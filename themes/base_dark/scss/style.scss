@@ -1,0 +1,400 @@
+/* ==========================================================================
+   Base (Dark) Theme Styles
+   ========================================================================== */
+
+.overlay-supersize.overlay-base_dark {
+	background-image: none;
+	background-color: #000;
+	overflow:hidden;
+	overflow-y: hidden;
+
+	& .envirabox-wrap {
+		top: 40px;
+
+		& .envirabox-close {
+			top: 50px;
+			right: 10px;
+		}
+	}
+}
+
+.envirabox-wrap {
+
+	& .envirabox-theme-base_dark {
+		/** 
+		 * Navigation
+		 */
+		a.envirabox-nav {
+			position:fixed;
+
+			/**
+			 * Previous Navigation
+			 */
+			&.envirabox-prev {
+
+				&:hover span {
+					background-position: 0 0;
+				}
+
+				span {
+					background-image: url(../images/left-nav.png);
+					background-size: 31px;
+					background-position: 0 -62px;
+					left: 0px;
+					visibility: visible;
+				}
+			}
+
+			/**
+			 * Next Navigation
+			 */
+			&.envirabox-next {
+
+				&:hover span {
+					background-position: 0 0;
+				}
+
+				span {
+					background-image: url(../images/right-nav.png);
+					background-size: 31px;
+					background-position: 0 -62px;
+					right: 0px;
+					visibility: visible;
+				}
+			}
+
+			& span {
+				width: 31px;
+				height: 62px;
+				margin-top: -31px;
+			}
+		}
+
+		/** 
+		 * Close Button
+		 */
+		& .envirabox-close {
+			background-image: url(../images/close@2x.png);
+			background-position: 0 0px;
+			cursor: pointer;
+			background-size: 30px 30px;
+			top: -15px;
+			right: -15px;
+			width: 30px;
+			height: 30px;
+
+			&:hover {
+				background-position: 0 0;
+			}
+		}
+	}
+
+	/**
+	 * Caption
+	 */
+	& .envirabox-title {
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		width:100%;
+		min-height: 40px;
+		padding: 10px;
+		box-sizing: border-box;
+		background: #2d2d2f;
+		color: #fff;
+		margin: 0;
+		text-align: left;
+		font-size: 14px;
+		z-index: 988060 !important;
+		visibility: visible;
+
+		& span.child {
+			margin:0;
+			padding:0;
+			background: none;
+			-webkit-border-radius: 0;
+			-moz-border-radius: 0;
+			border-radius: 0;
+			text-shadow: none;
+		}
+
+	}
+
+	/**
+	 * Actions
+	 */
+	& .envirabox-actions {
+		position:fixed;
+		top:9px;
+		right:9px;
+		z-index: 988061;
+
+		& .envira-download-button {
+			display:inline-block;
+			margin-left: 9px;
+			
+			& a {
+				width: 22px;
+				height: 22px;
+				background-size: 14px;
+			}
+		}
+
+		& .envira-printing-button {
+			display:inline-block;
+			margin-left: 9px;
+
+			& a {
+				width: 22px;
+				height: 22px;
+				background-size: 14px;
+			}
+		}
+
+		& .envira-fullscreen-button {
+			display:inline-block;
+			margin-left: 9px;
+			width: 22px;
+			height: 22px;
+			text-indent: -9999px;
+			background-image: url(../images/fullscreen@2x.png);
+			background-size: 22px;
+			
+			& a {
+				display:block;
+				width: 22px;
+				height: 23px;
+			}
+		}
+	}
+
+	/** 
+	 * Social icons
+	 */
+	.envirabox-inner .envirabox-position-overlay {
+		width: 100%;
+		text-align: center;
+		bottom: -38px;
+		top: inherit;
+
+		.envira-social-buttons {
+			display: inline-block;
+			float: none;
+
+			&.orientation-horizontal.outside {
+				position: relative;
+				bottom: 0;
+				min-width: inherit;
+				max-width: inherit;
+			}
+
+			&.orientation-vertical.outside {
+				position: relative;
+				left: 0;
+				min-width: inherit;
+				max-width: inherit;
+			}
+
+			& .envira-social-network {
+				clear: none;
+
+				a.envira-social-button {
+					margin: 10px 5px 0;
+					width: 25px;
+					height: 25px; 
+					line-height: 25px;
+					background-size: 151px 25px;
+					background-image: url(../images/social@2x.png);
+					background-color: transparent;
+					border-radius: inherit;
+					-webkit-border-radius: inherit;
+					-moz-border-radius: inherit;
+				}
+
+			}
+
+			/**
+			* Buttons for each Social Network
+			*/
+			div.facebook {
+				a { 
+					background-position: -63px 0px;
+				}
+			}
+			div.twitter {
+				a { 
+					background-position: -31px 0px;
+				}
+			}
+			div.pinterest {
+				a { 
+					background-position: -95px 0px;
+				}
+			}
+			div.google {
+				a { 
+					background-position: 0px 0px;
+				}
+			}
+			div.email {
+				a { 
+					background-position: -126px 0px;
+				}
+			}
+
+		}
+
+	}
+	
+}
+
+.envirabox-thumbs .envirabox-wrap {
+
+	& .envirabox-theme-base_dark {
+		/** 
+		 * Navigation
+		 */
+		a.envirabox-nav {
+
+			& span {
+				margin-top: -142px;
+			}
+
+		}
+
+	}
+
+}
+
+/**
+* Lightbox
+*/
+.envirabox-skin {
+
+	&.envirabox-theme-base_dark {
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		padding: 4px !important;
+		background: #fff;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+	.envira-supersize & {
+		&.envirabox-theme-base_dark {
+			-moz-border-radius: none;
+			-webkit-border-radius: none;
+			border-radius: none;
+			padding: 0 !important;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+	}
+}
+
+#envirabox-buttons {
+	display:none;
+}
+
+#envirabox-thumbs {
+	background: #2d2d2f;
+
+	ul li a {
+		border: none;
+	}
+
+	ul li {
+		margin: 36px 18px;
+		border: 3px solid #2d2d2f;
+	}
+
+	ul li.active {
+		border: 3px solid #fff;
+	}
+
+	&.bottom {
+		bottom: 0;
+	}
+
+}
+
+/**
+* Mobile Landscape (devices and browsers)
+*/
+@media only screen and (max-height: 640px) {
+
+	.envirabox-thumbs .envirabox-wrap {
+
+		& .envirabox-theme-base_dark {
+			/** 
+			 * Navigation
+			 */
+			a.envirabox-nav {
+
+				& span {
+					margin-top: -102px;
+				}
+			}
+		}
+	}
+
+	#envirabox-thumbs {
+
+		ul li a {
+			max-width: 100px;
+			max-height: 60px;
+
+			& img {
+				max-width: 100px;
+				max-height: 60px;
+			}
+		}
+
+		ul li {
+			margin: 18px 10px;
+		}
+
+	}
+}
+
+/**
+* Mobile Portrait (devices and browsers)
+*/
+@media only screen and (max-width: 459px) {
+	.envirabox-thumbs .envirabox-wrap {
+
+		& .envirabox-theme-base_dark {
+			/** 
+			 * Navigation
+			 */
+			a.envirabox-nav {
+
+				& span {
+					margin-top: -102px;
+				}
+			}
+		}
+	}
+	
+	#envirabox-thumbs {
+
+		ul li a {
+			max-width: 100px;
+			max-height: 60px;
+
+			& img {
+				max-width: 100px;
+				max-height: 60px;
+			}
+		}
+
+		ul li {
+			margin: 18px 10px;
+		}
+
+	}
+}

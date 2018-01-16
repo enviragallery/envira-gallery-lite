@@ -1,0 +1,1657 @@
+/* ==========================================================================
+   metabox.css loads on any Envira Gallery and Album Create/Edit Screen
+
+   Any styles that will be used by the main Gallery / Album editor screen should be
+   added to this file
+   ========================================================================== */
+
+/* ==========================================================================
+   Imports
+   ========================================================================== */
+@import "vars";
+@import "mixins";
+
+/* ==========================================================================
+   Messages
+   ========================================================================== */
+body.post-type-envira,
+body.post-type-envira_album {
+    /**
+    * Add left and right margins to ensure the message notification horizontally lines up
+    * with the metaboxes
+    */
+    #message {
+        margin: 5px 20px 15px 20px;
+    }
+
+    #wp-link-wrap{
+		z-index: 180105 !important;
+	}
+
+	#wp-link-backdrop{
+		z-index: 160105 !important;
+
+	}
+}
+
+/* ==========================================================================
+   Form
+   - The envira-gallery class is assigned to the Gallery and Album Add/Edit screens form.
+   ========================================================================== */
+form#post.envira-gallery {
+    /**
+    * Re-establish the left and right margins, so there's spacing between the Admin Menu
+    * and the content
+    */
+    margin: 0 20px;
+
+    /**
+     * Defined so we override WordPress' default styles
+     */
+    #poststuff {
+        /* ==========================================================================
+           Envira Gallery Shared Styles for Types and Settings
+           ========================================================================== */
+
+        /**
+        * Intro Text
+        */
+        p.envira-intro {
+            margin: 0;
+            padding: 0 0 30px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+            font-weight: 700;
+
+            small {
+                margin: 5px 0 0 0;
+                display: block;
+                font-weight: 400;
+
+                a {
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        /**
+        * Help Video
+        * - Can be placed inside p.envira-intro by JS, or outside p.envira-intro when
+        * viewing the Images tab for a Dynamic or Default Gallery
+        */
+        div.envira-video-help {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            margin: 20px 0 0 0;
+
+            iframe {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: auto;
+                min-height: 300px;
+            }
+
+            a.envira-video-close {
+                position: absolute;
+                z-index: 2;
+                top: -12px;
+                right: -12px;
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                @include borderRadius(50%);
+                background: #f5f5f5;
+                color: #000;
+                text-align: center;
+                text-decoration: none;
+            }
+        }
+
+        /**
+        * Image Grid
+        * - Used on the Images tab for Default Galleries, as well as the Preview Metabox
+        */
+        ul.envira-gallery-images-output {
+            width: 100%;
+
+            li {
+                position: relative;
+                display: inline-block;
+                width: 150px;
+                margin: 0 20px 20px 0;
+                padding: 0;
+                list-style: none;
+                vertical-align: top;
+                -moz-background-clip: padding;
+                -webkit-background-clip: padding-box;
+                background-clip: padding-box;
+                background: #f7f7f7;
+
+                img {
+                    display: block;
+                    width: 150px;
+                    height: 150px;
+                }
+
+                /**
+                * If, for some reason, the image doesn't exist or fails to load,
+                * the placeholder logo is displayed
+                */
+                div.placeholder-image {
+                    display: block;
+                    width: 148px;
+                    height: 149px;
+                    background: url(images/icons/leaf.svg) center no-repeat;
+                    background-size: 64px 64px;
+                    border-left: 1px solid #dfdfdf;
+                    border-top: 1px solid #dfdfdf;
+                    border-right: 1px solid #dfdfdf;
+                }
+
+                /**
+                * Metadata
+                */
+                div.meta {
+                    width: 148px;
+                    overflow: hidden;
+                    text-align: center;
+                    border-left: 1px solid #dfdfdf;
+                    border-bottom: 1px solid #dfdfdf;
+                    border-right: 1px solid #dfdfdf;
+
+                    /**
+                    * Title
+                    */
+                    div.title {
+                        font-size: 12px;
+                        font-weight: 700;
+                        width: 138px;
+                        height: 18px;
+                        line-height: 18px;
+                        margin: 8px 5px;
+                        overflow: hidden;
+
+                        /**
+                        * Hint
+                        * - Displays the full title on hover
+                        */
+                        a.hint {
+                            position: absolute;
+                            display: inline-block;
+                            bottom: 10px;
+                            right: 10px;
+                            width: 16px;
+                            height: 16px;
+                            background: #f7f7f7;
+
+                            &.hidden {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    /**
+                    * Additional metadata
+                    */
+                    div.additional {
+                        display: none;
+                        margin: 5px 0 0 0;
+                        font-weight: 400;
+                    }
+                }
+
+                /**
+                * Tick Icon
+                */
+                a.check {
+                    display: none;
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    width: 24px;
+                    height: 24px;
+                    background-color: #eee;
+                    -webkit-box-shadow: 0 0 0 1px #fff,0 0 0 2px rgba(0,0,0,0.15);
+                    box-shadow: 0 0 0 1px #fff,0 0 0 2px rgba(0,0,0,0.15);
+
+                    div.media-modal-icon {
+                        display: none;
+                        width: 15px;
+                        height: 15px;
+                        margin: 5px 0 0 5px;
+                        background-position: -21px 0;
+                    }
+                }
+
+                /**
+                * Edit / Delete Buttons
+                */
+                a.dashicons {
+                    position: absolute;
+                    display: block;
+                    top: 5px;
+                    left: 5px;
+                    width: 25px;
+                    height: 25px;
+                    line-height: 25px;
+                    font-size: 18px; /* Controls the icon size */
+                    outline: none;
+                    z-index: 20;
+                    border-radius: 2px;
+                    -moz-border-radius: 2px;
+                    -webkit-border-radius: 2px;
+
+                    &.envira-gallery-modify-image {
+                        background: #0085ba;
+                        color: $white;
+                    }
+                    &.envira-gallery-remove-image {
+                        left: 35px;
+                        background: #e02626;
+                        color: $white;
+                    }
+                }
+
+                /**
+                * Selected state
+                */
+                &.selected {
+                    width: 148px;
+                    border: 2px solid $green !important;
+
+                    a.check {
+                        display: block;
+                        background-color: $green;
+                        -webkit-box-shadow: 0 0 0 1px #fff,0 0 0 2px $green;
+                        box-shadow: 0 0 0 1px #fff,0 0 0 2px $green;
+
+                        div.media-modal-icon {
+                            display: block;
+                        }
+                    }
+
+                    div.meta {
+                        width: 146px;
+                    }
+                }
+
+                /**
+                * Multiple selection sorting - stacks images when the user has selected more than one image + dragged them
+                */
+                &.ui-sortable-helper {
+                    li {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            /**
+            * List View
+            */
+            &.list {
+                li {
+                    position: relative;
+                    z-index: 2;
+                    display: block;
+                    width: 100%;
+                    margin: 0 0 10px 0;
+                    padding: 10px 15px;
+                    background: #fff;
+                    border: 1px solid #ddd;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    border-radius: 2px;
+                    -moz-border-radius: 2px;
+                    -webkit-border-radius: 2px;
+
+                    img {
+                        display: inline-block;
+                        width: 75px;
+                        margin-left: 45px;
+                    }
+
+                    /**
+                    * Metadata
+                    */
+                    div.meta {
+                        position: absolute;
+                        z-index: 1;
+                        left: 0;
+                        display: inline-block;
+                        width: 100%;
+                        padding: 0 80px 0 150px;
+                        border: none;
+                        font-weight: 700;
+                        text-align: left;
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+
+                        /**
+                        * Title
+                        */
+                        div.title {
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            font-size: 16px;
+                            margin: 0;
+                            padding: 0;
+
+                            a.hint {
+                                display: none;
+                            }
+                        }
+
+                        /**
+                        * Additional metadata
+                        * - Displayed in list view
+                        */
+                        div.additional {
+                            display: block;
+                        }
+                    }
+
+                    /**
+                    * Checkbox
+                    * - Always display
+                    */
+                    a.check {
+                        display: block;
+                        position: absolute;
+                        left: 15px;
+                        top: 35px;
+                    }
+
+                    a.envira-gallery-remove-image {
+                        left: auto;
+                        top: 10px;
+                        right: 10px;
+                    }
+
+                    a.envira-gallery-modify-image {
+                        left: auto;
+                        top: 10px;
+                        right: 40px;
+                    }
+                }
+            }
+        }
+
+        /* ==========================================================================
+           Envira Gallery Type
+           Envira Album Type
+           ========================================================================== */
+        #envira-gallery {
+            margin: 60px 0 20px 0;
+        }
+        #envira-gallery,
+        #envira-albums {
+            /**
+            * Hide the title bar of the metabox, so we have a seamless style
+            */
+            .handlediv {
+                display: none;
+            }
+            .hndle {
+                display: none;
+            }
+
+            /**
+            * Tabs
+            * - Move up vertically so they sit above the metabox
+            */
+            h2.nav-tab-wrapper {
+                margin: -56px 0 0 -1px; /* The height of the tab */
+                padding: 0;
+                border-bottom: none;
+
+                /**
+                * Increase tab sizes and style
+                */
+                .nav-tab {
+                    display: inline-block;
+                    width: 49%;
+                    margin: 0;
+                    padding: 15px 0;
+                    text-align: center;
+                    font-size: 16px;
+                    border-color: #e5e5e5; /* Matches the metabox border for a seamless UI */
+                    background: #f5f5f5;
+
+                    /**
+                    * Envira Gallery Icon
+                    */
+                    &.nav-tab-native-envira-gallery {
+                        span {
+                            display: inline-block;
+                            background: url(images/icons/leaf.svg) 0 5px no-repeat;
+                            background-size: 14px 14px;
+                            text-indent: 20px;
+                        }
+                    }
+
+                    /**
+                    * External Gallery Tab
+                    */
+                    &.nav-tab-external-gallery {
+                        margin-right: -1px;
+                    }
+
+                    /**
+                    * Hover and Active States
+                    */
+                    &:hover,
+                    &.envira-active {
+                        background: $white;
+                        border-bottom: 1px solid $white;
+                    }
+
+                    /**
+                    * Focus State
+                    * - Remove WordPress' blue focus box from tabs
+                    */
+                    &:focus {
+                        -webkit-box-shadow: none;
+                        -moz-box-shadow: none;
+                        box-shadow: none;
+                    }
+
+                    &:last-child {
+                        float: right;
+                    }
+
+                    /**
+                    * Hides the radio input on a label
+                    * The radio input will be selected when the label is clicked
+                    */
+                    input[type=radio] {
+                        display: none;
+                    }
+                }
+            }
+
+            /**
+            * Tab Settings
+            */
+            .inside {
+                margin: 0;
+                padding: 0;
+
+                /**
+                * Native Envira Gallery Uploader / Select Files
+                * - Styles the pluploader instance to look the way we want it
+                * - Also see responsive styles at the end of this file
+                */
+                #envira-gallery-native {
+                    #plupload-upload-ui {
+                        /* Reserves the space needed for the drag-drop-area, which is loaded using JS */
+                        height: 210px;
+
+                        /**
+                        * A drag-drop-area div is always output, whether we're on a touch
+                        * device or not. WordPress will only style this div if its parent
+                        * has the .drag-drop class (i.e. touch devices won't get any CSS styling)
+                        *
+                        * The below CSS ensures that the drag drop area looks consistent
+                        * regardless of device used, and then adjusts the layout if drag-drop is supported.
+                        */
+                        #drag-drop-area {
+                            display: none;
+                            border: 4px dashed #b4b9be;
+                            height: 200px;
+
+                            .drag-drop-inside {
+                                margin: 0 auto 0 auto;
+
+                                p {
+                                    display: block;
+                                    text-align: center;
+                                    color: #a0a5aa;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    margin: -10px 0 0 -10px;
+
+                                    /**
+                                    * "Drop Files here"
+                                    */
+                                    &.drag-drop-info {
+                                        display: none;
+                                        font-size: 20px;
+                                    }
+                                    &.drag-drop-buttons {
+                                        text-align: center;
+                                        position: relative;
+                                        top: 20px;
+                                        left: 0;
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        /**
+                        * Select Files from Other Sources Button
+                        */
+                        a.envira-media-library.button {
+                            display: none;
+                            position: absolute;
+                            margin: 0 auto;
+                            left: 280px;
+                            right: 0;
+                            width: 230px;
+                            top: 115px;
+                            text-align: center;
+                        }
+
+                        /**
+                        * When the uploader supports drag and drop, a .drag-drop
+                        * class is appended to #drag-drop-area by WordPress
+                        *
+                        * We use this to show certain descriptions
+                        */
+                        &.drag-drop {
+                            #drag-drop-area {
+                                .drag-drop-inside {
+                                    width: 520px;
+                                    margin: 50px auto 0 auto;
+
+                                    p {
+                                        position: relative;
+                                        top: 0;
+                                        left: 0;
+                                        margin: 0;
+                                    }
+
+                                    p.drag-drop-info {
+                                        display: block;
+                                    }
+
+                                    p.drag-drop-buttons {
+                                        margin: 10px 0 0 0;
+                                        text-align: left;
+                                    }
+                                }
+
+
+                            }
+                        }
+
+                        /**
+                        * Upload Progress Bar
+                        */
+                        .envira-progress-bar {
+                            display: none;
+                            width: 100%;
+                            position: relative;
+                            height: 10px;
+                            width: 100%;
+                            margin: 10px auto;
+                            border-radius: 10px;
+                            background: #dfdfdf;
+                            background: rgba(0,0,0,.1);
+
+                            .envira-progress-bar-inner {
+                                height: 10px;
+                                min-width: 20px;
+                                width: 0;
+                                background: #aaa;
+                                background: rgba(0,0,0,.2);
+                                border-radius: 10px;
+                                -webkit-transition: width 300ms;
+                                -moz-transition: width 300ms;
+                                -ms-transition: width 300ms;
+                                -o-transition: width 300ms;
+                                transition: width 300ms;
+                            }
+
+                            .envira-progress-bar-status {
+                                clear: both;
+                                position: absolute;
+                                right: 0;
+                                width: 50%;
+                                height: 30px;
+                                margin: 12px 0 0 0;
+                                text-align: right;
+
+                                .uploading {
+
+                                }
+                                .done {
+                                    display: none;
+                                }
+                            }
+
+                        }
+
+                        /**
+                        * Upload Progress Bar
+                        */
+                        .envira-progress-adding-images {
+                            display: none;
+                            width: 100%;
+                            position: relative;
+                            height: 10px;
+                            width: 100%;
+                            margin: 5px auto;
+                            border-radius: 10px;
+/*                            background: #dfdfdf;
+                            background: rgba(0,0,0,.1);
+*/
+                            .envira-progress-bar-inner {
+                                height: 10px;
+                                min-width: 20px;
+                                width: 0;
+/*                                background: #aaa;
+                                background: rgba(0,0,0,.2);*/
+                                border-radius: 10px;
+/*                                -webkit-transition: width 300ms;
+                                -moz-transition: width 300ms;
+                                -ms-transition: width 300ms;
+                                -o-transition: width 300ms;
+                                transition: width 300ms;*/
+                            }
+
+                            .envira-progress-status {
+                                clear: both;
+                                position: absolute;
+                                right: 0;
+                                width: 50%;
+                                height: 30px;
+                                margin: 12px 0 0 0;
+                                text-align: right;
+                                color: green;
+                                -webkit-transition: 0.05s color ease-in-out;
+                                transition: 0.05s color ease-in-out;
+
+                                .spinner {
+                                    float: right;
+                                    margin-top: 0;
+                                    visibility: visible;
+                                }
+
+                                .adding_images {
+                                    float: right;
+                                    display: inline-block;
+                                }
+                            }
+
+                        }
+
+                        p.upload-flash-bypass {
+                            display: none;
+                        }
+                    }
+                }
+
+                div.envira-tab {
+                    padding: 20px;
+
+                    /**
+                    * External Gallery Tab Area
+                    */
+                    &#envira-gallery-external {
+                        text-align: center;
+
+                        /**
+                        * Header
+                        */
+                        p.envira-intro {
+                            margin: 0 0 20px 0;
+                            padding: 0;
+                            border: none;
+                        }
+
+                        /**
+                        * External Gallery Types
+                        */
+                        ul#envira-gallery-types-nav {
+                            margin: 0 0 40px 0;
+                            text-align: center;
+
+                            li {
+                                display: inline-block;
+                                margin: 0 20px 0 0;
+                                vertical-align: top;
+
+                                &:last-child {
+                                    margin: 0;
+                                }
+
+                                /**
+                                * Pro uses a <label> element so the user can select the Gallery Type
+                                * Lite uses an <a> element so the user can go to the Upgrade URL
+                                */
+                                label,
+                                a {
+                                    float: left;
+                                    width: 110px;
+
+                                    input {
+                                        display: none;
+                                    }
+                                    div.icon {
+                                        width: 110px;
+                                        height: 110px;
+                                        margin: 0 0 10px 0;
+                                        border: 1px solid #ddd;
+                                        background-size: 64px 64px;
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                    }
+                                    div.title {
+                                        font-weight: 700;
+                                    }
+                                }
+
+                                /**
+                                * Hover State
+                                * Selected State
+                                */
+                                &:hover,
+                                &.envira-active {
+                                    label,
+                                    a {
+                                        div.icon {
+                                            background-color: #f7fcf3;
+                                            border-color: #7cc048;
+                                        }
+                                    }
+                                }
+
+                                /**
+                                * Featured Content
+                                */
+                                &#envira-gallery-type-fc {
+                                    label,
+                                    a {
+                                        div.icon {
+                                            background-image: url(../images/types/fc.png);
+                                        }
+                                    }
+                                }
+
+                                /**
+                                * Instagram
+                                */
+                                &#envira-gallery-type-instagram {
+                                    label,
+                                    a {
+                                        div.icon {
+                                            background-image: url(../images/types/instagram.png);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        /**
+                        * Upgrade Button
+                        */
+                        a.button.button-x-large {
+                            margin-top: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* ==========================================================================
+           Envira Albums Drag & Drop Area
+           ========================================================================== */
+        #envira-albums {
+            .inside {
+                #envira-types {
+                    #envira-album-native {
+                        position: relative;
+
+                        /**
+                        * Galleries (Drop Target)
+                        */
+                        ul#envira-album-drag-drop-area {
+                            z-index: 2;
+                            min-height: 200px;
+                            margin: 0;
+                            padding: 20px;
+                            border: 4px dashed #b4b9be;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+
+                            li {
+                                cursor: move;
+                            }
+                        }
+
+                        /**
+                        * Drag & Drop Instructions
+                        */
+                        p.drag-drop-info {
+                            position: absolute;
+                            top: 80px;
+                            z-index: 1;
+                            margin: 0 auto;
+                            left: 0;
+                            right: 0;
+                            text-align: center;
+                            color: #a0a5aa;
+                            font-size: 20px;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+
+                            span {
+                                display: block;
+
+                                &.drag {
+
+                                }
+                                &.click {
+                                    font-size: 18px;
+                                }
+                            }
+                            small {
+                                display: block;
+                                margin: 5px 0;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* ==========================================================================
+           Envira Gallery Settings
+           Envira Albums Settings
+           ========================================================================== */
+        #envira-gallery-settings,
+        #envira-albums-settings {
+            background: $beige_light; /* The background for tabs, full height */
+
+            /**
+            * Clearfix
+            */
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /**
+            * Hide the title bar of the metabox, so we have a seamless style
+            */
+            .handlediv {
+                display: none;
+            }
+            .hndle {
+                display: none;
+            }
+            .inside {
+                margin: 0;
+                padding: 0;
+            }
+
+            /**
+            * Tabs
+            */
+            ul#envira-tabs-nav {
+                width: 160px;
+                margin: 0;
+                padding: 0;
+                border-right: 1px solid #ddd;
+
+                li {
+                    float: left;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+
+                    a {
+                        float: left;
+                        width: 120px;
+                        margin: 0 20px;
+                        padding: 20px 0 20px 25px;
+                        text-decoration: none;
+                        color: #999;
+                        border-bottom: 1px solid #ddd;
+                        background-position: left center;
+                        background-repeat: no-repeat;
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                        transition: none;
+                        -webkit-transition: none;
+
+                        /**
+                        * Hover and Active States
+                        */
+                        &:hover,
+                        &.envira-active {
+                            width: 161px;
+                            margin: -1px 0 0 0;
+                            padding: 20px 20px 20px ( 20px + 25px );
+                            text-decoration: none;
+                            color: #444;
+                            border-top: 1px solid #ddd;
+                            border-bottom: 1px solid #ddd;
+                            border-right: 1px solid $white;
+                            background-color: $white;
+                            background-position: 20px center;
+                        }
+
+                        /**
+                        * Focus State
+                        * - Remove WordPress' blue focus box from tabs
+                        */
+                        &:focus {
+                            -webkit-box-shadow: none;
+                            -moz-box-shadow: none;
+                            box-shadow: none;
+                        }
+                    }
+
+                    /**
+                    * Last Item
+                    */
+                    &:last-child {
+                        a {
+                            border-bottom: none;
+
+                            &:hover {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+
+                    /**
+                    * Tab Icons
+                    */
+                    &.envira-images,
+                    &.envira-galleries {
+                        a {
+                            background-image: url(images/icons/leaf.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-config {
+                        a {
+                            background-image: url(images/icons/configuration.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-lightbox {
+                        a {
+                            background-image: url(images/icons/lightbox.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-mobile {
+                        a {
+                            background-image: url(images/icons/mobile.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-breadcrumbs {
+                        a {
+                            background-image: url(images/icons/breadcrumbs.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-comments {
+                        a {
+                            background-image: url(images/icons/comments.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-downloads {
+                        a {
+                            background-image: url(images/icons/downloads.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-exif {
+                        a {
+                            background-image: url(images/icons/exif.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-pagination {
+                        a {
+                            background-image: url(images/icons/pagination.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-pinterest {
+                        a {
+                            background-image: url(images/icons/pinterest.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-proofing {
+                        a {
+                            background-image: url(images/icons/proofing.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-printing {
+                        a {
+                            background-image: url(images/icons/printing.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-slideshow {
+                        a {
+                            background-image: url(images/icons/slideshow.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-standalone {
+                        a {
+                            background-image: url(images/icons/standalone.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-social {
+                        a {
+                            background-image: url(images/icons/social.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-tags {
+                        a {
+                            background-image: url(images/icons/tags.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-videos {
+                        a {
+                            background-image: url(images/icons/video.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-watermarking {
+                        a {
+                            background-image: url(images/icons/watermark.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-woocommerce {
+                        a {
+                            background-image: url(images/icons/woocommerce.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-zoom {
+                        a {
+                            background-image: url(images/icons/zoom.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                    &.envira-misc {
+                        a {
+                            background-image: url(images/icons/misc.svg);
+                            background-size: 16px 16px;
+                        }
+                    }
+                }
+            }
+
+            /**
+            * Settings
+            */
+            #envira-tabs {
+                margin: 0 0 0 160px; /* Must match #ul#envira-tabs-nav width */
+                padding: 20px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                background: $white;
+                border-left: 1px solid #ddd;
+
+                /**
+                * Headings
+                */
+                h2 {
+                    clear: none; // Prevents config layouts breaking in WordPress 4.3 and older
+                }
+
+                /**
+                * All Tabs
+                */
+                table.form-table {
+                    clear: none;
+                    margin: 0 0 40px 0;
+
+                    &.no-margin {
+                        margin: 0;
+                    }
+
+                    /**
+                    * Row padding
+                    */
+                    th,td {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                    }
+
+                    /**
+                    * Sub Headings
+                    * - Used to denote an Addon's settings within a settings tab e.g. the Mobile tab
+                    */
+                    tr.sub-heading {
+                        th {
+                            margin: 0;
+                            padding: 20px 0 0 0;
+                            font-style: italic;
+                            font-weight: 400;
+                            font-size: 16px;
+                        }
+                    }
+
+                    /**
+                    * Full width labels (used for checkboxes that we don't want to be inline)
+                    */
+                    label.full-width {
+                        display: block;
+                        margin: 0 0 5px 0;
+
+                        &:first-child {
+                            margin-top: 5px;
+                        }
+                    }
+
+                    /**
+                    * Full width textareas
+                    */
+                    textarea {
+                        width: 100%;
+                    }
+
+                    /**
+                    * Checkbox alignment
+                    */
+                    input[type=checkbox] {
+                        margin-bottom: 2px;
+                    }
+
+                    /**
+                    * Descriptions
+                    */
+                    p.description,
+                    span.description {
+                        font-size: 13px;
+                        font-style: italic;
+                        color: #666;
+                    }
+                }
+
+                /**
+                * Tab: Images
+                */
+                #envira-tab-images {
+                    /**
+                    * Inline Navigation
+                    * - Select All
+                    * - List View / Grid View
+                    * - Edit / Delete Selected Items
+                    */
+                    nav {
+                        width: 100%;
+
+                        &.envira-tab-options {
+                            margin: 20px 0;
+                        }
+
+                        a.dashicons {
+                            position: absolute;
+                            color: #999;
+
+                            &.dashicons-grid-view {
+                                right: 20px;
+                            }
+                            &.dashicons-list-view {
+                                right: 50px;
+                            }
+
+                            &.selected {
+                                color: #23282d;
+                            }
+
+                            span {
+                                display: inline-block;
+                                text-indent: -9999px;
+                            }
+                        }
+
+                        /**
+                        * Edit / Delete Selected
+                        * - Hidden by default, shown by JS when image(s) are selected
+                        */
+                        &.envira-select-options {
+                            display: none;
+                        }
+                    }
+
+                    /**
+                    * Images
+                    * - Show move cursor
+                    */
+                    ul#envira-gallery-output {
+                        li {
+                            cursor: move;
+                        }
+                    }
+                }
+
+                /**
+                * Tab: Galleries
+                * - Used on Albums
+                */
+                #envira-tab-galleries {
+                    /**
+                    * Inline Navigation
+                    * - Search
+                    */
+                    nav {
+                        width: 100%;
+
+                        &.envira-tab-options {
+                            height: 40px;
+                            margin: 20px 0;
+                            position: relative;
+
+                            /**
+                            * Add Galleries to Album Button
+                            */
+                            a.envira-galleries-add {
+                                display: none; /* Displayed via JS when Galleries selected */
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            }
+
+                            /**
+                            * Search
+                            */
+                            input#envira-albums-gallery-search {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                            }
+                        }
+
+                        /**
+                        * Bulk Action Buttons
+                        * - Hidden by default, shown by JS when galleries(s) are selected
+                        */
+                        &.envira-select-options {
+                            display: none;
+                        }
+                    }
+
+                    /**
+                    * Images
+                    * - Show move cursor
+                    * - Hide Edit & Delete icons, as these are only displayed when the gallery is assigned to the Album
+                    */
+                    ul.envira-gallery-images-output {
+                        li {
+                            cursor: move;
+
+                            a.envira-gallery-remove-image,
+                            a.envira-gallery-modify-image {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                /**
+                * Clearfix
+                */
+                &:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+            }
+
+        }
+
+        /* ==========================================================================
+           Envira Gallery Preview Metabox
+           ========================================================================== */
+        #envira-gallery-preview {
+            /**
+            * Clearfix
+            */
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            /**
+            * Hide the title bar of the metabox, so we have a seamless style
+            */
+            button.handlediv {
+                display: none;
+            }
+            h2.hndle {
+                display: none;
+            }
+            .inside {
+                margin: 0;
+                padding: 20px;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Media Modal (Insert Images and Edit Metadata)
+   ========================================================================== */
+.media-modal {
+    /**
+    * Header Buttons
+    */
+    .edit-attachment-frame {
+        .edit-media-header {
+            button.right {
+                border-right: 1px solid #ddd;
+            }
+        }
+    }
+
+    /**
+    * Upload
+    */
+    .uploader-inline {
+        /**
+        * Don't display the 'Select Files from Other Sources' button that we add to plupload
+        * when we're in a modal.
+        */
+        a.envira-media-library.button {
+            display: none;
+        }
+    }
+
+    .envira-progress-bar {
+        .envira-progress-bar-status {
+            display: none;
+        }
+    }
+
+    /**
+    * Insert
+    */
+    .attachment.details {
+        -webkit-box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 7px $green;
+        box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 7px $green;
+
+        .check {
+            background-color: $green;
+            -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 2px $green;
+            box-shadow: 0 0 0 1px #fff, 0 0 0 2px $green;
+        }
+    }
+
+    /**
+    * Attachments
+    * - Ensures that images fill each <li> attachment block, providing compatibility from WordPress 4.0 upwards
+    * - Removed as breaks 4.4, 4.5
+    ul.attachments {
+        li.attachment {
+            width: 20%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    */
+
+    /**
+    * Albums: Select Gallery Cover Image
+    * - Add some top spacing so that a selected cover image that's on the first line of the results
+    * doesn't have its checkmark cut off
+    */
+    ul.attachments.envira-albums-gallery-cover-image {
+        padding: 10px;
+    }
+
+    /**
+    * Bulk Edit Attachments
+    * - Restore cursor to default, so the user doesn't think they can click an image
+    */
+    ul.attachments.envira-bulk-edit {
+        li.attachment {
+            cursor: default;
+
+            .attachment-preview {
+                cursor: default;
+            }
+        }
+    }
+
+    /**
+    * Edit
+    */
+    .attachment-details {
+        .attachment-info {
+            padding: 16px;
+
+            /**
+            * Settings
+            * - Contains one or more setting elements (Title, Alt etc)
+            */
+            .settings {
+                margin: 0;
+                padding: 0;
+                border: none;
+
+                /**
+                * Individual Setting (Title, Alt etc)
+                */
+                .setting {
+                    margin: 0 0 20px 0;
+                    padding: 0 0 20px 0;
+                    border-bottom: 1px solid #ddd;
+
+                    /**
+                    * Input
+                    */
+                    input[type="text"],
+                    textarea {
+                        display: block;
+                        width: 100%;
+                        min-width: 100%;
+                        margin: 0;
+                    }
+                    input[type="checkbox"] {
+                        float: left;
+                        margin: 0 5px 0 0;
+                    }
+                    select {
+                        margin: 0;
+                    }
+
+                    span {
+                        /**
+                        * Title
+                        */
+                        &.name {
+                            display: block;
+                            width: 100%;
+                            min-width: 100%;
+                            margin: 0;
+                            padding: 0;
+                            text-align: left;
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+
+                        /**
+                        * Description
+                        */
+                        &.description {
+                            text-align: left;
+                            font-style: normal;
+                            font-size: 13px;
+                            font-style: italic;
+                            color: #666;
+                        }
+                    }
+
+                    div.description {
+                        clear: both;
+                        float: left;
+                        margin: 5px 0 0 0;
+                        text-align: left;
+                        font-size: 13px;
+                        font-style: italic;
+                        color: #666;
+                    }
+                }
+            }
+
+            /**
+            * Actions
+            * - Save Button
+            * - Spinner
+            */
+            div.actions {
+                /**
+                * Ensure button renders at correct height
+                */
+                a.button {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Retina
+   ========================================================================== */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    /**
+    * WP media-views.css doesn't use .wp-core-ui for the x2 icons, therefore they never get applied
+    */
+    .wp-core-ui a.check .media-modal-icon {
+        background-image: url(../../../../../wp-includes/images/uploader-icons-2x.png) !important;
+        -webkit-background-size: 134px 15px;
+        background-size: 134px 15px;
+    }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media screen and (max-width: 1100px) {
+    /* ==========================================================================
+       Form
+       - The envira-gallery class is assigned to the Gallery and Album Add/Edit screens form.
+       ========================================================================== */
+    form#post.envira-gallery {
+        #poststuff {
+            #envira-gallery,
+            #envira-albums {
+                /**
+                * Tab Settings
+                */
+                .inside {
+                    /**
+                    * Native Envira Gallery
+                    */
+                    #envira-gallery-native {
+                        #plupload-upload-ui {
+                            &.drag-drop {
+                                #drag-drop-area {
+                                    border-color: #d5d5d5;
+
+                                    .drag-drop-inside {
+                                        width: 100%;
+                                        margin-top: 20px;
+
+                                        p.drag-drop-buttons {
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                            a.envira-media-library.button {
+                                left: 0;
+                                right: 0;
+                                width: 235px;
+                                top: 145px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* ==========================================================================
+       Form
+       - The envira-gallery class is assigned to the Gallery and Album Add/Edit screens form.
+       ========================================================================== */
+    form#post.envira-gallery {
+        #poststuff {
+            /* ==========================================================================
+               Envira Gallery Settings
+               Envira Albums Settings
+               ========================================================================== */
+            #envira-gallery-settings,
+            #envira-albums-settings {
+                /**
+                * Tabs
+                */
+                ul#envira-tabs-nav {
+                    width: 60px;
+
+                    li {
+                        a {
+                            width: 60px;
+                            height: 60px;
+                            margin: 0;
+                            padding: 0;
+                            text-indent: -9999px;
+                            background-position: center;
+
+                            &:hover,
+                            &.envira-active {
+                                width: 60px;
+                                height: 60px;
+                                margin: 0;
+                                padding: 0;
+                                text-indent: -9999px;
+                                background-position: center;
+                            }
+                        }
+                    }
+                }
+
+                /**
+                * Settings
+                */
+                #envira-tabs {
+                    margin: 0 0 0 60px; /* Must match #ul#envira-tabs-nav width */
+                }
+            }
+        }
+    }
+}

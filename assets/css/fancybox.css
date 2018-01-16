@@ -1,0 +1,356 @@
+#envirabox-wrap,
+#envirabox-wrap *,
+#envirabox-overlay {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+
+#envirabox-loading, .envirabox-close, #envirabox-left #envirabox-left-ico, #envirabox-right #envirabox-right-ico {
+    background-image: url('images/envirabox_sprite.png');
+}
+
+#envirabox-loading {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -22px;
+    margin-left: -22px;
+    background-position: 0 -108px;
+    opacity: 0.8;
+    cursor: pointer;
+	z-index: 988100;
+	display: none;
+}
+
+#envirabox-loading div {
+	width: 44px;
+    height: 44px;
+    background: url('images/envirabox_loading.gif') center center no-repeat;
+}
+
+#envirabox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 988010;
+	display: none;
+	background: url('images/envirabox_overlay.png');
+	background-color: rgba(0,0,0,.9); /* !important; */
+}
+
+#envirabox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none;
+}
+
+#envirabox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	z-index: 988020;
+	outline: none;
+	display: none;
+}
+
+#envirabox-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#envirabox-content {
+	width: 0;
+	height: 0;
+	padding: 0;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 988021;
+	border: 0px solid #fff;
+	-webkit-box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#envirabox-hide-sel-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 988020;
+}
+
+#envirabox-close {
+	position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 36px;
+    height: 36px;
+    z-index: 988040;
+	cursor: pointer;
+	display: none;
+	background-image: url("images/envirabox_sprite.png");
+}
+
+#envirabox-error {
+	color: #444;
+	font: normal 12px/20px Arial;
+	padding: 14px;
+	margin: 0;
+}
+
+#envirabox-img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	line-height: 0;
+	vertical-align: top;
+}
+
+#envirabox-frame {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+}
+
+#envirabox-left, #envirabox-right {
+	position: absolute;
+	bottom: 0px;
+	height: 100%;
+	width: 35%;
+	cursor: pointer;
+	outline: none;
+	background: transparent url('images/blank.gif');
+	z-index: 988040;
+	display: none;
+}
+
+#envirabox-left {
+	left: 0px;
+}
+
+#envirabox-right {
+	right: 0px;
+}
+
+#envirabox-left-ico, #envirabox-right-ico {
+	position: absolute;
+	top: 50%;
+	left: -9999px;
+	width: 36px;
+	height: 34px;
+	margin-top: -15px;
+	cursor: pointer;
+	z-index: 988040;
+	display: block;
+}
+
+#envirabox-left-ico {
+	background-position: 0 -36px;
+}
+
+#envirabox-right-ico {
+	background-position: 0 -72px;
+}
+
+#envirabox-left:hover, #envirabox-right:hover {
+	visibility: visible; /* IE6 */
+}
+
+body.envira-touch #envirabox-left span,
+#envirabox-left:hover span {
+	left: 20px;
+}
+
+#envirabox-right:hover span,
+body.envira-touch #envirabox-right span {
+	left: auto;
+	right: 20px;
+}
+
+body.envira-touch #envirabox-left,
+body.envira-touch #envirabox-right {
+	visibility: visible;
+}
+
+#envirabox-title {
+	font-family: Helvetica;
+	font-size: 12px;
+	z-index: 988025;
+}
+
+#envirabox-title.envirabox-title-inside {
+	padding-bottom: 12px;
+	background: #fff;
+	font-size: 13px;
+    line-height: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: relative;
+    text-shadow: none;
+    z-index: 988090;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: -6px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#envirabox-title.envirabox-title-outside {
+	padding-top: 10px;
+	color: #fff;
+	font-size: 13px;
+    line-height: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: relative;
+    text-shadow: none;
+    padding-left: 0 !important;
+}
+
+#envirabox-title-outside {
+	color: #fff;
+	font-size: 13px;
+    line-height: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: relative;
+    text-shadow: none;
+}
+
+.envirabox-title-over {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #FFF;
+	text-align: left;
+}
+
+#envirabox-title-over {
+	padding: 10px;
+	background: #000;
+	background: rgba(0,0,0,.8);
+	display: inline-block;
+	font-size: 13px;
+    line-height: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: relative;
+    text-shadow: none;
+}
+
+.envirabox-title-float {
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+	height: 32px;
+}
+
+#envirabox-title-float-wrap {
+	border: none;
+	border-collapse: collapse;
+	width: auto;
+}
+
+#envirabox-title-float-wrap tbody,
+#envirabox-title-float-wrap td {
+	border: none;
+	white-space: nowrap;
+}
+
+#envirabox-title-float-left {
+	padding: 0 0 0 15px;
+}
+
+#envirabox-title-float-main {
+	display: inline-block;
+    margin-right: -100%;
+    padding: 2px 20px;
+    background: transparent;
+    background: rgba(0,0,0,0.8);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-shadow: 0 1px 2px #222;
+    color: #FFF;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+#envirabox-title-float-right {
+	padding: 0 0 0 15px;
+}
+
+/* UPDATED FOR TWENTY-SEVENTEEN */
+
+#envirabox-title-float-wrap tr {
+	border-bottom: 0;
+}
+
+/* IE6 */
+
+.envirabox-ie6 #envirabox-close { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/envirabox/fancy_close.png', sizingMethod='scale'); }
+
+.envirabox-ie6 #envirabox-left-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/envirabox/fancy_nav_left.png', sizingMethod='scale'); }
+.envirabox-ie6 #envirabox-right-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/envirabox/fancy_nav_right.png', sizingMethod='scale'); }
+
+.envirabox-ie6 #envirabox-title-over { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/envirabox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
+.envirabox-ie6 #envirabox-title-float-left { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/envirabox/fancy_title_left.png', sizingMethod='scale'); }
+.envirabox-ie6 #envirabox-title-float-main { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/envirabox/fancy_title_main.png', sizingMethod='scale'); }
+.envirabox-ie6 #envirabox-title-float-right { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/envirabox/fancy_title_right.png', sizingMethod='scale'); }
+
+.envirabox-ie6 #envirabox-bg-w, .envirabox-ie6 #envirabox-bg-e, .envirabox-ie6 #envirabox-left, .envirabox-ie6 #envirabox-right, #envirabox-hide-sel-frame {
+	height: expression(this.parentNode.clientHeight + "px");
+}
+
+#envirabox-loading.envirabox-ie6 {
+	position: absolute; margin-top: 0;
+	top: expression( (-20 + (document.documentElement.clientHeight ? document.documentElement.clientHeight/2 : document.body.clientHeight/2 ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop )) + 'px');
+}
+
+#envirabox-loading.envirabox-ie6 div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/envirabox/fancy_loading.png', sizingMethod='scale'); }
+
+/* IE6, IE7, IE8 */
+
+.envirabox-ie .envirabox-bg { background: transparent !important; }
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+    #envirabox-loading, .envirabox-close, #envirabox-left #envirabox-left-ico, #envirabox-right #envirabox-right-ico, #envirabox-close {
+        background-image: url('images/envirabox_sprite@2x.png');
+        background-size: 44px 152px;
+    }
+
+    #envirabox-loading div {
+        background-image: url('images/envirabox_loading@2x.gif');
+        background-size: 24px 24px;
+    }
+
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="video" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+		<path class="envira-icon" d="M62,16l-14,9.3V20c0-4.4-3.6-8-8-8H8c-4.4,0-8,3.6-8,8v24c0,4.4,3.6,8,8,8h32c4.4,0,8-3.6,8-8v-5.3L62,48
+			c1.1,0,2-0.9,2-2V18C64,16.9,63.1,16,62,16z M44,44c0,2.2-1.8,4-4,4H8c-2.2,0-4-1.8-4-4V20c0-2.2,1.8-4,4-4h32c2.2,0,4,1.8,4,4V44
+			z M60,41.9l-12-8v-3.7l12-8V41.9z"/>
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="lightbox" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path class="envira-icon" d="M4,56V12H0v44c0,4.4,3.8,8,8.5,8H56v-4H8.3C5.9,60,4,58.2,4,56z M54,8H18c-1.1,0-2,0.9-2,2v32
+			c0,1.1,0.9,2,2,2h36c1.1,0,2-0.9,2-2V10C56,8.9,55.1,8,54,8z M52,38c0,1.1-0.9,2-2,2H22c-1.1,0-2-0.9-2-2V14c0-1.1,0.9-2,2-2h28
+			c1.1,0,2,0.9,2,2V38z M60,0H12C9.8,0,8,1.8,8,4v48c0,2.2,1.8,4,4,4h48c2.2,0,4-1.8,4-4V4C64,1.8,62.2,0,60,0z M60,50
+			c0,1.1-0.9,2-2,2H14c-1.1,0-2-0.9-2-2V6c0-1.1,0.9-2,2-2h44c1.1,0,2,0.9,2,2V50z"/>
+</svg>

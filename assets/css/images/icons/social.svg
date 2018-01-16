@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="social" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+		<path class="envira-icon" d="M47.492,12.001H15.999C7.162,12.001,0,19.165,0,28c0,7.669,5.401,14.061,12.603,15.621L15.999,64l15.999-8l-3.001-12.001
+			h18.502l16.496,11.999V0L47.492,12.001z M19.054,58l-2.332-13.997h8.154l2.465,9.855L19.054,58z M43.995,39.998H31.998V40H15.999
+			C9.372,40,4,34.625,4,28c0-6.626,5.372-11.998,11.999-11.998h15.998v-0.004h11.998V39.998z M59.995,47.996l-11.998-8.57V16.569
+			l11.998-8.571V47.996z"/>
+</svg>

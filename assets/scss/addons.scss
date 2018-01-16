@@ -1,0 +1,597 @@
+/* ==========================================================================
+   addons.css loads on all the Envira Addons Administration Screen
+
+   Any styles that will be used by the Addons section (or are useful to be 
+   included for future use) should be added to this file.
+
+   ========================================================================== */
+
+/* ==========================================================================
+   Imports
+   ========================================================================== */
+@import "vars";
+@import "mixins";
+@import "fonts";
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+#addon-heading {
+    /**
+    * Clearfix
+    */
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+	h1 {
+		float: left;
+		@include mq(xs) {
+			float: none;
+		}
+	}
+
+	/**
+	* Search Addons and Filter
+	*/
+	form {
+		float: right;
+
+		input {
+			border: 1px solid $grey_dark_2;
+			@include borderRadius(3px);
+			background-color: $white;
+			color: $grey;
+			margin: 7px 10px 0 5px;
+			font-size: 14px;
+			padding: 5px 8px;
+		}
+		select {
+			margin: -5px 20px 0 0;
+		}
+		.spinner {
+			float: none;
+			margin: -3px auto auto auto;
+		}
+		@include mq(xs) {
+			float: none;
+			display: table;
+			margin: 10px auto 0 auto;
+		}
+	}
+}
+
+/* ==========================================================================
+   Addons Styles
+   ========================================================================== */
+
+.envira-gallery {
+	margin: 20px auto;
+}
+
+.envira-hideme {
+	display: none;
+}
+
+#envira-gallery-addons {
+	padding: 20px 0;
+}
+
+#envira-addons {
+	/**
+	* Buttons
+	* - Make buttons beige
+	*/
+	.button,
+	.button-primary {
+		text-shadow: none;
+		background-color: $beige_light;
+		color: #23282d;
+		font-weight: 600;
+		border: 1px solid #ccc;
+		line-height: inherit;
+		height: inherit;
+		padding: 5px 15px;
+		box-shadow: none;
+		cursor: pointer;
+
+		&:hover {
+			color: #23282d;
+			background-color: #fafafa;
+			border-color: #999;
+		}
+	}
+
+	/**
+	* Action Buttons
+	* - Activate / Deactivate Addon
+	* - Install Addon
+	*/
+	.envira-addon-action-button {
+		padding-left: 20px;
+		padding-right: 20px;
+		.envira-cloud-download {
+			font-size: 19px;
+			float: left;
+			margin-right: 8px;
+			color: #8d8f92;
+		}
+		.envira-toggle-on {
+			font-size: 19px;
+			float: left;
+			margin-right: 8px;
+			margin-top: 1px;
+			color: $green;			
+		}
+	}
+	.envira-addon-upgrade-button {
+		background-color: $green;
+		color: $white;
+		float: none !important;
+		margin: 0 auto;
+		display: table;
+		line-height: 25px;
+		&:hover {
+			background-color: #95dc5e;		
+			color: $white;
+			border-color: #95dc5e;
+		}
+	}
+	.envira-addon-action-button.envira-activate-addon {
+		.envira-toggle-on {
+			color: #e92c21;
+			-moz-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			filter: FlipH;
+			-ms-filter: "FlipH";				
+		}
+	}
+	.envira-addon-title {
+		margin-top: 30px;
+	}
+
+	/**
+	* Addons Area:
+	* - Licensed
+	* - Unlicensed
+	*/
+	.envira-addons-area {
+
+		/**
+        * Clearfix
+        */
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+		&.licensed {
+			margin: 20px 0 40px 0;
+			padding: 0 0 20px 0;
+			border-bottom: 1px solid #ddd;
+		}
+
+	    /**
+	    * Addon Card
+	    */
+		.envira-addon {
+			border: 1px solid $grey_dark_2;
+			position: relative;
+			background: $white;
+			border-radius: 3px;
+			float: left;
+			margin: 0 2% 2% 0;
+			min-height: 465px;
+			padding: 0px;
+			text-align: center;
+			width: 32%;
+			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+			&:nth-child(3n+1) {
+				clear: both;
+			}
+			@include mq(md) {
+				min-height: 420px;
+			}
+			@include mq(sm) {
+				width: 100% !important;
+				min-height: 525px;
+			}
+			@include mq(xs) {
+				width: 100% !important;
+				min-height: 525px;
+			}
+
+
+			/**
+			* Thumbnail Image
+			*/
+			.envira-addon-thumb {
+				margin: 20px auto 20px auto;
+				max-width: 100%;
+				@include mq(md) {
+					margin: 10px auto 15px auto;
+				}
+				@include mq(sm) {
+					margin: 10px auto 15px auto;
+				}
+				@include mq(xs) {
+					margin: 10px auto 15px auto;
+				}
+			}
+
+			/**
+			* Paragraph Tag
+			*/
+			.envira-addon-excerpt {
+				margin-top: 0;
+				margin-bottom: 90px; /* 70px height on abs toolbar + 20px */
+				margin-left: 0px;
+				margin-right: 0px;
+				color: #2f2f2f;
+				font-weight: 200;
+				padding: 0 20px;
+				display: table;
+			}
+
+			/**
+			* Success and Error Messages
+			*/
+			.envira-addon-message {
+				background: $beige_light;
+				border-top: 1px solid $grey_dark_2;
+			}
+
+			.envira-addon-message,
+			.envira-addon-error {
+				position: absolute;
+				bottom: 0;
+				float: left;
+				width: 100%;
+				-moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				margin: 0;
+				padding: 0;
+				text-align: left;
+
+				/**
+				* Interior
+				*/			
+				.interior {
+					padding: 20px;
+				    /**
+				    * Clearfix
+				    */
+				    &:after {
+				        content: "";
+				        display: table;
+				        clear: both;
+				    }
+				}
+
+				/**
+				* Active Addon
+				*/
+				&.envira-addon-active {
+					.addon-status span {
+						color: $green;
+					}
+					.interior.envira-addon-active .addon-status span {
+						color: $green;
+					}
+					.interior.envira-addon-inactive .addon-status span {
+						color: #e82c20;
+					}
+					.interior.envira-addon-not-installed .addon-status span {
+						color: #a3a4a5;
+					}
+				}
+
+				/**
+				* Inactive Addon
+				*/
+				&.envira-addon-inactive {
+					.addon-status span {
+						color: #e82c20;
+					}
+					.interior.envira-addon-active .addon-status span {
+						color: $green;
+					}
+					.interior.envira-addon-inactive .addon-status span {
+						color: #e82c20;
+					}
+					.interior.envira-addon-not-installed .addon-status span {
+						color: #a3a4a5;
+					}
+				}
+
+				/**
+				* Not Installed Addon
+				*/
+				&.envira-addon-not-installed {
+					.addon-status span {
+						color: #a3a4a5;
+					}
+					.interior.envira-addon-active .addon-status span {
+						color: $green;
+					}
+					.interior.envira-addon-inactive .addon-status span {
+						color: #e82c20;
+					}
+					.interior.envira-addon-not-installed .addon-status span {
+						color: #a3a4a5;
+					}
+				}
+
+				span.addon-status {
+					float: left;
+					font-weight: bold;
+				}
+				a.button {
+					float: right;
+	/*				margin-right: 30px;*/
+				}
+				span.envira-gallery-spinner {
+					position: absolute;
+					bottom: 15px;
+					right: 0;
+				}
+			}
+
+			/**
+			* Action
+			*/
+			.envira-addon-action {
+				display: inline;
+				float: right;
+
+				.button-primary {
+					margin: -5px 0 0 0;
+					@include borderRadius(3px);
+				}
+				.button-primary:hover {
+					color: #23282d;
+					background-color: #fafafa;
+					border-color: #999;
+				}
+			}
+
+			/**
+			* Error
+			*/
+			.envira-addon-error {
+				bottom: 10px;
+				float: none;
+				left: 15px;
+				right: 20px;
+				width: auto;
+				.xinterior {
+					width: 100%;
+					margin: 0;
+					background: #fff;
+					border-left: 4px solid #dc3232;
+					box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+				}
+				p {
+					padding: 10px;
+
+					margin: 5px 10px;
+				}
+
+				.wrap {
+					margin: 0;
+				}
+
+				.icon32 {
+					display: none;
+				}
+
+				h2 {
+					padding: 0;
+				}
+
+				.form-table th {
+					padding: 10px 0;
+					width: 30% !important;
+				}
+
+				.form-table input[type="text"],
+				.envira-addon .envira-addon-error .form-table input[type="password"] {
+					width: 100% !important;
+				}
+
+				p.submit {
+					padding: 0;
+				}
+			}
+
+			/**
+			* Description
+			*/
+			p {
+				color: #2f2f2f;
+				font-size: 13px;
+				margin: 10px 0 0;
+				text-shadow: 0 1px #fff;
+			}
+		}
+		#envira-addons-unlock-more-area {
+			margin: 40px auto 20px auto;
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+	}
+}
+
+#envira-addons-more-area {
+	.envira-addon .interior {
+		padding: 15px 20px !important;
+	}
+}
+
+/**
+* Forms
+*/
+
+#envira-addons-refresh-addons-form {
+	width: 100%;
+	max-width: 850px;
+	float: left;
+	@include mq(md) {
+		max-width: 450px;
+	}
+	@include mq(sm) {
+		max-width: 50%;
+		input.button {
+			display: block;
+		}
+	}
+	@include mq(xs) {
+		width: 100%;
+		float: none;
+		input.button {
+			display: block;
+		}
+	}
+
+}
+#envira-filter-form {
+	float: right;
+	input[type='submit'],
+	select {
+		background-color: $beige_light;
+		color: #23282d;
+		border: 1px solid $grey_dark_2;
+		height: 30px;
+		width: 120px;
+		margin-top: -2px;
+	}
+	input {
+		padding: 5px 15px;
+		box-shadow: 0;
+		/*max-height: 30px;*/
+		cursor: pointer;
+		background-color: $beige_light;
+		color: #23282d;
+		&:hover {
+			color: #23282d;
+			background-color: #fafafa;
+			border-color: #999;
+		}
+	}
+
+	.spinner {
+		float: left;
+	}
+
+}
+
+/**
+* Clearfix
+*/
+.clearfix {
+	&:after {
+    	content: "";
+    	display: table;
+    	clear: both;
+    }
+}
+
+
+
+/* ==========================================================================
+   Responsive Addons Styles
+   ========================================================================== */
+@media only screen and (max-width: 1050px) {
+	#envira-addons-area {
+		/**
+	    * Addons - 2 Column
+	    */
+		.envira-addon {
+			width: 49%;
+			/*min-height: 300px;*/
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+			&:nth-child(2n+1) {
+				clear: both;
+			}
+
+			&:nth-child(3n) {
+				margin-right: 2%;
+			}
+			&:nth-child(3n+1) {
+				clear: none;
+			}
+			.envira-addon-excerpt {
+				margin-bottom: 90px;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 782px) {
+	#envira-addons-area {
+		.envira-addon {
+			min-height: auto;
+			/**
+			* Action
+			*/
+			.envira-addon-action {
+				.button-primary {
+					margin: -7px 0 0 0;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 600px) {
+
+	#envira-addons-area {
+
+		.envira-addon {
+			width: 99%;
+			/**
+			* Messages
+			*/
+			.envira-addon-message {
+				float: left;
+				width: 100%;
+				/*margin: 0 0 10px 0;*/
+
+				span.addon-status {
+					display: block;
+					width: 100%;
+					margin: 0 0 5px 0;
+					text-align: center;
+				}
+				div.envira-addon-action {
+					clear: both;
+					display: block;
+					width: 100%;
+					text-align: center;
+
+					.button-primary {
+						clear: both;
+						float: none;
+						margin: 0 auto;
+					}
+				}
+			}
+			.envira-addon-excerpt {
+				margin-bottom: 120px;
+			}
+		}
+	}
+}

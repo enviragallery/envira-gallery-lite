@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="mobile" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+
+		<path class="envira-icon" d="M44,0H20c-4.4,0-8,3.6-8,8v48c0,4.4,3.6,8,8,8h24c4.4,0,8-3.6,8-8V8C52,3.6,48.4,0,44,0z M48,56
+			c0,2.2-1.8,4-4,4H20c-2.2,0-4-1.8-4-4V44h32V56z M48,40H16V16h32V40z M48,12H16V8c0-2.2,1.8-4,4-4h24c2.2,0,4,1.8,4,4V12z M32,56
+			c2.2,0,4-1.8,4-4c0-2.2-1.8-4-4-4c-2.2,0-4,1.8-4,4C28,54.2,29.8,56,32,56z"/>
+</svg>

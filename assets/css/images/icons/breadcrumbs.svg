@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="breadcrumbs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path class="envira-icon" fill-rule="evenodd" clip-rule="evenodd" d="M56,32.001l8,10L56,52H42v8c0,2.207-1.791,4-4,4H26.001C23.791,64,22,62.207,22,60
+	v-8h-9.999V32.001H22v-4H8L0,18L8,8h14V3.998C22,1.791,23.791,0,26.001,0H38c2.209,0,4,1.791,4,3.998V8h10v20.001H42v4H56z
+	 M26.001,57.998c0,1.104,0.895,2.002,2,2.002H36c1.104,0,2-0.898,2-2.002V52H26.001V57.998z M38,6c0-1.104-0.896-2.002-2-2.002
+	h-7.999c-1.105,0-2,0.898-2,2.002v2H38V6z M48,24.001V11.998H10.001L4,18l6.001,6.001H48z M26.001,28.001v4H38v-4H26.001z
+	 M16.001,35.997v12.001H54l6-5.997l-6-6.004H16.001z"/>
+</svg>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="pagination" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path class="envira-icon" d="M26,4V0h38v4H26L26,4z M40,19v-4h16v4H40L40,19z M40,27v-4h16v4H40L40,27z M40,35v-4h16v4H40L40,35z M38,50
+	v-4h26v4H38L38,50z M60,46V4h4v42H60L60,46z M26,14V4h4v10H26L26,14z M0,18v-4h38v4H0L0,18z M8,33v-4h22v4H8L8,33z M8,41v-4h22v4H8
+	L8,41z M8,49v-4h22v4H8L8,49z M0,64v-4h38v4H0L0,64z M34,60V18h4v42H34L34,60z M0,60V18h4v42H0L0,60z"/>
+</svg>

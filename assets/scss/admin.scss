@@ -1,0 +1,723 @@
+/* ==========================================================================
+   admin.css loads on all Envira Administration Screens:
+   - WP_List_Tables
+   - Add New
+   - Albums
+   - Settings
+   - NextGEN Import
+
+   Any styles that will be used by all of the above (or are useful to be included
+   for future use) should be added to this file:
+   - Header and Logo
+   - WordPress Red Button
+   ========================================================================== */
+
+/* ==========================================================================
+   Imports
+   ========================================================================== */
+@import "vars";
+@import "mixins";
+
+body.post-type-envira,
+body.post-type-envira_album {
+	// Remove left padding on the main content area, so items can be full width e.g. the header
+	#wpcontent {
+		padding-left: 0;
+	}
+
+	// adding some padding/margin around the WordPress update-nag
+	.update-nag {
+		margin-left: 20px;
+		margin-bottom: 20px;
+	}
+	/**
+	* Subheading
+	*/
+	.subheading {
+		background-color: $white;
+	    height: 45px;
+	    margin-left: -20px;
+		@include mq(xs) {
+			height: auto;
+			padding-bottom: 20px;
+		}
+
+	    h1 {
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 45px;
+			margin: 0 0 0 20px;
+			padding-left: 20px;
+	    }
+	}
+
+	/**
+	* Wrapper
+	*/
+	div.wrap {
+		margin: 0;
+
+		/**
+		* Page Title Action (i.e. Add New)
+		*/
+		a.page-title-action {
+			position: relative;
+			top: -55px;
+			left: 185px; /* default - English */
+			&:hover {
+				background: $primary_button_color_hover;
+				border-color: $primary_button_color_hover;
+				color: $white;
+			}
+			/* display: none; */ /* Trying To Prevent The "Shift" Upload Page Load Before JS can move the button */
+			/* margin-left: 10px; */ /* Change WordPress 4.7 */
+		}
+		
+		/**
+		* Screen Title
+		* - h1 used from WordPress 4.3+
+		* - h2 used in WordPress 4.2-
+		*/
+		> h1,
+		> h2 {
+			margin: 0 0 20px 0;
+			padding: 15px 0 10px;
+			background: $white;
+			font-weight: 600;
+			font-size: 20px;
+			width: 100%;
+			text-indent: 20px;
+
+			/**
+			* Page Title Action (i.e. Add New)
+			*/
+			a.page-title-action {
+				top: -3px;
+				left: auto;
+				&:hover {
+					background: $primary_button_color_hover;
+					border-color: $primary_button_color_hover;
+					color: $white;
+				}
+				/* display: none; */ /* Trying To Prevent The "Shift" Upload Page Load Before JS can move the button */
+				/* margin-left: 10px; */ /* Change WordPress 4.7 */
+			}
+
+			/**
+			* Subtitle (search results title)
+			*/
+			span.subtitle {
+				float: right;
+			}
+		}
+
+
+		/**
+        * Tab Panels
+        * - By default, they're hidden and the .envira-active class displays them
+        */
+        .envira-tab {
+            display: none;
+
+            /**
+            * Active Tab
+            */
+            &.envira-active {
+                display: block;
+            }
+        }
+
+		/**
+		* Code Snippets
+		*/
+		div.envira-code {
+			position: relative;
+			margin: 0 0 10px 0;
+			
+			/**
+            * Clearfix
+            */
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+			code {
+				display: block;
+				font-size: 11px;
+				padding: 5px 20px 5px 5px;
+			}
+
+			/**
+			* Copy to Clipboard
+			*/
+			a.envira-clipboard {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				color: #23282d;
+				
+				span {
+					display: block;
+					text-indent: -9999px;
+				}
+			}
+		}
+	}
+
+	/* ==========================================================================
+	   Button Styles
+	   ========================================================================== */
+	.button {
+		@include borderRadius(2px);
+		padding: 0 16px 1px;
+		height: 33px;
+		line-height: 30px;
+		text-decoration: none;
+		text-shadow: none;
+		font-weight: 600;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+
+		/**
+		* Small
+		*/
+		&.button-small {
+			padding: 0 8px 1px;
+			line-height: 22px;
+			height: 24px;
+		}
+
+		/**
+		* Extra Large
+		* (.button-large is used on publish actions in WordPress, so we don't want to affect that)
+		*/
+		&.button-x-large {
+			padding: 0 32px 1px;
+			line-height: 48px;
+			height: 50px;
+			font-size: 18px;
+			text-transform: uppercase;
+		}
+
+		@include mq(xs) {
+			margin-top: 10px;
+		}
+
+		/**
+		* Screen Options
+		* - Don't set a height
+		*/
+		&.show-settings {
+			height: auto;
+		}
+	
+		/**
+		* Green Button
+		* - Replaces WordPress' default primary button style
+		*/
+		&.button-primary {
+			background: $primary_button_color;
+			border-color: $primary_button_color;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			color: $white;
+
+			&:hover{
+				background: $primary_button_color_hover;
+				border-color: $primary_button_color_hover;
+				color: $white;
+			}
+		}
+
+		/**
+		* Red Button
+		*/
+		&.button-danger {
+			background: $danger_button_color;
+			border-color: $danger_button_color;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			color: $white;
+
+			&:hover{
+				background: $danger_button_color_hover;
+				border-color: $danger_button_color_hover;
+				color: $white;
+			}
+		}
+	}
+
+	/* ==========================================================================
+	   Thickbox (used for choosing a Default Gallery/Album)
+	   ========================================================================== */
+	div#TB_window {
+		div.wrap {
+			margin: 10px 20px 0 2px;
+		}
+	}
+}
+
+/* ==========================================================================
+   Language Specific
+   ========================================================================== */
+body.post-type-envira.locale-fr-fr,
+body.post-type-envira_album.locale-fr-fr {
+	/**
+	* Wrapper
+	*/
+	div.wrap {
+		/**
+		* Page Title Action (i.e. Add New)
+		*/
+		a.page-title-action {
+			left: 220px;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+#envira-header-temp {
+	position: relative;
+}
+
+#envira-header {
+	background-color: $green;
+	height: $header-height;
+	@include mq(xxs) {
+		padding-top: 46px;
+	}
+
+	h1.envira-logo {
+		margin: 0;
+		line-height: $header-height;
+		margin-left: 20px;
+
+		img {
+			/**
+			* Image width and height (image is 2x so this ensures it displays correctly)
+			*/
+			max-width: 339px;
+			height: auto;
+			width: 90%;
+
+			/**
+			* Responsive - ensure the logo doesn't exceed the header dimensions
+			*/
+			@include mq(xs) {
+				width: 90%;
+			}
+		}
+	}
+}
+#wpbody {
+	@include mq(xxs) {
+		padding-top: 0;
+	}
+}
+body.post-type-envira_album {
+	div.wrap {
+		/**
+		* Page Title Action (i.e. Add New)
+		*/
+		a.page-title-action {
+			left: 180px !important;
+		}
+		> h1,
+		> h2 {
+			a.page-title-action {
+				top: -3px !important;
+				left: auto !important;
+			}
+		}
+	}
+}
+body.post-php.post-type-envira_album {
+	div.wrap {
+		/**
+		* Page Title Action (i.e. Add New)
+		*/
+		a.page-title-action {
+			left: 200px !important;
+		}
+		> h1,
+		> h2 {
+			a.page-title-action {
+				top: -3px !important;
+				left: auto !important;
+			}
+		}
+	}
+}
+body.post-php.post-type-envira {
+	div.wrap {
+		/**
+		* Page Title Action (i.e. Add New)
+		*/
+		a.page-title-action {
+			left: 215px !important;
+		}
+		> h1,
+		> h2 {
+			a.page-title-action {
+				top: -3px !important;
+				left: auto !important;
+			}
+		}
+		span.subtitle {
+			display: block;
+			margin-top: -10px;
+			padding-left: 21px;
+		}
+	}
+}
+body.edit-php.post-type-envira {
+	div.wrap {
+		span.subtitle {
+			display: block;
+			margin-top: -15px;
+			margin-bottom: 10px;
+			padding-left: 22px;
+		}
+	}
+}
+
+/* ==========================================================================
+   Inline Notices
+   - These are Envira-specific notices with custom styling for e.g. Instagram oAuth,
+   upgrade / upsells.
+   ========================================================================== */
+.envira-notice {
+	position: relative;
+	margin: 0 0 20px 0;
+    padding: 20px;
+    @include borderRadius(2px);
+
+    /**
+    * Heading
+    */
+    p.envira-intro {
+        border: none !important;
+        margin: 0 0 20px 0 !important;
+        padding: 0 !important;
+    }
+
+    /**
+    * Close Button
+    */
+    .notice-dismiss {
+        top: 10px;
+        right: 10px;
+        color: $white;
+
+        &:before {
+            color: $white;
+            width: 26px;
+            height: 26px;
+            font-size: 22px;
+        }
+    }
+
+    /**
+    * Success
+    */
+    &.success {
+        background: $green;
+        color: $white;
+        border: none;
+
+        /**
+        * Button background color needs to be adjusted so it displays over the green background
+        * of the success message
+        */
+        .button.button-primary {
+        	background-color: $green_alt;
+        	border-color: $green_alt;
+        }
+    }
+
+    /**
+    * Warning
+    */
+    &.warning {
+        background: #fcf8e3;
+        border: 1px solid #faebcc;
+
+        .notice-dismiss {
+        	color: $black;
+
+        	&:before {
+        		color: $black;
+        	}	
+        }
+    }
+
+    /**
+    * Error
+    */
+    &.error {
+        border-top: 1px solid #dc3232;
+        border-right: 1px solid #dc3232;
+        border-bottom: 1px solid #dc3232;
+    }
+}
+
+/* ==========================================================================
+   Table, Add, Edit Screens
+   ========================================================================== */
+body.post-type-envira.edit-php,
+body.post-type-envira.post-new-php,
+body.post-type-envira.post-php,
+body.post-type-envira_album.edit-php,
+body.post-type-envira_album.post-new-php,
+body.post-type-envira_album.post-php {
+	div.wrap {
+		/**
+		* Remove the margin on the wrapper
+		*/
+		margin: 0;
+
+		/**
+		* Add margin to notices
+		*/
+		> div.error,
+		> div.notice,
+		> div.updated {
+			margin-left: 20px;
+			margin-right: 20px;	
+		}
+	}
+}
+
+/* ==========================================================================
+   Taxonomy Screens
+   ========================================================================== */
+body.post-type-envira.edit-tags-php,
+body.post-type-envira.taxonomy-envira-tag {
+	div.wrap {
+		margin: 0;
+
+		/**
+		* Add margin to notices
+		*/
+		> div.error,
+		> div.notice,
+		> div.updated {
+			margin-left: 20px;
+			margin-right: 20px;	
+		}
+
+		form.search-form,
+		form#edittag,
+		#col-container {
+			/**
+			* Re-establish the left and right margins, so there's spacing between the Admin Menu
+			* and the content
+			*/
+			margin: 0 20px;
+		}
+
+		/**
+		* Reduce our global custom button sizes so they align with inputs
+		*/
+		.button {
+			height: 28px;
+			line-height: 26px;
+		}
+	}
+}
+
+/* ==========================================================================
+   Third Party Screens
+   ========================================================================== */
+body.post-type-envira {
+	div.wrap {
+		/**
+		* Re-establish the left and right margins, so there's spacing between the Admin Menu
+		* and the content for any third party plugins which add sections / pages within Envira
+		*/
+		margin: 0 20px;
+	}
+}
+
+/* ==========================================================================
+   Gallery / Album Selection Media Modal
+   ========================================================================== */
+.media-modal {
+    .media-modal-content {
+        .media-frame-content {
+            .attachments-browser.envira-gallery-editor {
+                /**
+                * Error
+                * - Position below the search bar
+                */
+                div.envira-gallery-error {
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    right: 300px;
+                }
+
+                /**
+                * Grid
+                */
+                ul.attachments {
+                    li.attachment {
+                        width: 20%;
+
+                        div.attachment-preview {
+                            div.thumbnail {
+                                /**
+                                * Thumbnail Image
+                                */
+                                img {
+                                    position: absolute;
+                                    z-index: 1;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    opacity: 0.2;
+                                }
+
+                                /**
+                                * Title
+                                */
+                                strong {
+                                    position: absolute;
+                                    z-index: 2;
+                                    height: 50%;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    padding: 10px;
+                                    text-align: center;
+                                    overflow: hidden;
+                                    -webkit-box-sizing: border-box;
+                                    -moz-box-sizing: border-box;
+                                    box-sizing: border-box;
+                                    vertical-align: bottom;
+                                    background: rgba(0,0,0,0.07);
+                                    text-shadow: 1px 1px #ddd;
+
+                                    span {
+                                        display: block;
+                                        position: absolute;
+                                        bottom: 10px;
+                                        left: 0;
+                                        right: 0;
+                                        padding: 0 10px;
+                                        text-align: center;
+                                    }
+                                }
+
+                                /**
+                                * Shortcode
+                                */
+                                code {
+                                    position: absolute;
+                                    z-index: 2;
+                                    height: 50%;
+                                    bottom: 0;
+                                    left: 0;
+                                    right: 0;
+                                    padding: 10px;
+                                    text-align: center;
+                                    -webkit-box-sizing: border-box;
+                                    -moz-box-sizing: border-box;
+                                    box-sizing: border-box;
+                                    vertical-align: middle;
+                                    text-shadow: 1px 1px #ddd;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /**
+                * Sidebar
+                */
+                div.media-sidebar {
+                    div.settings {
+                        .name {
+                            text-align: left;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Gallery List
+   ========================================================================== */
+
+@media screen and (max-width: 782px) {
+	body.post-type-envira .wp-list-table tr:not(.inline-edit-row):not(.no-items) td:not(.check-column) {
+	    display: table-cell;
+	}
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media screen and (max-width: 640px) {
+	body.post-type-envira,
+	body.post-type-envira_album {
+		/**
+		* Wrapper
+		*/
+		div.wrap {
+			/**
+			* Screen Title
+			*/
+			h1 {
+				/**
+				* Allow space for the "Search results for..." text to display, when searching
+				*/
+				padding-bottom: 40px;
+
+				/**
+				* Subtitle (search results title)
+				*/
+				span.subtitle {
+					clear: both;
+					width: 100%;
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 340px) {
+	body.post-type-envira,
+	body.post-type-envira_album {
+		/**
+		* Wrapper
+		*/
+		div.wrap {
+			/**
+			* Screen Title
+			*/
+			h1 {
+				text-align: center;
+
+				/**
+				* Page Title Action (i.e. Add New)
+				*/
+				a.page-title-action {
+					display: block;
+					text-align: center;
+					margin: 10px 0 0 0;
+				}
+			}
+		}
+	}
+}

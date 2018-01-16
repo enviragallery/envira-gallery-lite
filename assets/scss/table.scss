@@ -1,0 +1,181 @@
+/* ==========================================================================
+   table.css loads on any Envira WP_List_Table Screen:
+   - Galleries
+   - Albums
+
+   Any styles that will be used by these list tables should be added to this 
+   file:
+   - Quick Edit
+   ========================================================================== */
+
+/* ==========================================================================
+   Imports
+   ========================================================================== */
+@import "vars";
+@import "mixins";
+
+body.post-type-envira,
+body.post-type-envira_album {
+	/* ==========================================================================
+	   Post Filters
+	   ========================================================================== */
+	ul.subsubsub {
+		/**
+		* Re-establish the left and right margins, so there's spacing between the Admin Menu
+		* and the content
+		*/
+		margin: 0 0 20px 0;
+		padding-left: 20px;
+	}
+	//make our image col smaller
+	.column-image{
+		width: 85px !important;	
+	}
+	/* ==========================================================================
+	   Post Table Form
+	   ========================================================================== */
+	form#posts-filter {
+		/**
+		* Re-establish the left and right margins, so there's spacing between the Admin Menu
+		* and the content
+		*/
+		margin: 0 20px;
+
+		/**
+		* Table Navigation (Bulk Actions, Dates, SEO Score dropdowns etc)
+		*/
+		div.tablenav.top {
+			margin: 0 0 8px 0;
+		}
+
+		/**
+		* Reduce our global custom button sizes so they align with inputs
+		*/
+		.button {
+			height: 28px;
+			line-height: 26px;
+		}
+	}
+
+	/* ==========================================================================
+   	Quick Edit
+   	========================================================================== */
+	#wpbody-content {
+		
+		td.colspanchange {
+			/**
+			* Left Col (Title, Slug, Date, Password)
+			*/
+			fieldset.inline-edit-col-left {
+				width: 40%;
+
+				fieldset.inline-edit-date {
+					display: none;
+				}
+				div.inline-edit-group:last-child {
+					display: none;
+				}
+			}
+
+			/**
+			* Category Column
+			*/ 
+			fieldset.inline-edit-col-center.inline-edit-categories {
+				display: none;
+			}
+
+			/**
+			* Right Column (Comments + Status)
+			*/
+			fieldset.inline-edit-col-right {
+				margin: 30px 0 0 0;
+
+				label.inline-edit-status.alignleft {
+					width: 100%;
+				}
+			}
+			
+			/**
+			* Envira Gallery Col
+			*/
+			fieldset.inline-edit-col-right,
+			fieldset.inline-edit-envira-gallery {
+				width: 60%; /* Fill the remainder of the width */
+
+				.inline-edit-group {
+					clear: none;
+					float: left;
+					width: 50%;
+
+					/**
+					* Label
+					*/
+					span.title {
+						width: 40%;
+						padding-right: 0.5em;
+					}
+
+					/**
+					* Inputs
+					*/
+					input[type=number] {
+						width: 60px;
+						line-height: normal;
+					}
+				}
+			}
+
+			/**
+			* Submit
+			*/
+			p.submit.inline-edit-save {
+				margin-bottom: 20px;
+			}
+		}
+		
+	}
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media screen and (max-width: 940px) {
+	body.post-type-envira,
+	body.post-type-envira_album {
+
+		/* ==========================================================================
+		   Quick Edit
+		   ========================================================================== */
+		#wpbody-content {
+			td.colspanchange {
+				fieldset.inline-edit-col-left
+				fieldset.inline-edit-col-right,
+				fieldset.inline-edit-envira-gallery {
+					clear: both;
+					width: 100%;
+
+					.inline-edit-group {
+						clear: both;
+						float: left;
+						width: 100%;
+
+						/**
+						* Label
+						*/
+						span.title {
+							width: 100%;
+						}
+					}
+				}
+			}
+			
+		}
+
+		/* ==========================================================================
+		   Search Box
+		   ========================================================================== */
+		p.search-box {
+			width: 94%;
+		}
+	}
+}

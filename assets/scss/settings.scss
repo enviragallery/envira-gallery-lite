@@ -1,0 +1,252 @@
+/* ==========================================================================
+   settings.css loads on all the Envira Settings Administration Screen
+
+   Any styles that will be used by the Settings section (or are useful to be 
+   included for future use) should be added to this file:
+   - Settings
+   - Settings Tabs
+   - Addons
+   ========================================================================== */
+
+/* ==========================================================================
+   Imports
+   ========================================================================== */
+@import "vars";
+@import "mixins";
+
+/* ==========================================================================
+   Settings Styles
+   ========================================================================== */
+.envira-tab {
+	label {
+		margin-top: 7px;
+		display: block;
+	}
+}
+.nav-tab { 
+	// ensure tabs are floated
+	float: left;
+}
+
+#envira-gallery-settings {
+	padding: 20px 0;
+
+	#envira-gallery-refresh-submit {
+		margin-left: 10px;
+	}
+
+	.envira-hideme {
+		display: none;
+	}
+	/**
+	* Clearing
+	*/
+	.envira-clear {
+	    clear: both;
+	
+		&:after {
+		    clear: both;
+		    content: '.';
+		    display: block;
+		    height: 0;
+		    line-height: 0;
+		    overflow: auto;
+		    visibility: hidden;
+		    zoom: 1;
+		}
+	}
+
+	.envira-gallery {
+	    margin: 15px 0 20px;
+	}
+
+	/**
+	* Tab Panels
+	*/
+	.envira-tab {
+	    display: none;
+
+	    /**
+	    * Active Tab Panel
+	    */
+	    &.envira-active {
+	    	display: block;
+	    }
+
+	    th {
+	    	width: 170px;
+    		padding-right: 40px;
+			@include mq(xs) {
+				width: auto;
+			}
+	    }
+
+	    input[type="text"],
+		input[type="number"],
+		input[type="password"],
+		select,
+		textarea {
+		    width: 350px;
+		    padding-right: 0;
+			@include mq(xs) {
+				width: 100%;
+			}
+			font-size: 13px;
+		}
+
+	    input[type="text"],
+		input[type="number"],
+		input[type="password"] {
+			height: 32px;
+			@include mq(xs) {
+				height: auto;
+			}
+		}
+
+		/**
+		* Copy to Clipboard Button
+		*/
+		a.envira-clipboard {
+			width: 33px;
+			padding: 0;
+		}
+
+		/**
+		* Submit Button
+		*/
+		#envira-gallery-settings-submit {
+			margin: 40px 0 0 0px;
+		}
+	}
+
+	/**
+	* Refresh
+	*/
+	#envira-gallery-refresh-submit {
+    	vertical-align: baseline;
+	}
+}
+
+/* ==========================================================================
+   Settings Tab Styles
+   ========================================================================== */
+#envira-tabs {
+	.form-table {
+		th, td {
+			padding-top: 40px;
+			padding-bottom: 40px;	
+		}
+		th {
+			@include mq(sm) {
+				padding-top: 40px;
+				padding-bottom: 10px;
+				padding-right: 0px !important;
+			}
+			@include mq(xs) {
+				padding-top: 40px;
+				padding-bottom: 10px;
+				padding-right: 0px !important;
+			}
+		}
+		tr#envira-settings-key-box th { /* bit of a hack */
+			@include mq(sm) {
+				padding-top: 20px;
+			}	
+			@include mq(xs) {
+				padding-top: 20px;
+			}	
+		}
+		td {
+			@include mq(sm) {
+				padding-top: 0;
+				padding-right: 0px;
+			}	
+			@include mq(xs) {
+				padding-top: 0;
+				padding-right: 0px;
+			}	
+		}
+		tr {
+			border-bottom: 1px solid #ddd;
+		}
+		tr.no-bottom-border {
+			border-bottom: 0;
+		}
+	}
+	.description {
+		color: $grey;
+		font-size: 13px;
+		margin-top: 10px;
+	}
+}
+#envira-tabs-nav {
+	border-bottom: 0 !important;
+	background-color: $white;
+	height: $navbar-height;
+	padding-left: 20px;
+	margin: 0 0 0 -20px;
+	display: table;
+	width: 100%;
+	@include mq(xs) {
+		height: auto;
+		background-color: transparent;
+		margin: 5px 0 0 0;
+		padding: 0 10px;
+		display: table;
+	}
+	a {
+		float: left; /* Required for WordPress 4.3 and under */
+		border-left: 1px solid $color_bg;
+		border-right: 1px solid $color_bg;
+		border-top: 0;
+		color: $grey_dark;
+		background: none;
+		line-height: $navbar-height;
+		font-size: $font_size_tab;
+		padding: 0 15px;
+		margin: 0;
+		@include mq(xs) {
+			@include borderRadius(5px);
+			background-color: $beige_light;
+			padding: 0px 20px;
+			margin: 5px 5px 0px 0;
+			border: 1px solid #ddd;
+			line-height: 35px;
+			min-height: 30px;
+		}
+	}
+	a:first-child {
+/*		margin-left: 20px;
+		@include mq(xs) {
+			margin-left: 0;
+		}*/
+	}
+	.envira-active {
+		background-color: $color_bg;
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+		color: $black;
+		@include mq(xs) {
+			background-color: $grey_dark;
+			color: $white;
+		}
+	}
+	a:hover {
+		@include mq(xs) {
+			background-color: $grey_dark;
+			color: $white;
+		}
+	}
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media only screen and (max-width: 770px) {
+	#envira-gallery-settings {
+		#envira-gallery-settings-submit {
+			margin: 40px 0 0 0;
+		}
+	}
+}
