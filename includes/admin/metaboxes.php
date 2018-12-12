@@ -328,7 +328,7 @@ class Envira_Gallery_Metaboxes {
         global $id, $post;
 
         // Get current screen.
-        
+
         if ( ! function_exists( 'get_current_screen' ) ) {
             return;
         }
@@ -622,6 +622,7 @@ class Envira_Gallery_Metaboxes {
             'lightbox'   => __( 'Lightbox', 'envira-gallery' ),
             'mobile'     => __( 'Mobile', 'envira-gallery' ),
         );
+
         $tabs = apply_filters( 'envira_gallery_tab_nav', $tabs );
 
         // "Misc" tab is required.
@@ -854,19 +855,15 @@ class Envira_Gallery_Metaboxes {
                                 <p class="description"><?php _e( 'Determines how high (in pixels) each row will be. 150px is default. ', 'envira-gallery' ); ?></p>
                             </td>
                         </tr>
-                        <tr id="envira-config-gallery-justified-theme-box">
-                            <th scope="row">
-                                <label for="envira-config-gallery-justified-theme"><?php _e( 'Automatic Layout: Gallery Theme', 'envira-gallery' ); ?></label>
-                            </th>
-                            <td>
-                                <select id="envira-config-gallery-justified-theme" name="_envira_gallery[justified_gallery_theme]">
-                                    <?php foreach ( (array) $this->get_justified_gallery_themes() as $i => $data ) : ?>
-                                        <option value="<?php echo $data['value']; ?>"<?php selected( $data['value'], $this->get_config( 'justified_gallery_theme', $this->get_config_default( 'justified_gallery_theme' ) ) ); ?>><?php echo $data['name']; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                                <p class="description"><?php _e( 'Sets the theme for the gallery display.', 'envira-gallery' ); ?></p>
-                            </td>
-                        </tr>
+						<tr id="envira-config-justified-margins">
+							<th scope="row">
+								<label for="envira-config-justified-margins"><?php _e( 'Automatic Layout: Margins', 'envira-gallery' ); ?></label>
+							</th>
+							<td>
+								<input id="envira-config-justified-margins" type="number" name="_envira_gallery[justified_margins]" value="<?php echo $this->get_config( 'justified_margins', $this->get_config_default( 'justified_margins' ) ); ?>" /> <span class="envira-unit"><?php _e( 'px', 'envira-gallery' ); ?></span>
+								<p class="description"><?php _e( 'Sets the space between the images (defaults to 1)', 'envira-gallery' ); ?></p>
+							</td>
+						</tr>
                     </tbody>
                 </table>
             </div>
@@ -911,8 +908,8 @@ class Envira_Gallery_Metaboxes {
                     </tbody>
                 </table>
             </div>
-          
-            
+
+
             <div id="envira-image-settings-box">
                 <table class="form-table">
                     <tbody>
@@ -953,12 +950,12 @@ class Envira_Gallery_Metaboxes {
                                 <span class="description"><?php _e( 'If disabled, images will be resized to maintain their aspect ratio.', 'envira-gallery' ); ?></span>
 
                             </td>
-                        </tr>	
-                    </tbody>            
+                        </tr>
+                    </tbody>
 	            </table>
-	            
+
         </div>
-        </div>	
+        </div>
         <?php Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
                 'envira_gallery_config_tab',
                 __( 'Want to do even more with your gallery display?', 'envira-gallery' ),
@@ -1207,7 +1204,6 @@ class Envira_Gallery_Metaboxes {
      * @param object $post The current post object.
      */
     public function lite_videos_tab( $post ) {
-
         // Output an upgrade notice
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
             'envira_gallery_mobile_tab',
@@ -1218,9 +1214,7 @@ class Envira_Gallery_Metaboxes {
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
             false
         );
-
     }
-
     /**
      * Lite: Callback for displaying the settings UI for the Mobile tab.
      *
@@ -1229,7 +1223,6 @@ class Envira_Gallery_Metaboxes {
      * @param object $post The current post object.
      */
     public function lite_social_tab( $post ) {
-
         // Output an upgrade notice
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
             'envira_gallery_mobile_tab',
@@ -1240,9 +1233,7 @@ class Envira_Gallery_Metaboxes {
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
             false
         );
-
     }
-
     /**
      * Lite: Callback for displaying the settings UI for the Mobile tab.
      *
@@ -1251,7 +1242,6 @@ class Envira_Gallery_Metaboxes {
      * @param object $post The current post object.
      */
     public function lite_tags_tab( $post ) {
-
         // Output an upgrade notice
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
             'envira_gallery_mobile_tab',
@@ -1262,9 +1252,7 @@ class Envira_Gallery_Metaboxes {
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
             false
         );
-
     }
-
     /**
      * Lite: Callback for displaying the settings UI for the Mobile tab.
      *
@@ -1273,7 +1261,6 @@ class Envira_Gallery_Metaboxes {
      * @param object $post The current post object.
      */
     public function lite_pagination_tab( $post ) {
-
         // Output an upgrade notice
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
             'envira_gallery_mobile_tab',
@@ -1284,7 +1271,6 @@ class Envira_Gallery_Metaboxes {
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
             false
         );
-
     }
 
     /**
@@ -1320,13 +1306,12 @@ class Envira_Gallery_Metaboxes {
 		        }
 
 				// Update Settings
-	        	$settings['config']['columns']             = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['columns'] );
-                $settings['config']['gallery_theme']       = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['gallery_theme'] );
-                $settings['config']['justified_gallery_theme'] = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['justified_gallery_theme'] );
-                $settings['config']['gutter']              = absint( $_POST['_envira_gallery']['gutter'] );
-                $settings['config']['margin']              = absint( $_POST['_envira_gallery']['margin'] );
-                $settings['config']['crop_width']          = absint( $_POST['_envira_gallery']['crop_width'] );
-                $settings['config']['crop_height']         = absint( $_POST['_envira_gallery']['crop_height'] );
+	        	$settings['config']['columns']                 = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['columns'] );
+                $settings['config']['gallery_theme']           = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['gallery_theme'] );
+				$settings['config']['gutter']                  = absint( $_POST['_envira_gallery']['gutter'] );
+                $settings['config']['margin']                  = absint( $_POST['_envira_gallery']['margin'] );
+                $settings['config']['crop_width']              = absint( $_POST['_envira_gallery']['crop_width'] );
+                $settings['config']['crop_height']             = absint( $_POST['_envira_gallery']['crop_height'] );
 
 		        // Provide a filter to override settings.
 				$settings = apply_filters( 'envira_gallery_quick_edit_save_settings', $settings, $post_id, $post );
@@ -1374,8 +1359,8 @@ class Envira_Gallery_Metaboxes {
         $settings['config']['type']                = isset( $_POST['_envira_gallery']['type'] ) ? $_POST['_envira_gallery']['type'] : $this->get_config_default( 'type' );
         $settings['config']['columns']             = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['columns'] );
         $settings['config']['gallery_theme']       = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['gallery_theme'] );
-        $settings['config']['justified_gallery_theme'] = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['justified_gallery_theme'] );
-        $settings['config']['gutter']              = absint( $_POST['_envira_gallery']['gutter'] );
+		$settings['config']['justified_margins']       = absint( $_POST['_envira_gallery']['justified_margins'] );
+		$settings['config']['gutter']              = absint( $_POST['_envira_gallery']['gutter'] );
         $settings['config']['margin']              = absint( $_POST['_envira_gallery']['margin'] );
         $settings['config']['image_size']          = sanitize_text_field( esc_attr ( $_POST['_envira_gallery']['image_size'] ) );
         $settings['config']['crop_width']          = absint( $_POST['_envira_gallery']['crop_width'] ) > 0 ? absint( $_POST['_envira_gallery']['crop_width'] ) : $this->get_config_default( 'crop_width' );

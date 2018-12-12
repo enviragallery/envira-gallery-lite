@@ -42,7 +42,7 @@ class Envira_Gallery_Posttype {
      * @since 1.0.0
      */
     public function __construct() {
-    
+
         // Load the base class object.
         $this->base = Envira_Gallery_Lite::get_instance();
 
@@ -72,7 +72,9 @@ class Envira_Gallery_Posttype {
             'show_in_menu'        => true,
             'show_in_admin_bar'   => true,
             'rewrite'             => false,
-            'query_var'           => false,
+			'query_var'           => false,
+			'show_in_rest'        => true,
+			'rest_base'           => 'envira-gallery',
             'menu_position'       => apply_filters( 'envira_gallery_post_type_menu_position', 247 ),
             'menu_icon'           => plugins_url( 'assets/css/images/menu-icon@2x.png', $this->base->file ),
             'supports'            => array( 'title' ),

@@ -96,12 +96,12 @@ class Envira_Lite_Review {
 
 		// Verify that we can do a check for reviews.
 		$review = get_option( 'envira_gallery_review' );
-		$time	= time();
-		$load	= false;
+		$time     = time();
+		$load     = false;
 
 		if ( ! $review ) {
 			$review = array(
-				'time' 		=> $time,
+				'time'         => $time,
 				'dismissed' => false
 			);
 			$load = true;
@@ -121,7 +121,7 @@ class Envira_Lite_Review {
 		update_option( 'envira_gallery_review', $review );
 
 		// Run through optins on the site to see if any have been loaded for more than a week.
-		$valid	= false;
+		$valid    = false;
 		$galleries = $this->base->get_galleries();
 
 		if ( ! $galleries ) {
@@ -153,7 +153,7 @@ class Envira_Lite_Review {
 		?>
 		<div class="notice notice-info is-dismissible envira-review-notice">
 			<p><?php _e( 'Hey, I noticed you created a photo gallery with Envira - that’s awesome! Could you please do me a BIG favor and give it a 5-star rating on WordPress to help us spread the word and boost our motivation?', 'envira-gallery-lite' ); ?></p>
-			<p><strong><?php _e( '~ Syed Balkhi<br>Co-Founder of Envira Gallery', 'envira-gallery-lite' ); ?></strong></p>
+			<p><strong><?php _e( '~ Nathan Signh<br>CEO of Envira Gallery', 'envira-gallery-lite' ); ?></strong></p>
 			<p>
 				<a href="https://wordpress.org/support/plugin/envira-gallery-lite/reviews/?filter=5#new-post" class="envira-dismiss-review-notice envira-review-out" target="_blank" rel="noopener"><?php _e( 'Ok, you deserve it', 'envira-gallery-lite' ); ?></a><br>
 				<a href="#" class="envira-dismiss-review-notice" target="_blank" rel="noopener"><?php _e( 'Nope, maybe later', 'envira-gallery-lite' ); ?></a><br>
@@ -190,7 +190,7 @@ class Envira_Lite_Review {
 			$review = array();
 		}
 
-		$review['time'] 	 = time();
+		$review['time']      = time();
 		$review['dismissed'] = true;
 
 		update_option( 'envira_gallery_review', $review );
