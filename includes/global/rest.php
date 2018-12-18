@@ -55,21 +55,25 @@ class Envira_Rest {
 		$i        = 0;
 		$images = array();
 
+		$data = $this->maybe_sort_gallery( $data, $object['id' ] );
+
 		if ( isset( $data['gallery'] ) && is_array( $data['gallery'] ) ) {
+
 			foreach ( $data['gallery'] as $id => $item ) {
-				// Skip over images that are pending (ignore if in Preview mode).
-				if ( isset( $item['status'] ) && 'pending' == $item['status'] && ! is_preview() ) {
-					continue;
-				}
+
 				$imagesrc = $this->get_image_src( $id, $item, $data, false, false );
 				$item['src'] = $imagesrc;
-				$images[ $id ] = $item;
+				$item['id'] = $id;
+				$images[ $i ] = $item;
+				$i++;
 
 			}
+
 			$data['gallery'] = $images;
+
 		}
-		// Allow the data to be filtered before it is stored and used to create the gallery output.
-		$data = apply_filters( 'envira_gallery_pre_data', $data, $object['id'] );
+		error_log( print_r( $data, true ) );
+
 		return $data;
 
 	}
@@ -286,6 +290,7 @@ class Envira_Rest {
         return isset( $data['config'][$key] ) ? $data['config'][$key] : $this->common->get_config_default( $key );
 
 	}
+
 	public function find_clostest_size( $data ){
 
 		$image_sizes = $this->common->get_image_sizes();
@@ -297,7 +302,7 @@ class Envira_Rest {
 		usort( $image_sizes, array( $this, 'usort_callback' ) );
 
 		foreach( $image_sizes as $num ) {
-
+			if( isset( $num['width'] ) && isset( $num['width'] ) ) {
 			$num['width']  = (int) $num['width'];
 			$num['height'] = (int) $num['height'];
 
@@ -315,6 +320,7 @@ class Envira_Rest {
 					return $size;
 				}
 			}
+			}
 		}
 		return '';
 
@@ -328,10 +334,138 @@ class Envira_Rest {
 	 * @return void
 	 */
 	function usort_callback( $a, $b ) {
-
+		if ( isset( $a['width'] ) && isset( $b['width'] ) ) {
 		return intval( $a['width'] ) - intval( $b['width'] );
+		}
+
+		return;
 
 	}
+    /**
+     * Maybe sort the gallery images, if specified in the config
+     *
+     * Note: To ensure backward compat with the previous 'random' config
+     * key, the sorting parameter is still stored in the 'random' config
+     * key.
+     *
+     * @since 1.3.8
+     *
+     * @param   array   $data       Gallery Config
+     * @param   int     $gallery_id Gallery ID
+     * @return  array               Gallery Config
+     */
+    public function maybe_sort_gallery( $data, $gallery_id ) {
+
+        // Get sorting method
+        $sorting_method     = (string) $this->get_config( 'random', $data );
+        $sorting_direction  = $this->get_config( 'sorting_direction', $data );
+
+        // Sort images based on method
+        switch ( $sorting_method ) {
+            /**
+            * Random
+            * - Again, by design, to ensure backward compat when upgrading from 1.3.7.x or older
+            * where we had a 'random' key = 0 or 1. Sorting was introduced in 1.3.8
+            */
+            case '1':
+                // Shuffle keys
+                $keys = array_keys( $data['gallery'] );
+                shuffle( $keys );
+
+                // Rebuild array in new order
+                $new = array();
+                foreach( $keys as $key ) {
+                    $new[ $key ] = $data['gallery'][ $key ];
+                }
+
+                // Assign back to gallery
+                $data['gallery'] = $new;
+                break;
+
+            /**
+            * Image Meta
+            */
+            case 'src':
+            case 'title':
+            case 'caption':
+            case 'alt':
+            case 'link':
+                // Get metadata
+                $keys = array();
+                foreach ( $data['gallery'] as $id => $item ) {
+                    $keys[ $id ] = strip_tags( $item[ $sorting_method ] );
+                }
+
+                // Sort titles / captions
+                if ( $sorting_direction == 'ASC' ) {
+                    asort( $keys );
+                } else {
+                    arsort( $keys );
+                }
+
+                // Iterate through sorted items, rebuilding gallery
+                $new = array();
+                foreach( $keys as $key => $title ) {
+                    $new[ $key ] = $data['gallery'][ $key ];
+                }
+
+                // Assign back to gallery
+                $data['gallery'] = $new;
+                break;
+
+            /**
+            * Published Date
+            */
+            case 'date':
+                // Get published date for each
+                $keys = array();
+                foreach ( $data['gallery'] as $id => $item ) {
+                    // If the attachment isn't in the Media Library, we can't get a post date - assume now
+                    if ( ! is_numeric( $id ) || ( false === ( $attachment = get_post( $id ) ) ) ) {
+                        $keys[ $id ] = date( 'Y-m-d H:i:s' );
+                    } else {
+                        $keys[ $id ] = $attachment->post_date;
+                    }
+                }
+
+                // Sort titles / captions
+                if ( $sorting_direction == 'ASC' ) {
+                    asort( $keys );
+                } else {
+                    arsort( $keys );
+                }
+
+                // Iterate through sorted items, rebuilding gallery
+                $new = array();
+                foreach( $keys as $key => $title ) {
+                    $new[ $key ] = $data['gallery'][ $key ];
+                }
+
+                // Assign back to gallery
+                $data['gallery'] = $new;
+                break;
+
+            /**
+            * None
+            * - Do nothing
+            */
+            case '0':
+            case '':
+                break;
+
+            /**
+            * If developers have added their own sort options, let them run them here
+            */
+            default:
+                $data = apply_filters( 'envira_gallery_sort_gallery', $data, $sorting_method, $gallery_id );
+                break;
+
+        }
+
+        return $data;
+
+    }
+
     /**
      * Returns the singleton instance of the class.
      *
