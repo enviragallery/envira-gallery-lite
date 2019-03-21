@@ -72,7 +72,6 @@ class Envira_Rest {
 			$data['gallery'] = $images;
 
 		}
-		error_log( print_r( $data, true ) );
 
 		return $data;
 

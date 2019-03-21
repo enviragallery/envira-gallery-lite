@@ -190,13 +190,13 @@ class Envira_Gallery_Addons {
         ?>
 
         <div id="addon-heading" class="subheading clearfix">
-            <h1><?php _e( 'Envira Gallery Addons', 'envira-gallery' ); ?></h1>
+            <h1><?php esc_html_e( 'Envira Gallery Addons', 'envira-gallery' ); ?></h1>
             <form id="add-on-search">
                 <span class="spinner"></span>
                 <input id="add-on-searchbox" name="envira-addon-search" value="" placeholder="<?php _e( 'Search Envira Addons', 'envira-gallery' ); ?>" />
                 <select id="envira-filter-select">
-                    <option value="asc"><?php _e( 'Sort Ascending (A-Z)', 'envira-gallery' ); ?></option>
-                    <option value="desc"><?php _e( 'Sort Descending (Z-A)', 'envira-gallery' ); ?></option>
+                    <option value="asc"><?php esc_html_e( 'Sort Ascending (A-Z)', 'envira-gallery' ); ?></option>
+                    <option value="desc"><?php esc_html_e( 'Sort Descending (Z-A)', 'envira-gallery' ); ?></option>
                 </select>
             </form>
         </div>
@@ -222,7 +222,7 @@ class Envira_Gallery_Addons {
             ?>
             <div class="error below-h2">
                 <p>
-                    <?php _e( 'In order to get access to Addons, you need to resolve your license key errors.', 'envira-gallery' ); ?>
+                    <?php esc_html_e( 'In order to get access to Addons, you need to resolve your license key errors.', 'envira-gallery' ); ?>
                 </p>
             </div>
             <?php
@@ -241,7 +241,7 @@ class Envira_Gallery_Addons {
                     <?php _e( 'There was an issue retrieving the addons for this site. Please click on the button below the refresh the addons data.', 'envira-gallery' ); ?>
                 </p>
                 <p>
-                    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" class="button button-primary"><?php _e( 'Refresh Addons', 'envira-gallery' ); ?></a>
+                    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" class="button button-primary"><?php esc_html_e( 'Refresh Addons', 'envira-gallery' ); ?></a>
                 </p>
             </form>
             <?php
@@ -363,9 +363,9 @@ class Envira_Gallery_Addons {
      * @return  array               Array of addon data otherwise.
      */
     public function get_addons_data( $key ) {
-		
+
 		$this->key = $key;
-		
+
         // Get Addons
         // If the key is valid, we'll get personalised upgrade URLs for each Addon (if necessary) and plugin update information.
         $addons = $this->perform_remote_request( 'get-addons-data-v15', array( 'tgm-updater-key' => $key ) );

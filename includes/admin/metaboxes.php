@@ -1306,7 +1306,7 @@ class Envira_Gallery_Metaboxes {
 		        }
 
 				// Update Settings
-	        	$settings['config']['columns']                 = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['columns'] );
+	          $settings['config']['columns']                 = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['columns'] );
                 $settings['config']['gallery_theme']           = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['gallery_theme'] );
 				$settings['config']['gutter']                  = absint( $_POST['_envira_gallery']['gutter'] );
                 $settings['config']['margin']                  = absint( $_POST['_envira_gallery']['margin'] );
@@ -1486,9 +1486,10 @@ class Envira_Gallery_Metaboxes {
             <div class="meta">
                 <div class="title">
                     <span>
-                        <?php
+						<?php
+						$allowed_tags = wp_kses_allowed_html( 'title' );
                         // Output Title.
-                        echo ( isset( $item['title'] ) ? $item['title'] : '' );
+                        echo ( isset( $item['title'] ) ? wp_kses( $item['title'], $allowed_tags ) : '' );
 
                         // If the title exceeds 20 characters, the grid view will deliberately only show the first line of the title.
                         // Therefore we need to make it clear to the user that the full title is there by way of a hint.

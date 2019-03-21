@@ -1,8 +1,8 @@
-=== WordPress Photo Gallery Plugin – Envira Gallery ===
+=== Gallery Plugin for WordPress - Envira Photo Gallery ===
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
-Tags: gallery, image gallery, photo gallery, video gallery, wordpress gallery plugin, album, youtube gallery, gallery, lightbox, gallery plugin, gallery slider, gallery slideshow, gallery widget
+Tags: gallery, image gallery, photo gallery, video gallery, wordpress gallery plugin, gallery slider, gallery slideshow, gallery widget
 Requires at least: 4.4.0
-Tested up to: 5.0.0
+Tested up to: 5.1.0
 Requires PHP: 5.3
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
@@ -10,6 +10,15 @@ License: GNU General Public License v2.0 or later
 Envira Gallery is the fastest, easiest to use WordPress image gallery plugin. Lightbox with Drag & Drop builder that helps you create beautiful galleries with just a few clicks.
 
 == Description ==
+
+= Gallery Plugin =
+
+https://www.youtube.com/watch?v=4jHG3LOmV-c&w=532&rel=0
+
+= Helpful Links: =
+* [Gallery Demo](https://enviragallery.com/demo/)
+* [Gallery Documentation](https://enviragallery.com/docs/)
+* [Gallery Support](https://wordpress.org/support/plugin/envira-gallery-lite/)
 
 We believe that you shouldn't have to hire a developer to create a WordPress gallery. That's why we built <a href="http://enviragallery.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend" title="Envira">Envira</a>, a drag & drop **photo gallery plugin** that's both EASY, FAST and POWERFUL.
 
@@ -19,8 +28,6 @@ Envira is highly optimized for web and server performance because we understand 
 > Photo Gallery by Envira is the lite version of the popular Envira Pro plugin that comes with all the features you will ever need including albums, tags, social media integration, gallery templates / gallery layouts, deeplinking, pagination, e-commerce, image proofing, and tons more. <a href="http://enviragallery.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend" title="Envira">Click here to purchase Envira Pro now!</a>
 
 **Envira** has been downloaded over 1,000,000 times. Here's why smart photographers, designers, and developers love Envira, and you will too!
-
-https://www.youtube.com/watch?v=4jHG3LOmV-c&w=532&rel=0
 
 = Drag & Drop Gallery Builder =
 
@@ -140,7 +147,7 @@ If you like this plugin, then consider checking out our other plugin:
 
 = Who should use Envira? =
 
-Envira is perfect for photographers, designers, bloggers, and small businesses. 
+Envira is perfect for photographers, designers, bloggers, and small businesses.
 
 = Do I need to have coding skills to use Envira? =
 
@@ -201,6 +208,16 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 
 == Changelog ==
+
+= 1.6.5 =
+* Fix: Escaping in the admin
+* Remove: Error Log
+* Fix: Minor bug fixes.
+
+= 1.6.4 =
+
+* Fix: Gutenberg Block gallery preview appearing out of order.
+* Fix: Minor bug fixes.
 
 
 = 1.6.3 =
