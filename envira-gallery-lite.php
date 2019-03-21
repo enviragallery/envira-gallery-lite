@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Envira Gallery Lite
  * Plugin URI:  http://enviragallery.com
- * Description: Envira Gallery is best responsive WordPress gallery plugin. This is the lite version.
+ * Description: Envira Gallery is the best responsive WordPress gallery plugin. This is the Lite version.
  * Author:      Envira Gallery Team
  * Author URI:  http://enviragallery.com
  * Version:     1.6.5
@@ -136,8 +136,6 @@ class Envira_Gallery_Lite {
         if ( is_admin() ) {
             $this->require_admin();
         }
-
-
 
 		// Add hook for when Envira has loaded.
 		// This hook is deliberately different from the Pro version, to prevent the entire site breaking
