@@ -1,0 +1,17 @@
+{
+    "name": "envira-gallery-lite",
+    "description": "Envira Gallery Lite",
+    "authors": [
+        {
+            "name": "Envira Gallery",
+            "email": "admin@enviragallery.com"
+        }
+	],
+	"require": {},
+	"require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "object-calisthenics/phpcs-calisthenics-rules": "*",
+        "phpcompatibility/php-compatibility": "*",
+        "wp-coding-standards/wpcs": "*"
+    }
+}

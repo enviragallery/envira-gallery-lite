@@ -95,7 +95,7 @@ class Envira_Gallery_Metaboxes {
 
         ?>
         <div class="error">
-            <p><strong><?php _e( 'The GD or Imagick libraries are not installed on your server. Envira Gallery requires at least one (preferably Imagick) in order to crop images and may not work properly without it. Please contact your webhost and ask them to compile GD or Imagick for your PHP install.', 'envira-gallery' ); ?></strong></p>
+            <p><strong><?php esc_html_e( 'The GD or Imagick libraries are not installed on your server. Envira Gallery requires at least one (preferably Imagick) in order to crop images and may not work properly without it. Please contact your webhost and ask them to compile GD or Imagick for your PHP install.', 'envira-gallery' ); ?></strong></p>
         </div>
         <?php
 
@@ -165,19 +165,19 @@ class Envira_Gallery_Metaboxes {
             <div class="envira-progress-bar-inner"></div>
             <div class="envira-progress-bar-status">
                 <span class="uploading">
-                    <?php _e( 'Uploading Image', 'envira-gallery' ); ?>
+                    <?php esc_html_e( 'Uploading Image', 'envira-gallery' ); ?>
                     <span class="current">1</span>
-                    <?php _e( 'of', 'envira-gallery' ); ?>
+                    <?php esc_html_e( 'of', 'envira-gallery' ); ?>
                     <span class="total">3</span>
                 </span>
 
-                <span class="done"><?php _e( 'All images uploaded.', 'envira-gallery' ); ?></span>
+                <span class="done"><?php esc_html_e( 'All images uploaded.', 'envira-gallery' ); ?></span>
             </div>
         </div>
 
         <div class="envira-progress-adding-images">
             <div class="envira-progress-status">
-                <span class="spinner"></span><span class="adding_images"><?php _e( 'Adding items to gallery.', 'envira-gallery' ); ?></span>
+                <span class="spinner"></span><span class="adding_images"><?php esc_html_e( 'Adding items to gallery.', 'envira-gallery' ); ?></span>
             </div>
         </div>
         <?php
@@ -1487,15 +1487,16 @@ class Envira_Gallery_Metaboxes {
                 <div class="title">
                     <span>
 						<?php
-						$allowed_tags = wp_kses_allowed_html( 'title' );
+                        $allowed_tags = wp_kses_allowed_html( 'title' );
+                        $the_title = isset( $item['title'] ) ? wp_kses( $item['title'], $allowed_tags ) : '';
                         // Output Title.
-                        echo ( isset( $item['title'] ) ? wp_kses( $item['title'], $allowed_tags ) : '' );
+                        echo ( $the_title );
 
                         // If the title exceeds 20 characters, the grid view will deliberately only show the first line of the title.
                         // Therefore we need to make it clear to the user that the full title is there by way of a hint.
                         ?>
                     </span>
-                    <a class="hint <?php echo ( ( strlen( $item['title'] ) > 20 ) ? '' : ' hidden' ); ?>" title="<?php echo ( isset( $item['title'] ) ? $item['title'] : '' ); ?>">...</a>
+                    <a class="hint <?php echo ( ( strlen( $the_title  ) > 20 ) ? '' : ' hidden' ); ?>" title="<?php echo ( isset( $the_title  ) ? $the_title  : '' ); ?>">...</a>
                 </div>
                 <div class="additional">
                     <?php
@@ -1506,8 +1507,8 @@ class Envira_Gallery_Metaboxes {
             </div>
 
             <a href="#" class="check"><div class="media-modal-icon"></div></a>
-            <a href="#" class="dashicons dashicons-trash envira-gallery-remove-image" title="<?php _e( 'Remove Image from Gallery?', 'envira-gallery' ); ?>"></a>
-            <a href="#" class="dashicons dashicons-edit envira-gallery-modify-image" title="<?php _e( 'Modify Image', 'envira-gallery' ); ?>"></a>
+            <a href="#" class="dashicons dashicons-trash envira-gallery-remove-image" title="<?php esc_html_e( 'Remove Image from Gallery?', 'envira-gallery' ); ?>"></a>
+            <a href="#" class="dashicons dashicons-edit envira-gallery-modify-image" title="<?php esc_html_e( 'Modify Image', 'envira-gallery' ); ?>"></a>
         </li>
         <?php
         return ob_get_clean();
