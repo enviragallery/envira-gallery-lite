@@ -98,6 +98,36 @@ class Envira_Gallery_Lite {
 		// Load the plugin.
 		add_action( 'init', array( $this, 'init' ), 0 );
 
+		if ( ! defined( 'ENVIRA_VERSION' ) ) {
+
+			define( 'ENVIRA_VERSION', $this->version );
+
+		}
+
+		if ( ! defined( 'ENVIRA_SLUG' ) ) {
+
+			define( 'ENVIRA_SLUG', $this->plugin_slug );
+
+		}
+
+		if ( ! defined( 'ENVIRA_FILE' ) ) {
+
+			define( 'ENVIRA_FILE', $this->file );
+
+		}
+
+		if ( ! defined( 'ENVIRA_DIR' ) ) {
+
+			define( 'ENVIRA_DIR', plugin_dir_path( __FILE__ ) );
+
+		}
+
+		if ( ! defined( 'ENVIRA_URL' ) ) {
+
+			define( 'ENVIRA_URL', plugin_dir_url( __FILE__ ) );
+
+		}
+
 	}
 
 	/**
@@ -164,6 +194,7 @@ class Envira_Gallery_Lite {
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/review.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/gutenberg.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/subscribe.php';
+		require plugin_dir_path( __FILE__ ) . 'includes/admin/welcome.php';
 
 	}
 

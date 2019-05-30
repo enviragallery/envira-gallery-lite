@@ -1,0 +1,701 @@
+@font-face {
+  font-family: 'envira';
+  src: url("../fonts/envira.eot");
+  src: url("../fonts/envira.eot?#iefix") format("embedded-opentype"), url("../fonts/envira.woff") format("woff"), url("../fonts/envira.ttf") format("truetype"), url("../fonts/envira.svg#envira") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class*='envira-']:before {
+  display: inline-block;
+  font-family: 'envira';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.envira-configuration:before {
+  content: '\0041'; }
+
+.envira-leaf:before {
+  content: '\0042'; }
+
+.envira-lightbox:before {
+  content: '\0044'; }
+
+.envira-misc:before {
+  content: '\0045'; }
+
+.envira-mobile:before {
+  content: '\0046'; }
+
+.envira-pagination:before {
+  content: '\0047'; }
+
+.envira-proofing:before {
+  content: '\0048'; }
+
+.envira-slideshow:before {
+  content: '\0049'; }
+
+.envira-tags:before {
+  content: '\004a'; }
+
+.envira-thumbnails:before {
+  content: '\004b'; }
+
+.envira-video:before {
+  content: '\004c'; }
+
+.envira-watermark:before {
+  content: '\004d'; }
+
+.envira-cloud-download:before {
+  content: '\004e'; }
+
+.envira-toggle-on:before {
+  content: '\004f'; }
+
+.envira-plus-circle:before {
+  content: '\0050'; }
+
+.envira-down-arrow:before {
+  content: '\0051'; }
+
+.envira-list:before {
+  content: '\0052'; }
+
+.envira-grid:before {
+  content: '\0053'; }
+
+.envira-pinterest-p:before {
+  content: '\0054'; }
+
+.envira-whatsapp-p:before {
+  content: '\0054'; }
+
+.envira-pencil:before {
+  content: '\0055'; }
+
+.envira-close:before {
+  content: '\0056'; }
+
+.envira-check:before {
+  content: '\0057'; }
+
+.envira-welcome-wrap {
+  padding: 20px 30px; }
+  .envira-welcome-wrap .nav-tab-wrapper a {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px; }
+  .envira-welcome-wrap .nav-tab-wrapper a.nav-tab-active {
+    font-weight: 600; }
+  .envira-welcome-wrap .envira-title {
+    width: 100%;
+    margin-bottom: 20px; }
+    .envira-welcome-wrap .envira-title h1.welcome-header {
+      background: none;
+      font-size: 42px;
+      font-weight: 400;
+      padding-left: 0; }
+      .envira-welcome-wrap .envira-title h1.welcome-header span {
+        color: #7cc048;
+        margin-right: -10px;
+        text-indent: 0;
+        line-height: 1;
+        font-size: 33px; }
+    .envira-welcome-wrap .envira-title h1.welcome-header,
+    .envira-welcome-wrap .envira-title .about-text {
+      text-indent: 10px; }
+    .envira-welcome-wrap .envira-title .about-text {
+      font-size: 21px;
+      line-height: 32px;
+      font-weight: 200; }
+  .envira-welcome-wrap .envira-welcome-sidebar {
+    float: right;
+    width: 20%;
+    padding: 15px; }
+    .envira-welcome-wrap .envira-welcome-sidebar .sidebox {
+      background: beige;
+      padding: 20px;
+      font-size: 14px;
+      margin-bottom: 20px; }
+      .envira-welcome-wrap .envira-welcome-sidebar .sidebox h4 {
+        font-weight: 600;
+        line-height: 1.3;
+        color: #000;
+        margin: 0 0 10px 0; }
+      .envira-welcome-wrap .envira-welcome-sidebar .sidebox input[type='password'],
+      .envira-welcome-wrap .envira-welcome-sidebar .sidebox input[type='text'],
+      .envira-welcome-wrap .envira-welcome-sidebar .sidebox input[type='email'] {
+        width: 100%; }
+      .envira-welcome-wrap .envira-welcome-sidebar .sidebox input[type='submit'],
+      .envira-welcome-wrap .envira-welcome-sidebar .sidebox input[type='button'] {
+        margin: 10px 0 0; }
+      .envira-welcome-wrap .envira-welcome-sidebar .sidebox .form-row {
+        margin: 2px 0;
+        width: 100%;
+        font-size: 14px;
+        line-break: 14px; }
+        .envira-welcome-wrap .envira-welcome-sidebar .sidebox .form-row input[type='checkbox'] {
+          margin: 2px; }
+        .envira-welcome-wrap .envira-welcome-sidebar .sidebox .form-row label {
+          margin-left: 5px;
+          font-size: 12px; }
+      .envira-welcome-wrap .envira-welcome-sidebar .sidebox.warning {
+        background: #950303;
+        color: white; }
+        .envira-welcome-wrap .envira-welcome-sidebar .sidebox.warning h4 {
+          color: #ffae00; }
+        .envira-welcome-wrap .envira-welcome-sidebar .sidebox.warning p strong {
+          color: #ffae00; }
+    .envira-welcome-wrap .envira-welcome-sidebar sidebox:last-of-type {
+      margin-bottom: 0; }
+  .envira-welcome-wrap .envira-welcome-main,
+  .envira-welcome-wrap .envira-get-started-main,
+  .envira-welcome-wrap .envira-support-main {
+    width: 75%;
+    float: left; }
+  .envira-welcome-wrap .envira-wrap {
+    padding: 20px; }
+
+.changelog-main {
+  padding: 0 10px; }
+  .changelog-main ul {
+    list-style: disc;
+    list-style-position: inside; }
+
+/*------------------------------------------------------------------------------
+* 1.0 Welcome Screen
+*----------------------------------------------------------------------------*/
+/*
+* 1.1 Version Badge
+*/
+.envirabadge {
+  color: #d84800;
+  display: inline-block;
+  font: 400 150px/1 dashicons !important; }
+
+.envirabadge:before {
+  content: "\f448"; }
+
+.about-wrap .envirabadge {
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.index_page_enviracredits code,
+.index_page_enviraabout code {
+  background-color: #e0e0e0;
+  color: #636363;
+  font-size: 1em; }
+
+@media only screen and (max-width: 500px) {
+  .about-wrap .envirabadge {
+    position: relative;
+    margin: 10px auto;
+    top: auto;
+    right: auto; } }
+/*
+* 1.2 About Panel
+*/
+body.post-type-envira div.wrap.about-wrap {
+  padding-top: 20px;
+  padding-left: 20px; }
+  body.post-type-envira div.wrap.about-wrap h1.welcome-header {
+    background: none;
+    font-size: 42px;
+    font-weight: 400;
+    padding-left: 0; }
+  body.post-type-envira div.wrap.about-wrap h1.welcome-header,
+  body.post-type-envira div.wrap.about-wrap .about-text {
+    text-indent: 10px; }
+  body.post-type-envira div.wrap.about-wrap .nav-tab {
+    padding: 15px; }
+
+/*
+* 1.2.1 Headline Feature
+*/
+.envira_page_envira-gallery-lite-welcome .enviraheadline-feature {
+  margin-bottom: 2em;
+  margin-top: 3em;
+  padding: 2em 3em; }
+
+.envira_page_envira-gallery-lite-welcome .enviraheadline {
+  margin: 0 auto;
+  width: 45em; }
+
+.envira_page_envira-gallery-lite-welcome .enviraheadline span.dashicons {
+  background-color: #f1f1f1;
+  color: #d84800;
+  clear: left;
+  font-size: 100px;
+  float: left;
+  height: 100px;
+  line-height: 100px;
+  margin: 0 15px 15px 0;
+  text-align: center;
+  width: 100px; }
+
+.envira_page_envira-gallery-support .headline-title {
+  font-size: 2.2em;
+  font-weight: 300;
+  line-height: 2;
+  margin: 1em 0 1em;
+  text-align: center; }
+
+.envira_page_envira-gallery-lite-welcome .enviraheadline-feature p {
+  font-size: 1.15em;
+  margin: 1.15em auto 0.6em 0; }
+
+.envira_page_envira-gallery-lite-welcome .envira-features-section,
+.envira_page_envira-gallery-lite-get-started .envira-features-section,
+.envira_page_envira-gallery-support .envira-features-section {
+  border-bottom: 1px solid #ccc;
+  clear: both;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  overflow: hidden;
+  padding-bottom: 2em;
+  word-break: break-word; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section p,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section p,
+  .envira_page_envira-gallery-support .envira-features-section p {
+    font-size: 14px;
+    line-height: 1.5; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section img,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section img,
+  .envira_page_envira-gallery-support .envira-features-section img {
+    margin-bottom: 20px; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section code,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section code,
+  .envira_page_envira-gallery-support .envira-features-section code {
+    word-break: break-all; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section span.dashicons,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section span.dashicons,
+  .envira_page_envira-gallery-support .envira-features-section span.dashicons {
+    /* DELETE */
+    background-color: #fff;
+    border-radius: 50%;
+    clear: left;
+    color: #d84800;
+    font-size: 50px;
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 15px 15px 0;
+    text-align: center;
+    width: 80px; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section img.icon,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section img.icon,
+  .envira_page_envira-gallery-support .envira-features-section img.icon {
+    background-color: transparent;
+    clear: left;
+    font-size: 50px;
+    float: left;
+    line-height: 80px;
+    margin: 0 15px 15px 0;
+    text-align: center;
+    width: 80px; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section h4.feature-title,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section h4.feature-title,
+  .envira_page_envira-gallery-support .envira-features-section h4.feature-title {
+    color: #7cc048;
+    font-size: 1.35em;
+    margin-bottom: 0.6em;
+    margin-top: 0; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section span.badge,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section span.badge,
+  .envira_page_envira-gallery-support .envira-features-section span.badge {
+    font-size: 0.7em;
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: #7cc048;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 15%; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .headline-title,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section .headline-title,
+  .envira_page_envira-gallery-support .envira-features-section .headline-title {
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 1em auto 2em;
+    text-align: center; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature-with-images,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-feature-with-images,
+  .envira_page_envira-gallery-support .envira-features-section .envira-feature-with-images {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5em;
+    padding-bottom: 2em; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature,
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature-imaged,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-feature,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-feature-imaged,
+  .envira_page_envira-gallery-support .envira-features-section .envira-feature,
+  .envira_page_envira-gallery-support .envira-features-section .envira-feature-imaged {
+    float: left;
+    margin-bottom: 3em;
+    margin-right: 4.799999999%;
+    width: 47.6%; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature.opposite,
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature-imaged.anon,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-feature.opposite,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-feature-imaged.anon,
+  .envira_page_envira-gallery-support .envira-features-section .envira-feature.opposite,
+  .envira_page_envira-gallery-support .envira-features-section .envira-feature-imaged.anon {
+    margin-right: 0; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature code,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-feature code,
+  .envira_page_envira-gallery-support .envira-features-section .envira-feature code {
+    font-size: 0.95em;
+    line-height: 1.5; }
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-big-icon,
+  .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-big-icon,
+  .envira_page_envira-gallery-support .envira-features-section .envira-big-icon {
+    font-size: 80px;
+    float: left;
+    margin-left: 10px; }
+    .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-big-icon.envira-leaf,
+    .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-big-icon.envira-leaf,
+    .envira_page_envira-gallery-support .envira-features-section .envira-big-icon.envira-leaf {
+      color: #7cc048; }
+.envira_page_envira-gallery-lite-welcome .envira-feature:after,
+.envira_page_envira-gallery-lite-get-started .envira-feature:after,
+.envira_page_envira-gallery-support .envira-feature:after {
+  clear: both;
+  content: "";
+  margin-bottom: 2em; }
+.envira_page_envira-gallery-lite-welcome .envira-feature-imaged p,
+.envira_page_envira-gallery-lite-get-started .envira-feature-imaged p,
+.envira_page_envira-gallery-support .envira-feature-imaged p {
+  clear: left;
+  font-size: 1.1em; }
+.envira_page_envira-gallery-lite-welcome .envira-feature-imaged img,
+.envira_page_envira-gallery-lite-get-started .envira-feature-imaged img,
+.envira_page_envira-gallery-support .envira-feature-imaged img {
+  clear: left; }
+.envira_page_envira-gallery-lite-welcome .envira-feature .feature-title,
+.envira_page_envira-gallery-lite-get-started .envira-feature .feature-title,
+.envira_page_envira-gallery-support .envira-feature .feature-title {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-left: 110px;
+  margin-top: 0;
+  text-align: left; }
+.envira_page_envira-gallery-lite-welcome .envira-feature p,
+.envira_page_envira-gallery-lite-get-started .envira-feature p,
+.envira_page_envira-gallery-support .envira-feature p {
+  margin-left: 110px; }
+
+/*
+* 1.2.3 Changelog Section
+*/
+.envira_page_envira-gallery-lite-welcome .envira-recent-section,
+.envira_page_envira-gallery-lite-welcome .envira-posts,
+.envira_page_envira-gallery-lite-get-started .envira-recent-section,
+.envira_page_envira-gallery-lite-get-started .envira-posts,
+.envira_page_envira-gallery-support .envira-recent-section,
+.envira_page_envira-gallery-support .envira-posts {
+  clear: both;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-bottom: 0; }
+  .envira_page_envira-gallery-lite-welcome .envira-recent-section h3,
+  .envira_page_envira-gallery-lite-welcome .envira-posts h3,
+  .envira_page_envira-gallery-lite-get-started .envira-recent-section h3,
+  .envira_page_envira-gallery-lite-get-started .envira-posts h3,
+  .envira_page_envira-gallery-support .envira-recent-section h3,
+  .envira_page_envira-gallery-support .envira-posts h3 {
+    margin-top: 0;
+    color: #7cc048;
+    font-size: 1.50em;
+    line-height: 1.5;
+    font-weight: 500; }
+  .envira_page_envira-gallery-lite-welcome .envira-recent-section img.post-image,
+  .envira_page_envira-gallery-lite-welcome .envira-posts img.post-image,
+  .envira_page_envira-gallery-lite-get-started .envira-recent-section img.post-image,
+  .envira_page_envira-gallery-lite-get-started .envira-posts img.post-image,
+  .envira_page_envira-gallery-support .envira-recent-section img.post-image,
+  .envira_page_envira-gallery-support .envira-posts img.post-image {
+    max-width: 100%; }
+.envira_page_envira-gallery-lite-welcome .envira-recent-section:after,
+.envira_page_envira-gallery-lite-get-started .envira-recent-section:after,
+.envira_page_envira-gallery-support .envira-recent-section:after {
+  clear: both;
+  content: "";
+  display: table; }
+.envira_page_envira-gallery-lite-welcome .enviratwo-column div,
+.envira_page_envira-gallery-lite-get-started .enviratwo-column div,
+.envira_page_envira-gallery-support .enviratwo-column div {
+  float: left;
+  margin-right: 4.799999999%;
+  position: relative;
+  width: 47.6%; }
+.envira_page_envira-gallery-lite-welcome .envirathree-column .enviracolumn,
+.envira_page_envira-gallery-lite-get-started .envirathree-column .enviracolumn,
+.envira_page_envira-gallery-support .envirathree-column .enviracolumn {
+  float: left;
+  margin-right: 5%;
+  position: relative;
+  width: 29.95%; }
+.envira_page_envira-gallery-lite-welcome .enviratwo-column .enviracolumn:nth-of-type(2n),
+.envira_page_envira-gallery-lite-welcome .envirathree-column .enviracolumn:nth-of-type(3n),
+.envira_page_envira-gallery-lite-get-started .enviratwo-column .enviracolumn:nth-of-type(2n),
+.envira_page_envira-gallery-lite-get-started .envirathree-column .enviracolumn:nth-of-type(3n),
+.envira_page_envira-gallery-support .enviratwo-column .enviracolumn:nth-of-type(2n),
+.envira_page_envira-gallery-support .envirathree-column .enviracolumn:nth-of-type(3n) {
+  margin-right: 0; }
+.envira_page_envira-gallery-lite-welcome .envira-recent,
+.envira_page_envira-gallery-lite-get-started .envira-recent,
+.envira_page_envira-gallery-support .envira-recent {
+  margin-right: 0; }
+  .envira_page_envira-gallery-lite-welcome .envira-recent p,
+  .envira_page_envira-gallery-lite-get-started .envira-recent p,
+  .envira_page_envira-gallery-support .envira-recent p {
+    margin-bottom: 0; }
+.envira_page_envira-gallery-lite-welcome .envira-recent:after,
+.envira_page_envira-gallery-lite-get-started .envira-recent:after,
+.envira_page_envira-gallery-support .envira-recent:after {
+  clear: both;
+  content: "";
+  display: table; }
+.envira_page_envira-gallery-lite-welcome .envira-recent .title,
+.envira_page_envira-gallery-lite-get-started .envira-recent .title,
+.envira_page_envira-gallery-support .envira-recent .title {
+  font-size: 14px;
+  margin-bottom: 0.75em;
+  margin-top: 0; }
+.envira_page_envira-gallery-lite-welcome .envira-recent-url,
+.envira_page_envira-gallery-lite-get-started .envira-recent-url,
+.envira_page_envira-gallery-support .envira-recent-url {
+  text-align: center; }
+.envira_page_envira-gallery-lite-welcome .envira-assets,
+.envira_page_envira-gallery-lite-get-started .envira-assets,
+.envira_page_envira-gallery-support .envira-assets {
+  clear: both;
+  margin-bottom: 3em; }
+.envira_page_envira-gallery-lite-welcome article.docs li,
+.envira_page_envira-gallery-lite-get-started article.docs li,
+.envira_page_envira-gallery-support article.docs li {
+  width: 45%;
+  display: inline-block; }
+
+.envira_page_envira-gallery-support h3.headline-title {
+  margin-bottom: 1em; }
+
+#changelog-envira-gallery h3 {
+  background: #7cc048;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  padding: 5px; }
+#changelog-envira-gallery ul {
+  list-style: inside; }
+#changelog-envira-gallery li {
+  width: 80%;
+  vertical-align: top; }
+
+.envira-headline-button {
+  margin: 20px auto 0 auto; }
+
+/*------------------------------------------------------------------------------
+* 1.0 Upgrade Screen
+*----------------------------------------------------------------------------*/
+.upgrade-wrap {
+  text-align: center; }
+  .upgrade-wrap h3 {
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 400;
+    margin: 35px auto 10px auto; }
+  .upgrade-wrap h4.headline-subtitle {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 200;
+    margin: 20px auto;
+    display: block; }
+  .upgrade-wrap a.button {
+    margin: 10px auto;
+    display: table;
+    clear: both; }
+
+.upgrade-list {
+  display: table;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 35px; }
+  .upgrade-list ul {
+    width: 85%;
+    margin: 20px auto; }
+  .upgrade-list li {
+    width: 50%;
+    margin: 20px auto;
+    float: left;
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    min-height: 75px; }
+    .upgrade-list li .interior {
+      padding: 0 10px; }
+    .upgrade-list li h5 {
+      font-size: 18px;
+      line-height: 24px;
+      margin: 5px auto;
+      font-weight: 700; }
+    .upgrade-list li p {
+      margin: 0; }
+
+.upgrade-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0; }
+
+.upgrade-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/*------------------------------------------------------------------------------
+* 1.0 Media Queries
+*----------------------------------------------------------------------------*/
+@media screen and (max-width: 782px) {
+  .envira-welcome-wrap .envira-welcome-sidebar {
+    float: none;
+    width: 100%;
+    padding: 0; }
+  .envira-welcome-wrap .envira-welcome-main {
+    float: none;
+    width: 100%; }
+  .envira-welcome-wrap .envira-title h1.welcome-header {
+    line-height: 42px; }
+  .envira-welcome-wrap .envira-title h1.welcome-header,
+  .envira-welcome-wrap .envira-title .about-text {
+    text-indent: 0; }
+
+  .enviraheadline-feature,
+  .envira-features-section,
+  .envira-recent-section {
+    margin-left: 20px;
+    margin-right: 20px; }
+
+  .envira_page_envira-gallery-lite-welcome .enviraheadline-feature {
+    padding: 0; }
+
+  .envira_page_envira-gallery-lite-welcome .enviraheadline {
+    margin: 0;
+    width: 97%; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section {
+    clear: both;
+    margin-bottom: 0;
+    margin-top: 2em;
+    padding-bottom: 2em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature-with-images {
+    margin-bottom: 2em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .headline-title {
+    margin-bottom: 1em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-recent-section .changelog-title {
+    font-size: 1.25em;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .feature-title,
+  .envira_page_envira-gallery-lite-welcome .envira-recent-section .title {
+    font-size: 1.25em;
+    line-height: 1.25;
+    margin-top: 0.6em;
+    text-align: left; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature,
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature-imaged {
+    clear: both;
+    float: left;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-right: 0;
+    padding-right: 1em;
+    width: 100%; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature-imaged p {
+    font-size: 1em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature span {
+    margin-top: 0.33em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-feature.opposite .feature-title,
+  .envira_page_envira-gallery-lite-welcome .envira-feature.opposite p {
+    float: none; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-recent-section {
+    clear: both;
+    margin-bottom: 2em;
+    margin-top: 2em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-recent {
+    margin-bottom: 0; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-recent-section .changelog-title {
+    margin-bottom: 0.5em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-recent .title {
+    font-size: 1em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-recent p {
+    margin-bottom: 1em; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-recent-section .two-col > div,
+  .envira_page_envira-gallery-lite-welcome .envira-recent-section .three-col .col {
+    margin-top: 0;
+    padding-bottom: 0.5em;
+    width: 100%; }
+
+  .envira_page_envira-gallery-lite-welcome .envirathree-column .enviracolumn {
+    width: 100%; } }
+@media screen and (max-width: 360px) {
+  .envira_page_envira-gallery-lite-welcome .enviraheadline {
+    text-align: center; }
+
+  .envira_page_envira-gallery-lite-welcome .enviraheadline span.dashicons {
+    clear: none;
+    font-size: 80px;
+    float: none;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto;
+    width: 80px; }
+
+  .envira_page_envira-gallery-lite-welcome .enviraheadline-feature .headline-title,
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .headline-title {
+    font-size: 1.5em;
+    line-height: 1.5;
+    text-align: left; }
+
+  .envira_page_envira-gallery-lite-welcome .enviraheadline-feature .headline-title {
+    margin: 1em 0 0; }
+
+  .envira_page_envira-gallery-lite-welcome .enviraheadline-feature p {
+    margin: 1.15em auto 0.6em 0;
+    text-align: left;
+    width: auto; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature {
+    text-align: center; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section span.dashicons {
+    float: none; }
+
+  .envira_page_envira-gallery-lite-welcome .envira-features-section .feature-title,
+  .envira_page_envira-gallery-lite-welcome .envira-features-section p {
+    margin-left: 0;
+    text-align: left; } }

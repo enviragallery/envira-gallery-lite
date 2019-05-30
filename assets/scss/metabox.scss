@@ -1194,6 +1194,61 @@ form#post.envira-gallery {
                 }
 
                 /**
+                * Upsell/Upgrade Call To Actions
+                */
+                .upgrade-header {
+                    display: table; 
+                    margin-bottom: 10px; 
+                    width: 100%; 
+                    border-bottom: 1px solid #ccc; 
+                    padding-bottom: 15px;
+                    img {
+                        float: left;
+                    }
+                    h2 {
+                        float: left; 
+                        font-size: 24px; 
+                        line-height: 24px; 
+                        font-weight: 500; 
+                        margin-top: 0px;
+                        max-width: 80%;
+                        padding-top: 0;
+                    }
+                }
+                .upgrade-content {
+                    .hero-image-exterior {
+                        border: 1px solid #ccc; 
+                        width: 100%; 
+                        max-width: 100%; 
+                        display: table;
+                        .interior {
+                            padding: 10px;
+                            img {
+                                width: 100%;
+                                display: table;
+                            }
+                        }
+                    }
+                    .two-column-list {
+                        display: table; 
+                        width: 100%;
+                        ul {
+                            list-style: disc; 
+                            list-style-position: inside; 
+                            width: 45%; float: 
+                            left;
+                        }
+                    }
+                    .cta-buttons {
+                        margin-top: 30px;
+                        a {
+                            display:inline-block; 
+                            margin-right: 20px;
+                        }
+                    }
+                }
+
+                /**
                 * Tab: Images
                 */
                 #envira-tab-images {

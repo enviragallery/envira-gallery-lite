@@ -1174,47 +1174,112 @@ class Envira_Gallery_Metaboxes {
 
     }
 
-    /**
-     * Callback for displaying the settings UI for the Mobile tab.
-     *
-     * @since 1.5.0
-     *
-     * @param object $post The current post object.
-     */
-    public function lite_mobile_tab( $post ) {
+	/**
+	 * Callback for displaying the settings UI for the Mobile tab.
+	 *
+	 * @since 1.3.2
+	 *
+	 * @param object $post The current post object.
+	 */
+	public function lite_mobile_tab( $post ) {
 
-        // Output an upgrade notice
-        Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
-            'envira_gallery_mobile_tab',
-            __( 'Want to take your galleries further?', 'envira-gallery' ),
-            __( 'By upgrading to Envira Pro, you can get access to mobile-specific settings, including mobile image sizes, number of columns, mobile-specific lightbox options and so much more!', 'envira-gallery' ),
-            'warning',
-            __( 'Click here to Upgrade', 'envira-gallery' ),
-            Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
-            false
-        );
+		?>
 
-    }
+		<div class="upgrade-header">
+			<img src="https://enviragallery.com/wp-content/uploads/2015/08/responsive-icon.png" width="35" height="35" />
+			<h2>Customize A Unique Mobile Experience With Envira Pro!</h2>
+		</div>
 
-    /**
+		<div class="upgrade-content">
+			<div class="hero-image-exterior">
+				<div class="interior">
+					<img src="https://previews.dropbox.com/p/thumb/AANCkIMVfKq4_0FoR0USoTbSM6qLNvtxRHKQOv274PP7v5smsa7RtmJumhGom15BFUgHVqrLUobOrQe6Aob2FPhrq3tBnmhCY3Oeu75Y06fEMbPRtAh3BLNAtqVCSugWAW9T5jg-f71bf9pZhIBCSnNX_y-ZjAc86lL8kPH75xFJTAg9JExEhgocTBXDdeBbNZ9eRu_hXrmsP8QvcWyHrURZv9Q0iTQ9Bc-Y9baSSqJyBQ/p.png?size=1600x1200&size_mode=3" />
+				</div>
+			</div>
+			<p>Build responsive WordPress galleries that work on mobile, tablet and desktop devices.</p>
+			<!-- <div class="two-column-list">
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Self-hosted Videos</a> (MP4)</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">YouTube</a> (with playlist and custom start time support)</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Vimeo</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Instagram</a> Feed Videos</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Instagram</a> IGTV</li>
+				</ul>
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Facebook</a> Video</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Twitch</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">VideoPress</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">DailyMotion</a></li>
+					<li><strong>...and more!</strong></li>
+				</ul>
+			</div> -->
+			<div class="cta-buttons">
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-secondary">View Mobile Demo</a>
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
+			</div>
+		</div>
+
+		<?php
+				
+		// Output an upgrade notice
+		// $this->notices->display_inline_notice(
+		// 	'envira_gallery_mobile_tab',
+		// 	__( 'Want to take your galleries further?', 'envira-gallery' ),
+		// 	__( 'By upgrading to Envira Pro, you can get access to mobile-specific settings, including mobile image sizes, number of columns, mobile-specific lightbox options and so much more!', 'envira-gallery' ),
+		// 	'warning',
+		// 	__( 'Click here to Upgrade', 'envira-gallery' ),
+		// 	envira_get_upgrade_link(),
+		// 	false
+		// );
+
+	}
+   /**
      * Lite: Callback for displaying the settings UI for the Mobile tab.
      *
      * @since 1.5.0
      *
      * @param object $post The current post object.
      */
-    public function lite_videos_tab( $post ) {
-        // Output an upgrade notice
-        Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
-            'envira_gallery_mobile_tab',
-            __( 'Want to take your galleries further?', 'envira-gallery' ),
-            __( 'By upgrading to Envira Pro, you can add Videos to your Envira Galleries from YouTube, Vimeo, Wistia, and your own self-hosted videos!', 'envira-gallery' ),
-            'warning',
-            __( 'Click here to Upgrade', 'envira-gallery' ),
-            Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
-            false
-        );
+    public function lite_videos_tab( $post ) { ?>
+
+		<div class="upgrade-header">
+			<img src="https://enviragallery.com/wp-content/uploads/2015/10/videos-icon.png" width="35" height="35" />
+			<h2>Add Video To Your Galleries With Envira Pro!</h2>
+		</div>
+
+		<div class="upgrade-content">
+			<div class="hero-image-exterior">
+				<div class="interior">
+					<img src="https://enviragallery.com/wp-content/uploads/2015/10/videos-addon.png" />
+				</div>
+			</div>
+			<p>Video platform integrations allow you to add more video sources for your galleries. We’ve added integrations with all the most popular video sharing and video hosting providers.</p>
+			<div class="two-column-list">
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Self-hosted Videos</a> (MP4)</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">YouTube</a> (with playlist and custom start time support)</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Vimeo</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Instagram</a> Feed Videos</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Instagram</a> IGTV</li>
+				</ul>
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Facebook</a> Video</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Twitch</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">VideoPress</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">DailyMotion</a></li>
+					<li><strong>...and more!</strong></li>
+				</ul>
+			</div>
+			<div class="cta-buttons">
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-secondary">View Video Addon Demo</a>
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
+			</div>
+		</div>
+
+		<?php
+				
     }
+
     /**
      * Lite: Callback for displaying the settings UI for the Mobile tab.
      *
@@ -1223,17 +1288,55 @@ class Envira_Gallery_Metaboxes {
      * @param object $post The current post object.
      */
     public function lite_social_tab( $post ) {
+
+		?>
+
+		<div class="upgrade-header">
+			<img src="https://enviragallery.com/wp-content/uploads/2015/10/social-icon.png" width="35" height="35" />
+			<h2>Have Users Share With Envira Pro!</h2>
+		</div>
+
+		<div class="upgrade-content">
+			<div class="hero-image-exterior">
+				<div class="interior">
+					<img src="https://enviragallery.com/wp-content/uploads/2015/10/socialsharing.png" />
+				</div>
+			</div>
+			<p>You can add social sharing buttons to your Gallery images and Lightbox images. Encourage your users to share your content via:</p>
+			<div class="two-column-list">
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Facebook</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Twitter</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Google+</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">PInterest</li>
+				</ul>
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">LinkedIn</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">WhatsApp</a></li>
+					<li><strong>...and more!</strong></li>
+				</ul>
+			</div>
+			<div class="cta-buttons">
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-secondary">View Social Addon Demo</a>
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
+			</div>
+		</div>
+
+		<?php
+
         // Output an upgrade notice
-        Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
-            'envira_gallery_mobile_tab',
-            __( 'Want to take your galleries further?', 'envira-gallery' ),
-            __( 'By upgrading to Envira Pro, you can add social sharing buttons to your Gallery images and Lightbox images.  With support for Facebook, Twitter, Google+ and Pinterest why not check it out?', 'envira-gallery' ),
-            'warning',
-            __( 'Click here to Upgrade', 'envira-gallery' ),
-            Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
-            false
-        );
+        // $this->notices->display_inline_notice(
+        //     'envira_gallery_mobile_tab',
+        //     __( 'Want to take your galleries further?', 'envira-gallery' ),
+        //     __( 'By upgrading to Envira Pro, you can add social sharing buttons to your Gallery images and Lightbox images.  With support for Facebook, Twitter, Google+ and Pinterest why not check it out?', 'envira-gallery' ),
+        //     'warning',
+        //     __( 'Click here to Upgrade', 'envira-gallery' ),
+        //     envira_get_upgrade_link(),
+        //     false
+        // );
+
     }
+
     /**
      * Lite: Callback for displaying the settings UI for the Mobile tab.
      *
@@ -1242,17 +1345,55 @@ class Envira_Gallery_Metaboxes {
      * @param object $post The current post object.
      */
     public function lite_tags_tab( $post ) {
+
+		?>
+
+		<div class="upgrade-header">
+			<img src="https://enviragallery.com/wp-content/uploads/2015/10/tags-icon.png" width="35" height="35" />
+			<h2>Tag And Filter Images With Envira Pro!</h2>
+		</div>
+
+		<div class="upgrade-content">
+			<div class="hero-image-exterior">
+				<div class="interior">
+					<img src="https://enviragallery.com/wp-content/uploads/2015/10/tags-addon.png" />
+				</div>
+			</div>
+			<p>By upgrading to Envira Pro, you can add Tags to your Gallery images (and categories to Albums). Allow users to filter your galleries by tag and so much more!</p>
+			<!--<div class="two-column-list">
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Facebook</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Twitter</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Google+</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">PInterest</li>
+				</ul>
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">LinkedIn</a></li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">WhatsApp</a></li>
+					<li><strong>...and more!</strong></li>
+				</ul>
+			</div>-->
+			<div class="cta-buttons">
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-secondary">View Tags Addon Demo</a>
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
+			</div>
+		</div>
+
+		<?php
+
         // Output an upgrade notice
-        Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
-            'envira_gallery_mobile_tab',
-            __( 'Want to take your galleries further?', 'envira-gallery' ),
-            __( 'By upgrading to Envira Pro, you can add Tags to your Gallery images, allow users to filter your Gallery by tag and so much more!', 'envira-gallery' ),
-            'warning',
-            __( 'Click here to Upgrade', 'envira-gallery' ),
-            Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
-            false
-        );
+        // $this->notices->display_inline_notice(
+        //     'envira_gallery_mobile_tab',
+        //     __( 'Want to take your galleries further?', 'envira-gallery' ),
+        //     __( 'By upgrading to Envira Pro, you can add Tags to your Gallery images (and categories to Albums). Allow users to filter your galleries by tag and so much more!', 'envira-gallery' ),
+        //     'warning',
+        //     __( 'Click here to Upgrade', 'envira-gallery' ),
+        //     envira_get_upgrade_link(),
+        //     false
+        // );
+
     }
+
     /**
      * Lite: Callback for displaying the settings UI for the Mobile tab.
      *
@@ -1261,16 +1402,50 @@ class Envira_Gallery_Metaboxes {
      * @param object $post The current post object.
      */
     public function lite_pagination_tab( $post ) {
+
+		?>
+
+		<div class="upgrade-header">
+			<img src="https://enviragallery.com/wp-content/uploads/2015/10/pagination-icon.png" width="35"  />
+			<h2>Improve Large Gallery Experiences With Envira Pro!</h2>
+		</div>
+
+		<div class="upgrade-content">
+			<div class="hero-image-exterior">
+				<div class="interior">
+					<img src="https://enviragallery.com/wp-content/uploads/2015/10/pagination-addon.png" />
+				</div>
+			</div>
+			<p>If you have a lot of photos in your gallery, upgrade to Envira Pro to split your Gallery across multiple pages! Customize a variety of aspects including how many items are shown per page, button text, left/right arrows, and more. Available pagination options include:</p>
+			<div class="two-column-list">
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">By Page (Ajax Or Standard)</li>
+					<li><a target="_blank" href="https://enviragallery.com/lite">On Scroll</li>
+				</ul>
+				<ul>
+					<li><a target="_blank" href="https://enviragallery.com/lite">Click More Button</a> (with customizable text)</li>
+					<li><strong>...and more!</strong></li>
+				</ul>
+			</div>
+			<div class="cta-buttons">
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-secondary">View Pagination Addon Demo</a>
+				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
+			</div>
+		</div>
+
+		<?php
+
         // Output an upgrade notice
-        Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
-            'envira_gallery_mobile_tab',
-            __( 'Want to take your galleries further?', 'envira-gallery' ),
-            __( 'By upgrading to Envira Pro, you can split your Gallery across multiple pages with pagination, load paginated images via AJAX, lazy loading and more!', 'envira-gallery' ),
-            'warning',
-            __( 'Click here to Upgrade', 'envira-gallery' ),
-            Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
-            false
-        );
+        // $this->notices->display_inline_notice(
+        //     'envira_gallery_mobile_tab',
+        //     __( 'Want to take your galleries further?', 'envira-gallery' ),
+        //     __( 'By upgrading to Envira Pro, you can split your Gallery across multiple pages with pagination, load paginated images via AJAX, lazy loading and more!', 'envira-gallery' ),
+        //     'warning',
+        //     __( 'Click here to Upgrade', 'envira-gallery' ),
+        //     envira_get_upgrade_link(),
+        //     false
+        // );
+
     }
 
     /**
