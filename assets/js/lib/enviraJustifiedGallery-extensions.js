@@ -29,6 +29,7 @@
             }
 
             if (this.isValidCaption(caption)) { // Create only we found something
+              caption = $('<textarea />').html(caption).text();
               $imgCaption = $('<div class="caption">' + caption + '</div>');
               $entry.append($imgCaption);
               $entry.data('jg.createdCaption', true);
