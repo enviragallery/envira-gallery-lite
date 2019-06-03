@@ -749,8 +749,8 @@ class Envira_Gallery_Metaboxes {
         // Output an upgrade notice
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
             'envira_gallery_images_tab',
-            __( 'Want to make your gallery workflow even better?', 'envira-gallery' ),
-            __( 'By upgrading to Envira Pro, you can get access to numerous other features, including: a fully featured gallery widget, complete gallery API, powerful gallery documentation, full mobile and Retina support, dedicated customer support and so much more!', 'envira-gallery' ),
+            __( 'Want to make your gallery workflow and presentation even better?', 'envira-gallery' ),
+            __( 'By upgrading to Envira Pro, you can get access to numerous other features, including: <a target="_blank" href="https://enviragallery.com/demo/albums-demo/">Albums</a>, <a target="_blank"  href="https://enviragallery.com/demo/envira-gallery-theme-demo/">Gallery Themes/Layouts</a>, <a target="_blank" href="https://enviragallery.com/demo/proofing-gallery-demo/">Image Proofing</a>, <a target="_blank" href="https://enviragallery.com/addons/woocommerce-addon/">eCommerce</a>, dedicated customer support and so much more!', 'envira-gallery' ),
             'warning',
             __( 'Click here to Upgrade', 'envira-gallery' ),
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
@@ -1063,7 +1063,7 @@ class Envira_Gallery_Metaboxes {
             Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
                 'envira_gallery_lightbox_tab',
                 __( 'Want even more fine tuned control over your lightbox display?', 'envira-gallery' ),
-                __( 'By upgrading to Envira Pro, you can get access to numerous other lightbox features, including: custom lightbox titles, enable/disable lightbox controls (arrow, keyboard and mousehweel navigation), custom lightbox transition effects, native fullscreen support, gallery deeplinking, image protection, lightbox supersize effects, lightbox slideshows and so much more!', 'envira-gallery' ),
+                __( 'By upgrading to Envira Pro, you can get access to numerous other lightbox features, including: custom lightbox titles, enable/disable lightbox controls (arrow, keyboard and mouse wheel navigation), custom lightbox transition effects, native fullscreen support, gallery deeplinking, image protection, lightbox supersize effects, lightbox slideshows and so much more!', 'envira-gallery' ),
                 'warning',
                 __( 'Click here to Upgrade', 'envira-gallery' ),
                 Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),
@@ -1307,12 +1307,12 @@ class Envira_Gallery_Metaboxes {
 				<ul>
 					<li><a target="_blank" href="https://enviragallery.com/lite">Facebook</li>
 					<li><a target="_blank" href="https://enviragallery.com/lite">Twitter</li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">Google+</a></li>
 					<li><a target="_blank" href="https://enviragallery.com/lite">PInterest</li>
 				</ul>
 				<ul>
 					<li><a target="_blank" href="https://enviragallery.com/lite">LinkedIn</a></li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">WhatsApp</a></li>
+                    <li><a target="_blank" href="https://enviragallery.com/lite">WhatsApp</a></li>
+                    <li><a target="_blank" href="https://enviragallery.com/lite">Email</a></li>
 					<li><strong>...and more!</strong></li>
 				</ul>
 			</div>
