@@ -53,6 +53,7 @@ class Envira_Welcome {
 
 		// Add scripts and styles.
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
+		add_action( 'admin_head', array( $this, 'envira_menu_styles' ) );
 
 		// Misc.
 		add_action( 'admin_print_scripts', array( $this, 'disable_admin_notices' ) );
@@ -95,6 +96,38 @@ class Envira_Welcome {
 		}
 
 	}
+
+	/**
+	 * Add custom CSS to block out certain menu items ONLY when welcome screen is activated.
+	 *
+	 * @since 1.8.1
+	 */
+	public function envira_menu_styles() { 
+
+		if ( is_admin() ) {
+
+		?>
+
+			<style>
+
+			/* ==========================================================================
+			Menu
+			========================================================================== */
+			li#menu-posts-envira ul li:last-child,
+			li#menu-posts-envira ul li:nth-last-child(2),
+			li#menu-posts-envira ul li:nth-last-child(3) {
+				display: none;
+			}
+
+			</style>
+
+		<?php
+
+		}
+
+	}
+
+
 
 	/**
 	 * Making page as clean as possible
