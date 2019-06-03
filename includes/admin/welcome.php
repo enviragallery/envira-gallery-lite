@@ -41,7 +41,7 @@ class Envira_Welcome {
 	 */
 	public function __construct() {
 
-		if ( ( ! defined( 'ENVIRA_WELCOME_SCREEN' ) || false === ENVIRA_WELCOME_SCREEN ) || apply_filters( 'envira_whitelabel', false ) === true ) {
+		if ( ( defined( 'ENVIRA_WELCOME_SCREEN' ) && false === ENVIRA_WELCOME_SCREEN ) || apply_filters( 'envira_whitelabel', false ) === true ) {
 			return;
 		}
 
