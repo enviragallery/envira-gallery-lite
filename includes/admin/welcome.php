@@ -8,7 +8,7 @@
  * @author  Envira Gallery Team
  */
 
-namespace Envira\Admin;
+// namespace Envira\Admin;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -946,21 +946,24 @@ class Envira_Welcome {
 
                         <?php
                         
-                        // Load the main plugin class.
-                        // $envira_gallery_lite = Envira_Gallery_Lite::get_instance();
+						// Load the main plugin class.
+						
+						$envira_gallery_lite = Envira_Gallery_Lite::get_instance();
 
-                        // $galleries = $envira_gallery_lite->_get_galleries();
-                        //if ( count( $galleries ) === 0 ) {
-                            $text = 'Create Your A Gallery';
-                        // } else {
-                            // $text = 'Create Another Gallery';
-                        // }
+                        $galleries = Envira_Gallery_Lite::get_instance()->_get_galleries();
+
+                        if ( count( $galleries ) === 0 ) {
+                            $text = esc_html( 'Create Your First Gallery', 'envira-gallery' );
+                        } else {
+                            $text = esc_html( 'Create Another Gallery', 'envira-gallery' );
+                        }
 
 						?>
 
 						<div class="envira-headline-button">
 							<a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=envira' ) ); ?>" class="button button-primary">
-							<?php echo esc_html( $text ); ?></a>
+								<?php echo $text; ?>
+							</a>
 						</div>
 
 						</h3>
