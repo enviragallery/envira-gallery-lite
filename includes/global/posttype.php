@@ -48,18 +48,18 @@ class Envira_Gallery_Posttype {
 
         // Build the labels for the post type.
         $labels =  array(
-            'name'               => __( 'Envira Galleries', 'envira-gallery' ),
-            'singular_name'      => __( 'Envira Gallery', 'envira-gallery' ),
+            'name'               => __( 'Galleries', 'envira-gallery' ),
+            'singular_name'      => __( 'Gallery', 'envira-gallery' ),
             'add_new'            => __( 'Add New', 'envira-gallery' ),
-            'add_new_item'       => __( 'Add New Envira Gallery', 'envira-gallery' ),
-            'edit_item'          => __( 'Edit Envira Gallery', 'envira-gallery' ),
-            'new_item'           => __( 'New Envira Gallery', 'envira-gallery' ),
-            'view_item'          => __( 'View Envira Gallery', 'envira-gallery' ),
-            'search_items'       => __( 'Search Envira Galleries', 'envira-gallery' ),
-            'not_found'          => __( 'No Envira galleries found.', 'envira-gallery' ),
-            'not_found_in_trash' => __( 'No Envira galleries found in trash.', 'envira-gallery' ),
+            'add_new_item'       => __( 'Add New Gallery', 'envira-gallery' ),
+            'edit_item'          => __( 'Edit Gallery', 'envira-gallery' ),
+            'new_item'           => __( 'New Gallery', 'envira-gallery' ),
+            'view_item'          => __( 'View Gallery', 'envira-gallery' ),
+            'search_items'       => __( 'Search Galleries', 'envira-gallery' ),
+            'not_found'          => __( 'No galleries found.', 'envira-gallery' ),
+            'not_found_in_trash' => __( 'No galleries found in trash.', 'envira-gallery' ),
             'parent_item_colon'  => '',
-            'menu_name'          => __( 'Envira Gallery', 'envira-gallery' ),
+            'menu_name'          => __( 'Envira Galleries', 'envira-gallery' ),
         );
         $labels = apply_filters( 'envira_gallery_post_type_labels', $labels );
 
@@ -86,7 +86,34 @@ class Envira_Gallery_Posttype {
         // Register the post type with WordPress.
         register_post_type( 'envira', $args );
 
+        // Change the name of the first item in the CPT menu.
+        add_filter( '_admin_menu', array( $this, 'custom_menu_order' ) );
+
     }
+
+
+    /**
+     * Allows us to rename 'Envira Galleries' to 'Galleries' without creating a submenu or fancy CSS tricks.
+     *
+     * @since 1.0.0
+     *
+     */
+	function custom_menu_order( ){
+
+        global $submenu;
+
+        foreach ( $submenu as $item => $item_submenu ) {
+            if ( 'edit.php?post_type=envira' !== $item ) {
+                continue;
+            }
+            foreach ( $item_submenu as $index => $item_submenu_info ) {
+                if ( $item_submenu_info[0] == 'Envira Galleries' ) {
+                    $submenu[ $item][ $index ][0] = 'Galleries';
+                }
+            }
+        }
+    }
+
 
     /**
      * Returns the singleton instance of the class.

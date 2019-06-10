@@ -62,8 +62,8 @@ body.post-type-envira_album {
 		*/
 		a.page-title-action {
 			position: relative;
-			top: -55px;
-			left: 185px; /* default - English */
+			top: -53px;
+			left: 115px; /* default - English */
 			&:hover {
 				background: $primary_button_color_hover;
 				border-color: $primary_button_color_hover;
@@ -420,7 +420,24 @@ body.edit-php.post-type-envira {
             height: 26px;
             font-size: 22px;
         }
-    }
+	}
+	
+    /**
+    * Layout
+    */
+	.two-column-list {
+		display: table; 
+		width: 100%;
+		ul {
+			list-style: none;
+			list-style-position: inside; 
+			width: 45%; 
+			float: left;
+		}
+	}
+	.no-margin-top {
+		margin-top: 0;
+	}
 
     /**
     * Success

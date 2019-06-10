@@ -617,7 +617,7 @@ class Envira_Gallery_Metaboxes {
     public function get_envira_tab_nav() {
 
         $tabs = array(
-            'images'     => __( 'Images', 'envira-gallery' ),
+            'images'     => __( 'Gallery', 'envira-gallery' ),
             'config'     => __( 'Config', 'envira-gallery' ),
             'lightbox'   => __( 'Lightbox', 'envira-gallery' ),
             'mobile'     => __( 'Mobile', 'envira-gallery' ),
@@ -745,12 +745,24 @@ class Envira_Gallery_Metaboxes {
             ?>
         </ul>
 
+
+
         <?php
         // Output an upgrade notice
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
             'envira_gallery_images_tab',
             __( 'Want to make your gallery workflow and presentation even better?', 'envira-gallery' ),
-            __( 'By upgrading to Envira Pro, you can get access to numerous other features, including: <a target="_blank" href="https://enviragallery.com/demo/albums-demo/">Albums</a>, <a target="_blank"  href="https://enviragallery.com/demo/envira-gallery-theme-demo/">Gallery Themes/Layouts</a>, <a target="_blank" href="https://enviragallery.com/demo/proofing-gallery-demo/">Image Proofing</a>, <a target="_blank" href="https://enviragallery.com/addons/woocommerce-addon/">eCommerce</a>, dedicated customer support and so much more!', 'envira-gallery' ),
+            __( '<p>By upgrading to Envira Pro, you can get access to numerous other features, including:</p><div class="two-column-list">
+            <ul>
+                <li>+ <a target="_blank" href="https://enviragallery.com/demo/albums-demo">Albums</a></li>
+                <li>+ <a target="_blank" href="https://enviragallery.com/demo/envira-gallery-theme-demo">Gallery Themes/Layouts</a></li>
+                <li>+ <a target="_blank" href="https://enviragallery.com/demo/proofing-gallery-demo">Image Proofing</a></li>
+            </ul>
+            <ul>
+                <li>+ <a target="_blank" href="https://enviragallery.com/addons/woocommerce-addon/">eCommerce</a></li>
+                <li>+ Dedicated customer support and so much more!</li>
+            </ul>
+        </div><p class="no-margin-top"><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>', 'envira-gallery' ),
             'warning',
             __( 'Click here to Upgrade', 'envira-gallery' ),
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(),

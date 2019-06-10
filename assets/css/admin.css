@@ -85,8 +85,8 @@ body.post-type-envira_album {
     body.post-type-envira div.wrap a.page-title-action,
     body.post-type-envira_album div.wrap a.page-title-action {
       position: relative;
-      top: -55px;
-      left: 185px;
+      top: -53px;
+      left: 115px;
       /* default - English */
       /* display: none; */
       /* Trying To Prevent The "Shift" Upload Page Load Before JS can move the button */
@@ -368,6 +368,9 @@ body.edit-php.post-type-envira div.wrap span.subtitle {
   * Close Button
   */
   /**
+  * Layout
+  */
+  /**
   * Success
   */
   /**
@@ -389,6 +392,16 @@ body.edit-php.post-type-envira div.wrap span.subtitle {
       width: 26px;
       height: 26px;
       font-size: 22px; }
+  .envira-notice .two-column-list {
+    display: table;
+    width: 100%; }
+    .envira-notice .two-column-list ul {
+      list-style: none;
+      list-style-position: inside;
+      width: 45%;
+      float: left; }
+  .envira-notice .no-margin-top {
+    margin-top: 0; }
   .envira-notice.success {
     background: #7cc048;
     color: #ffffff;

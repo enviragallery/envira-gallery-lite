@@ -1118,7 +1118,7 @@ class Envira_Welcome {
 							<li>
 								<div class="interior">
 									<h5><a href="https://enviragallery.com/addons/woocommerce-addon/">Ecommerce</a></h5>
-									<p>nstantly display and sell your photos with our native WooCommerce integration.</p>
+									<p>Instantly display and sell your photos with our native WooCommerce integration.</p>
 								</div>
 							</li>
 							<li>
