@@ -1135,7 +1135,7 @@ class Envira_Welcome {
 							</li>
 							<li>
 								<div class="interior">
-									<h5><a href="https://enviragallery.com/addons/lightroom-addon/">Lightroom Intergration</a></h5>
+									<h5><a href="https://enviragallery.com/addons/lightroom-addon/">Lightroom Integration</a></h5>
 									<p>Automatically create & sync photo galleries from your Adobe Lightroom collections.</p>
 								</div>
 							</li>
