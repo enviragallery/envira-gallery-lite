@@ -930,6 +930,9 @@ form#post.envira-gallery {
         * All Tabs
         */
         /**
+        * Upsell/Upgrade Call To Actions
+        */
+        /**
         * Tab: Images
         */
         /**
@@ -1000,6 +1003,55 @@ form#post.envira-gallery {
             font-size: 13px;
             font-style: italic;
             color: #666; }
+        form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-header,
+        form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-header {
+          display: table;
+          margin-bottom: 10px;
+          width: 100%;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 15px; }
+          form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-header img,
+          form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-header img {
+            float: left; }
+          form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-header h2,
+          form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-header h2 {
+            float: left;
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: 500;
+            margin-top: 0px;
+            max-width: 80%;
+            padding-top: 0; }
+        form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-content .hero-image-exterior,
+        form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-content .hero-image-exterior {
+          border: 1px solid #ccc;
+          width: 100%;
+          max-width: 100%;
+          display: table; }
+          form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-content .hero-image-exterior .interior,
+          form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-content .hero-image-exterior .interior {
+            padding: 10px; }
+            form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-content .hero-image-exterior .interior img,
+            form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-content .hero-image-exterior .interior img {
+              width: 100%;
+              display: table; }
+        form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-content .two-column-list,
+        form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-content .two-column-list {
+          display: table;
+          width: 100%; }
+          form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-content .two-column-list ul,
+          form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-content .two-column-list ul {
+            list-style: disc;
+            list-style-position: inside;
+            width: 45%;
+            float: left; }
+        form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-content .cta-buttons,
+        form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-content .cta-buttons {
+          margin-top: 30px; }
+          form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-content .cta-buttons a,
+          form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-content .cta-buttons a {
+            display: inline-block;
+            margin-right: 20px; }
         form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs #envira-tab-images,
         form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs #envira-tab-images {
           /**
