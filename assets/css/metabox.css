@@ -1041,7 +1041,7 @@ form#post.envira-gallery {
           width: 100%; }
           form#post.envira-gallery #poststuff #envira-gallery-settings #envira-tabs .upgrade-content .two-column-list ul,
           form#post.envira-gallery #poststuff #envira-albums-settings #envira-tabs .upgrade-content .two-column-list ul {
-            list-style: disc;
+            list-style: none;
             list-style-position: inside;
             width: 45%;
             float: left; }
