@@ -502,6 +502,14 @@ body.post-type-envira div.wrap.about-wrap {
   margin: 20px auto 0 auto; }
 
 /*------------------------------------------------------------------------------
+* 1.0 Addon Screen
+*----------------------------------------------------------------------------*/
+body.envira_page_envira-gallery-lite-welcome-addons #wpfooter {
+  position: relative; }
+body.envira_page_envira-gallery-lite-welcome-addons .envira-addons-area.unlicensed h3 {
+  display: none; }
+
+/*------------------------------------------------------------------------------
 * 1.0 Upgrade Screen
 *----------------------------------------------------------------------------*/
 .upgrade-wrap {

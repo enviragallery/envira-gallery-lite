@@ -86,7 +86,7 @@ class Envira_Welcome {
 	 */
 	public function enqueue_admin_styles() {
 
-		$welcome_pages = array( 'envira-gallery-lite-get-started', 'envira-gallery-lite-welcome', 'envira-gallery-lite-support', 'envira-gallery-lite-changelog', 'envira-gallery-lite-upgrade' );
+		$welcome_pages = array( 'envira-gallery-lite-get-started', 'envira-gallery-lite-welcome', 'envira-gallery-lite-support', 'envira-gallery-lite-welcome-addons', 'envira-gallery-lite-changelog', 'envira-gallery-lite-upgrade' );
 
 		if ( isset( $_GET['post_type'] ) && isset( $_GET['page'] ) && 'envira' === wp_unslash( $_GET['post_type'] ) && in_array( wp_unslash( $_GET['page'] ), $welcome_pages ) ) { // @codingStandardsIgnoreLine
 
@@ -94,6 +94,12 @@ class Envira_Welcome {
 			wp_enqueue_style( ENVIRA_SLUG . '-welcome-style' );
 
 		}
+
+        wp_register_style( ENVIRA_SLUG . '-addons-style', plugins_url( 'assets/css/addons.css', ENVIRA_FILE ), array(), ENVIRA_VERSION );
+        wp_enqueue_style( ENVIRA_SLUG . '-addons-style' );
+
+        // Run a hook to load in custom styles.
+        do_action( 'envira_gallery_addons_styles' );
 
 	}
 
@@ -138,7 +144,7 @@ class Envira_Welcome {
 
 		global $wp_filter;
 
-		$welcome_pages = array( 'envira-gallery-lite-get-started', 'envira-gallery-lite-welcome', 'envira-gallery-lite-support', 'envira-gallery-lite-changelog', 'envira-gallery-lite-upgrade' );
+		$welcome_pages = array( 'envira-gallery-lite-get-started', 'envira-gallery-lite-welcome', 'envira-gallery-lite-support', 'envira-gallery-lite-welcome-addons', 'envira-gallery-lite-changelog', 'envira-gallery-lite-upgrade' );
 
 		if ( isset( $_GET['post_type'] ) && isset( $_GET['page'] ) && 'envira' === wp_unslash( $_GET['post_type'] ) && in_array( wp_unslash( $_GET['page'] ), $welcome_pages ) ) { // @codingStandardsIgnoreLine
 
@@ -181,6 +187,15 @@ class Envira_Welcome {
 			array( $this, 'upgrade_page' )
 		);
 
+		add_submenu_page(
+			'edit.php?post_type=envira',
+			$whitelabel . __( 'Addons', 'envira-gallery' ),
+			'<span style="color:#FFA500"> ' . __( 'Addons', 'envira-gallery' ) . '</span>',
+			apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
+			ENVIRA_SLUG . '-welcome-addons',
+			array( $this, 'addon_page' )
+		);
+		
 		add_submenu_page(
 			'edit.php?post_type=envira',
 			$whitelabel . __( 'Welcome', 'envira-gallery' ),
@@ -315,7 +330,7 @@ class Envira_Welcome {
 			</a>
 			<a class="nav-tab
 			<?php
-			if ( 'envira-gallery-lite-addons' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) : // @codingStandardsIgnoreLine
+			if ( 'envira-gallery-lite-welcome-addons' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) : // @codingStandardsIgnoreLine
 				?>
 				nav-tab-active<?php endif; ?>" href="
 				<?php
@@ -324,7 +339,7 @@ class Envira_Welcome {
 						add_query_arg(
 							array(
 								'post_type' => 'envira',
-								'page'      => 'envira-gallery-lite-addons',
+								'page'      => 'envira-gallery-lite-welcome-addons',
 							),
 							'edit.php'
 						)
@@ -1353,6 +1368,41 @@ class Envira_Welcome {
 
 		<?php
 	}
+
+	/**
+	 * Output the addon screen.
+	 *
+	 * @since 1.8.1
+	 */
+	public function addon_page() {
+		?>
+
+		<div class="envira-welcome-wrap envira-help">
+
+			<div class="envira-title">
+
+				<?php self::welcome_text(); ?>
+
+			</div>
+
+			<?php $this->sidebar(); ?>
+
+			<div class="envira-get-started-main">
+
+				<?php self::tab_navigation( __METHOD__ ); ?>
+
+				<?php do_action('envira_gallery_addons_section'); ?> 
+
+			</div>
+
+		</div>
+
+		</div> <!-- wrap -->
+
+
+		<?php
+	}
+
 
 
 	/**
