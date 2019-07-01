@@ -30,7 +30,7 @@ class Envira_Welcome {
 	 *
 	 * @since 1.7.0
 	 *
-	 * @var string
+	 * @var string`
 	 */
 	public $hook;
 
@@ -93,10 +93,10 @@ class Envira_Welcome {
 			wp_register_style( ENVIRA_SLUG . '-welcome-style', plugins_url( 'assets/css/welcome.css', ENVIRA_FILE ), array(), ENVIRA_VERSION );
 			wp_enqueue_style( ENVIRA_SLUG . '-welcome-style' );
 
-		}
+			wp_register_style( ENVIRA_SLUG . '-addons-style', plugins_url( 'assets/css/addons.css', ENVIRA_FILE ), array(), ENVIRA_VERSION );
+			wp_enqueue_style( ENVIRA_SLUG . '-addons-style' );
 
-        wp_register_style( ENVIRA_SLUG . '-addons-style', plugins_url( 'assets/css/addons.css', ENVIRA_FILE ), array(), ENVIRA_VERSION );
-        wp_enqueue_style( ENVIRA_SLUG . '-addons-style' );
+		}
 
         // Run a hook to load in custom styles.
         do_action( 'envira_gallery_addons_styles' );
@@ -120,6 +120,7 @@ class Envira_Welcome {
 			Menu
 			========================================================================== */
 			li#menu-posts-envira ul li:last-child,
+			li#menu-posts-envira ul li:nth-last-child(4),
 			li#menu-posts-envira ul li:nth-last-child(2),
 			li#menu-posts-envira ul li:nth-last-child(3) {
 				display: none;
