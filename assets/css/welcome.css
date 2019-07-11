@@ -90,6 +90,8 @@
     line-height: 24px; }
   .envira-welcome-wrap .nav-tab-wrapper a.nav-tab-active {
     font-weight: 600; }
+  .envira-welcome-wrap .nav-tab {
+    margin-right: 0.85em; }
   .envira-welcome-wrap .envira-title {
     width: 100%;
     margin-bottom: 20px; }
@@ -318,8 +320,8 @@ body.post-type-envira div.wrap.about-wrap {
   .envira_page_envira-gallery-lite-welcome .envira-features-section .headline-title,
   .envira_page_envira-gallery-lite-get-started .envira-features-section .headline-title,
   .envira_page_envira-gallery-support .envira-features-section .headline-title {
-    font-size: 2em;
-    font-weight: 300;
+    font-size: 28px;
+    font-weight: 400;
     line-height: 1.5;
     margin: 1em auto 2em;
     text-align: center; }
@@ -508,6 +510,8 @@ body.envira_page_envira-gallery-lite-welcome-addons #wpfooter {
   position: relative; }
 body.envira_page_envira-gallery-lite-welcome-addons .envira-addons-area.unlicensed h3 {
   display: none; }
+body.envira_page_envira-gallery-lite-welcome-addons #envira-addons .envira-addons-area .envira-addon p {
+  font-size: 18px; }
 
 /*------------------------------------------------------------------------------
 * 1.0 Upgrade Screen

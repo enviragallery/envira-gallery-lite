@@ -120,6 +120,7 @@ class Envira_Welcome {
 			Menu
 			========================================================================== */
 			li#menu-posts-envira ul li:last-child,
+			li#menu-posts-envira ul li:nth-last-child(5),
 			li#menu-posts-envira ul li:nth-last-child(4),
 			li#menu-posts-envira ul li:nth-last-child(2),
 			li#menu-posts-envira ul li:nth-last-child(3) {
@@ -477,19 +478,12 @@ class Envira_Welcome {
 					</div>
 				<div class="sidebox">
 					<form action="https://enviragallery.us3.list-manage.com/subscribe/post?u=beaa9426dbd898ac91af5daca&amp;id=2ee2b5572e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<h4><?php esc_html_e( 'Newsletter Signup', 'send-system-info' ); ?></h4>
+						<h4><?php esc_html_e( 'Stay in Touch!', 'send-system-info' ); ?></h4>
 						<p><?php esc_html_e( 'Get periodic updates, developer notices, special discounts, and invites to our exclusive beta programs.', 'send-system-info' ); ?></p>
 						<div class="form-row"><input type="text" value="" name="FNAME" placeholder="Name" id="mce-FNAME"></div>
 						<div class="form-row"><input type="email" placeholder="Email" name="EMAIL" required /></div>
 
 						<input type="submit" class="button button-primary" value="Sign Up" />
-					</form>
-				</div>
-				<div class="sidebox">
-					<form action="https://enviragallery.com/account/support/" method="post" target="_blank">
-						<h4><?php esc_html_e( 'Get Support', 'send-system-info' ); ?></h4>
-						<p><?php esc_html_e( 'New to Envira? Our Knowledge Base has over 20 video tutorials, from installing Envira to working with addons and more.', 'send-system-info' ); ?></p>
-						<input type="submit" value="Visit Our Support Center" class="button button-primary" />
 					</form>
 				</div>
 			</div>
@@ -968,11 +962,7 @@ class Envira_Welcome {
 
                         $galleries = Envira_Gallery_Lite::get_instance()->_get_galleries();
 
-                        if ( count( $galleries ) === 0 ) {
-                            $text = esc_html( 'Create Your First Gallery', 'envira-gallery' );
-                        } else {
-                            $text = esc_html( 'Create Another Gallery', 'envira-gallery' );
-                        }
+                        $text = esc_html( 'Add New Gallery', 'envira-gallery' );
 
 						?>
 
@@ -1252,119 +1242,7 @@ class Envira_Welcome {
 				<ul>
 				<li>Fix: Resolved issues for installs using older PHP versions.</li>
 				</ul>
-				<h3>1.8.4.2 (10-16-2018)</h3>
-				<ul>
-				<li>Enhancement: New "Hide Thumbnails On Opening Lightbox" option.</li>
-				<li>Enhancement: New "Enable Title/Caption Below Image" option for column layouts on Mobile Gallery Settings tab.</li>
-				<li>Enhancement: Improved Import/Export buttons</li>
-				<li>Enhancement: Allow search by single or multiple post IDs for galleries in gallery admin list</li>
-				<li>Added: Unofficial support for PDFs in Lightboxes</li>
-				<li>Added: Importing gallery should automatically apply the gallery title to the new post</li>
-				<li>Added: envira_import_gallery_post_data and envira_import_gallery_metadata WordPress filters for developers to alter imported data</li>
-				<li>Added: envirabox_theme_image_counter WordPress filter to allow filtering of Image XX of XX text</li>
-				<li>Added: Adjustment of margins and padding for non-supersized Lightbox images</li>
-				<li>Fix: Tweaked admin UI and CSS on mobile and narrow width devices.</li>
-				<li>Fix: If Gallery Theme Addon deactivated, revert galleries using themes to legacy.</li>
-				<li>Fix: Various bug fixes, minor code tweaks, output to resolve W3C reported errors, and PHP compatability adjustments</li>
-				</ul>
-				<h3>1.8.4.1 (09-05-2018)</h3>
-				<ul>
-				<li>Hotfix: Fix false positive caused by WordFence.</li>
-				</ul>
-				<h3>1.8.4 (08-22-2018)</h3>
-				<ul>
-				<li>Added: Random image gallery widget.</li>
-				<li>Added: Limit images option for standard gallery widget.</li>
-				<li>Added: Filter for lightbox "idle time".</li>
-				<li>Enhancement: Added support for featured images.</li>
-				<li>Fix: Random galleries not random in certain circumstances.</li>
-				<li>Fix: Minor bug fixes.</li>
-				</ul>
-				<h3>1.8.3 (05-30-2018)</h3>
-				<ul>
-				<li>Fix: Lightbox thumbnail custom sizes</li>
-				<li>Fix: Multiple Envira link fixes</li>
-				<li>Fix: Captions and titles missing from automatic layout</li>
-				<li>Fix: Toolbar navigation </li>
-				<li>Fix: Supersize appearance with no thumbnails</li>
-				<li>Fix: Minor bug fixes</li>
-				</ul>
-				<h3>1.8.2.1 (05-01-2018)</h3>
-				<ul>
-				<li>Fix: Fix missing lightbox captions.</li>
-				</ul>
-				<h3>1.8.2 (05-01-2018)</h3>
-				<ul>
-				<li>Enhancement: Clear Envira Cache on update</li>
-				<li>Enhancement: Using WordPress Importer adjust meta to new URL</li>
-				<li>Enhancement: Image Dimensions set by default, option has been removed</li>
-				<li>Fix: Random sorting not opening proper lightbox image</li>
-				<li>Fix: Double images in Lightbox for Images with links in Captions</li>
-				<li>Fix: Minor Bug fixes.</li>
-				</ul>
-				<h3>1.8.1 (04-20-2018)</h3>
-				<ul>
-				<li>Fix: Addressed performance issues.</li>
-				<li>Fix: Resolved issue regarding using slug instead of id in envira shortcode in some situations.</li>
-				<li>Fix: Resolved JS error w/ Yoast and Divi</li>
-				<li>Fix: Minor Bug fixes.</li>
-				</ul>
-
-				<h3>1.8.0 (04-10-2018)</h3>
-				<ul>
-					<li>Added: Fancybox3</li>
-					<li>Added: Link shortcode to open linkbox [envira_link id=GALLERYID]Link Text[/envira_link]</li>
-					<li>Added: Filters to override or create Lightbox Themes Directly in themes</li>
-					<li>Added: Gallery Scripts Optimization</li>
-					<li>Fix: Cases that prevent cropping.</li>
-					<li>Fix: Minor Bug fixes.</li>
-					<li>Depricated: Justified Gallery Themes</li>
-				</ul>
-
-				<h3>1.7.3 (11-07-2017)</h3>
-				<ul>
-					<li>Fix: Tweaks to updater class to prevent multiple calls</li>
-					<li>Fix: Minor bug fixes</li>
-				</ul>
-				<h3>1.7.1 (11-07-2017)</h3>
-				<ul>
-					<li>Added: UI spinner when adding photos to gallery</li>
-					<li>Fix: Cases where thumbnails have double URLS</li>
-					<li>Fix: Compatibility with 3rd Party builders</li>
-					<li>Fix: Random sorting</li>
-					<li>Fix: Retina Cropping</li>
-					<li>Fix: Prevent Caption Line breaks not </li>
-					<li>Fix: RTL admin styling</li>
-					<li>Fix: Minor bug fixes</li>
-				</ul>
-
-				<h3>1.7.0.2 (10-23-2017)</h3>
-				<ul>
-					<li>Fix: Compatibility with X Theme</li>
-					<li>Fix: Compatibility with Yoast SEO</li>
-					<li>Added: ENVIRA_DEBUG to System Info</li>
-				</ul>
-
-				<h3>1.7.0.1 (10-19-2017)</h3>
-				<ul>
-					<li>Added: Cropping Position Option</li>
-					<li>Fix: Minor bug fixes</li>
-				</ul>
-
-				<h3>1.7.0 (10-18-2017)</h3>
-				<ul>
-					<li>Added: Cropping is now done in a background process</li>
-					<li>Added: Fragment Caching - gallery output is now cached utilizing fragment caching</li>
-					<li>Added: Debug Screen</li>
-					<li>Added: Sorting moved to config screen</li>
-					<li>Added: Support for Search in Widget</li>
-					<li>Added: French Translation</li>
-					<li>Added: Russian Translation</li>
-					<li>Fix: Url field linking to external</li>
-					<li>Fix: Url on lightbox image using proper url</li>
-					<li>Fix: Raw HTML in captions</li>
-					<li>Fix: Minor bug fixes</li>
-				</ul>
+				
 			</div>
 
 		<?php
@@ -1391,6 +1269,8 @@ class Envira_Welcome {
 			<div class="envira-get-started-main">
 
 				<?php self::tab_navigation( __METHOD__ ); ?>
+
+				<h3>Unlock More Addons</h3>
 
 				<?php do_action('envira_gallery_addons_section'); ?> 
 

@@ -59,7 +59,7 @@ class Envira_Gallery_Posttype {
             'not_found'          => __( 'No galleries found.', 'envira-gallery' ),
             'not_found_in_trash' => __( 'No galleries found in trash.', 'envira-gallery' ),
             'parent_item_colon'  => '',
-            'menu_name'          => __( 'Envira Galleries', 'envira-gallery' ),
+            'menu_name'          => __( 'Envira Gallery', 'envira-gallery' ),
         );
         $labels = apply_filters( 'envira_gallery_post_type_labels', $labels );
 
@@ -86,7 +86,7 @@ class Envira_Gallery_Posttype {
         // Register the post type with WordPress.
         register_post_type( 'envira', $args );
 
-        // Change the name of the first item in the CPT menu.
+        // Change the names of items in the CPT menu.
         add_filter( '_admin_menu', array( $this, 'custom_menu_order' ) );
 
     }
@@ -107,8 +107,8 @@ class Envira_Gallery_Posttype {
                 continue;
             }
             foreach ( $item_submenu as $index => $item_submenu_info ) {
-                if ( $item_submenu_info[0] == 'Envira Galleries' ) {
-                    $submenu[ $item][ $index ][0] = 'Galleries';
+                if ( $item_submenu_info[0] == 'Envira Galleries' || $item_submenu_info[0] == 'Envira Gallery' ) {
+                    $submenu[ $item][ $index ][0] = 'All Galleries';
                 }
             }
         }
