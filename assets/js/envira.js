@@ -50,11 +50,9 @@ jQuery( document ).ready( function( $ ) {
 
             if ( $('#envira-gallery-wrap-' + event.gallery_id).find('div.envira-gallery-public').hasClass('envira-gallery-0-columns') ) { 
                 /* this is an automatic gallery */
-                console.log('- AUTOMATIC ----');
                 $( envira_container ).closest('div.envira-gallery-item-inner').find( 'div.envira-gallery-position-overlay' ).delay( 100 ).show();
             } else {
                 /* this is a legacy gallery */
-                console.log('- LEGACY ----');
                 $( envira_container ).closest('div.envira-gallery-item-inner').find( 'div.envira-gallery-position-overlay' ).delay( 100 ).show();
 
                 /* re-do the padding bottom */
