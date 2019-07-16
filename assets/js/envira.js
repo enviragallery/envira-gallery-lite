@@ -21,7 +21,7 @@
 */
 
 /**
-* If a lightbox caption's link is an anchor, close the lightbox
+* If a lightbox caption's link is an anchor, close the lightbox!
 */
 jQuery( document ).ready( function( $ ) {
 
@@ -31,20 +31,30 @@ jQuery( document ).ready( function( $ ) {
       		$.envirabox.close();
       		return false;
       	}
-
-	} );
+ 
+	} ); 
 
     /* setup lazy load event */
     $( document ).on( "envira_image_lazy_load_complete", function( event ) {
-        if ( event !== undefined && event.image_id !== undefined && event.image_id !== null ) {
+        if ( event !== undefined && ( ( event.image_id !== undefined && event.image_id !== null ) ) ) {
 
-            var envira_container = $('div.envira-gallery-public').find('img#' + event.image_id);
+            // var envira_container = $('div.envira-gallery-public').find('img#' + event.image_id);
 
-            if ( $('div.envira-gallery-public').hasClass('envira-gallery-0-columns') ) {
+            if ($( '#envira-gallery-wrap-' + event.gallery_id ).find( '#' + event.video_id + ' iframe' ).length > 0) {
+                envira_container = $( '#envira-gallery-wrap-' + event.gallery_id ).find( '#' + event.video_id + ' iframe' );
+            } else if ($( '#envira-gallery-wrap-' + event.gallery_id ).find( '#' + event.video_id + ' video' ).length > 0) {
+                envira_container = $( '#envira-gallery-wrap-' + event.gallery_id ).find( '#' + event.video_id + ' video' );
+            } else {
+                envira_container = $( '#envira-gallery-wrap-' + event.gallery_id ).find( 'img#' + event.image_id );
+            }
+
+            if ( $('#envira-gallery-wrap-' + event.gallery_id).find('div.envira-gallery-public').hasClass('envira-gallery-0-columns') ) { 
                 /* this is an automatic gallery */
+                console.log('- AUTOMATIC ----');
                 $( envira_container ).closest('div.envira-gallery-item-inner').find( 'div.envira-gallery-position-overlay' ).delay( 100 ).show();
             } else {
                 /* this is a legacy gallery */
+                console.log('- LEGACY ----');
                 $( envira_container ).closest('div.envira-gallery-item-inner').find( 'div.envira-gallery-position-overlay' ).delay( 100 ).show();
 
                 /* re-do the padding bottom */

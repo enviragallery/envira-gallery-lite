@@ -147,43 +147,49 @@ var responsivelyLazy = (function () {
 
             image.onload = function () {
 
-                if ( container.getAttribute('class') == 'envira-lazy' ) {
-                    // this is a legacy layout
-                    var the_image = container.firstElementChild;
-                    var the_container = container;
-                    var image_id = the_image.id;
-                    var image_src = the_image.src;
-                    var gallery_id = jQuery(the_image).data('envira-gallery-id');
-                    var naturalWidth = this.naturalWidth;
-                    var naturalHeight = this.naturalHeight;
-                } else {
-                    // we are going with the automatic
-                    var the_image = image;
-                    var the_container = container;
-                    var image_id = container.id;
-                    var image_src = container.src;
-                    var gallery_id = jQuery(the_image).data('envira-gallery-id');
-                    var naturalWidth = this.naturalWidth;
-                    var naturalHeight = this.naturalHeight;
-                }
+				if ( container.getAttribute( 'class' ) == 'envira-lazy' && jQuery( container ).not( "img" ) ) {
+					// this is a legacy layout
+					var the_image     = container.firstElementChild;
+					var the_container = container;
+					var image_id      = the_image.id;
+					var image_src     = the_image.src;
+					var gallery_id    = jQuery( the_image ).data( 'envira-gallery-id' );
+					var item_id       = jQuery( container ).data( 'envira-item-id' );
+					var naturalWidth  = this.naturalWidth;
+					var naturalHeight = this.naturalHeight;
+				} else {
+					// we are going with the automatic
+					var the_image     = image;
+					var the_container = container;
+					var image_id      = container.id;
+					var image_src     = container.src;
+					var gallery_id    = jQuery( container ).data( 'envira-gallery-id' );
+					var item_id       = jQuery( container ).data( 'envira-item-id' );
+					var naturalWidth  = this.naturalWidth;
+					var naturalHeight = this.naturalHeight;
 
-                /* type check */
+				}
 
-                if ( gallery_id === undefined || gallery_id === null ) {
-                    gallery_id = 0;
-                }
+				/* type check */
 
-                jQuery( document ).trigger( {
-                    type:           'envira_image_lazy_load_complete',
-                    container:      the_container,
-                    image_src:      image_src,
-                    image_id:       image_id,
-                    gallery_id:     gallery_id,
-                    naturalWidth:   naturalWidth,
-                    naturalHeight:  naturalHeight,
-                } );
+				if ( gallery_id === undefined || gallery_id === null ) {
+					gallery_id = 0;
+				}
 
-            }
+				jQuery( document ).trigger(
+					{
+						type:           'envira_image_lazy_load_complete',
+						container:      the_container,
+						image_src:      image_src,
+						image_id:       image_id,
+						item_id:        item_id,
+						gallery_id:     gallery_id,
+						naturalWidth:   naturalWidth,
+						naturalHeight:  naturalHeight,
+					}
+				);
+
+			}
             image.onerror = function () {
                /* console.error("Cannot load image"); */
                //do something else...
