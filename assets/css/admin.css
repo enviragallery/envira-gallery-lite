@@ -398,21 +398,6 @@ body.edit-php.post-type-envira div.wrap span.subtitle {
       width: 26px;
       height: 26px;
       font-size: 22px; }
-  .envira-notice .two-column-list {
-    display: table;
-    width: 100%; }
-    .envira-notice .two-column-list ul {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 1em;
-      text-indent: -1em;
-      width: 45%;
-      padding-right: 10px;
-      float: left; }
-      .envira-notice .two-column-list ul li:before {
-        content: "+ "; }
-      .envira-notice .two-column-list ul li {
-        line-height: 1.5; }
   .envira-notice .no-margin-top {
     margin-top: 0; }
   .envira-notice.success {
@@ -438,18 +423,27 @@ body.edit-php.post-type-envira div.wrap span.subtitle {
     border-right: 1px solid #dc3232;
     border-bottom: 1px solid #dc3232; }
 
+.envira-tab .two-column-list {
+  display: table;
+  width: 100%; }
+  .envira-tab .two-column-list ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+    width: 45%;
+    padding-right: 10px;
+    float: left; }
+    .envira-tab .two-column-list ul li:before {
+      content: "+ "; }
+    .envira-tab .two-column-list ul li {
+      line-height: 1.5; }
+
 .upgrade-content .two-column-list li {
   line-height: 21px; }
 
 .cta-buttons {
   margin-top: 40px; }
-  .cta-buttons .button.button-primary {
-    margin: -15px 0 40px 0;
-    padding: 0 60px;
-    line-height: 60px;
-    font-weight: 700;
-    font-size: 21px;
-    height: 60px; }
 
 /* ==========================================================================
    Table, Add, Edit Screens

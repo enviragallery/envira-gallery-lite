@@ -319,7 +319,8 @@ body.post-type-envira div.wrap.about-wrap {
 .envira_page_envira-gallery-lite-get-started,
 .envira_page_envira-gallery-support {
 
-	.envira-features-section {
+	.envira-features-section,
+	.envira-recent-section {
 
 		border-bottom: 1px solid #ccc;
 		clear: both;
@@ -493,6 +494,9 @@ body.post-type-envira div.wrap.about-wrap {
 			}
 		}
 	}
+	.envira-recent-section {
+		padding-bottom: 20px;
+	}
 	.envira-recent-section:after {
 		clear: both;
 		content: "";
@@ -573,6 +577,65 @@ body.post-type-envira div.wrap.about-wrap {
 
 .envira-headline-button {
 	margin: 20px auto 0 auto;
+	.button.button-primary {
+		font-size: 17px;
+		line-height: 30px;
+		// margin: -15px 0 40px 0;
+		// padding: 0 60px;
+		// line-height: 60px;
+		// font-weight: 700;
+		// font-size: 21px;
+		// height: 60px;
+	}
+}
+
+div.label {
+	float: left;
+	margin-right: 10px;
+}
+div.icons-container {
+	display: table;
+	clear: both;
+}
+ul.social-icons {
+	float: left;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	li {
+		float: left;
+		width: 20px;
+		height: 20px;
+		margin-right: 5px;
+		a {
+			width: 20px;
+			height: 20px;
+			background-size: 20px 20px;
+			text-decoration: none;
+			text-indent: -999em;
+			float: left;
+		}
+		a.facebook {
+			background-image: url(../images/icons/facebook-black.svg);
+			background-repeat: no-repeat;
+		}
+		a.twitter {
+			background-image: url(../images/icons/twitter-black.svg);
+			background-repeat: no-repeat;
+		}
+		a.instagram {
+			background-image: url(../images/icons/instagram-black.svg);
+			background-repeat: no-repeat;
+			opacity: 0.7;
+		}
+		a.youtube {
+			background-image: url(../images/icons/youtube-black.svg);
+			background-repeat: no-repeat;
+		}
+		a.pinterest {
+			background-image: url(../images/icons/pinterest-black.svg);
+			background-repeat: no-repeat;
+		}
+	}
 }
 
 /*------------------------------------------------------------------------------

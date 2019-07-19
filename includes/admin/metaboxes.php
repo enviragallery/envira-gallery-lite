@@ -974,7 +974,7 @@ class Envira_Gallery_Metaboxes {
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
             'envira_gallery_images_tab',
             __( 'Want to do even more with your gallery display?', 'envira-gallery' ),
-            __( '<p>We know that you will truly love Envira Gallery Pro. It has 1,000 five star ratings (<span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span>) and is active on over 150,000 websites.</p>
+            __( '<p>We know that you will truly love Envira Gallery Pro. It has 1,000+ five star ratings (<span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span>) and is active on over 150,000 websites.</p>
             <p>By upgrading to Envira Gallery Pro, you can get access to numerous other gallery display features, including:</p><div class="two-column-list">
             <ul>
                 <li><a target="_blank" href="https://enviragallery.com/addons/tags-addon/">Custom image tagging and filtering</a></li>

@@ -433,25 +433,6 @@ body.edit-php.post-type-envira {
     /**
     * Layout
     */
-	.two-column-list {
-		display: table; 
-		width: 100%;
-		ul {
-			list-style: none;
-			margin-left: 0;
-			padding-left: 1em;
-			text-indent: -1em;
-			width: 45%;
-			padding-right: 10px;
-			float: left;
-			li:before {
-				content: "+ ";
-			}
-			li {
-				line-height: 1.5;
-			}
-		}
-	}
 	.no-margin-top {
 		margin-top: 0;
 	}
@@ -499,6 +480,27 @@ body.edit-php.post-type-envira {
         border-bottom: 1px solid #dc3232;
     }
 }
+
+.envira-tab .two-column-list {
+	display: table; 
+	width: 100%;
+	ul {
+		list-style: none;
+		margin-left: 0;
+		padding-left: 1em;
+		text-indent: -1em;
+		width: 45%;
+		padding-right: 10px;
+		float: left;
+		li:before {
+			content: "+ ";
+		}
+		li {
+			line-height: 1.5;
+		}
+	}
+}
+
 .upgrade-content {
 	.two-column-list {
 		li {
@@ -508,14 +510,14 @@ body.edit-php.post-type-envira {
 }
 .cta-buttons {
 	margin-top: 40px;
-	.button.button-primary {
-		margin: -15px 0 40px 0;
-		padding: 0 60px;
-		line-height: 60px;
-		font-weight: 700;
-		font-size: 21px;
-		height: 60px;
-	}
+	// .button.button-primary {
+	// 	margin: -15px 0 40px 0;
+	// 	padding: 0 60px;
+	// 	line-height: 60px;
+	// 	font-weight: 700;
+	// 	font-size: 21px;
+	// 	height: 60px;
+	// }
 }
 
 /* ==========================================================================

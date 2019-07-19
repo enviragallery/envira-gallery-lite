@@ -93,8 +93,8 @@ class Envira_Welcome {
 			wp_register_style( ENVIRA_SLUG . '-welcome-style', plugins_url( 'assets/css/welcome.css', ENVIRA_FILE ), array(), ENVIRA_VERSION );
 			wp_enqueue_style( ENVIRA_SLUG . '-welcome-style' );
 
-			wp_register_style( ENVIRA_SLUG . '-addons-style', plugins_url( 'assets/css/addons.css', ENVIRA_FILE ), array(), ENVIRA_VERSION );
-			wp_enqueue_style( ENVIRA_SLUG . '-addons-style' );
+			// wp_register_style( ENVIRA_SLUG . '-addons-style', plugins_url( 'assets/css/addons.css', ENVIRA_FILE ), array(), ENVIRA_VERSION );
+			// wp_enqueue_style( ENVIRA_SLUG . '-addons-style' );
 
 		}
 
@@ -120,8 +120,6 @@ class Envira_Welcome {
 			Menu
 			========================================================================== */
 			li#menu-posts-envira ul li:last-child,
-			li#menu-posts-envira ul li:nth-last-child(5),
-			li#menu-posts-envira ul li:nth-last-child(4),
 			li#menu-posts-envira ul li:nth-last-child(2),
 			li#menu-posts-envira ul li:nth-last-child(3) {
 				display: none;
@@ -146,7 +144,7 @@ class Envira_Welcome {
 
 		global $wp_filter;
 
-		$welcome_pages = array( 'envira-gallery-lite-get-started', 'envira-gallery-lite-welcome', 'envira-gallery-lite-support', 'envira-gallery-lite-welcome-addons', 'envira-gallery-lite-changelog', 'envira-gallery-lite-upgrade' );
+		$welcome_pages = array( 'envira-gallery-lite-get-started', 'envira-gallery-lite-welcome', 'envira-gallery-lite-support', 'envira-gallery-lite-changelog', 'envira-gallery-lite-upgrade' );
 
 		if ( isset( $_GET['post_type'] ) && isset( $_GET['page'] ) && 'envira' === wp_unslash( $_GET['post_type'] ) && in_array( wp_unslash( $_GET['page'] ), $welcome_pages ) ) { // @codingStandardsIgnoreLine
 
@@ -188,16 +186,7 @@ class Envira_Welcome {
 			ENVIRA_SLUG . '-upgrade',
 			array( $this, 'upgrade_page' )
 		);
-
-		add_submenu_page(
-			'edit.php?post_type=envira',
-			$whitelabel . __( 'Addons', 'envira-gallery' ),
-			'<span style="color:#FFA500"> ' . __( 'Addons', 'envira-gallery' ) . '</span>',
-			apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
-			ENVIRA_SLUG . '-welcome-addons',
-			array( $this, 'addon_page' )
-		);
-		
+	
 		add_submenu_page(
 			'edit.php?post_type=envira',
 			$whitelabel . __( 'Welcome', 'envira-gallery' ),
@@ -205,15 +194,6 @@ class Envira_Welcome {
 			apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
 			ENVIRA_SLUG . '-welcome',
 			array( $this, 'welcome_page' )
-		);
-
-		add_submenu_page(
-			'edit.php?post_type=envira',
-			$whitelabel . __( 'Changelog', 'envira-gallery' ),
-			'<span style="color:#FFA500"> ' . __( 'Changelog', 'envira-gallery' ) . '</span>',
-			apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
-			ENVIRA_SLUG . '-changelog',
-			array( $this, 'changelog_page' )
 		);
 
 		add_submenu_page(
@@ -329,69 +309,6 @@ class Envira_Welcome {
 				?>
 														">
 				<?php esc_html_e( 'Upgrade Envira Gallery', 'envira-gallery' ); ?>
-			</a>
-			<a class="nav-tab
-			<?php
-			if ( 'envira-gallery-lite-welcome-addons' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) : // @codingStandardsIgnoreLine
-				?>
-				nav-tab-active<?php endif; ?>" href="
-				<?php
-				echo esc_url(
-					admin_url(
-						add_query_arg(
-							array(
-								'post_type' => 'envira',
-								'page'      => 'envira-gallery-lite-welcome-addons',
-							),
-							'edit.php'
-						)
-					)
-				);
-				?>
-														">
-				<?php esc_html_e( 'Addons', 'envira-gallery' ); ?>
-			</a>
-			<a class="nav-tab
-			<?php
-			if ( isset( $_GET['page'] ) && 'envira-gallery-lite-support' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) : // @codingStandardsIgnoreLine
-				?>
-				nav-tab-active<?php endif; ?>" href="
-				<?php
-				echo esc_url(
-					admin_url(
-						add_query_arg(
-							array(
-								'post_type' => 'envira',
-								'page'      => 'envira-gallery-lite-support',
-							),
-							'edit.php'
-						)
-					)
-				);
-				?>
-														">
-				<?php esc_html_e( 'FAQ &amp; Support', 'envira-gallery' ); ?>
-			</a>
-			<a class="nav-tab
-			<?php
-			if ( isset( $_GET['page'] ) && 'envira-gallery-lite-changelog' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) : // @codingStandardsIgnoreLine
-				?>
-				nav-tab-active<?php endif; ?>" href="
-				<?php
-				echo esc_url(
-					admin_url(
-						add_query_arg(
-							array(
-								'post_type' => 'envira',
-								'page'      => 'envira-gallery-lite-changelog',
-							),
-							'edit.php'
-						)
-					)
-				);
-				?>
-														">
-				<?php esc_html_e( 'Changelog', 'envira-gallery' ); ?>
 			</a>
 		</h3>
 
@@ -529,7 +446,7 @@ class Envira_Welcome {
 								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/08/drag-drop-icon.png" />
 								<h4 class="feature-title"><?php esc_html_e( 'Getting Better And Better!', 'envira-gallery' ); ?></h4>
 								<?php /* translators: %1$s: url, %2$s url */ ?>
-								<p><?php printf( esc_html__( 'This latest update contains enhancements and improvements - some of which are based on your user feedback! Check out %1$s and %2$s.', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/docs/how-to-configure-your-gallery-settings/#envira-changelog/">our changelog</a>', '<a target="_blank" href="https://enviragallery.com/contact/">tell us what you would to see</a> in future updates' ); ?></p>
+								<p><?php printf( esc_html__( 'This latest update contains enhancements and improvements - some of which are based on your user feedback! Check out %1$s.', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/docs/how-to-configure-your-gallery-settings/#envira-changelog/">our changelog</a>' ); ?></p>
 								</div>
 
 								<div class="envira-feature opposite">
@@ -559,50 +476,30 @@ class Envira_Welcome {
 								</div>
 
 							</div>
+							
 
 							<div class="envira-recent-section">
 
-								<h3 class="title"><?php esc_html_e( 'Recent Enhancements:', 'envira-gallery' ); ?></h3>
+								<h3 class="title"><?php esc_html_e( 'Recent Updates To Envira Lite:', 'envira-gallery' ); ?></h3>
 								<div class="envira-recent envirathree-column">
 								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Improved CSS Editor', 'envira-gallery' ); ?></h4>
+										<h4 class="title"><?php esc_html_e( 'Bug Fixes', 'envira-gallery' ); ?> <span class="badge updated">UPDATED</span></h4>
 										<?php /* translators: %1$s: link */ ?>
-										<p><?php printf( esc_html__( 'The %s now has an improved editor to write CSS code, including the ability to detect errors as you type them!', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/addons/css-addon/">CSS Addon</a>' ); ?></p>
+										<p><?php printf( esc_html__( 'Bugs involving automatic and column galleries on the same page, certain character displaying in the admin, and Gutenberg Block tweaks.' ) ); ?></p>
 								</div>
 								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Pull Latest Galleries Dynamically', 'envira-gallery' ); ?></h4>
+										<h4 class="title"><?php esc_html_e( 'Gutenberg Block', 'envira-gallery' ); ?></h4>
 										<?php /* translators: %1$s: link */ ?>
-										<p><?php printf( esc_html__( 'Additional support now in the %s for pulling galleries was added to this addon, including ability to pull X latest plus much more.', 'envira-gallery' ), '<a target="_blank"  href="https://enviragallery.com/addons/dynamic-addon/">Dynamic Addon</a>' ); ?></p>
+										<p><?php printf( esc_html__( 'Improved support and additional features for the Envira Lite Gutenberg block. Bug fixes involving the gallery preview and items that were appearing out of order.' ) ); ?></p>
 								</div>
 
 								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Customizable Password Protection Text', 'envira-gallery' ); ?></h4>
-										<?php /* translators: %1$s: link */ ?>
-										<p><?php printf( esc_html__( 'Update the text (via backend setting or WordPress filter) shown to visitors in the %s when they need to enter a password.', 'envira-gallery' ), '<a target="_blank"  href="https://enviragallery.com/addons/password-protection-addon/">Password Protection</a>' ); ?></p>
-								</div>
-								</div>
-
-								<br/>
-
-								<div class="envira-recent envirathree-column">
-								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Zoom Cursor Options', 'envira-gallery' ); ?></h4>
-										<?php /* translators: %1$s: link */ ?>
-										<p><?php printf( esc_html__( 'Users updating to the latest version of the %s will be able to toggle cursor visibility in the lightbox.', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/addons/zoom-addon/">Zoom Addon</a>' ); ?></p>
-								</div>
-								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Additional Mobile Settings', 'envira-gallery' ); ?></h4>
-										<p><?php printf( esc_html__( 'You now have the ability to enable or disable display of a gallery title and caption on mobile devices.', 'envira-gallery' ) ); ?></p>
-								</div>
-								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Third-Party Theme &amp; Plugin Compatibility', 'envira-gallery' ); ?></h4>
-										<p><?php printf( esc_html__( 'Each version of Envira Gallery brings better workings with various popular WordPress plugins and themes.', 'envira-gallery' ) ); ?></p>
+										<h4 class="title"><?php esc_html_e( 'Enhancements', 'envira-gallery' ); ?></h4>
+										<p><?php printf( esc_html__( 'Ability to set margins for Automatic Layouts. Also better workings with various popular WordPress plugins and themes.', 'envira-gallery' ) ); ?></p>
 								</div>
 								</div>
 
 							</div>
-
-							<?php $this->envira_posts(); ?>
 
 							<?php $this->envira_assets(); ?>
 
@@ -1341,29 +1238,37 @@ class Envira_Welcome {
 		<div class="envira-assets">
 			<p>
 				<?php esc_html_e( 'Learn more:', 'envira-gallery' ); ?>&nbsp;<a href="https://enviragallery.com/blog/"><?php esc_html_e( 'Blog', 'envira-gallery' ); ?></a>
-				&bullet; <a href="https://enviragallery.com/contact/"><?php esc_html_e( 'Support', 'envira-gallery' ); ?></a>
 				&bullet; <a href="https://enviragallery.com/docs/"><?php esc_html_e( 'Documentation', 'envira-gallery' ); ?></a>
 			<?php /* &bullet; <a href="https://enviragallery.com/dev/"><?php _ex( 'Development Blog', 'About screen, link to development blog', 'envira-gallery' ); ?></a> */ ?>
 			</p>
 
-			<p>
-				<?php esc_html_e( 'Social:', 'envira-gallery' ); ?>
+			<div class="icons-container">
+				<div class="label"><?php esc_html_e( 'Social:', 'envira-gallery' ); ?></div>
 
-				<a target="_blank" href="https://twitter.com/enviragallery/"><?php esc_html_e( 'Twitter', 'envira-gallery' ); ?></a>
+				<ul class="social-icons">
+					<li class="facebook">
+						<a href="http://facebook.com/enviragallery" title="Facebook" target="_blank" class="facebook">
+							Facebook</a>
+					</li>
+					<li class="twitter">
+						<a href="http://twitter.com/enviragallery" title="Twitter" target="_blank" class="twitter">
+							Twitter</a>
+					</li>
+					<li class="youtube">
+						<a href="http://youtube.com/enviragallery" title="YouTube" target="_blank" class="youtube">
+							YouTube</a>
+					</li>
+					<li class="pinterest">
+						<a href="https://www.pinterest.com/enviragallery/" title="Pinterest" target="_blank" class="pinterest">
+							Pinterest</a>
+					</li>
+					<li class="instagram">
+						<a href="http://instagram.com/enviragallery" title="Instagram" target="_blank" class="instagram">
+							Instagram</a>
+					</li>
+				</ul>
 
-					&bullet;
-
-				<a target="_blank" href="https://facebook.com/enviragallery/"><?php esc_html_e( 'Facebook', 'envira-gallery' ); ?></a>
-
-					&bullet;
-
-				<a target="_blank" href="https://www.instagram.com/enviragallery/"><?php esc_html_e( 'Instagram', 'envira-gallery' ); ?></a>
-
-					&bullet;
-
-				<a target="_blank" href="https://www.youtube.com/user/enviragallery/"><?php esc_html_e( 'YouTube', 'envira-gallery' ); ?></a>
-
-			</p>
+			</div>
 
 			<p>
 
