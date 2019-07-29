@@ -6,7 +6,7 @@
  * Author:      Envira Gallery Team
  * Author URI:  http://enviragallery.com
  * Version:     1.6.6
- * Text Domain: envira-gallery
+ * Text Domain: envira-gallery-lite
  *
  * Envira Gallery is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
