@@ -170,7 +170,7 @@ class Envira_Gallery_Addons {
                 'install'          => __( 'Install', 'envira-gallery-lite' ),
                 'install_nonce'    => wp_create_nonce( 'envira-gallery-install' ),
                 'installing'       => __( 'Installing...', 'envira-gallery-lite' ),
-                'proceed'          => __( 'Proceed', 'envira-gallery' )
+                'proceed'          => __( 'Proceed', 'envira-gallery-lite' ) . )
             )
         );
 
