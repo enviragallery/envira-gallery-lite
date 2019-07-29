@@ -60,31 +60,31 @@ class Envira_Gallery_Common {
         $columns = array(
             array(
                 'value' => '0',
-                'name'  => __( 'Automatic', 'envira-gallery' )
+                'name'  => __( 'Automatic', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '1',
-                'name'  => __( 'One Column (1)', 'envira-gallery' )
+                'name'  => __( 'One Column (1)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '2',
-                'name'  => __( 'Two Columns (2)', 'envira-gallery' )
+                'name'  => __( 'Two Columns (2)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '3',
-                'name'  => __( 'Three Columns (3)', 'envira-gallery' )
+                'name'  => __( 'Three Columns (3)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '4',
-                'name'  => __( 'Four Columns (4)', 'envira-gallery' )
+                'name'  => __( 'Four Columns (4)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '5',
-                'name'  => __( 'Five Columns (5)', 'envira-gallery' )
+                'name'  => __( 'Five Columns (5)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '6',
-                'name'  => __( 'Six Columns (6)', 'envira-gallery' )
+                'name'  => __( 'Six Columns (6)', 'envira-gallery-lite' )
             )
         );
 
@@ -331,23 +331,23 @@ class Envira_Gallery_Common {
         $displays = array(
             array(
                 'value' => 'float',
-                'name'  => __( 'Float', 'envira-gallery' )
+                'name'  => __( 'Float', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'float_wrap',
-                'name'  => __( 'Float (Wrapped)', 'envira-gallery' )
+                'name'  => __( 'Float (Wrapped)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'inside',
-                'name'  => __( 'Inside', 'envira-gallery' )
+                'name'  => __( 'Inside', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'outside',
-                'name'  => __( 'Outside', 'envira-gallery' )
+                'name'  => __( 'Outside', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'over',
-                'name'  => __( 'Over', 'envira-gallery' )
+                'name'  => __( 'Over', 'envira-gallery-lite' )
             )
         );
 
@@ -367,11 +367,11 @@ class Envira_Gallery_Common {
         $displays = array(
             array(
                 'value' => 'inside',
-                'name'  => __( 'Inside', 'envira-gallery' )
+                'name'  => __( 'Inside', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'outside',
-                'name'  => __( 'Outside', 'envira-gallery' )
+                'name'  => __( 'Outside', 'envira-gallery-lite' )
             ),
         );
 
@@ -391,15 +391,15 @@ class Envira_Gallery_Common {
         $effects = array(
             array(
                 'value' => 'none',
-                'name'  => __( 'No Effect', 'envira-gallery' )
+                'name'  => __( 'No Effect', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'fade',
-                'name'  => __( 'Fade', 'envira-gallery' )
+                'name'  => __( 'Fade', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'elastic',
-                'name'  => __( 'Elastic', 'envira-gallery' )
+                'name'  => __( 'Elastic', 'envira-gallery-lite' )
             ),
         );
 
@@ -447,44 +447,8 @@ class Envira_Gallery_Common {
         $effects = array(
             array(
                 'value' => 'Swing',
-                'name'  => __( 'Swing', 'envira-gallery' )
+                'name'  => __( 'Swing', 'envira-gallery-lite' )
             ),
-            // array(
-            //     'value' => 'Quad',
-            //     'name'  => __( 'Quad', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Cubic',
-            //     'name'  => __( 'Cubic', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Quart',
-            //     'name'  => __( 'Quart', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Quint',
-            //     'name'  => __( 'Quint', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Sine',
-            //     'name'  => __( 'Sine', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Expo',
-            //     'name'  => __( 'Expo', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Circ',
-            //     'name'  => __( 'Circ', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Back',
-            //     'name'  => __( 'Back', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Bounce',
-            //     'name'  => __( 'Bounce', 'envira-gallery' )
-            // ),
         );
 
         return apply_filters( 'envira_gallery_easing_transition_effects', $effects );
@@ -503,11 +467,11 @@ class Envira_Gallery_Common {
         $positions = array(
             array(
                 'value' => 'top',
-                'name'  => __( 'Top', 'envira-gallery' )
+                'name'  => __( 'Top', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'bottom',
-                'name'  => __( 'Bottom', 'envira-gallery' )
+                'name'  => __( 'Bottom', 'envira-gallery-lite' )
             )
         );
 
@@ -527,11 +491,11 @@ class Envira_Gallery_Common {
         $positions = array(
             array(
                 'value' => 'top',
-                'name'  => __( 'Top', 'envira-gallery' )
+                'name'  => __( 'Top', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'bottom',
-                'name'  => __( 'Bottom', 'envira-gallery' )
+                'name'  => __( 'Bottom', 'envira-gallery-lite' )
             )
         );
 
@@ -727,11 +691,11 @@ class Envira_Gallery_Common {
         $positions = array(
             array(
                 'value' => 'before',
-                'name'  => __( 'Before Existing Images', 'envira-gallery' )
+                'name'  => __( 'Before Existing Images', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'after',
-                'name'  => __( 'After Existing Images', 'envira-gallery' )
+                'name'  => __( 'After Existing Images', 'envira-gallery-lite' )
             ),
         );
 
@@ -751,11 +715,11 @@ class Envira_Gallery_Common {
         $options = array(
             array(
                 'value' => '',
-                'name'  => __( 'No', 'envira-gallery' )
+                'name'  => __( 'No', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '1',
-                'name'  => __( 'Yes', 'envira-gallery' )
+                'name'  => __( 'Yes', 'envira-gallery-lite' )
             ),
         );
 
@@ -1076,7 +1040,7 @@ class Envira_Gallery_Common {
      *
      * @return int Expiration Time (in seconds)
      */
-    public function get_transient_expiration_time( $plugin = 'envira-gallery' ) {
+    public function get_transient_expiration_time( $plugin = 'envira-gallery-lite' ) {
 
         // Define the default
         $default = DAY_IN_SECONDS;
