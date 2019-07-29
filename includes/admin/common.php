@@ -234,7 +234,7 @@ class Envira_Gallery_Common_Admin {
 
         ?>
         <div class="notice updated">
-            <p><?php _e( '<strong>Envira Gallery:</strong> Your existing in-page Galleries can now be found by clicking on Envira Gallery in the WordPress Admin menu.', 'envira-gallery' ); ?></p>
+            <p><?php _e( '<strong>Envira Gallery:</strong> Your existing in-page Galleries can now be found by clicking on Envira Gallery in the WordPress Admin menu.', 'envira-gallery-lite' ); ?></p>
         </div>
         <?php
 

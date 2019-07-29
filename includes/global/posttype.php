@@ -48,18 +48,18 @@ class Envira_Gallery_Posttype {
 
         // Build the labels for the post type.
         $labels =  array(
-            'name'               => __( 'Galleries', 'envira-gallery' ),
-            'singular_name'      => __( 'Gallery', 'envira-gallery' ),
-            'add_new'            => __( 'Add New', 'envira-gallery' ),
-            'add_new_item'       => __( 'Add New Gallery', 'envira-gallery' ),
-            'edit_item'          => __( 'Edit Gallery', 'envira-gallery' ),
-            'new_item'           => __( 'New Gallery', 'envira-gallery' ),
-            'view_item'          => __( 'View Gallery', 'envira-gallery' ),
-            'search_items'       => __( 'Search Galleries', 'envira-gallery' ),
-            'not_found'          => __( 'No galleries found.', 'envira-gallery' ),
-            'not_found_in_trash' => __( 'No galleries found in trash.', 'envira-gallery' ),
+            'name'               => __( 'Galleries', 'envira-gallery-lite' ),
+            'singular_name'      => __( 'Gallery', 'envira-gallery-lite' ),
+            'add_new'            => __( 'Add New', 'envira-gallery-lite' ),
+            'add_new_item'       => __( 'Add New Gallery', 'envira-gallery-lite' ),
+            'edit_item'          => __( 'Edit Gallery', 'envira-gallery-lite' ),
+            'new_item'           => __( 'New Gallery', 'envira-gallery-lite' ),
+            'view_item'          => __( 'View Gallery', 'envira-gallery-lite' ),
+            'search_items'       => __( 'Search Galleries', 'envira-gallery-lite' ),
+            'not_found'          => __( 'No galleries found.', 'envira-gallery-lite' ),
+            'not_found_in_trash' => __( 'No galleries found in trash.', 'envira-gallery-lite' ),
             'parent_item_colon'  => '',
-            'menu_name'          => __( 'Envira Gallery', 'envira-gallery' ),
+            'menu_name'          => __( 'Envira Gallery', 'envira-gallery-lite' ),
         );
         $labels = apply_filters( 'envira_gallery_post_type_labels', $labels );
 

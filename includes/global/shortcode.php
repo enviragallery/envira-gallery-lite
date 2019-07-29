@@ -1070,10 +1070,10 @@ class Envira_Gallery_Shortcode {
                                 wrap     : '<?php echo $this->get_lightbox_template( $data ); ?>',
                                 image    : '<img class="envirabox-image" src="{href}" alt="" data-envira-title="" data-envira-caption="" data-envira-index="" data-envira-data="" />',
                                 iframe   : '<iframe id="envirabox-frame{rnd}" name="envirabox-frame{rnd}" class="envirabox-iframe" frameborder="0" vspace="0" hspace="0" allowtransparency="true" wekitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
-                                error    : '<p class="envirabox-error"><?php echo __( 'The requested content cannot be loaded.<br/>Please try again later.</p>', 'envira-gallery' ); ?>',
-                                closeBtn : '<a title="<?php echo __( 'Close', 'envira-gallery' ); ?>" class="envirabox-item envirabox-close" href="#"></a>',
-                                next     : '<a title="<?php echo __( 'Next', 'envira-gallery' ); ?>" class="envirabox-nav envirabox-next envirabox-arrows-<?php echo $this->get_config( 'arrows_position', $data ); ?>" href="#"><span></span></a>',
-                                prev     : '<a title="<?php echo __( 'Previous', 'envira-gallery' ); ?>" class="envirabox-nav envirabox-prev envirabox-arrows-<?php echo $this->get_config( 'arrows_position', $data ); ?>" href="#"><span></span></a>'
+                                error    : '<p class="envirabox-error"><?php echo __( 'The requested content cannot be loaded.<br/>Please try again later.</p>', 'envira-gallery-lite' ); ?>',
+                                closeBtn : '<a title="<?php echo __( 'Close', 'envira-gallery-lite' ); ?>" class="envirabox-item envirabox-close" href="#"></a>',
+                                next     : '<a title="<?php echo __( 'Next', 'envira-gallery-lite' ); ?>" class="envirabox-nav envirabox-next envirabox-arrows-<?php echo $this->get_config( 'arrows_position', $data ); ?>" href="#"><span></span></a>',
+                                prev     : '<a title="<?php echo __( 'Previous', 'envira-gallery-lite' ); ?>" class="envirabox-nav envirabox-prev envirabox-arrows-<?php echo $this->get_config( 'arrows_position', $data ); ?>" href="#"><span></span></a>'
                                 <?php do_action( 'envira_gallery_api_templates', $data ); ?>
                             },
                             helpers: {
@@ -1791,11 +1791,11 @@ class Envira_Gallery_Shortcode {
                 $template  = apply_filters( 'envira_gallery_toolbar_start', $template, $data );
 
                 // Prev
-                $template .= '<li><a class="btnPrev" title="' . __( 'Previous', 'envira-gallery' ) . '" href="javascript:;"></a></li>';
+                $template .= '<li><a class="btnPrev" title="' . __( 'Previous', 'envira-gallery-lite' ) . '" href="javascript:;"></a></li>';
                 $template  = apply_filters( 'envira_gallery_toolbar_after_prev', $template, $data );
 
                 // Next
-                $template .= '<li><a class="btnNext" title="' . __( 'Next', 'envira-gallery' ) . '" href="javascript:;"></a></li>';
+                $template .= '<li><a class="btnNext" title="' . __( 'Next', 'envira-gallery-lite' ) . '" href="javascript:;"></a></li>';
                 $template  = apply_filters( 'envira_gallery_toolbar_after_next', $template, $data );
 
                 // Title
@@ -1805,7 +1805,7 @@ class Envira_Gallery_Shortcode {
                 }
 
                 // Close
-                $template .= '<li><a class="btnClose" title="' . __( 'Close', 'envira-gallery' ) . '" href="javascript:;"></a></li>';
+                $template .= '<li><a class="btnClose" title="' . __( 'Close', 'envira-gallery-lite' ) . '" href="javascript:;"></a></li>';
                 $template  = apply_filters( 'envira_gallery_toolbar_after_close', $template, $data );
 
                 $template  = apply_filters( 'envira_gallery_toolbar_end', $template, $data );

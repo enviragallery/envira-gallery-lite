@@ -83,21 +83,21 @@ class Envira_Gallery_Editor {
         wp_enqueue_script( $this->base->plugin_slug . '-gallery-select-script', plugins_url( 'assets/js/min/gallery-select-min.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
         wp_localize_script( $this->base->plugin_slug . '-gallery-select-script', 'envira_gallery_select', array(
             'get_galleries_nonce' => wp_create_nonce( 'envira-gallery-editor-get-galleries' ),
-            'modal_title'           => __( 'Insert', 'envira-gallery' ),
-            'insert_button_label'   => __( 'Insert', 'envira-gallery' ),
+            'modal_title'           => __( 'Insert', 'envira-gallery-lite' ),
+            'insert_button_label'   => __( 'Insert', 'envira-gallery-lite' ),
         ) );
 
         // Enqueue the script that will trigger the editor button.
         wp_enqueue_script( $this->base->plugin_slug . '-editor-script', plugins_url( 'assets/js/min/editor-min.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
         wp_localize_script( $this->base->plugin_slug . '-gallery-select-script', 'envira_gallery_editor', array(
-            'modal_title'           => __( 'Insert', 'envira-gallery' ),
-            'insert_button_label'   => __( 'Insert', 'envira-gallery' ),
+            'modal_title'           => __( 'Insert', 'envira-gallery-lite' ),
+            'insert_button_label'   => __( 'Insert', 'envira-gallery-lite' ),
         ) );
 
         // Create the media button.
-        $button = '<a id="envira-media-modal-button" href="#" class="button envira-gallery-choose-gallery" data-action="gallery" title="' . esc_attr__( 'Add Gallery', 'envira-gallery' ) . '" >
+        $button = '<a id="envira-media-modal-button" href="#" class="button envira-gallery-choose-gallery" data-action="gallery" title="' . esc_attr__( 'Add Gallery', 'envira-gallery-lite' ) . '" >
             <span class="envira-media-icon"></span> ' .
-             __( 'Add Gallery', 'envira-gallery' ) . 
+             __( 'Add Gallery', 'envira-gallery-lite' ) . 
         '</a>';
 
         // Filter the button.

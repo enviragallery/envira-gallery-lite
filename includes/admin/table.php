@@ -132,8 +132,8 @@ class Envira_Gallery_Table_Admin {
         wp_register_script( $this->base->plugin_slug . '-gallery-select-script', plugins_url( 'assets/js/gallery-select.js', $this->base->file ), array( 'jquery' ), $this->base->version, true );
         wp_localize_script( $this->base->plugin_slug . '-gallery-select-script', 'envira_gallery_select', array(
             'get_galleries_nonce'   => wp_create_nonce( 'envira-gallery-editor-get-galleries' ),
-            'modal_title'           => __( 'Insert', 'envira-gallery' ),
-            'insert_button_label'   => __( 'Insert', 'envira-gallery' ),
+            'modal_title'           => __( 'Insert', 'envira-gallery-lite' ),
+            'insert_button_label'   => __( 'Insert', 'envira-gallery-lite' ),
         ) );
 
         wp_register_script( $this->base->plugin_slug . '-table-script', plugins_url( 'assets/js/min/table-min.js', $this->base->file ), array( 'jquery' ), $this->base->version );
@@ -157,11 +157,11 @@ class Envira_Gallery_Table_Admin {
         // Add additional columns we want to display.
         $envira_columns = array(
             'cb'            => '<input type="checkbox" />',
-            'image'         => __( '', 'envira-gallery' ),
-            'title'         => __( 'Title', 'envira-gallery' ),
-            'shortcode'     => __( 'Shortcode', 'envira-gallery' ),
-            'posts'         => __( 'Posts', 'envira-gallery' ),
-            'modified'      => __( 'Last Modified', 'envira-gallery' ),
+            'image'         => __( '', 'envira-gallery-lite' ),
+            'title'         => __( 'Title', 'envira-gallery-lite' ),
+            'shortcode'     => __( 'Shortcode', 'envira-gallery-lite' ),
+            'posts'         => __( 'Posts', 'envira-gallery-lite' ),
+            'modified'      => __( 'Last Modified', 'envira-gallery-lite' ),
             'date'          => __( 'Date', 'envira-gallery' )
         );
 
@@ -207,7 +207,7 @@ class Envira_Gallery_Table_Admin {
                     }
 
                     echo '<img src="' . $thumb[0] . '" width="75" /><br />';
-                    printf( _n( '%d Image', '%d Images', count( $gallery_data['gallery'] ), 'envira-gallery' ), count( $gallery_data['gallery'] ) );
+                    printf( _n( '%d Image', '%d Images', count( $gallery_data['gallery'] ), 'envira-gallery-lite' ), count( $gallery_data['gallery'] ) );
                 }
                 break;
 
@@ -218,8 +218,8 @@ class Envira_Gallery_Table_Admin {
                 echo '
                 <div class="envira-code">
                     <code id="envira_shortcode_' . $post_id . '">[envira-gallery id="' . $post_id . '"]</code>
-                    <a href="#" title="' . __( 'Copy Shortcode to Clipboard', 'envira-gallery' ) . '" data-clipboard-target="#envira_shortcode_' . $post_id . '" class="dashicons dashicons-clipboard envira-clipboard">
-                        <span>' . __( 'Copy to Clipboard', 'envira-gallery' ) . '</span>
+                    <a href="#" title="' . __( 'Copy Shortcode to Clipboard', 'envira-gallery-lite' ) . '" data-clipboard-target="#envira_shortcode_' . $post_id . '" class="dashicons dashicons-clipboard envira-clipboard">
+                        <span>' . __( 'Copy to Clipboard', 'envira-gallery-lite' ) . '</span>
                     </a>
                 </div>';
 
@@ -363,7 +363,7 @@ class Envira_Gallery_Table_Admin {
                         <label class="inline-edit-group">
                             <span class="title"><?php _e( 'Number of Columns', 'envira-gallery'); ?></span>
                             <select name="_envira_gallery[columns]">
-                                <option value="-1" selected><?php _e( '— No Change —', 'envira-gallery' ); ?></option>
+                                <option value="-1" selected><?php _e( '— No Change —', 'envira-gallery-lite' ); ?></option>
                                 
                                 <?php foreach ( (array) $this->metabox->get_columns() as $i => $data ) : ?>
                                     <option value="<?php echo $data['value']; ?>"><?php echo $data['name']; ?></option>
@@ -374,7 +374,7 @@ class Envira_Gallery_Table_Admin {
                         <label class="inline-edit-group">
                             <span class="title"><?php _e( 'Gallery Theme', 'envira-gallery'); ?></span>
                             <select name="_envira_gallery[gallery_theme]">
-                                <option value="-1" selected><?php _e( '— No Change —', 'envira-gallery' ); ?></option>
+                                <option value="-1" selected><?php _e( '— No Change —', 'envira-gallery-lite' ); ?></option>
                                 
                                 <?php foreach ( (array) $this->metabox->get_gallery_themes() as $i => $data ) : ?>
                                     <option value="<?php echo $data['value']; ?>"><?php echo $data['name']; ?></option>
@@ -384,19 +384,19 @@ class Envira_Gallery_Table_Admin {
 
                         <?php /* <label class="inline-edit-group">
                             <span class="title"><?php _e( 'Column Gutter Width', 'envira-gallery'); ?></span>
-                            <input type="number" name="_envira_gallery[gutter]" value="" placeholder="<?php _e( '— No Change —', 'envira-gallery' ); ?>" />
+                            <input type="number" name="_envira_gallery[gutter]" value="" placeholder="<?php _e( '— No Change —', 'envira-gallery-lite' ); ?>" />
                         </label>
 
                         <label class="inline-edit-group">
                             <span class="title"><?php _e( 'Margin Below Each Image', 'envira-gallery'); ?></span>
-                            <input type="number" name="_envira_gallery[margin]" value="" placeholder="<?php _e( '— No Change —', 'envira-gallery' ); ?>" />
+                            <input type="number" name="_envira_gallery[margin]" value="" placeholder="<?php _e( '— No Change —', 'envira-gallery-lite' ); ?>" />
                         </label>
 
                         <label class="inline-edit-group">
                             <span class="title"><?php _e( 'Image Dimensions', 'envira-gallery'); ?></span>
-                            <input type="number" name="_envira_gallery[crop_width]" value="" placeholder="<?php _e( '— No Change —', 'envira-gallery' ); ?>" />
+                            <input type="number" name="_envira_gallery[crop_width]" value="" placeholder="<?php _e( '— No Change —', 'envira-gallery-lite' ); ?>" />
                             x
-                            <input type="number" name="_envira_gallery[crop_height]" value="" placeholder="<?php _e( '— No Change —', 'envira-gallery' ); ?>" />
+                            <input type="number" name="_envira_gallery[crop_height]" value="" placeholder="<?php _e( '— No Change —', 'envira-gallery-lite' ); ?>" />
                             px
                         </label> */ ?>
                     </div>

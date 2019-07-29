@@ -128,7 +128,7 @@ class Envira_Gallery_License {
 
         // If it returns false, send back a generic error message and return.
         if ( ! $verify ) {
-            $this->errors[] = __( 'There was an error connecting to the remote key API. Please try again later.', 'envira-gallery' );
+            $this->errors[] = __( 'There was an error connecting to the remote key API. Please try again later.', 'envira-gallery-lite' );
             return;
         }
 
@@ -145,7 +145,7 @@ class Envira_Gallery_License {
         $option['is_expired']  = false;
         $option['is_disabled'] = false;
         $option['is_invalid']  = false;
-        $this->success[]       = isset( $verify->success ) ? $verify->success : __( 'Congratulations! This site is now receiving automatic updates.', 'envira-gallery' );
+        $this->success[]       = isset( $verify->success ) ? $verify->success : __( 'Congratulations! This site is now receiving automatic updates.', 'envira-gallery-lite' );
         update_option( 'envira_gallery', $option );
 
     }
@@ -221,7 +221,7 @@ class Envira_Gallery_License {
         if ( ! $validate ) {
             // If forced, set contextual success message.
             if ( $forced ) {
-                $this->errors[] = __( 'There was an error connecting to the remote key API. Please try again later.', 'envira-gallery' );
+                $this->errors[] = __( 'There was an error connecting to the remote key API. Please try again later.', 'envira-gallery-lite' );
             }
 
             set_transient( '_eg_validate_license', false, 10 * MINUTE_IN_SECONDS );
@@ -263,7 +263,7 @@ class Envira_Gallery_License {
 
         // If forced, set contextual success message.
         if ( $forced ) {
-            $this->success[] = __( 'Congratulations! Your key has been refreshed successfully.', 'envira-gallery' );
+            $this->success[] = __( 'Congratulations! Your key has been refreshed successfully.', 'envira-gallery-lite' );
         }
 
         // Otherwise, our check has returned successfully. Set the transient and update our license type and flags.
@@ -310,7 +310,7 @@ class Envira_Gallery_License {
 
         // If it returns false, send back a generic error message and return.
         if ( ! $deactivate ) {
-            $this->errors[] = __( 'There was an error connecting to the remote key API. Please try again later.', 'envira-gallery' );
+            $this->errors[] = __( 'There was an error connecting to the remote key API. Please try again later.', 'envira-gallery-lite' );
             return;
         }
 
@@ -321,7 +321,7 @@ class Envira_Gallery_License {
         }
 
         // Otherwise, our request has been done successfully. Reset the option and set the success message.
-        $this->success[] = isset( $deactivate->success ) ? $deactivate->success : __( 'Congratulations! You have deactivated the key from this site successfully.', 'envira-gallery' );
+        $this->success[] = isset( $deactivate->success ) ? $deactivate->success : __( 'Congratulations! You have deactivated the key from this site successfully.', 'envira-gallery-lite' );
         update_option( 'envira_gallery', Envira_Gallery::default_options() );
 
     }
@@ -415,7 +415,7 @@ class Envira_Gallery_License {
         if ( ! $key ) :
         ?>
         <div class="error">
-            <p><?php printf( __( 'No valid license key has been entered, so automatic updates for Envira Gallery have been turned off. <a href="%s">Please click here to enter your license key and begin receiving automatic updates.</a>', 'envira-gallery' ), esc_url( add_query_arg( array( 'post_type' => 'envira', 'page' => 'envira-gallery-settings' ), admin_url( 'edit.php' ) ) ) ); ?></p>
+            <p><?php printf( __( 'No valid license key has been entered, so automatic updates for Envira Gallery have been turned off. <a href="%s">Please click here to enter your license key and begin receiving automatic updates.</a>', 'envira-gallery-lite' ), esc_url( add_query_arg( array( 'post_type' => 'envira', 'page' => 'envira-gallery-settings' ), admin_url( 'edit.php' ) ) ) ); ?></p>
         </div>
         <?php
         endif;
@@ -424,7 +424,7 @@ class Envira_Gallery_License {
         if ( isset( $option['is_expired'] ) && $option['is_expired'] ) :
         ?>
         <div class="error">
-            <p><?php printf( __( 'Your license key for Envira Gallery has expired. <a href="%s" target="_blank">Please click here to renew your license key and continue receiving automatic updates.</a>', 'envira-gallery' ), 'https://enviragallery.com/login/' ); ?></p>
+            <p><?php printf( __( 'Your license key for Envira Gallery has expired. <a href="%s" target="_blank">Please click here to renew your license key and continue receiving automatic updates.</a>', 'envira-gallery-lite' ), 'https://enviragallery.com/login/' ); ?></p>
         </div>
         <?php
         endif;
@@ -433,7 +433,7 @@ class Envira_Gallery_License {
         if ( isset( $option['is_disabled'] ) && $option['is_disabled'] ) :
         ?>
         <div class="error">
-            <p><?php _e( 'Your license key for Envira Gallery has been disabled. Please use a different key to continue receiving automatic updates.', 'envira-gallery' ); ?></p>
+            <p><?php _e( 'Your license key for Envira Gallery has been disabled. Please use a different key to continue receiving automatic updates.', 'envira-gallery-lite' ); ?></p>
         </div>
         <?php
         endif;
@@ -442,7 +442,7 @@ class Envira_Gallery_License {
         if ( isset( $option['is_invalid'] ) && $option['is_invalid'] ) :
         ?>
         <div class="error">
-            <p><?php _e( 'Your license key for Envira Gallery is invalid. The key no longer exists or the user associated with the key has been deleted. Please use a different key to continue receiving automatic updates.', 'envira-gallery' ); ?></p>
+            <p><?php _e( 'Your license key for Envira Gallery is invalid. The key no longer exists or the user associated with the key has been deleted. Please use a different key to continue receiving automatic updates.', 'envira-gallery-lite' ); ?></p>
         </div>
         <?php
         endif;
