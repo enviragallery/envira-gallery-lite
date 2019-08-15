@@ -600,7 +600,7 @@ class Envira_Gallery_Metaboxes {
     public function get_envira_types( $post ) {
 
         $types = array(
-            'default' => __( 'Default', 'envira-gallery-lite' ) . )
+            'default' => __( 'Default', 'envira-gallery-lite' )
         );
 
         return apply_filters( 'envira_gallery_types', $types, $post );

@@ -216,7 +216,7 @@ class Envira_Welcome {
 
 		// Switch welcome text based on whether this is a new installation or not.
 		$welcome_text = ( self::is_new_install() )
-			? esc_html( 'Thank you for installing Envira Lite! Envira provides great gallery features for your WordPress site!', 'envira-gallery-lite' ) . )
+			? esc_html( 'Thank you for installing Envira Lite! Envira provides great gallery features for your WordPress site!', 'envira-gallery-lite' )
 			: esc_html( 'Thank you for updating! Envira Lite %s has many recent improvements that you will enjoy.', 'envira-gallery-lite' );
 
 		?>
