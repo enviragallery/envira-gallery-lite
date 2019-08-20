@@ -94,16 +94,16 @@ class Envira_Gallery_Posttype_Admin {
         // Contextualize the messages.
         $envira_messages = array(
             0  => '',
-            1  => __( 'Envira gallery updated.', 'envira-gallery' ),
-            2  => __( 'Envira gallery custom field updated.', 'envira-gallery' ),
-            3  => __( 'Envira gallery custom field deleted.', 'envira-gallery' ),
-            4  => __( 'Envira gallery updated.', 'envira-gallery' ),
-            5  => isset( $_GET['revision'] ) ? sprintf( __( 'Envira gallery restored to revision from %s.', 'envira-gallery' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-            6  => __( 'Envira gallery published.', 'envira-gallery' ),
-            7  => __( 'Envira gallery saved.', 'envira-gallery' ),
-            8  => __( 'Envira gallery submitted.', 'envira-gallery' ),
-            9  => sprintf( __( 'Envira gallery scheduled for: <strong>%1$s</strong>.', 'envira-gallery' ), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ) ),
-            10 => __( 'Envira gallery draft updated.', 'envira-gallery' ),
+            1  => __( 'Envira gallery updated.', 'envira-gallery-lite' ),
+            2  => __( 'Envira gallery custom field updated.', 'envira-gallery-lite' ),
+            3  => __( 'Envira gallery custom field deleted.', 'envira-gallery-lite' ),
+            4  => __( 'Envira gallery updated.', 'envira-gallery-lite' ),
+            5  => isset( $_GET['revision'] ) ? sprintf( __( 'Envira gallery restored to revision from %s.', 'envira-gallery-lite' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+            6  => __( 'Envira gallery published.', 'envira-gallery-lite' ),
+            7  => __( 'Envira gallery saved.', 'envira-gallery-lite' ),
+            8  => __( 'Envira gallery submitted.', 'envira-gallery-lite' ),
+            9  => sprintf( __( 'Envira gallery scheduled for: <strong>%1$s</strong>.', 'envira-gallery-lite' ), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ) ),
+            10 => __( 'Envira gallery draft updated.', 'envira-gallery-lite' ),
         );
         $messages['envira'] = apply_filters( 'envira_gallery_messages', $envira_messages );
 

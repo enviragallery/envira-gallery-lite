@@ -164,7 +164,7 @@ class Envira_Gallery_Notice_Admin {
                 ?>
                 <button type="button" class="notice-dismiss">
                     <span class="screen-reader-text">
-                        <?php _e( 'Dismiss this notice', 'envira-gallery' ); ?>
+                        <?php _e( 'Dismiss this notice', 'envira-gallery-lite' ); ?>
                     </span>
                 </button>
                 <?php

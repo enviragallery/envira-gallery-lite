@@ -79,8 +79,8 @@ class Envira_Gallery_Settings {
         // Register the submenu.
         $this->hook = add_submenu_page(
             'edit.php?post_type=envira',
-            __( 'Envira Gallery Settings', 'envira-gallery' ),
-            __( 'Settings', 'envira-gallery' ),
+            __( 'Envira Gallery Settings', 'envira-gallery-lite' ),
+            __( 'Settings', 'envira-gallery-lite' ),
             apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
             $this->base->plugin_slug . '-settings',
             array( $this, 'settings_page' )
@@ -225,7 +225,7 @@ class Envira_Gallery_Settings {
         
         ?>
         <div class="notice updated below-h2">
-            <p><strong><?php echo $fixedGalleries . __( ' galleries(s) fixed successfully.', 'envira-gallery' ); ?></strong></p>
+            <p><strong><?php echo $fixedGalleries . __( ' galleries(s) fixed successfully.', 'envira-gallery-lite' ); ?></strong></p>
         </div>
         <?php
             
@@ -359,7 +359,7 @@ class Envira_Gallery_Settings {
         
         ?>
         <div class="notice updated below-h2">
-            <p><strong><?php _e( 'Settings saved successfully.', 'envira-gallery' ); ?></strong></p>
+            <p><strong><?php _e( 'Settings saved successfully.', 'envira-gallery-lite' ); ?></strong></p>
         </div>
         <?php
             
@@ -410,19 +410,19 @@ class Envira_Gallery_Settings {
             $this->base->plugin_slug . '-settings-script',
             'envira_gallery_settings',
             array(
-                'active'           => __( 'Status: Active', 'envira-gallery' ),
-                'activate'         => __( 'Activate', 'envira-gallery' ),
+                'active'           => __( 'Status: Active', 'envira-gallery-lite' ),
+                'activate'         => __( 'Activate', 'envira-gallery-lite' ),
                 'activate_nonce'   => wp_create_nonce( 'envira-gallery-activate' ),
-                'activating'       => __( 'Activating...', 'envira-gallery' ),
+                'activating'       => __( 'Activating...', 'envira-gallery-lite' ),
                 'ajax'             => admin_url( 'admin-ajax.php' ),
-                'deactivate'       => __( 'Deactivate', 'envira-gallery' ),
+                'deactivate'       => __( 'Deactivate', 'envira-gallery-lite' ),
                 'deactivate_nonce' => wp_create_nonce( 'envira-gallery-deactivate' ),
-                'deactivating'     => __( 'Deactivating...', 'envira-gallery' ),
-                'inactive'         => __( 'Status: Inactive', 'envira-gallery' ),
-                'install'          => __( 'Install', 'envira-gallery' ),
+                'deactivating'     => __( 'Deactivating...', 'envira-gallery-lite' ),
+                'inactive'         => __( 'Status: Inactive', 'envira-gallery-lite' ),
+                'install'          => __( 'Install', 'envira-gallery-lite' ),
                 'install_nonce'    => wp_create_nonce( 'envira-gallery-install' ),
-                'installing'       => __( 'Installing...', 'envira-gallery' ),
-                'proceed'          => __( 'Proceed', 'envira-gallery' )
+                'installing'       => __( 'Installing...', 'envira-gallery-lite' ),
+                'proceed'          => __( 'Proceed', 'envira-gallery-lite' )
             )
         );
 
@@ -491,7 +491,7 @@ class Envira_Gallery_Settings {
     public function get_envira_settings_tab_nav() {
 
         $tabs = array(
-            'general' => __( 'General', 'envira-gallery' ), // This tab is required. DO NOT REMOVE VIA FILTERING.
+            'general' => __( 'General', 'envira-gallery-lite' ), // This tab is required. DO NOT REMOVE VIA FILTERING.
         );
         $tabs = apply_filters( 'envira_gallery_settings_tab_nav', $tabs );
 
@@ -521,30 +521,30 @@ class Envira_Gallery_Settings {
                 <tbody>
                     <tr id="envira-settings-key-box">
                         <th scope="row">
-                            <label for="envira-settings-key"><?php _e( 'Envira License Key', 'envira-gallery' ); ?></label>
+                            <label for="envira-settings-key"><?php _e( 'Envira License Key', 'envira-gallery-lite' ); ?></label>
                         </th>
                         <td>
                             <form id="envira-settings-verify-key" method="post">
                                 <input type="password" name="envira-license-key" id="envira-settings-key" value="<?php echo ( $this->base->get_license_key() ? $this->base->get_license_key() : '' ); ?>" />
                                 <?php wp_nonce_field( 'envira-gallery-key-nonce', 'envira-gallery-key-nonce' ); ?>
-                                <?php submit_button( __( 'Verify Key', 'envira-gallery' ), 'primary', 'envira-gallery-verify-submit', false ); ?>
-                                <?php submit_button( __( 'Deactivate Key', 'envira-gallery' ), 'secondary', 'envira-gallery-deactivate-submit', false ); ?>
-                                <p class="description"><?php _e( 'License key to enable automatic updates for Envira.', 'envira-gallery' ); ?></p>
+                                <?php submit_button( __( 'Verify Key', 'envira-gallery-lite' ), 'primary', 'envira-gallery-verify-submit', false ); ?>
+                                <?php submit_button( __( 'Deactivate Key', 'envira-gallery-lite' ), 'secondary', 'envira-gallery-deactivate-submit', false ); ?>
+                                <p class="description"><?php _e( 'License key to enable automatic updates for Envira.', 'envira-gallery-lite' ); ?></p>
                             </form>
                         </td>
                     </tr>
                     <?php $type = $this->base->get_license_key_type(); if ( ! empty( $type ) ) : ?>
                     <tr id="envira-settings-key-type-box">
                         <th scope="row">
-                            <label for="envira-settings-key-type"><?php _e( 'Envira License Key Type', 'envira-gallery' ); ?></label>
+                            <label for="envira-settings-key-type"><?php _e( 'Envira License Key Type', 'envira-gallery-lite' ); ?></label>
                         </th>
                         <td>
                             <form id="envira-settings-key-type" method="post">
-                                <span class="envira-license-type"><?php printf( __( 'Your license key type for this site is <strong>%s.</strong>', 'envira-gallery' ), $this->base->get_license_key_type() ); ?>
+                                <span class="envira-license-type"><?php printf( __( 'Your license key type for this site is <strong>%s.</strong>', 'envira-gallery-lite' ), $this->base->get_license_key_type() ); ?>
                                 <input type="hidden" name="envira-license-key" value="<?php echo $this->base->get_license_key(); ?>" />
                                 <?php wp_nonce_field( 'envira-gallery-key-nonce', 'envira-gallery-key-nonce' ); ?>
-                                <?php submit_button( __( 'Refresh Key', 'envira-gallery' ), 'primary', 'envira-gallery-refresh-submit', false ); ?>
-                                <p class="description"><?php _e( 'Your license key type (handles updates and Addons). Click refresh if your license has been upgraded or the type is incorrect.', 'envira-gallery' ); ?></p>
+                                <?php submit_button( __( 'Refresh Key', 'envira-gallery-lite' ), 'primary', 'envira-gallery-refresh-submit', false ); ?>
+                                <p class="description"><?php _e( 'Your license key type (handles updates and Addons). Click refresh if your license has been upgraded or the type is incorrect.', 'envira-gallery-lite' ); ?></p>
                             </form>
                         </td>
                     </tr>
@@ -553,13 +553,13 @@ class Envira_Gallery_Settings {
                     <!-- Fix Broken Migration -->
                     <tr id="envira-serialization-box">
                         <th scope="row">
-                            <label for="envira-serialization"><?php _e( 'Fix Broken Migration', 'envira-gallery' ); ?></label>
+                            <label for="envira-serialization"><?php _e( 'Fix Broken Migration', 'envira-gallery-lite' ); ?></label>
                         </th>
                         <td>
                             <form id="envira-serialization" method="post">
                                 <?php wp_nonce_field( 'envira-serialization-nonce', 'envira-serialization-nonce' ); ?>
-                                <?php submit_button( __( 'Fix', 'envira-gallery' ), 'primary', 'envira-serialization-submit', false ); ?>
-                                <p class="description"><?php _e( 'If you have changed the URL of your WordPress web site, and manually executed a search/replace query on URLs in your WordPress database, your galleries will probably no longer show any images.  If this is the case, click the button above to fix this. We recommend using a migration plugin or script next time :)', 'envira-gallery' ); ?></p>
+                                <?php submit_button( __( 'Fix', 'envira-gallery-lite' ), 'primary', 'envira-serialization-submit', false ); ?>
+                                <p class="description"><?php _e( 'If you have changed the URL of your WordPress web site, and manually executed a search/replace query on URLs in your WordPress database, your galleries will probably no longer show any images.  If this is the case, click the button above to fix this. We recommend using a migration plugin or script next time :)', 'envira-gallery-lite' ); ?></p>
                             </form>
                         </td>
                     </tr>
@@ -575,7 +575,7 @@ class Envira_Gallery_Settings {
                         <!-- Media Position -->
                         <tr id="envira-media-position-box">
                             <th scope="row">
-                                <label for="envira-media-position"><?php _e( 'Add New Images', 'envira-gallery' ); ?></label>
+                                <label for="envira-media-position"><?php _e( 'Add New Images', 'envira-gallery-lite' ); ?></label>
                             </th>
                             <td>
                                 <select id="envira-media-position" name="envira_media_position">
@@ -583,14 +583,14 @@ class Envira_Gallery_Settings {
                                         <option value="<?php echo $data['value']; ?>"<?php selected( $data['value'], $media_position ); ?>><?php echo $data['name']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <p class="description"><?php _e( 'When adding media to a Gallery, choose whether to add this media before or after any existing images.', 'envira-gallery' ); ?></p>
+                                <p class="description"><?php _e( 'When adding media to a Gallery, choose whether to add this media before or after any existing images.', 'envira-gallery-lite' ); ?></p>
                             </td>
                         </tr>
 
                         <!-- Delete Media -->
                         <tr id="envira-image-delete-box">
                             <th scope="row">
-                                <label for="envira-image-delete"><?php _e( 'Delete Image on Gallery Image Deletion', 'envira-gallery' ); ?></label>
+                                <label for="envira-image-delete"><?php _e( 'Delete Image on Gallery Image Deletion', 'envira-gallery-lite' ); ?></label>
                             </th>
                             <td>
                                 <select id="envira-image-delete" name="envira_image_delete">
@@ -598,13 +598,13 @@ class Envira_Gallery_Settings {
                                         <option value="<?php echo $data['value']; ?>"<?php selected( $data['value'], $image_delete ); ?>><?php echo $data['name']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <p class="description"><?php _e( 'When deleting an Image from a Gallery, choose whether to delete all media associated with that image. Note: If image(s) in the Media Library are attached to other Posts, they will not be deleted.', 'envira-gallery' ); ?></p>
+                                <p class="description"><?php _e( 'When deleting an Image from a Gallery, choose whether to delete all media associated with that image. Note: If image(s) in the Media Library are attached to other Posts, they will not be deleted.', 'envira-gallery-lite' ); ?></p>
                             </td>
                         </tr>
                         
                         <tr id="envira-media-delete-box">
                             <th scope="row">
-                                <label for="envira-media-delete"><?php _e( 'Delete Images on Gallery Deletion', 'envira-gallery' ); ?></label>
+                                <label for="envira-media-delete"><?php _e( 'Delete Images on Gallery Deletion', 'envira-gallery-lite' ); ?></label>
                             </th>
                             <td>
                                 <select id="envira-media-delete" name="envira_media_delete">
@@ -612,7 +612,7 @@ class Envira_Gallery_Settings {
                                         <option value="<?php echo $data['value']; ?>"<?php selected( $data['value'], $media_delete ); ?>><?php echo $data['name']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <p class="description"><?php _e( 'When deleting a Gallery, choose whether to delete all media associated with the gallery. Note: If image(s) in the Media Library are attached to other Posts, they will not be deleted.', 'envira-gallery' ); ?></p>
+                                <p class="description"><?php _e( 'When deleting a Gallery, choose whether to delete all media associated with the gallery. Note: If image(s) in the Media Library are attached to other Posts, they will not be deleted.', 'envira-gallery-lite' ); ?></p>
                             </td>
                         </tr>
 
@@ -621,7 +621,7 @@ class Envira_Gallery_Settings {
                 </table>
 
                 <?php wp_nonce_field( 'envira-gallery-settings-nonce', 'envira-gallery-settings-nonce' ); ?>
-                <?php submit_button( __( 'Save Settings', 'envira-gallery' ), 'primary', 'envira-gallery-settings-submit', false ); ?>
+                <?php submit_button( __( 'Save Settings', 'envira-gallery-lite' ), 'primary', 'envira-gallery-settings-submit', false ); ?>
             </form>
         </div>
         <?php
@@ -660,7 +660,7 @@ class Envira_Gallery_Settings {
      */
     public function settings_link( $links ) {
 
-        $settings_link = sprintf( '<a href="%s">%s</a>', esc_url( add_query_arg( array( 'post_type' => 'envira', 'page' => 'envira-gallery-settings' ), admin_url( 'edit.php' ) ) ), __( 'Settings', 'envira-gallery' ) );
+        $settings_link = sprintf( '<a href="%s">%s</a>', esc_url( add_query_arg( array( 'post_type' => 'envira', 'page' => 'envira-gallery-settings' ), admin_url( 'edit.php' ) ) ), __( 'Settings', 'envira-gallery-lite' ) );
         array_unshift( $links, $settings_link );
 
         return $links;

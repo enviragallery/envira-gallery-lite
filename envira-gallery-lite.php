@@ -137,7 +137,7 @@ class Envira_Gallery_Lite {
 	 */
 	public function load_plugin_textdomain() {
 
-		load_plugin_textdomain( 'envira-gallery' );
+		load_plugin_textdomain( 'envira-gallery-lite' );
 
 	}
 
@@ -538,7 +538,7 @@ function envira_gallery_lite_activation_hook( $network_wide ) {
 	global $wp_version;
 	if ( version_compare( $wp_version, '4.0', '<' ) && ! defined( 'ENVIRA_FORCE_ACTIVATION' ) ) {
 		deactivate_plugins( plugin_basename( __FILE__ ) );
-		wp_die( sprintf( __( 'Sorry, but your version of WordPress does not meet Envira Gallery\'s required version of <strong>4.0</strong> to run properly. The plugin has been deactivated. <a href="%s">Click here to return to the Dashboard</a>.', 'envira-gallery' ), get_admin_url() ) );
+		wp_die( sprintf( __( 'Sorry, but your version of WordPress does not meet Envira Gallery\'s required version of <strong>4.0</strong> to run properly. The plugin has been deactivated. <a href="%s">Click here to return to the Dashboard</a>.', 'envira-gallery-lite' ), get_admin_url() ) );
 	}
 
 	// Make sure Envira Pro plugin, if activated is deactivated

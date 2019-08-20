@@ -11,6 +11,6 @@
 <div id="envira-header-temp"></div>
 <div id="envira-header" class="envira-header">
 	<h1 class="envira-logo" id="envira-logo">
-		<img src="<?php echo $data['logo']; ?>" alt="<?php _e( 'Envira Gallery', 'envira-gallery' ); ?>" width="339" height="26" />
+		<img src="<?php echo $data['logo']; ?>" alt="<?php _e( 'Envira Gallery', 'envira-gallery-lite' ); ?>" width="339" height="26" />
 	</h1>
 </div>

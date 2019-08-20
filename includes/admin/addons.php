@@ -76,8 +76,8 @@ class Envira_Gallery_Addons {
         // Register the submenu.
         $this->hook = add_submenu_page(
             'edit.php?post_type=envira',
-            __( 'Envira Gallery Addons', 'envira-gallery' ),
-            '<span style="color:#7cc048"> ' . __( 'Addons', 'envira-gallery' ) . '</span>',
+            __( 'Envira Gallery Addons', 'envira-gallery-lite' ),
+            '<span style="color:#7cc048"> ' . __( 'Addons', 'envira-gallery-lite' ) . '</span>',
             apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
             $this->base->plugin_slug . '-addons',
             array( $this, 'addons_page' )
@@ -158,19 +158,19 @@ class Envira_Gallery_Addons {
             'envira_gallery_addons',
             array(
                 'activate_nonce'      => wp_create_nonce( 'envira-gallery-activate' ),
-                'active'           => __( 'Status: Active', 'envira-gallery' ),
-                'activate'         => __( 'Activate', 'envira-gallery' ),
+                'active'           => __( 'Status: Active', 'envira-gallery-lite' ),
+                'activate'         => __( 'Activate', 'envira-gallery-lite' ),
                 'get_addons_nonce'   => wp_create_nonce( 'envira-gallery-get-addons' ),
-                'activating'       => __( 'Activating...', 'envira-gallery' ),
+                'activating'       => __( 'Activating...', 'envira-gallery-lite' ),
                 'ajax'             => admin_url( 'admin-ajax.php' ),
-                'deactivate'       => __( 'Deactivate', 'envira-gallery' ),
+                'deactivate'       => __( 'Deactivate', 'envira-gallery-lite' ),
                 'deactivate_nonce' => wp_create_nonce( 'envira-gallery-deactivate' ),
-                'deactivating'     => __( 'Deactivating...', 'envira-gallery' ),
-                'inactive'         => __( 'Status: Inactive', 'envira-gallery' ),
-                'install'          => __( 'Install', 'envira-gallery' ),
+                'deactivating'     => __( 'Deactivating...', 'envira-gallery-lite' ),
+                'inactive'         => __( 'Status: Inactive', 'envira-gallery-lite' ),
+                'install'          => __( 'Install', 'envira-gallery-lite' ),
                 'install_nonce'    => wp_create_nonce( 'envira-gallery-install' ),
-                'installing'       => __( 'Installing...', 'envira-gallery' ),
-                'proceed'          => __( 'Proceed', 'envira-gallery' )
+                'installing'       => __( 'Installing...', 'envira-gallery-lite' ),
+                'proceed'          => __( 'Proceed', 'envira-gallery-lite' ),
             )
         );
 
@@ -190,13 +190,13 @@ class Envira_Gallery_Addons {
         ?>
 
         <div id="addon-heading" class="subheading clearfix">
-            <h1><?php esc_html_e( 'Envira Gallery Addons', 'envira-gallery' ); ?></h1>
+            <h1><?php esc_html_e( 'Envira Gallery Addons', 'envira-gallery-lite' ); ?></h1>
             <form id="add-on-search">
                 <span class="spinner"></span>
-                <input id="add-on-searchbox" name="envira-addon-search" value="" placeholder="<?php _e( 'Search Envira Addons', 'envira-gallery' ); ?>" />
+                <input id="add-on-searchbox" name="envira-addon-search" value="" placeholder="<?php _e( 'Search Envira Addons', 'envira-gallery-lite' ); ?>" />
                 <select id="envira-filter-select">
-                    <option value="asc"><?php esc_html_e( 'Sort Ascending (A-Z)', 'envira-gallery' ); ?></option>
-                    <option value="desc"><?php esc_html_e( 'Sort Descending (Z-A)', 'envira-gallery' ); ?></option>
+                    <option value="asc"><?php esc_html_e( 'Sort Ascending (A-Z)', 'envira-gallery-lite' ); ?></option>
+                    <option value="desc"><?php esc_html_e( 'Sort Descending (Z-A)', 'envira-gallery-lite' ); ?></option>
                 </select>
             </form>
         </div>
@@ -222,7 +222,7 @@ class Envira_Gallery_Addons {
             ?>
             <div class="error below-h2">
                 <p>
-                    <?php esc_html_e( 'In order to get access to Addons, you need to resolve your license key errors.', 'envira-gallery' ); ?>
+                    <?php esc_html_e( 'In order to get access to Addons, you need to resolve your license key errors.', 'envira-gallery-lite' ); ?>
                 </p>
             </div>
             <?php
@@ -238,10 +238,10 @@ class Envira_Gallery_Addons {
             ?>
             <form id="envira-addons-refresh-addons-form" method="post">
                 <p>
-                    <?php _e( 'There was an issue retrieving the addons for this site. Please click on the button below the refresh the addons data.', 'envira-gallery' ); ?>
+                    <?php _e( 'There was an issue retrieving the addons for this site. Please click on the button below the refresh the addons data.', 'envira-gallery-lite' ); ?>
                 </p>
                 <p>
-                    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" class="button button-primary"><?php esc_html_e( 'Refresh Addons', 'envira-gallery' ); ?></a>
+                    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>" class="button button-primary"><?php esc_html_e( 'Refresh Addons', 'envira-gallery-lite' ); ?></a>
                 </p>
             </form>
             <?php
@@ -259,7 +259,7 @@ class Envira_Gallery_Addons {
             if ( count( $addons['licensed'] )> 0 ) {
                 ?>
                 <div class="envira-addons-area licensed" class="envira-clear">
-                    <h3><?php _e( 'Available Addons', 'envira-gallery' ); ?></h3>
+                    <h3><?php _e( 'Available Addons', 'envira-gallery-lite' ); ?></h3>
 
                     <div id="envira-addons-licensed" class="envira-addons">
                         <!-- list container class required for list.js -->
@@ -279,8 +279,8 @@ class Envira_Gallery_Addons {
             if ( count( $addons['unlicensed'] )> 0 ) {
                 ?>
                 <div class="envira-addons-area unlicensed" class="envira-clear">
-                    <h3><?php _e( 'Unlock More Addons', 'envira-gallery' ); ?></h3>
-                    <p><?php echo sprintf( __( '<strong>Want even more addons?</strong> <a href="%s">Upgrade your Envira Gallery account</a> and unlock the following addons.', 'envira-gallery' ), $upgrade_url ); ?></p>
+                    <h3><?php _e( 'Unlock More Addons', 'envira-gallery-lite' ); ?></h3>
+                    <p><?php echo sprintf( __( '<strong>Want even more addons?</strong> <a href="%s">Upgrade your Envira Gallery account</a> and unlock the following addons.', 'envira-gallery-lite' ), $upgrade_url ); ?></p>
 
                     <div id="envira-addons-unlicensed" class="envira-addons">
                         <!-- list container class required for list.js -->
@@ -446,7 +446,7 @@ class Envira_Gallery_Addons {
      */
     public function addons_link( $links ) {
 
-        $addons_link = sprintf( '<a href="%s">%s</a>', esc_url( add_query_arg( array( 'post_type' => 'envira', 'page' => 'envira-gallery-lite-addons' ), admin_url( 'edit.php' ) ) ), __( 'Addons', 'envira-gallery' ) );
+        $addons_link = sprintf( '<a href="%s">%s</a>', esc_url( add_query_arg( array( 'post_type' => 'envira', 'page' => 'envira-gallery-lite-addons' ), admin_url( 'edit.php' ) ) ), __( 'Addons', 'envira-gallery-lite' ) );
         array_unshift( $links, $addons_link );
 
         return $links;
@@ -500,7 +500,7 @@ class Envira_Gallery_Addons {
                     <div class="interior">
                         <div class="envira-addon-upgrade">
                             <a href="<?php echo esc_url( $addon->upgrade_url ); ?>" target="_blank" class="button button-primary envira-addon-upgrade-button"  rel="<?php echo esc_attr( $plugin_basename ); ?>">
-                                <?php _e( 'Upgrade Now', 'envira-gallery' ); ?>
+                                <?php _e( 'Upgrade Now', 'envira-gallery-lite' ); ?>
                             </a>
                             <span class="spinner envira-gallery-spinner"></span>
                         </div>
@@ -515,11 +515,11 @@ class Envira_Gallery_Addons {
                     ?>
                     <div class="envira-addon-not-installed envira-addon-message">
                         <div class="interior">
-                            <span class="addon-status"><?php _e( 'Status: <span>Not Installed</span>', 'envira-gallery' ); ?></span>
+                            <span class="addon-status"><?php _e( 'Status: <span>Not Installed</span>', 'envira-gallery-lite' ); ?></span>
                             <div class="envira-addon-action">
                                 <a class="button button-primary envira-addon-action-button envira-install-addon" href="#" rel="<?php echo esc_url( $addon->url ); ?>">
                                     <i class="envira-cloud-download"></i>
-                                    <?php _e( 'Install', 'envira-gallery' ); ?>
+                                    <?php _e( 'Install', 'envira-gallery-lite' ); ?>
                                 </a>
                                 <span class="spinner envira-gallery-spinner"></span>
                             </div>
@@ -533,11 +533,11 @@ class Envira_Gallery_Addons {
                         ?>
                         <div class="envira-addon-active envira-addon-message">
                             <div class="interior">
-                                <span class="addon-status"><?php _e( 'Status: <span>Active</span>', 'envira-gallery' ); ?></span>
+                                <span class="addon-status"><?php _e( 'Status: <span>Active</span>', 'envira-gallery-lite' ); ?></span>
                                 <div class="envira-addon-action">
                                     <a class="button button-primary envira-addon-action-button envira-deactivate-addon" href="#" rel="<?php echo esc_attr( $plugin_basename ); ?>">
                                         <i class="envira-toggle-on"></i>
-                                        <?php _e( 'Deactivate', 'envira-gallery' ); ?>
+                                        <?php _e( 'Deactivate', 'envira-gallery-lite' ); ?>
                                     </a>
                                     <span class="spinner envira-gallery-spinner"></span>
                                 </div>
@@ -549,11 +549,11 @@ class Envira_Gallery_Addons {
                         ?>
                         <div class="envira-addon-inactive envira-addon-message">
                             <div class="interior">
-                                <span class="addon-status"><?php _e( 'Status: <span>Inactive</span>', 'envira-gallery' ); ?></span>
+                                <span class="addon-status"><?php _e( 'Status: <span>Inactive</span>', 'envira-gallery-lite' ); ?></span>
                                 <div class="envira-addon-action">
                                     <a class="button button-primary envira-addon-action-button envira-activate-addon" href="#" rel="<?php echo esc_attr( $plugin_basename ); ?>">
                                         <i class="envira-toggle-on"></i>
-                                        <?php _e( 'Activate', 'envira-gallery' ); ?>
+                                        <?php _e( 'Activate', 'envira-gallery-lite' ); ?>
                                     </a>
                                     <span class="spinner envira-gallery-spinner"></span>
                                 </div>

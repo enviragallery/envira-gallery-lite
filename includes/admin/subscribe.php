@@ -93,9 +93,9 @@ class Envira_Subscribe {
 		</style>
 		<div class="notice notice-info is-dismissible envira-subscribe-notice">
 			<div id="envira-subscribe-block">
-				<div id="envira-subscribe-error"><p><strong><?php esc_html_e( 'Opps, Looks like something went wrong.', 'envira-gallery' ); ?></strong></p></div>
-				<h2><?php esc_html_e( 'Thank you for using Envira Gallery.', 'envira-gallery' ); ?></h2>
-				<p><strong><?php esc_html_e( 'Get Envira updates, photography tips, tutorials and resources straight to your mailbox.', 'envira-gallery' ); ?></strong></p>
+				<div id="envira-subscribe-error"><p><strong><?php esc_html_e( 'Opps, Looks like something went wrong.', 'envira-gallery-lite' ); ?></strong></p></div>
+				<h2><?php esc_html_e( 'Thank you for using Envira Gallery.', 'envira-gallery-lite' ); ?></h2>
+				<p><strong><?php esc_html_e( 'Get Envira updates, photography tips, tutorials and resources straight to your mailbox.', 'envira-gallery-lite' ); ?></strong></p>
 				<p>
 				<form action="https://enviragallery.us3.list-manage.com/subscribe/post-json?u=beaa9426dbd898ac91af5daca&amp;id=2ee2b5572e&amp;c=?" method="get" id="envira-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					<input class="envira-subscribe-field" type="name" name="FNAME" placeholder="First Name" required />
@@ -107,7 +107,7 @@ class Envira_Subscribe {
 			</p>
 			</div>
 			<div id="envira-subscribe-success">
-				<p><strong><?php esc_html_e('Thank you for subscribing to Envira Gallery', 'envira-gallery' ); ?></strong></p>
+				<p><strong><?php esc_html_e('Thank you for subscribing to Envira Gallery', 'envira-gallery-lite' ); ?></strong></p>
 			</div>
 		</div>
 		<script type="text/javascript">

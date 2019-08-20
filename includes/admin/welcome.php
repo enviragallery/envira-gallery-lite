@@ -167,12 +167,12 @@ class Envira_Welcome {
 	 * @since 1.8.1
 	 */
 	public function admin_menu() {
-		$whitelabel = apply_filters( 'envira_whitelabel', false ) ? '' : __( 'Envira Gallery ', 'envira-gallery' );
+		$whitelabel = apply_filters( 'envira_whitelabel', false ) ? '' : __( 'Envira Gallery ', 'envira-gallery-lite' );
 		// Register the submenus.
 		add_submenu_page(
 			'edit.php?post_type=envira',
-			$whitelabel . __( 'Get Started', 'envira-gallery' ),
-			'<span style="color:#FFA500"> ' . __( 'Get Started', 'envira-gallery' ) . '</span>',
+			$whitelabel . __( 'Get Started', 'envira-gallery-lite' ),
+			'<span style="color:#FFA500"> ' . __( 'Get Started', 'envira-gallery-lite' ) . '</span>',
 			apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
 			ENVIRA_SLUG . '-get-started',
 			array( $this, 'help_page' )
@@ -180,8 +180,8 @@ class Envira_Welcome {
 
 		add_submenu_page(
 			'edit.php?post_type=envira',
-			$whitelabel . __( 'Upgrade Envira Gallery', 'envira-gallery' ),
-			'<span style="color:#FFA500"> ' . __( 'Upgrade Envira Gallery', 'envira-gallery' ) . '</span>',
+			$whitelabel . __( 'Upgrade Envira Gallery', 'envira-gallery-lite' ),
+			'<span style="color:#FFA500"> ' . __( 'Upgrade Envira Gallery', 'envira-gallery-lite' ) . '</span>',
 			apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
 			ENVIRA_SLUG . '-upgrade',
 			array( $this, 'upgrade_page' )
@@ -189,8 +189,8 @@ class Envira_Welcome {
 	
 		add_submenu_page(
 			'edit.php?post_type=envira',
-			$whitelabel . __( 'Welcome', 'envira-gallery' ),
-			'<span style="color:#FFA500"> ' . __( 'Welcome', 'envira-gallery' ) . '</span>',
+			$whitelabel . __( 'Welcome', 'envira-gallery-lite' ),
+			'<span style="color:#FFA500"> ' . __( 'Welcome', 'envira-gallery-lite' ) . '</span>',
 			apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
 			ENVIRA_SLUG . '-welcome',
 			array( $this, 'welcome_page' )
@@ -198,8 +198,8 @@ class Envira_Welcome {
 
 		add_submenu_page(
 			'edit.php?post_type=envira',
-			$whitelabel . __( 'Support', 'envira-gallery' ),
-			'<span style="color:#FFA500"> ' . __( 'Support', 'envira-gallery' ) . '</span>',
+			$whitelabel . __( 'Support', 'envira-gallery-lite' ),
+			'<span style="color:#FFA500"> ' . __( 'Support', 'envira-gallery-lite' ) . '</span>',
 			apply_filters( 'envira_gallery_menu_cap', 'manage_options' ),
 			ENVIRA_SLUG . '-support',
 			array( $this, 'support_page' )
@@ -216,12 +216,12 @@ class Envira_Welcome {
 
 		// Switch welcome text based on whether this is a new installation or not.
 		$welcome_text = ( self::is_new_install() )
-			? esc_html( 'Thank you for installing Envira Lite! Envira provides great gallery features for your WordPress site!', 'envira-gallery' )
-			: esc_html( 'Thank you for updating! Envira Lite %s has many recent improvements that you will enjoy.', 'envira-gallery' );
+			? esc_html( 'Thank you for installing Envira Lite! Envira provides great gallery features for your WordPress site!', 'envira-gallery-lite' )
+			: esc_html( 'Thank you for updating! Envira Lite %s has many recent improvements that you will enjoy.', 'envira-gallery-lite' );
 
 		?>
 		<?php /* translators: %s: version */ ?>
-		<h1 class="welcome-header"><?php printf( esc_html__( 'Welcome to %1$s Envira Gallery Lite %2$s', 'envira-gallery' ), '<span class="envira-leaf"></span>&nbsp;', esc_html( self::display_version() ) ); ?></h1>
+		<h1 class="welcome-header"><?php printf( esc_html__( 'Welcome to %1$s Envira Gallery Lite %2$s', 'envira-gallery-lite' ), '<span class="envira-leaf"></span>&nbsp;', esc_html( self::display_version() ) ); ?></h1>
 
 		<div class="about-text">
 			<?php
@@ -266,7 +266,7 @@ class Envira_Welcome {
 				);
 				?>
 														">
-				<?php esc_html_e( 'What&#8217;s New', 'envira-gallery' ); ?>
+				<?php esc_html_e( 'What&#8217;s New', 'envira-gallery-lite' ); ?>
 			</a>
 			<a class="nav-tab
 			<?php
@@ -287,7 +287,7 @@ class Envira_Welcome {
 				);
 				?>
 														">
-				<?php esc_html_e( 'Get Started', 'envira-gallery' ); ?>
+				<?php esc_html_e( 'Get Started', 'envira-gallery-lite' ); ?>
 			</a>
 			<a class="nav-tab
 			<?php
@@ -308,7 +308,7 @@ class Envira_Welcome {
 				);
 				?>
 														">
-				<?php esc_html_e( 'Upgrade Envira Gallery', 'envira-gallery' ); ?>
+				<?php esc_html_e( 'Upgrade Envira Gallery', 'envira-gallery-lite' ); ?>
 			</a>
 		</h3>
 
@@ -336,7 +336,7 @@ class Envira_Welcome {
 
 					<div class="sidebox warning php-warning">
 
-					<h4><?php esc_html_e( 'Please Upgrade Your PHP Version!', 'envira-gallery' ); ?></h4>
+					<h4><?php esc_html_e( 'Please Upgrade Your PHP Version!', 'envira-gallery-lite' ); ?></h4>
 					<p><?php echo wp_kses( 'Your hosting provider is using PHP <strong>' . PHP_VERSION . '</strong>, an outdated and unsupported version. Soon Envira Gallery will need a minimum of PHP <strong>5.6</strong>.', wp_kses_allowed_html( 'post' ) ); ?></p>
 					<a target="_blank" href="https://enviragallery.com/docs/update-php" class="button button-primary">Learn More</a>
 
@@ -352,7 +352,7 @@ class Envira_Welcome {
 
 				<div class="sidebox warning php-warning">
 
-					<h4><?php esc_html_e( 'Please Upgrade Your WordPress Version!', 'envira-gallery' ); ?></h4>
+					<h4><?php esc_html_e( 'Please Upgrade Your WordPress Version!', 'envira-gallery-lite' ); ?></h4>
 					<p><?php echo wp_kses( 'You are currently using WordPress <strong>' . $wp_version . '</strong>, an outdated version. Soon Envira Gallery will need a minimum of WordPress <strong>4.8</strong>.', wp_kses_allowed_html( 'post' ) ); ?></p>
 					<a target="_blank" href="https://enviragallery.com/docs/update-wordpress" class="button button-primary">Learn More</a>
 
@@ -368,11 +368,11 @@ class Envira_Welcome {
 
 				<div class="sidebox">
 					<form id="envira-settings-verify-key" method="post" action="<?php echo esc_url( admin_url( 'edit.php?post_type=envira&page=envira-gallery-settings' ) ); ?>">
-						<h4><?php esc_html_e( 'Activate License Key', 'envira-gallery' ); ?></h4>
+						<h4><?php esc_html_e( 'Activate License Key', 'envira-gallery-lite' ); ?></h4>
 						<p><?php esc_html_e( 'License key to enable automatic updates for Envira. License key to enable automatic updates for Envira. ', 'send-system-info' ); ?></p>
 						<input type="password" name="envira-license-key" id="envira-settings-key" value="" />
 						<?php wp_nonce_field( 'envira-gallery-key-nonce', 'envira-gallery-key-nonce' ); ?>
-						<?php submit_button( __( 'Verify Key', 'envira-gallery' ), 'primary', 'envira-gallery-verify-submit', false ); ?>
+						<?php submit_button( __( 'Verify Key', 'envira-gallery-lite' ), 'primary', 'envira-gallery-verify-submit', false ); ?>
 					</form>
 				</div>
 
@@ -387,9 +387,9 @@ class Envira_Welcome {
 				?>
 					<div class="sidebox">
 
-							<h4><?php esc_html_e( 'We Need Your Help', 'envira-gallery' ); ?></h4>
+							<h4><?php esc_html_e( 'We Need Your Help', 'envira-gallery-lite' ); ?></h4>
 							<?php /* translators: %1$s: url, %2$s url */ ?>
-							<p><?php echo sprintf( __( 'Please rate <strong>Envira Gallery</strong> <a href="%1$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%2$s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the Envira Gallery team!', 'envira-gallery' ), esc_url( $url ), esc_url( $url ) ); // @codingStandardsIgnoreLine ?></p>
+							<p><?php echo sprintf( __( 'Please rate <strong>Envira Gallery</strong> <a href="%1$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%2$s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the Envira Gallery team!', 'envira-gallery-lite' ), esc_url( $url ), esc_url( $url ) ); // @codingStandardsIgnoreLine ?></p>
 							<a target="_blank" href="<?php echo esc_url( $url ); ?>" class="button button-primary">Rate It</a>
 
 					</div>
@@ -440,39 +440,39 @@ class Envira_Welcome {
 
 							<div class="envira-features-section">
 
-								<h3 class="headline-title"><?php esc_html_e( 'Envira Gallery is the best responsive WordPress gallery plugin.', 'envira-gallery' ); ?></h3>
+								<h3 class="headline-title"><?php esc_html_e( 'Envira Gallery is the best responsive WordPress gallery plugin.', 'envira-gallery-lite' ); ?></h3>
 
 								<div class="envira-feature">
 								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/08/drag-drop-icon.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Getting Better And Better!', 'envira-gallery' ); ?></h4>
+								<h4 class="feature-title"><?php esc_html_e( 'Getting Better And Better!', 'envira-gallery-lite' ); ?></h4>
 								<?php /* translators: %1$s: url, %2$s url */ ?>
-								<p><?php printf( esc_html__( 'This latest update contains enhancements and improvements - some of which are based on your user feedback! Check out %1$s.', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/docs/how-to-configure-your-gallery-settings/#envira-changelog/">our changelog</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'This latest update contains enhancements and improvements - some of which are based on your user feedback! Check out %1$s.', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/docs/how-to-configure-your-gallery-settings/#envira-changelog/">our changelog</a>' ); ?></p>
 								</div>
 
 								<div class="envira-feature opposite">
 									<img class="icon" src="<?php echo esc_url( plugins_url( 'assets/images/logos/gutenberg.svg', ENVIRA_FILE ) ); ?>" />
 									<h4 class="feature-title">
-										<?php esc_html_e( 'Envira Gutenberg Block', 'envira-gallery' ); ?>
+										<?php esc_html_e( 'Envira Gutenberg Block', 'envira-gallery-lite' ); ?>
 										<span class="badge new">NEW</span>
 									</h4>
 									<p>
 										<?php /* translators: %1$s: url, %2$s url */ ?>
-										<?php printf( esc_html__( 'Envira is now ready for WordPress 5.0 and it\'s newest editor "%1$s". Find out how to use the new Envira Gutenberg block: %2$s', 'envira-gallery' ), '<a href="https://wordpress.org/gutenberg/" target="_blank">Gutenberg</a>', '<a href="https://enviragallery.com/docs/how-to-use-envira-with-gutenberg/" target="_blank">Read More</a>' ); ?>
+										<?php printf( esc_html__( 'Envira is now ready for WordPress 5.0 and it\'s newest editor "%1$s". Find out how to use the new Envira Gutenberg block: %2$s', 'envira-gallery-lite' ), '<a href="https://wordpress.org/gutenberg/" target="_blank">Gutenberg</a>', '<a href="https://enviragallery.com/docs/how-to-use-envira-with-gutenberg/" target="_blank">Read More</a>' ); ?>
 										</p>
 								</div>
 
 								<div class="envira-feature">
 								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/10/social-icon.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Social Addon', 'envira-gallery' ); ?> <span class="badge updated">UPDATED</span> </h4>
+								<h4 class="feature-title"><?php esc_html_e( 'Social Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span> </h4>
 								<?php /* translators: %1$s: button */ ?>
-								<p><?php printf( esc_html__( 'You can now allow users to share your photos via LinkedIn and WhatsApp, in addition to Facebook, Twitter, Google+, Pinterest, and email. %s', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/addons/social-addon/">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'You can now allow users to share your photos via LinkedIn and WhatsApp, in addition to Facebook, Twitter, Google+, Pinterest, and email. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/addons/social-addon/">Read More</a>' ); ?></p>
 								</div>
 
 								<div class="envira-feature opposite">
 								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/10/videos-icon.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Video Addon', 'envira-gallery' ); ?> <span class="badge updated">UPDATED</span> </h4>
+								<h4 class="feature-title"><?php esc_html_e( 'Video Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span> </h4>
 								<?php /* translators: %1$s: button */ ?>
-								<p><?php printf( esc_html__( 'Now add videos from Facebook, Instagram, Twitch, VideoPress, Vimeo, Wistia, and Dailymotion to your galleries. Expanded self-hosted and YouTube features are now supported too! %s', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/announcing-new-video-integrations/">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'Now add videos from Facebook, Instagram, Twitch, VideoPress, Vimeo, Wistia, and Dailymotion to your galleries. Expanded self-hosted and YouTube features are now supported too! %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/announcing-new-video-integrations/">Read More</a>' ); ?></p>
 								</div>
 
 							</div>
@@ -480,22 +480,22 @@ class Envira_Welcome {
 
 							<div class="envira-recent-section">
 
-								<h3 class="title"><?php esc_html_e( 'Recent Updates To Envira Lite:', 'envira-gallery' ); ?></h3>
+								<h3 class="title"><?php esc_html_e( 'Recent Updates To Envira Lite:', 'envira-gallery-lite' ); ?></h3>
 								<div class="envira-recent envirathree-column">
 								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Bug Fixes', 'envira-gallery' ); ?> <span class="badge updated">UPDATED</span></h4>
+										<h4 class="title"><?php esc_html_e( 'Bug Fixes', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span></h4>
 										<?php /* translators: %1$s: link */ ?>
 										<p><?php printf( esc_html__( 'Bugs involving automatic and column galleries on the same page, certain character displaying in the admin, and Gutenberg Block tweaks.' ) ); ?></p>
 								</div>
 								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Gutenberg Block', 'envira-gallery' ); ?></h4>
+										<h4 class="title"><?php esc_html_e( 'Gutenberg Block', 'envira-gallery-lite' ); ?></h4>
 										<?php /* translators: %1$s: link */ ?>
 										<p><?php printf( esc_html__( 'Improved support and additional features for the Envira Lite Gutenberg block. Bug fixes involving the gallery preview and items that were appearing out of order.' ) ); ?></p>
 								</div>
 
 								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Enhancements', 'envira-gallery' ); ?></h4>
-										<p><?php printf( esc_html__( 'Ability to set margins for Automatic Layouts. Also better workings with various popular WordPress plugins and themes.', 'envira-gallery' ) ); ?></p>
+										<h4 class="title"><?php esc_html_e( 'Enhancements', 'envira-gallery-lite' ); ?></h4>
+										<p><?php printf( esc_html__( 'Ability to set margins for Automatic Layouts. Also better workings with various popular WordPress plugins and themes.', 'envira-gallery-lite' ) ); ?></p>
 								</div>
 								</div>
 
@@ -542,11 +542,11 @@ class Envira_Welcome {
 
 					<div class="wraps about-wsrap">
 
-						<h3 class="headline-title"><?php esc_html_e( 'Got A Question? We Can Help!', 'envira-gallery' ); ?></h3>
+						<h3 class="headline-title"><?php esc_html_e( 'Got A Question? We Can Help!', 'envira-gallery-lite' ); ?></h3>
 
 						<div class="envira-recent-section">
 
-							<h3 class="title"><?php esc_html_e( 'Functionality:', 'envira-gallery' ); ?></h3>
+							<h3 class="title"><?php esc_html_e( 'Functionality:', 'envira-gallery-lite' ); ?></h3>
 
 							<article class="docs">
 
@@ -634,7 +634,7 @@ class Envira_Welcome {
 									<a  target="_blank" href="https://enviragallery.com/categories/docs/functionality/" class="button button-primary">See More Guides On Functionality</a>
 								</div>
 
-								<h3 class="title" style="margin-top: 30px;"><?php esc_html_e( 'Addons:', 'envira-gallery' ); ?></h3>
+								<h3 class="title" style="margin-top: 30px;"><?php esc_html_e( 'Addons:', 'envira-gallery-lite' ); ?></h3>
 
 								<article class="docs">
 									<ul>
@@ -721,7 +721,7 @@ class Envira_Welcome {
 									<a  target="_blank" href="https://enviragallery.com/categories/docs/addons/" class="button button-primary">See More Guides On Addons</a>
 								</div>
 
-								<h3 class="title" style="margin-top: 30px;"><?php esc_html_e( 'Styling:', 'envira-gallery' ); ?></h3>
+								<h3 class="title" style="margin-top: 30px;"><?php esc_html_e( 'Styling:', 'envira-gallery-lite' ); ?></h3>
 
 								<article class="docs">
 									<ul>
@@ -849,7 +849,7 @@ class Envira_Welcome {
 
 						<div class="envira-features-section">
 
-						<h3 class="headline-title"><?php esc_html_e( 'New To Envira? It\'s Easy To Get Started!', 'envira-gallery' ); ?>
+						<h3 class="headline-title"><?php esc_html_e( 'New To Envira? It\'s Easy To Get Started!', 'envira-gallery-lite' ); ?>
 
                         <?php
                         
@@ -859,7 +859,7 @@ class Envira_Welcome {
 
                         $galleries = Envira_Gallery_Lite::get_instance()->_get_galleries();
 
-                        $text = esc_html( 'Add New Gallery', 'envira-gallery' );
+                        $text = esc_html( 'Add New Gallery', 'envira-gallery-lite' );
 
 						?>
 
@@ -873,27 +873,27 @@ class Envira_Welcome {
 
 						<div class="envira-feature">
 								<span class="envira-leaf envira-big-icon"></span>
-								<h4 class="feature-title"><?php esc_html_e( 'How to Verify Your Envira License', 'envira-gallery' ); ?></h4>
-								<p><?php printf( esc_html( 'We\'ll walk you through each step on how to verify your Envira license. %s', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/docs/verify-envira-license/">Read More</a>' ); ?></p>
+								<h4 class="feature-title"><?php esc_html_e( 'How to Verify Your Envira License', 'envira-gallery-lite' ); ?></h4>
+								<p><?php printf( esc_html( 'We\'ll walk you through each step on how to verify your Envira license. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/docs/verify-envira-license/">Read More</a>' ); ?></p>
 						</div>
 
 						<div class="envira-feature opposite">
 								<span class="envira-leaf envira-big-icon"></span>
-								<h4 class="feature-title"><?php esc_html_e( 'How to Activate Addons', 'envira-gallery' ); ?></h4>
-								<p><?php printf( esc_html( 'Once your license is verified, it\'s now time to activate your addons. %s', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/docs/activate-addons/">Read More</a>' ); ?></p>
+								<h4 class="feature-title"><?php esc_html_e( 'How to Activate Addons', 'envira-gallery-lite' ); ?></h4>
+								<p><?php printf( esc_html( 'Once your license is verified, it\'s now time to activate your addons. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/docs/activate-addons/">Read More</a>' ); ?></p>
 						</div>
 
 						<div class="envira-feature">
 								<span class="envira-leaf envira-big-icon"></span>
-								<h4 class="feature-title"><?php esc_html_e( 'Creating Your First Envira Gallery', 'envira-gallery' ); ?></h4>
-								<p><?php printf( esc_html( 'In this article, we\'ll help you create your very first Envira gallery. %s', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/docs/creating-first-envira-gallery/">Read More</a>' ); ?></p>
+								<h4 class="feature-title"><?php esc_html_e( 'Creating Your First Envira Gallery', 'envira-gallery-lite' ); ?></h4>
+								<p><?php printf( esc_html( 'In this article, we\'ll help you create your very first Envira gallery. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/docs/creating-first-envira-gallery/">Read More</a>' ); ?></p>
 
 						</div>
 
 						<div class="envira-feature opposite">
 								<span class="envira-leaf envira-big-icon"></span>
-								<h4 class="feature-title"><?php esc_html_e( 'Debugging Envira', 'envira-gallery' ); ?></h4>
-								<p><?php printf( esc_html( 'Having trouble seeing your gallery? Take a look at some of our steps on troubleshooting your gallery. %s', 'envira-gallery' ), '<a target="_blank" href="https://enviragallery.com/docs/debugging-envira/">Read More</a>' ); ?></p>
+								<h4 class="feature-title"><?php esc_html_e( 'Debugging Envira', 'envira-gallery-lite' ); ?></h4>
+								<p><?php printf( esc_html( 'Having trouble seeing your gallery? Take a look at some of our steps on troubleshooting your gallery. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/docs/debugging-envira/">Read More</a>' ); ?></p>
 								</p>
 						</div>
 
@@ -901,27 +901,27 @@ class Envira_Welcome {
 
 					<div class="envira-posts">
 
-						<h3 class="title"><?php esc_html_e( 'Video Tutorials:', 'envira-gallery' ); ?></h3>
+						<h3 class="title"><?php esc_html_e( 'Video Tutorials:', 'envira-gallery-lite' ); ?></h3>
 
 						<div class="envira-recent envirathree-column">
 							<div class="enviracolumn">
 								<iframe width="100%" src="https://www.youtube.com/embed/sE5ZEfT7388" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-								<h4 class="title"><?php esc_html_e( 'How to Create a Filterable Portfolio in WordPress', 'envira-gallery' ); ?></h4>
+								<h4 class="title"><?php esc_html_e( 'How to Create a Filterable Portfolio in WordPress', 'envira-gallery-lite' ); ?></h4>
 								<?php /* Translators: %s */ ?>
-								<p><?php printf( esc_html__( 'Many photographers have large portfolios that have a variety of their favorite photos and some users want to filter down to the types they want to see. In this video we\'ll show you how to create a filterable portfolio. %s', 'envira-gallery' ), '<a target="_blank" href="https://www.youtube.com/watch?v=sE5ZEfT7388">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'Many photographers have large portfolios that have a variety of their favorite photos and some users want to filter down to the types they want to see. In this video we\'ll show you how to create a filterable portfolio. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://www.youtube.com/watch?v=sE5ZEfT7388">Read More</a>' ); ?></p>
 							</div>
 							<div class="enviracolumn">
 							<iframe width="100%" src="https://www.youtube.com/embed/S_4LgeQdb-I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-								<h4 class="title"><?php esc_html_e( 'Envira Gallery Instagram Addon', 'envira-gallery' ); ?></h4>
+								<h4 class="title"><?php esc_html_e( 'Envira Gallery Instagram Addon', 'envira-gallery-lite' ); ?></h4>
 								<?php /* Translators: %s */ ?>
-								<p><?php printf( esc_html__( 'The Instagram addon allows you to dynamically add images from your Instagram account to your galleries. %s', 'envira-gallery' ), '<a target="_blank" href="https://www.youtube.com/watch?v=S_4LgeQdb-I">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'The Instagram addon allows you to dynamically add images from your Instagram account to your galleries. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://www.youtube.com/watch?v=S_4LgeQdb-I">Read More</a>' ); ?></p>
 							</div>
 
 							<div class="enviracolumn">
 							<iframe width="100%" src="https://www.youtube.com/embed/uGpz4YVb5UY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-								<h4 class="title"><?php esc_html_e( 'Envira Gallery EXIF Addon', 'envira-gallery' ); ?></h4>
+								<h4 class="title"><?php esc_html_e( 'Envira Gallery EXIF Addon', 'envira-gallery-lite' ); ?></h4>
 								<?php /* Translators: %s */ ?>
-								<p><?php printf( esc_html__( 'Add your EXIF metadata in your galleries and lightbox images, including support for all the common EXIF data, including camera make/model, aperture and shutter speed. %s', 'envira-gallery' ), '<a  target="_blank" href="https://www.youtube.com/watch?v=uGpz4YVb5UY">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'Add your EXIF metadata in your galleries and lightbox images, including support for all the common EXIF data, including camera make/model, aperture and shutter speed. %s', 'envira-gallery-lite' ), '<a  target="_blank" href="https://www.youtube.com/watch?v=uGpz4YVb5UY">Read More</a>' ); ?></p>
 							</div>
 						</div>
 
@@ -971,9 +971,9 @@ class Envira_Welcome {
 
 					<div class="wraps upgrade-wrap">
 
-						<h3 class="headline-title"><?php esc_html_e( 'Make Your Galleries Amazing!', 'envira-gallery' ); ?></h3>
+						<h3 class="headline-title"><?php esc_html_e( 'Make Your Galleries Amazing!', 'envira-gallery-lite' ); ?></h3>
 
-						<h4 class="headline-subtitle"><?php esc_html_e( 'Upgrade To Envira Pro and can get access to our full suite of features.', 'envira-gallery' ); ?></h4>
+						<h4 class="headline-subtitle"><?php esc_html_e( 'Upgrade To Envira Pro and can get access to our full suite of features.', 'envira-gallery-lite' ); ?></h4>
 
 						<a target="_blank" href="https://enviragallery.com/lite?tracking=lite-tab" class="button button-primary">Upgrade To Envira Pro</a>
 
@@ -1193,29 +1193,29 @@ class Envira_Welcome {
 
 			<div class="envira-posts">
 
-				<h3 class="title"><?php esc_html_e( 'Helpful Articles For Beginners:', 'envira-gallery' ); ?></h3>
+				<h3 class="title"><?php esc_html_e( 'Helpful Articles For Beginners:', 'envira-gallery-lite' ); ?></h3>
 				<div class="envira-recent envirathree-column">
 
 
 					<div class="enviracolumn">
 						<img class="post-image" src="https://enviragallery.com/wp-content/uploads/2018/10/Image-SEO-for-WordPress.png" />
-						<h4 class="title"><?php esc_html_e( 'How to Optimize SEO Images for WordPress', 'envira-gallery' ); ?></h4>
+						<h4 class="title"><?php esc_html_e( 'How to Optimize SEO Images for WordPress', 'envira-gallery-lite' ); ?></h4>
 						<?php /* Translators: %s */ ?>
-						<p><?php printf( esc_html__( 'Thinking of designing an eCommerce website where you can sell your photos or building a WordPress portfolio where you can show off your photography skills? It’s important to think carefully about your SEO strategy. %s', 'envira-gallery' ), '<a href="https://enviragallery.com/optimize-seo-images-wordpress/" target="_blank">Read More</a>' ); ?></p>
+						<p><?php printf( esc_html__( 'Thinking of designing an eCommerce website where you can sell your photos or building a WordPress portfolio where you can show off your photography skills? It’s important to think carefully about your SEO strategy. %s', 'envira-gallery-lite' ), '<a href="https://enviragallery.com/optimize-seo-images-wordpress/" target="_blank">Read More</a>' ); ?></p>
 					</div>
 
 					<div class="enviracolumn">
 						<img class="post-image" src="https://enviragallery.com/wp-content/uploads/2017/08/move-photography-site-from-flickr-to-wordpress.jpg" />
-						<h4 class="title"><?php esc_html_e( 'How to Move Your Photography Site from Flickr to WordPress', 'envira-gallery' ); ?></h4>
+						<h4 class="title"><?php esc_html_e( 'How to Move Your Photography Site from Flickr to WordPress', 'envira-gallery-lite' ); ?></h4>
 						<?php /* Translators: %s */ ?>
-						<p><?php printf( esc_html__( 'You may know that your photos aren’t safe at Flickr, and you should upload them to your self hosted site. In this tutorial, we will share how to move your photography site from Flickr to WordPress. %s', 'envira-gallery' ), '<a href="https://enviragallery.com/how-to-move-your-photography-site-from-flickr-to-wordpress/" target="_blank">Read More</a>' ); ?></p>
+						<p><?php printf( esc_html__( 'You may know that your photos aren’t safe at Flickr, and you should upload them to your self hosted site. In this tutorial, we will share how to move your photography site from Flickr to WordPress. %s', 'envira-gallery-lite' ), '<a href="https://enviragallery.com/how-to-move-your-photography-site-from-flickr-to-wordpress/" target="_blank">Read More</a>' ); ?></p>
 					</div>
 
 					<div class="enviracolumn">
 						<img class="post-image" src="https://enviragallery.com/wp-content/uploads/2018/09/vidoe-gallery.jpg" />
-						<h4 class="title"><?php esc_html_e( 'Announcing New Video Integrations', 'envira-gallery' ); ?></h4>
+						<h4 class="title"><?php esc_html_e( 'Announcing New Video Integrations', 'envira-gallery-lite' ); ?></h4>
 						<?php /* Translators: %s */ ?>
-						<p><?php printf( esc_html__( 'We’re pleased to introduce our expanded video gallery support options for Envira Gallery 1.8.1. More video platform integrations allow you to add more video sources for your galleries. %s', 'envira-gallery' ), '<a href="https://enviragallery.com/announcing-new-video-integrations/" target="_blank">Read More</a>' ); ?></p>
+						<p><?php printf( esc_html__( 'We’re pleased to introduce our expanded video gallery support options for Envira Gallery 1.8.1. More video platform integrations allow you to add more video sources for your galleries. %s', 'envira-gallery-lite' ), '<a href="https://enviragallery.com/announcing-new-video-integrations/" target="_blank">Read More</a>' ); ?></p>
 					</div>
 
 
@@ -1237,13 +1237,13 @@ class Envira_Welcome {
 
 		<div class="envira-assets">
 			<p>
-				<?php esc_html_e( 'Learn more:', 'envira-gallery' ); ?>&nbsp;<a href="https://enviragallery.com/blog/"><?php esc_html_e( 'Blog', 'envira-gallery' ); ?></a>
-				&bullet; <a href="https://enviragallery.com/docs/"><?php esc_html_e( 'Documentation', 'envira-gallery' ); ?></a>
-			<?php /* &bullet; <a href="https://enviragallery.com/dev/"><?php _ex( 'Development Blog', 'About screen, link to development blog', 'envira-gallery' ); ?></a> */ ?>
+				<?php esc_html_e( 'Learn more:', 'envira-gallery-lite' ); ?>&nbsp;<a href="https://enviragallery.com/blog/"><?php esc_html_e( 'Blog', 'envira-gallery-lite' ); ?></a>
+				&bullet; <a href="https://enviragallery.com/docs/"><?php esc_html_e( 'Documentation', 'envira-gallery-lite' ); ?></a>
+			<?php /* &bullet; <a href="https://enviragallery.com/dev/"><?php _ex( 'Development Blog', 'About screen, link to development blog', 'envira-gallery-lite' ); ?></a> */ ?>
 			</p>
 
 			<div class="icons-container">
-				<div class="label"><?php esc_html_e( 'Social:', 'envira-gallery' ); ?></div>
+				<div class="label"><?php esc_html_e( 'Social:', 'envira-gallery-lite' ); ?></div>
 
 				<ul class="social-icons">
 					<li class="facebook">
@@ -1272,9 +1272,9 @@ class Envira_Welcome {
 
 			<p>
 
-				<?php esc_html_e( 'Also by us: ', 'envira-gallery' ); ?>
+				<?php esc_html_e( 'Also by us: ', 'envira-gallery-lite' ); ?>
 
-				<a target="_blank" href="http://soliloquywp.com"><?php esc_html_e( 'Soliloquy Slider', 'envira-gallery' ); ?></a>
+				<a target="_blank" href="http://soliloquywp.com"><?php esc_html_e( 'Soliloquy Slider', 'envira-gallery-lite' ); ?></a>
 
 			</p>
 

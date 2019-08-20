@@ -60,31 +60,31 @@ class Envira_Gallery_Common {
         $columns = array(
             array(
                 'value' => '0',
-                'name'  => __( 'Automatic', 'envira-gallery' )
+                'name'  => __( 'Automatic', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '1',
-                'name'  => __( 'One Column (1)', 'envira-gallery' )
+                'name'  => __( 'One Column (1)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '2',
-                'name'  => __( 'Two Columns (2)', 'envira-gallery' )
+                'name'  => __( 'Two Columns (2)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '3',
-                'name'  => __( 'Three Columns (3)', 'envira-gallery' )
+                'name'  => __( 'Three Columns (3)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '4',
-                'name'  => __( 'Four Columns (4)', 'envira-gallery' )
+                'name'  => __( 'Four Columns (4)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '5',
-                'name'  => __( 'Five Columns (5)', 'envira-gallery' )
+                'name'  => __( 'Five Columns (5)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '6',
-                'name'  => __( 'Six Columns (6)', 'envira-gallery' )
+                'name'  => __( 'Six Columns (6)', 'envira-gallery-lite' )
             )
         );
 
@@ -104,7 +104,7 @@ class Envira_Gallery_Common {
         $themes = array(
             array(
                 'value' => 'base',
-                'name'  => __( 'Base', 'envira-gallery' ),
+                'name'  => __( 'Base', 'envira-gallery-lite' ),
                 'file'  => $this->base->file
             )
         );
@@ -125,7 +125,7 @@ class Envira_Gallery_Common {
         $themes = array(
             array(
                 'value' => 'normal',
-                'name'  => __( 'Normal', 'envira-gallery' ),
+                'name'  => __( 'Normal', 'envira-gallery-lite' ),
                 'file'  => $this->base->file
             )
         );
@@ -145,15 +145,15 @@ class Envira_Gallery_Common {
 
         $descriptions = array(
             array(
-                'name'  => __( 'Do not display', 'envira-gallery' ),
+                'name'  => __( 'Do not display', 'envira-gallery-lite' ),
                 'value' => 0,
             ),
             array(
-                'name'  => __( 'Display above galleries', 'envira-gallery' ),
+                'name'  => __( 'Display above galleries', 'envira-gallery-lite' ),
                 'value' => 'above',
             ),
             array(
-                'name'  => __( 'Display below galleries', 'envira-gallery' ),
+                'name'  => __( 'Display below galleries', 'envira-gallery-lite' ),
                 'value' => 'below',
             ),
         );
@@ -173,35 +173,35 @@ class Envira_Gallery_Common {
 
         $options = array(
             array(
-                'name'  => __( 'No Sorting', 'envira-gallery' ),
+                'name'  => __( 'No Sorting', 'envira-gallery-lite' ),
                 'value' => 0,
             ),
             array(
-                'name'  => __( 'Random', 'envira-gallery' ),
+                'name'  => __( 'Random', 'envira-gallery-lite' ),
                 'value' => 1, // Deliberate, as we map the 'random' config key which was a true/false
             ),
             array(
-                'name'  => __( 'Published Date', 'envira-gallery' ),
+                'name'  => __( 'Published Date', 'envira-gallery-lite' ),
                 'value' => 'date',
             ),
             array(
-                'name'  => __( 'Filename', 'envira-gallery' ),
+                'name'  => __( 'Filename', 'envira-gallery-lite' ),
                 'value' => 'src',
             ),
             array(
-                'name'  => __( 'Title', 'envira-gallery' ),
+                'name'  => __( 'Title', 'envira-gallery-lite' ),
                 'value' => 'title',
             ),
             array(
-                'name'  => __( 'Caption', 'envira-gallery' ),
+                'name'  => __( 'Caption', 'envira-gallery-lite' ),
                 'value' => 'caption',
             ),
             array(
-                'name'  => __( 'Alt', 'envira-gallery' ),
+                'name'  => __( 'Alt', 'envira-gallery-lite' ),
                 'value' => 'alt',
             ),
             array(
-                'name'  => __( 'URL', 'envira-gallery' ),
+                'name'  => __( 'URL', 'envira-gallery-lite' ),
                 'value' => 'link',
             ),
         );
@@ -221,11 +221,11 @@ class Envira_Gallery_Common {
 
         $directions = array(
             array(
-                'name'  => __( 'Ascending (A-Z)', 'envira-gallery' ),
+                'name'  => __( 'Ascending (A-Z)', 'envira-gallery-lite' ),
                 'value' => 'ASC',
             ),
             array(
-                'name'  => __( 'Descending (Z-A)', 'envira-gallery' ),
+                'name'  => __( 'Descending (Z-A)', 'envira-gallery-lite' ),
                 'value' => 'DESC',
             ),
         );
@@ -246,12 +246,12 @@ class Envira_Gallery_Common {
         $themes = array(
 //            array(
 //                'value' => 'base_dark',
-//                'name'  => __( 'Base (Dark)', 'envira-gallery' ),
+//                'name'  => __( 'Base (Dark)', 'envira-gallery-lite' ),
 //                'file'  => $this->base->file
 //            ),
             array(
                 'value' => 'base',
-                'name'  => __( 'Legacy', 'envira-gallery' ),
+                'name'  => __( 'Legacy', 'envira-gallery-lite' ),
                 'file'  => $this->base->file
             )
         );
@@ -276,7 +276,7 @@ class Envira_Gallery_Common {
             $sizes = array(
                 array(
                     'value'  => 'default',
-                    'name'   => __( 'Default', 'envira-gallery' ),
+                    'name'   => __( 'Default', 'envira-gallery-lite' ),
                 )
             );
         }
@@ -311,7 +311,7 @@ class Envira_Gallery_Common {
         if ( ! $wordpress_only ) {
             $sizes[] = array(
                 'value'  => 'envira_gallery_random',
-                'name'   => __( 'Random', 'envira-gallery' ),
+                'name'   => __( 'Random', 'envira-gallery-lite' ),
             );
         }
 
@@ -331,23 +331,23 @@ class Envira_Gallery_Common {
         $displays = array(
             array(
                 'value' => 'float',
-                'name'  => __( 'Float', 'envira-gallery' )
+                'name'  => __( 'Float', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'float_wrap',
-                'name'  => __( 'Float (Wrapped)', 'envira-gallery' )
+                'name'  => __( 'Float (Wrapped)', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'inside',
-                'name'  => __( 'Inside', 'envira-gallery' )
+                'name'  => __( 'Inside', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'outside',
-                'name'  => __( 'Outside', 'envira-gallery' )
+                'name'  => __( 'Outside', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'over',
-                'name'  => __( 'Over', 'envira-gallery' )
+                'name'  => __( 'Over', 'envira-gallery-lite' )
             )
         );
 
@@ -367,11 +367,11 @@ class Envira_Gallery_Common {
         $displays = array(
             array(
                 'value' => 'inside',
-                'name'  => __( 'Inside', 'envira-gallery' )
+                'name'  => __( 'Inside', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'outside',
-                'name'  => __( 'Outside', 'envira-gallery' )
+                'name'  => __( 'Outside', 'envira-gallery-lite' )
             ),
         );
 
@@ -391,15 +391,15 @@ class Envira_Gallery_Common {
         $effects = array(
             array(
                 'value' => 'none',
-                'name'  => __( 'No Effect', 'envira-gallery' )
+                'name'  => __( 'No Effect', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'fade',
-                'name'  => __( 'Fade', 'envira-gallery' )
+                'name'  => __( 'Fade', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'elastic',
-                'name'  => __( 'Elastic', 'envira-gallery' )
+                'name'  => __( 'Elastic', 'envira-gallery-lite' )
             ),
         );
 
@@ -447,44 +447,8 @@ class Envira_Gallery_Common {
         $effects = array(
             array(
                 'value' => 'Swing',
-                'name'  => __( 'Swing', 'envira-gallery' )
+                'name'  => __( 'Swing', 'envira-gallery-lite' )
             ),
-            // array(
-            //     'value' => 'Quad',
-            //     'name'  => __( 'Quad', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Cubic',
-            //     'name'  => __( 'Cubic', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Quart',
-            //     'name'  => __( 'Quart', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Quint',
-            //     'name'  => __( 'Quint', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Sine',
-            //     'name'  => __( 'Sine', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Expo',
-            //     'name'  => __( 'Expo', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Circ',
-            //     'name'  => __( 'Circ', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Back',
-            //     'name'  => __( 'Back', 'envira-gallery' )
-            // ),
-            // array(
-            //     'value' => 'Bounce',
-            //     'name'  => __( 'Bounce', 'envira-gallery' )
-            // ),
         );
 
         return apply_filters( 'envira_gallery_easing_transition_effects', $effects );
@@ -503,11 +467,11 @@ class Envira_Gallery_Common {
         $positions = array(
             array(
                 'value' => 'top',
-                'name'  => __( 'Top', 'envira-gallery' )
+                'name'  => __( 'Top', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'bottom',
-                'name'  => __( 'Bottom', 'envira-gallery' )
+                'name'  => __( 'Bottom', 'envira-gallery-lite' )
             )
         );
 
@@ -527,11 +491,11 @@ class Envira_Gallery_Common {
         $positions = array(
             array(
                 'value' => 'top',
-                'name'  => __( 'Top', 'envira-gallery' )
+                'name'  => __( 'Top', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'bottom',
-                'name'  => __( 'Bottom', 'envira-gallery' )
+                'name'  => __( 'Bottom', 'envira-gallery-lite' )
             )
         );
 
@@ -677,7 +641,7 @@ class Envira_Gallery_Common {
 
         $supported_file_types = array(
             array(
-                'title'     => __( 'Image Files', 'envira-gallery' ),
+                'title'     => __( 'Image Files', 'envira-gallery-lite' ),
                 'extensions'=> 'jpg,jpeg,jpe,gif,png,bmp,tif,tiff,JPG,JPEG,JPE,GIF,PNG,BMP,TIF,TIFF',
             ),
         );
@@ -727,11 +691,11 @@ class Envira_Gallery_Common {
         $positions = array(
             array(
                 'value' => 'before',
-                'name'  => __( 'Before Existing Images', 'envira-gallery' )
+                'name'  => __( 'Before Existing Images', 'envira-gallery-lite' )
             ),
             array(
                 'value' => 'after',
-                'name'  => __( 'After Existing Images', 'envira-gallery' )
+                'name'  => __( 'After Existing Images', 'envira-gallery-lite' )
             ),
         );
 
@@ -751,11 +715,11 @@ class Envira_Gallery_Common {
         $options = array(
             array(
                 'value' => '',
-                'name'  => __( 'No', 'envira-gallery' )
+                'name'  => __( 'No', 'envira-gallery-lite' )
             ),
             array(
                 'value' => '1',
-                'name'  => __( 'Yes', 'envira-gallery' )
+                'name'  => __( 'Yes', 'envira-gallery-lite' )
             ),
         );
 
@@ -837,7 +801,7 @@ class Envira_Gallery_Common {
 
             // If an editor cannot be found, the user needs to have GD or Imagick installed.
             if ( is_wp_error( $editor ) ) {
-                return new WP_Error( 'envira-gallery-error-no-editor', __( 'No image editor could be selected. Please verify with your webhost that you have either the GD or Imagick image library compiled with your PHP install on your server.', 'envira-gallery' ) );
+                return new WP_Error( 'envira-gallery-error-no-editor', __( 'No image editor could be selected. Please verify with your webhost that you have either the GD or Imagick image library compiled with your PHP install on your server.', 'envira-gallery-lite' ) );
             }
 
             // Set the image editor quality.
@@ -940,7 +904,7 @@ class Envira_Gallery_Common {
 
         // Return an error if no URL is present.
         if ( empty( $url ) ) {
-            return new WP_Error( 'envira-gallery-error-no-url', __( 'No image URL specified for cropping.', 'envira-gallery' ) );
+            return new WP_Error( 'envira-gallery-error-no-url', __( 'No image URL specified for cropping.', 'envira-gallery-lite' ) );
         }
 
         // Get the image file path.
@@ -960,12 +924,12 @@ class Envira_Gallery_Common {
 
         // Attempt to stream and import the image if it does not exist based on URL provided.
         if ( ! file_exists( $file_path ) ) {
-            return new WP_Error( 'envira-gallery-error-no-file', __( 'No file could be found for the image URL specified.', 'envira-gallery' ) );
+            return new WP_Error( 'envira-gallery-error-no-file', __( 'No file could be found for the image URL specified.', 'envira-gallery-lite' ) );
         }
 
         // Attempt to stream and import the image if it does not exist based on URL provided.
         if ( ! file_exists( $file_path ) ) {
-            return new WP_Error( 'envira-gallery-error-no-file', __( 'No file could be found for the image URL specified.', 'envira-gallery' ) );
+            return new WP_Error( 'envira-gallery-error-no-file', __( 'No file could be found for the image URL specified.', 'envira-gallery-lite' ) );
         }
 
         // Get original image size.
@@ -973,7 +937,7 @@ class Envira_Gallery_Common {
 
         // If no size data obtained, return an error.
         if ( ! $size ) {
-            return new WP_Error( 'envira-gallery-error-no-size', __( 'The dimensions of the original image could not be retrieved for cropping.', 'envira-gallery' ) );
+            return new WP_Error( 'envira-gallery-error-no-size', __( 'The dimensions of the original image could not be retrieved for cropping.', 'envira-gallery-lite' ) );
         }
 
         // Set original width and height.
@@ -985,7 +949,7 @@ class Envira_Gallery_Common {
         } else if ( $height && ! $width ) {
             $width = floor( $orig_width * ($height / $orig_height) );
         } else if ( ! $width && ! $height ) {
-            return new WP_Error( 'envira-gallery-error-no-size', __( 'The dimensions of the original image could not be retrieved for cropping.', 'envira-gallery' ) );
+            return new WP_Error( 'envira-gallery-error-no-size', __( 'The dimensions of the original image could not be retrieved for cropping.', 'envira-gallery-lite' ) );
         }
 
         // Allow for different retina image sizes.
@@ -1076,7 +1040,7 @@ class Envira_Gallery_Common {
      *
      * @return int Expiration Time (in seconds)
      */
-    public function get_transient_expiration_time( $plugin = 'envira-gallery' ) {
+    public function get_transient_expiration_time( $plugin = 'envira-gallery-lite' ) {
 
         // Define the default
         $default = DAY_IN_SECONDS;

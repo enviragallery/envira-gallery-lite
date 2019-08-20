@@ -914,13 +914,13 @@ function envira_gallery_move_media() {
     $image_ids          = $_POST['image_ids'];
 
     if ( ! $from_gallery_id ) {
-        wp_send_json_error( __( 'The From Gallery ID has not been specified.', 'envira-gallery' ) );
+        wp_send_json_error( __( 'The From Gallery ID has not been specified.', 'envira-gallery-lite' ) );
     }
     if ( ! $to_gallery_id ) {
-        wp_send_json_error( __( 'The From Gallery ID has not been specified.', 'envira-gallery' ) );
+        wp_send_json_error( __( 'The From Gallery ID has not been specified.', 'envira-gallery-lite' ) );
     }
     if ( count( $image_ids ) == 0 ) {
-        wp_send_json_error( __( 'No images were selected to be moved between Galleries.', 'envira-gallery' ) );
+        wp_send_json_error( __( 'No images were selected to be moved between Galleries.', 'envira-gallery-lite' ) );
     }
 
     // Get from and to Galleries
