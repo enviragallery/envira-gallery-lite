@@ -53,7 +53,7 @@ class Envira_Gallery_Lite {
 	 *
 	 * @var string
 	 */
-	public $version = '1.6.6';
+	public $version = '1.6.8';
 
 	/**
 	 * The name of the plugin.
