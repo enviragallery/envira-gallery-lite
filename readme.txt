@@ -209,7 +209,23 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+= 1.6.8 =
+
+* Added: Welcome Screen.
+* Fix: Translation tag.
+
+= 1.6.7 =
+
+* Fix: Issue involving automatic and column galleries on the same page.
+* Fix: Minor bug fixes.
+
+= 1.6.6 =
+
+* Fix: Escaping in the admin.
+* Fix: Minor bug fixes.
+
 = 1.6.5 =
+
 * Fix: Escaping in the admin
 * Remove: Error Log
 * Fix: Minor bug fixes.
