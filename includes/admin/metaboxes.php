@@ -60,7 +60,7 @@ class Envira_Gallery_Metaboxes {
         add_action( 'wp_print_scripts', array( $this, 'fix_plugin_js_conflicts' ), 100 );
 
         // Metaboxes
-        add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 1 );
+        add_action( 'add_meta_boxes_envira', array( $this, 'add_meta_boxes' ), 1 );
 
         // Add the envira-gallery class to the form, so our styles can be applied
         add_action( 'post_edit_form_tag', array( $this, 'add_form_class' ) );
