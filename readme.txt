@@ -2,7 +2,7 @@
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
 Tags: gallery, image gallery, photo gallery, video gallery, wordpress gallery plugin, gallery slider, gallery slideshow, gallery widget
 Requires at least: 4.4.0
-Tested up to: 5.2.2
+Tested up to: 5.2.3
 Requires PHP: 5.3
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
@@ -209,6 +209,10 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+= 1.6.9 =
+
+* Fix: Update post_type-check in the add-meta-boxes hook .
+
 = 1.6.8 =
 
 * Added: Welcome Screen.
@@ -238,13 +242,13 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 = 1.6.3 =
 
-* Added:Gutenberg Block support ( Beta )
+* Added: Gutenberg Block support ( Beta )
 * Added: Set margins for Automatic Layouts
 * Fix: Minor bug fixes
 
 = 1.6.2 =
 
-* Fix:Image titles with numbers throwing js errors.
+* Fix: Image titles with numbers throwing js errors.
 * Fix: Minor bug fixes
 
 = 1.6.1.7 =
@@ -254,6 +258,7 @@ Yes, Envira has full translation and localization support via the envira-gallery
 = 1.6.1.6 =
 
 * Fix: Minor bug fixes
+
 = 1.6.1.5 =
 
 * Fix: Minor bug fixes
