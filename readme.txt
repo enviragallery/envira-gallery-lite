@@ -209,9 +209,15 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+= 1.7.0 =
+
+* Updated: Welcome Screen information.
+* Fix: Issue involving showing captions in certain scenarios.
+* Fix: Remove unused CSS.
+
 = 1.6.9 =
 
-* Fix: Update post_type-check in the add-meta-boxes hook .
+* Fix: Update post_type-check in the add-meta-boxes hook.
 
 = 1.6.8 =
 
