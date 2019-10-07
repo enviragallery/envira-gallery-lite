@@ -1198,17 +1198,17 @@ class Envira_Welcome {
 
 
 					<div class="enviracolumn">
-						<img class="post-image" src="https://enviragallery.com/wp-content/uploads/2018/10/Image-SEO-for-WordPress.png" />
-						<h4 class="title"><?php esc_html_e( 'How to Optimize SEO Images for WordPress', 'envira-gallery-lite' ); ?></h4>
+						<img class="post-image" src="https://enviragallery.com/wp-content/uploads/2016/11/How-to-Fix-Flipped-or-Upside-Down-Images-in-WordPress-1.png" />
+						<h4 class="title"><?php esc_html_e( 'How to Fix Flipped or Upside Down Images in WordPress', 'envira-gallery-lite' ); ?></h4>
 						<?php /* Translators: %s */ ?>
-						<p><?php printf( esc_html__( 'Thinking of designing an eCommerce website where you can sell your photos or building a WordPress portfolio where you can show off your photography skills? It’s important to think carefully about your SEO strategy. %s', 'envira-gallery-lite' ), '<a href="https://enviragallery.com/optimize-seo-images-wordpress/" target="_blank">Read More</a>' ); ?></p>
+						<p><?php printf( esc_html__( 'Do the images you upload to WordPress appear flipped? In this tutorial, we will show you how to fix flipped or upside down images in WordPress. %s', 'envira-gallery-lite' ), '<a href="https://enviragallery.com/how-to-fix-flipped-or-upside-down-images-in-wordpress/" target="_blank">Read More</a>' ); ?></p>
 					</div>
 
 					<div class="enviracolumn">
-						<img class="post-image" src="https://enviragallery.com/wp-content/uploads/2017/08/move-photography-site-from-flickr-to-wordpress.jpg" />
-						<h4 class="title"><?php esc_html_e( 'How to Move Your Photography Site from Flickr to WordPress', 'envira-gallery-lite' ); ?></h4>
+						<img class="post-image" src="https://enviragallery.com/wp-content/uploads/2017/12/best-photo-editing-software-for-photographers.jpg" />
+						<h4 class="title"><?php esc_html_e( '17 Best Photo Editing Software for Photographers', 'envira-gallery-lite' ); ?></h4>
 						<?php /* Translators: %s */ ?>
-						<p><?php printf( esc_html__( 'You may know that your photos aren’t safe at Flickr, and you should upload them to your self hosted site. In this tutorial, we will share how to move your photography site from Flickr to WordPress. %s', 'envira-gallery-lite' ), '<a href="https://enviragallery.com/how-to-move-your-photography-site-from-flickr-to-wordpress/" target="_blank">Read More</a>' ); ?></p>
+						<p><?php printf( esc_html__( 'Are you looking for professional photo editing software for your photos on Mac or Windows? In this guide, we will share the best photo editing software for photographers. %s', 'envira-gallery-lite' ), '<a href="https://enviragallery.com/best-photo-editing-software-for-photographers/" target="_blank">Read More</a>' ); ?></p>
 					</div>
 
 					<div class="enviracolumn">
