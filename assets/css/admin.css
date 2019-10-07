@@ -219,6 +219,8 @@ body.post-type-envira {
         color: #ffffff; }
   body.post-type-envira div#TB_window div.wrap {
     margin: 10px 20px 0 2px; }
+  body.post-type-envira .envira-subscribe-notice {
+    margin-top: -10px; }
 
 /* ==========================================================================
    Language Specific
