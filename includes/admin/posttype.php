@@ -67,7 +67,7 @@ class Envira_Gallery_Posttype_Admin {
         
         // Get the current screen, and check whether we're viewing the Envira or Envira Album Post Types.
         $screen = get_current_screen(); 
-        if ( 'envira' !== $screen->post_type && 'envira_album' !== $screen->post_type ) {
+        if ( 'envira' !== $screen->post_type ) {
             return;
         }
 

@@ -386,13 +386,11 @@ form#post.envira-gallery {
 
         /* ==========================================================================
            Envira Gallery Type
-           Envira Album Type
            ========================================================================== */
         #envira-gallery {
             margin: 60px 0 20px 0;
         }
-        #envira-gallery,
-        #envira-albums {
+        #envira-gallery {
             /**
             * Hide the title bar of the metabox, so we have a seamless style
             */

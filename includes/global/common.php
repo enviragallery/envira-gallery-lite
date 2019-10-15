@@ -434,7 +434,7 @@ class Envira_Gallery_Common {
      * Helper method for retrieving lightbox easing transition effects.
      *
      * These are deliberately seperate from get_transition_effects() above, so that
-     * we can determine whether an effect on a Gallery or Album is an easing one or not.
+     * we can determine whether an effect on a Gallery is an easing one or not.
      *
      * In turn, that determines the setting keys used for Fancybox (e.g. openEffect vs openEasing)
      *

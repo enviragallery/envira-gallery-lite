@@ -253,7 +253,7 @@ class Envira_Gallery_Common_Admin {
         $screen = get_current_screen();
 
         // Bail if we're not on the Envira Post Type screen.
-        if ( 'envira' !== $screen->post_type && 'envira_album' !== $screen->post_type ) {
+        if ( 'envira' !== $screen->post_type ) {
             return;
         }
 
@@ -279,7 +279,7 @@ class Envira_Gallery_Common_Admin {
         $screen = get_current_screen();
 
         // Bail if we're not on the Envira Post Type screen.
-        if ( 'envira' !== $screen->post_type && 'envira_album' !== $screen->post_type ) {
+        if ( 'envira' !== $screen->post_type ) {
             return;
         }
 
