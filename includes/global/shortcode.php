@@ -212,7 +212,7 @@ class Envira_Gallery_Shortcode {
         $gallery = apply_filters( 'envira_gallery_output_start', $gallery, $this->gallery_data );
 
         // Build out the gallery HTML.
-        $gallery .= '<div id="envira-gallery-wrap-' . sanitize_html_class( $this->gallery_data['id'] ) . '" class="' . $this->get_gallery_classes( $this->gallery_data ) . '" itemscope itemtype="http://schema.org/ImageGallery">';
+        $gallery .= '<div id="envira-gallery-wrap-' . sanitize_html_class( $this->gallery_data['id'] ) . '" class="' . $this->get_gallery_classes( $this->gallery_data ) . '" itemscope itemtype="https://schema.org/ImageGallery">';
             $gallery  = apply_filters( 'envira_gallery_output_before_container', $gallery, $this->gallery_data );
 
             // Description
@@ -326,7 +326,7 @@ class Envira_Gallery_Shortcode {
             $item['thumb'] = str_replace( $thumbnail_start_url, get_bloginfo( 'url' ) . '/', $item['thumb'] );
         }
 
-        $output   = '<div id="envira-gallery-item-' . sanitize_html_class( $id ) . '" class="' . $this->get_gallery_item_classes( $item, $i, $data ) . '" style="padding-left: ' . $padding . 'px; padding-bottom: ' . $this->get_config( 'margin', $data ) . 'px; padding-right: ' . $padding . 'px;" ' . apply_filters( 'envira_gallery_output_item_attr', '', $id, $item, $data, $i ) . ' itemscope itemtype="http://schema.org/ImageObject">';
+        $output   = '<div id="envira-gallery-item-' . sanitize_html_class( $id ) . '" class="' . $this->get_gallery_item_classes( $item, $i, $data ) . '" style="padding-left: ' . $padding . 'px; padding-bottom: ' . $this->get_config( 'margin', $data ) . 'px; padding-right: ' . $padding . 'px;" ' . apply_filters( 'envira_gallery_output_item_attr', '', $id, $item, $data, $i ) . ' itemscope itemtype="https://schema.org/ImageObject">';
 
         $output .= '<div class="envira-gallery-item-inner">';
         $output  = apply_filters( 'envira_gallery_output_before_link', $output, $id, $item, $data, $i );
