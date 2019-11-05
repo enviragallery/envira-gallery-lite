@@ -33,6 +33,7 @@ class Envira_Gutenberg {
 	 */
 	public $loaded = false;
 
+	public $galleries = array();
 	/**
 	 * Primary class constructor.
 	 *
@@ -44,7 +45,7 @@ class Envira_Gutenberg {
 		$this->common = Envira_Gallery_Common::get_instance();
 		add_action( 'enqueue_block_assets', array( $this, 'block_assets' ), 10 );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'editor_assets' ), 10 );
-
+		add_action( 'current_screen', array( $this, 'get_galleries' ) );
 	}
 
 	/**
@@ -65,6 +66,21 @@ class Envira_Gutenberg {
 
 	}
 
+	/**
+	 * Helper Method to get the galleries
+	 *
+	 * @since 1.0.0
+	 */
+	public function get_galleries() {
+		$current_screen = get_current_screen();
+		if ( ! is_null( $current_screen ) && method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) {
+			$request = new WP_REST_Request( 'GET', '/wp/v2/envira-gallery' );
+			$request->set_query_params( [ 'per_page' => 10 ] );
+			$response        = rest_do_request( $request );
+			$server          = rest_get_server();
+			$this->galleries = $server->response_to_data( $response, false );
+		}
+	}
 
 	/**
 	 * Enqueue Gutenberg block assets for backend editor.
@@ -118,8 +134,11 @@ class Envira_Gutenberg {
 			'lightbox_themes' => $new_lightbox,
 			'image_sizes'     => $new_sizes,
 			'sorting_options' => $this->common->get_sorting_options(),
+			'galleries'       => is_array( $this->galleries ) ? $this->galleries : [],
 		);
-		$args_array = array( 'options' => $options );
+		$args_array = array(
+			'options' => $options,
+		);
 		wp_localize_script(
 			'envira_gutenberg-block-js',
 			'envira_args',
