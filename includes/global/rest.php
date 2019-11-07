@@ -52,28 +52,71 @@ class Envira_Rest {
 
 		$data = get_post_meta( $object['id'], '_eg_gallery_data', true );
 
-		$i        = 0;
+		if ( ! is_array( $data ) ) {
+			$data = array();
+		}
+
+		$i      = 0;
 		$images = array();
 
-		$data = $this->maybe_sort_gallery( $data, $object['id' ] );
-
 		if ( isset( $data['gallery'] ) && is_array( $data['gallery'] ) ) {
-
 			foreach ( $data['gallery'] as $id => $item ) {
 
+				// Skip over images that are pending (ignore if in Preview mode).
+				if ( isset( $item['status'] ) && 'pending' === $item['status'] && ! is_preview() ) {
+					continue;
+				}
+
+				$width    = null;
+				$height   = null;
 				$imagesrc = $this->get_image_src( $id, $item, $data, false, false );
-				$item['src'] = $imagesrc;
-				$item['id'] = $id;
-				$images[ $i ] = $item;
+
+				// Get the image file path.
+				$urlinfo       = wp_parse_url( $imagesrc );
+				$wp_upload_dir = wp_upload_dir();
+
+				// Interpret the file path of the image.
+				if ( preg_match( '/\/[0-9]{4}\/[0-9]{2}\/.+$/', $urlinfo['path'], $matches ) ) {
+
+					$file_path = $wp_upload_dir['basedir'] . $matches[0];
+
+				} else {
+
+					$content_dir = defined( 'WP_CONTENT_DIR' ) ? WP_CONTENT_DIR : '/wp-content/';
+					$pathinfo    = wp_parse_url( $url );
+					$uploads_dir = is_multisite() ? '/files/' : $content_dir;
+					$file_path   = trailingslashit( $wp_upload_dir['basedir'] ) . basename( $urlinfo['path'] );
+					$file_path   = preg_replace( '/(\/\/)/', '/', $file_path );
+
+				}		
+
+				if ( file_exists( $file_path ) ) {
+					list($width, $height) = getimagesize( $file_path );
+				}
+
+				$item['src']    = $imagesrc;
+				$item['id']     = $id;
+				$item['height'] = intval( $height );
+				$item['width']  = intval( $width );
+				$images[ $i ]   = $item;
+
 				$i++;
-
 			}
-
 			$data['gallery'] = $images;
 
 		}
 
+		if ( ! isset( $data['config'] ) || ! is_array( $data['config'] ) ) {
+			$data['config'] = array();
+		}
+
+		$data['config']['title'] = wp_strip_all_tags( get_the_title( $object['id'] ) );
+		
+		// Allow the data to be filtered before it is stored and used to create the gallery output.
+		$data = apply_filters( 'envira_gallery_pre_data', $data, $object['id'] );
+
 		return $data;
+
 
 	}
 
