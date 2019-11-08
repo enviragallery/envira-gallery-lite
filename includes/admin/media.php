@@ -228,7 +228,7 @@ class Envira_Gallery_Media {
         $exif_added = ! $exif_data;
         $iptc_added = ! $iptc_data;
 
-        while ( ( substr( $destination_image_contents, 0, 2 ) & 0xFFF0 ) === 0xFFE0 ) {
+        while ( ( substr( $destination_image_contents, 0, 2 ) && 0xFFF0 ) === 0xFFE0 ) {
             $segment_length = ( substr( $destination_image_contents, 2, 2 ) & 0xFFFF );
             $iptc_segment_number = ( substr( $destination_image_contents, 1, 1 ) & 0x0F );   // Last 4 bits of second byte is IPTC segment #
             if ( $segment_length <= 2 ) {
