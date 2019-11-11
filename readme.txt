@@ -2,7 +2,7 @@
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
 Tags: gallery, image gallery, photo gallery, video gallery, wordpress gallery plugin, gallery slider, gallery slideshow, gallery widget
 Requires at least: 4.4.0
-Tested up to: 5.2.3
+Tested up to: 5.3.0
 Requires PHP: 5.3
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
@@ -208,6 +208,32 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 
 == Changelog ==
+
+1.7.3.1
+
+* Fix: Resolving Gutenberg links and minor errors related to media uploads.
+
+1.7.3
+
+* Fix: Reverting some changes related to Gutenberg.
+
+1.7.2
+
+* Updated: Gutenberg performance improvements.
+* Fix: Errors related to Gutenberg updates.
+* Fix: Typo resolved in Media.php causing PHP Warning.
+
+1.7.1
+
+* Fix: Schema referenced now points to https.
+* Fix: Remove unused CSS.
+
+1.7.0
+
+* Updated: Welcome Screen information.
+* Fix: Issue involving showing captions in certain scenarios.
+* Fix: Remove unused CSS.
+
 
 = 1.7.0 =
 
