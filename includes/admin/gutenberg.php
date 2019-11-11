@@ -137,7 +137,8 @@ class Envira_Gutenberg {
 			'galleries'       => is_array( $this->galleries ) ? $this->galleries : [],
 		);
 		$args_array = array(
-			'options' => $options,
+			'options'    => $options,
+			'admin_url'   => admin_url(),
 		);
 		wp_localize_script(
 			'envira_gutenberg-block-js',

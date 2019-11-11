@@ -182,7 +182,6 @@ class Envira_Gallery_Lite {
 	public function require_admin() {
 
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/addons.php';
-		require plugin_dir_path( __FILE__ ) . 'includes/admin/ajax.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/common.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/editor.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/media.php';
@@ -231,6 +230,7 @@ class Envira_Gallery_Lite {
 		require plugin_dir_path( __FILE__ ) . 'includes/global/posttype.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/global/shortcode.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/global/rest.php';
+		require plugin_dir_path( __FILE__ ) . 'includes/admin/ajax.php';
 
 	}
 
