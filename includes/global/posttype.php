@@ -67,7 +67,7 @@ class Envira_Gallery_Posttype {
         $args = array(
             'labels'              => $labels,
             'public'              => false,
-            'exclude_from_search' => false,
+            'exclude_from_search' => true,
             'show_ui'             => true,
             'show_in_menu'        => true,
             'show_in_admin_bar'   => true,
