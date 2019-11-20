@@ -190,6 +190,7 @@ class Envira_Gallery_Lite {
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/notice.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/posttype.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/table.php';
+		require plugin_dir_path( __FILE__ ) . 'includes/admin/promotion.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/review.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/gutenberg.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/subscribe.php';
