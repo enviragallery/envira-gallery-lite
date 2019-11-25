@@ -102,7 +102,7 @@ class Envira_Lite_Promotion {
 		if ( ! $promotion ) {
 			$promotion = array(
 				'time'         => $time,
-				'dismissed' => false
+				'dismissed'    => false
 			);
 			$load = true;
 		} else {
@@ -151,7 +151,7 @@ class Envira_Lite_Promotion {
 
 		// We have a candidate! Output a promotion message.
 		?>
-		<div class="notice notice-info is-dismissible envira-subscribe-notice">
+		<div class="notice notice-info is-dismissible envira-promotion-notice">
 			<h2><?php _e( ' Black Friday is here! – Get 50% off Envira Gallery and unlock its most powerful features!', 'envira-gallery-lite' ); ?></h2>
 			<p><?php _e( 'Easy, intuitive and fast, spend less time configuring your galleries and more time shooting and editing your photos.', 'envira-gallery-lite' );?>
 			<p><?php _e( 'Envira Gallery makes it easy to create lightning-fast, mobile-responsive photo and video galleries. Create, edit and sync your favorite photo galleries from Adobe Lightroom directly to Wordpress. Protect your galleries with passwords, watermarks and no-right-click downloads. Want to sell your photos in WordPress? Easily turn your galleries and images into products with WooCommerce and much more!', 'envira-gallery-lite' );?></p>
