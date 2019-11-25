@@ -66,8 +66,8 @@ class Envira_Lite_Promotion {
 
 		add_action( 'admin_notices', array( $this, 'promotion' ) );
 		add_action( 'wp_ajax_envira_dismiss_promotion', array( $this, 'dismiss_promotion' ) );
-        add_filter( 'admin_footer_text',     array( $this, 'admin_footer'   ), 1, 2 );
-
+		add_filter( 'admin_footer_text',     array( $this, 'admin_footer'   ), 1, 2 );
+		
 	}
 
 	/**
@@ -112,13 +112,13 @@ class Envira_Lite_Promotion {
 			}
 		}
 
-		// If we cannot load, return early.
-		// if ( ! $load ) {
-		// 	return;
-		// }
+		//If we cannot load, return early.
+		if ( ! $load ) {
+			return;
+		}
 
 		// Update the promotion option now.
-		// update_option( 'envira_gallery_promotion', $promotion );
+		update_option( 'envira_gallery_promotion', $promotion );
 
 		// Run through optins on the site to see if any have been loaded for more than a week.
 		$valid    = false;
