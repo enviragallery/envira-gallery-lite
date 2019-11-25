@@ -67,7 +67,7 @@ class Envira_Lite_Promotion {
 		add_action( 'admin_notices', array( $this, 'promotion' ) );
 		add_action( 'wp_ajax_envira_dismiss_promotion', array( $this, 'dismiss_promotion' ) );
 		add_filter( 'admin_footer_text',     array( $this, 'admin_footer'   ), 1, 2 );
-		
+	
 	}
 
 	/**
@@ -112,7 +112,7 @@ class Envira_Lite_Promotion {
 			}
 		}
 
-		//If we cannot load, return early.
+		// If we cannot load, return early.
 		if ( ! $load ) {
 			return;
 		}
