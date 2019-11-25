@@ -2,7 +2,7 @@
 /**
  * Promotion class.
  *
- * @since 1.1.4.5
+ * @since 1.7.4
  *
  * @package envira
  * @author  Devin Vinson
