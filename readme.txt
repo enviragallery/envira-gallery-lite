@@ -209,6 +209,11 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+1.7.4.1
+
+* Fix: Promotion updating.
+
+
 1.7.4
 
 * Added: Messaging.
