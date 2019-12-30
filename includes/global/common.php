@@ -315,6 +315,12 @@ class Envira_Gallery_Common {
             );
         }
 
+        // Add Option for full image.
+        $sizes[] = array(
+            'value' => 'full',
+            'name'  => __( 'Original Image', 'envira-gallery' ),
+        );
+
         return apply_filters( 'envira_gallery_image_sizes', $sizes );
 
     }

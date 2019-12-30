@@ -312,7 +312,6 @@ class Envira_Gallery_Shortcode {
         $imagesrc         = $this->get_image_src( $id, $item, $data );
         $image_src_retina = $this->get_image_src( $id, $item, $data, false, true );
         $placeholder      = wp_get_attachment_image_src( $id, 'medium' ); // $placeholder is null because $id is 0 for instagram?
-
         // Filter output before starting this gallery item.
         $gallery  = apply_filters( 'envira_gallery_output_before_item', $gallery, $id, $item, $data, $i );
 
@@ -1542,17 +1541,18 @@ class Envira_Gallery_Shortcode {
 
 		if ( !empty($item['src']) && strpos( $item['src'], 'cdninstagram' ) !== false ) :
 			// using 'cdninstagram' because it seems all urls contain it - but be watchful in the future
-			$instagram     = true;
-			$src      = $item['src'];
-			$image         = $item['src'];
+			$instagram = true;
+			$src       = $item['src'];
+			$image     = $item['src'];
 		endif;
 
-		$image_size = $this->get_config( 'image_size', $data );
+        $image_size = $this->get_config( 'image_size', $data );
+        $crop = $this->get_config( 'crop', $data );
 
-		if ( !$src ) :
+        if ( !$src ) :         
 
 			// Check if this Gallery uses a WordPress defined image size
-			if ( $image_size != 'default' && ! $retina ) {
+			if ( $image_size !== 'default' && $image_size !== 'full' && ! $retina ) {
 				// If image size is envira_gallery_random, get a random image size.
 				if ( $image_size == 'envira_gallery_random' ) {
 
@@ -1577,13 +1577,17 @@ class Envira_Gallery_Shortcode {
 				}
 			} else {
 
-				if ( ! $retina ){
 
-					$isize = $this->find_clostest_size( $data ) != '' ? $this->find_clostest_size( $data ) : 'full';
+				if ( ! $retina ) {
+
+                    $isize = $this->find_clostest_size( $data ) != '' ? $this->find_clostest_size( $data ) : 'full';
+                    $isize = ( $image_size === 'full' ) ? 'full' : $isize;
 					$src = apply_filters( 'envira_gallery_retina_image_src', wp_get_attachment_image_src( $id, $isize ), $id, $item, $data, $this->is_mobile );
 
-				}else{
-					$src = apply_filters( 'envira_gallery_retina_image_src', wp_get_attachment_image_src( $id, 'full' ), $id, $item, $data, $this->is_mobile );
+				} else {
+
+                    $src = apply_filters( 'envira_gallery_retina_image_src', wp_get_attachment_image_src( $id, 'full' ), $id, $item, $data, $this->is_mobile );
+                    
 				}
 
 
@@ -1598,8 +1602,8 @@ class Envira_Gallery_Shortcode {
 			$image = $item['src'];
 		} else if ( ! $instagram ) {
 			$image = $src[0];
-		}
-
+        }
+        
 		// If we still don't have an image at this point, something went wrong
 		if ( ! isset( $image ) ) {
 			return apply_filters( 'envira_gallery_no_image_src', $item['link'], $id, $item, $data );
@@ -1619,8 +1623,8 @@ class Envira_Gallery_Shortcode {
 		// if ( ( $image_size != 'default' && ! $retina ) ) {
 			// Return the image
 			return apply_filters( 'envira_gallery_image_src', $image, $id, $item, $data );
-		}
-
+        }
+        
 		// If the image size is default (i.e. the user has input their own custom dimensions in the Gallery),
 		// we may need to resize the image now
 		// This is safe to call every time, as resize_image() will check if the image already exists, preventing thumbnails
@@ -1659,33 +1663,40 @@ class Envira_Gallery_Shortcode {
 				break;
 
 			}
-		}
+        }
+        
 
 		// Filter
-        $args = apply_filters( 'envira_gallery_crop_image_args', $args);
-        $crop = $this->get_config( 'crop', $data );
+        $args     = apply_filters( 'envira_gallery_crop_image_args', $args);
 
-        if ( $crop ) {
-            $resized_image = $this->common->resize_image( $image, $args['width'], $args['height'], $this->get_config( 'crop', $data ), $args['position'], $args['quality'], $args['retina'], $data );
+        if ( $image_size === 'full' ) {
+
+            // Return the non-cropped image, the full image (which is useful for animated gifs).
+            return apply_filters( 'envira_gallery_image_src', $image, $id, $item, $data );
+
         } else {
-            $resized_image = $image;
+        
+            $resized_image = $this->common->resize_image( $image, $args['width'], $args['height'], $this->get_config( 'crop', $data ), $args['position'], $args['quality'], $args['retina'], $data );
+
+            // If there is an error, possibly output error message and return the default image src.
+            if ( is_wp_error( $resized_image ) ) {
+                // If WP_DEBUG is enabled, and we're logged in, output an error to the user
+                if ( defined( 'WP_DEBUG' ) && WP_DEBUG && is_user_logged_in() ) {
+                    echo '<pre>Envira: Error occured resizing image (these messages are only displayed to logged in WordPress users):<br />';
+                    echo 'Error: ' . $resized_image->get_error_message() . '<br />';
+                    echo 'Image: ' . $image . '<br />';
+                    echo 'Args: ' . var_export( $args, true ) . '</pre>';
+                }
+
+                // Return the non-cropped image as a fallback.
+                return apply_filters( 'envira_gallery_image_src', $image, $id, $item, $data );
+
+		    } else {
+
+                return apply_filters( 'envira_gallery_image_src', $resized_image, $id, $item, $data );
+            
+            }
         }
-
-		// If there is an error, possibly output error message and return the default image src.
-		if ( is_wp_error( $resized_image ) ) {
-			// If WP_DEBUG is enabled, and we're logged in, output an error to the user
-			if ( defined( 'WP_DEBUG' ) && WP_DEBUG && is_user_logged_in() ) {
-				echo '<pre>Envira: Error occured resizing image (these messages are only displayed to logged in WordPress users):<br />';
-				echo 'Error: ' . $resized_image->get_error_message() . '<br />';
-				echo 'Image: ' . $image . '<br />';
-				echo 'Args: ' . var_export( $args, true ) . '</pre>';
-			}
-
-			// Return the non-cropped image as a fallback.
-			return apply_filters( 'envira_gallery_image_src', $image, $id, $item, $data );
-		} else {
-			return apply_filters( 'envira_gallery_image_src', $resized_image, $id, $item, $data );
-		}
 
 	}
 
