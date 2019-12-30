@@ -1662,8 +1662,14 @@ class Envira_Gallery_Shortcode {
 		}
 
 		// Filter
-		$args     = apply_filters( 'envira_gallery_crop_image_args', $args);
-		$resized_image = $this->common->resize_image( $image, $args['width'], $args['height'], $this->get_config( 'crop', $data ), $args['position'], $args['quality'], $args['retina'], $data );
+        $args = apply_filters( 'envira_gallery_crop_image_args', $args);
+        $crop = $this->get_config( 'crop', $data );
+
+        if ( $crop ) {
+            $resized_image = $this->common->resize_image( $image, $args['width'], $args['height'], $this->get_config( 'crop', $data ), $args['position'], $args['quality'], $args['retina'], $data );
+        } else {
+            $resized_image = $image;
+        }
 
 		// If there is an error, possibly output error message and return the default image src.
 		if ( is_wp_error( $resized_image ) ) {
