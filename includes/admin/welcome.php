@@ -1118,13 +1118,13 @@ class Envira_Welcome {
 							</li>
 							<li>
 								<div class="interior">
-									<h5><a href="https://enviragallery.com/lite/">Masonry Gallery</a></h5>
+									<h5><a href="https://enviragallery.com/demo/masonry-gallery-demo/">Masonry Gallery</a></h5>
 									<p>Display your photo galleries in a masonry layout.</p>
 								</div>
 							</li>
 							<li>
 								<div class="interior">
-									<h5><a href="https://enviragallery.com/lite/">Gallery Themes/Layouts</a></h5>
+									<h5><a href="https://enviragallery.com/demo/envira-gallery-theme-demo/">Gallery Themes/Layouts</a></h5>
 									<p>Build responsive WordPress galleries that work on mobile, tablet and desktop devices.</p>
 								</div>
 							</li>
