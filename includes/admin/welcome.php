@@ -121,7 +121,8 @@ class Envira_Welcome {
 			========================================================================== */
 			li#menu-posts-envira ul li:last-child,
 			li#menu-posts-envira ul li:nth-last-child(2),
-			li#menu-posts-envira ul li:nth-last-child(3) {
+			li#menu-posts-envira ul li:nth-last-child(3),
+			li#menu-posts-envira ul li:nth-last-child(4) { 
 				display: none;
 			}
 
