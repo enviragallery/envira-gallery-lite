@@ -471,7 +471,7 @@ class Envira_Welcome {
 
 							<div class="envira-features-section">
 
-								<h3 class="headline-title"><?php esc_html_e( 'Envira Gallery is the best responsive WordPress gallery plugin.', 'envira-gallery-lite' ); ?></h3>
+								<h3 class="headline-title"><?php esc_html_e( 'Envira Gallery is the most beginner-friendly drag & drop WordPress gallery plugin.', 'envira-gallery-lite' ); ?></h3>
 
 								<div class="envira-feature">
 								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/08/drag-drop-icon.png" />

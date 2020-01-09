@@ -133,7 +133,7 @@ content: '\0057'; }
 		padding: 15px;
 
 		.sidebox {
-			background: beige;
+			background: #e6e6e6;
 			padding: 20px;
 			font-size:  14px;
 			margin-bottom: 20px;
@@ -395,11 +395,12 @@ body.post-type-envira div.wrap.about-wrap {
 		}
 
 		.headline-title {
-			font-size: 28px;
+			font-size: 25px;
 			font-weight: 400;
 			line-height: 1.5;
 			margin: 1em auto 2em;
 			text-align: center;
+			color: #000;
 		}
 
 		.envira-feature-with-images {
@@ -553,6 +554,22 @@ body.post-type-envira div.wrap.about-wrap {
 .envira_page_envira-gallery-support {
 	h3.headline-title {
 		margin-bottom: 1em;
+	}
+}
+
+.envira_page_envira-gallery-lite-welcome {
+	.envira-recent-section {
+		padding-bottom: 30px;
+		h3.headline-title {
+			margin-bottom: 1.25em;
+		}
+		&.last-section {
+			padding-top: 0px;
+			padding-bottom: 0;
+			h3 {
+				margin-bottom: 1.25em;
+			}
+		}
 	}
 }
 
@@ -731,20 +748,37 @@ body.envira_page_envira-gallery-lite-welcome-addons {
 * 4.0 Lite vs Pro
 *----------------------------------------------------------------------------*/
 
+body.envira_page_envira-gallery-lite-litevspro {
+	.envira-get-started-main {
+		width: 100%;
+	}
+}
+
 #envira-admin-litevspro {
+	.centered {
+		text-align: center;
+	}
+	h1 {
+		font-size: 34px;
+		line-height: 32px;
+	}
+	p.centered {
+		font-size: 18px;
+		line-height: 21px;
+	}
 	&.wrap {
 		margin-left: 0;
 		margin-right: 0;
 	}
+	.litevspro-table-header {
+		background: #fff;
+		// border-bottom: 1px solid #DDDDDD;
+		border-right: 1px solid #DDDDDD;
+		border-left: 1px solid #DDDDDD;
+	}
 	.envira-admin-litevspro-section {
 		margin: 0 0 30px 0;
 		padding: 30px;
-		background: #fff;
-		border-left: 1px solid #DDDDDD;
-		border-right: 1px solid #DDDDDD;
-			border-bottom-color: rgb(221, 221, 221);
-			border-bottom-style: solid;
-			border-bottom-width: 1px;
 		line-height: 2;
 		&.no-bottom {
 			margin-bottom: 0;
@@ -759,6 +793,11 @@ body.envira_page_envira-gallery-lite-welcome-addons {
 		border-right: 1px solid #DDDDDD;
 		padding: 30px;
 		vertical-align: top;
+		width: 33%;
+		p {
+			font-size: 18px;
+			line-height: 24px;
+		}
 	}
 	table tr td:last-child {
 		border-right: 0;
@@ -788,7 +827,22 @@ body.envira_page_envira-gallery-lite-welcome-addons {
 	.envira-admin-litevspro-section-table {
 		padding-left: 0;
 		padding-right: 0;
+		padding-top: 0;
 		table {
+			width: 100%;
+			tr td:first-child {
+				border-left: 1px solid #DDDDDD;
+				border-bottom-color: rgb(221, 221, 221);
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+			}
+			tr td:last-child {
+				border-right: 1px solid #DDDDDD;
+				border-bottom-color: rgb(221, 221, 221);
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				background-color: #F3F9FE;
+			}
 			tr:first-child td {
 				border-top: 1px solid #DDD;
 			}
@@ -798,8 +852,19 @@ body.envira_page_envira-gallery-lite-welcome-addons {
 				font-size: 18px;
 				padding-left: 30px;
 				padding-bottom: 20px;
+				padding-top: 20px;
+				border-top: 1px solid #DDDDDD;
+				border-right: 1px solid #DDDDDD;
+				vertical-align: middle;
+			}
+			th:last-child {
+				border-right: 1px solid #DDDDDD;
+			}
+			th:first-child {
+				border-left: 1px solid #DDDDDD;
 			}
 			td {
+				background: #fff;
 				strong {
 					display: block;
 				}
@@ -812,17 +877,23 @@ body.envira_page_envira-gallery-lite-welcome-addons {
 			}
 			p.features-full {
 				padding-left: 30px;
-				background-image: url(../images/icons/litevspro/icon-full.svg);
+				background-position: 0 4px;
+				background-image: url(../images/icons/litevspro/tick.svg);
 			}
 			p.features-none {
 				padding-left: 30px;
-				background-image: url(../images/icons/litevspro/icon-none.svg);
+				background-position: 6px 6px;
+				background-image: url(../images/icons/litevspro/cross_red.svg);
+				background-size: 15px auto;
+				
+				
 			}
 			p.features-partial {
 				padding-left: 30px;
-				background-position: -3px 0;
-				background-size: 23px auto;
-				background-image: url(../images/icons/litevspro/icon-partial.svg);
+				background-position: 6px 6px;
+				background-size: 15px auto;
+				background-image: url(../images/icons/litevspro/cross.svg);
+				
 			}
 		}
 	}
@@ -835,6 +906,9 @@ body.envira_page_envira-gallery-lite-welcome-addons {
 
 .envira-get-started-section {
 	margin-top: 20px;
+	.centered {
+		text-align: center;
+	}
 
 	.envira-admin-get-started-panel {
 		display: flex;
