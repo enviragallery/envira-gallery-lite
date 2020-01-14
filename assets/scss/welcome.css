@@ -119,7 +119,7 @@
     width: 20%;
     padding: 15px; }
     .envira-welcome-wrap .envira-welcome-sidebar .sidebox {
-      background: #e6e6e6;
+      background: beige;
       padding: 20px;
       font-size: 14px;
       margin-bottom: 20px; }
@@ -349,12 +349,11 @@ body.post-type-envira div.wrap.about-wrap {
   .envira_page_envira-gallery-lite-get-started .envira-recent-section .headline-title,
   .envira_page_envira-gallery-support .envira-features-section .headline-title,
   .envira_page_envira-gallery-support .envira-recent-section .headline-title {
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 400;
     line-height: 1.5;
     margin: 1em auto 2em;
-    text-align: center;
-    color: #000; }
+    text-align: center; }
   .envira_page_envira-gallery-lite-welcome .envira-features-section .envira-feature-with-images,
   .envira_page_envira-gallery-lite-welcome .envira-recent-section .envira-feature-with-images,
   .envira_page_envira-gallery-lite-get-started .envira-features-section .envira-feature-with-images,
@@ -562,16 +561,6 @@ body.post-type-envira div.wrap.about-wrap {
 .envira_page_envira-gallery-support h3.headline-title {
   margin-bottom: 1em; }
 
-.envira_page_envira-gallery-lite-welcome .envira-recent-section {
-  padding-bottom: 30px; }
-  .envira_page_envira-gallery-lite-welcome .envira-recent-section h3.headline-title {
-    margin-bottom: 1.25em; }
-  .envira_page_envira-gallery-lite-welcome .envira-recent-section.last-section {
-    padding-top: 0px;
-    padding-bottom: 0; }
-    .envira_page_envira-gallery-lite-welcome .envira-recent-section.last-section h3 {
-      margin-bottom: 1.25em; }
-
 #changelog-envira-gallery h3 {
   background: #7cc048;
   color: white;
@@ -709,215 +698,19 @@ body.envira_page_envira-gallery-lite-welcome-addons #envira-addons .envira-addon
 /*------------------------------------------------------------------------------
 * 4.0 Lite vs Pro
 *----------------------------------------------------------------------------*/
-body.envira_page_envira-gallery-lite-litevspro .envira-get-started-main {
-  width: 100%; }
+#wpforms-admin-about .wpforms-admin-about-section-table table p.features-full {
+  padding-left: 30px;
+  background-image: url(../images/icons/litevspro/icon-full.svg); }
 
-#envira-admin-litevspro .centered {
-  text-align: center; }
+#wpforms-admin-about .wpforms-admin-about-section-table table p.features-none {
+  padding-left: 30px;
+  background-image: url(../images/icons/litevspro/icon-none.svg); }
 
-#envira-admin-litevspro h1 {
-  font-size: 34px;
-  line-height: 32px; }
-
-#envira-admin-litevspro p.centered {
-  font-size: 18px;
-  line-height: 21px; }
-
-#envira-admin-litevspro.wrap {
-  margin-left: 0;
-  margin-right: 0; }
-
-#envira-admin-litevspro .litevspro-table-header {
-  background: #fff;
-  border-right: 1px solid #DDDDDD;
-  border-left: 1px solid #DDDDDD; }
-
-#envira-admin-litevspro .envira-admin-litevspro-section {
-  margin: 0 0 30px 0;
-  padding: 30px;
-  line-height: 2; }
-  #envira-admin-litevspro .envira-admin-litevspro-section.no-bottom {
-    margin-bottom: 0;
-    padding-bottom: 0; }
-  #envira-admin-litevspro .envira-admin-litevspro-section.litevspro-table-header {
-    padding-bottom: 15px; }
-
-#envira-admin-litevspro table tr td {
-  border-bottom: 1px solid #DDDDDD;
-  border-right: 1px solid #DDDDDD;
-  padding: 30px;
-  vertical-align: top;
-  width: 33%; }
-  #envira-admin-litevspro table tr td p {
-    font-size: 18px;
-    line-height: 24px; }
-
-#envira-admin-litevspro table tr td:last-child {
-  border-right: 0; }
-
-#envira-admin-litevspro table {
-  border-bottom: 0; }
-
-#envira-admin-litevspro .envira-admin-litevspro-section-hero {
-  border-top: 0;
-  font-size: 16px;
-  line-height: 18px; }
-  #envira-admin-litevspro .envira-admin-litevspro-section-hero p {
-    text-align: center;
-    font-size: 16px;
-    line-height: 18px; }
-  #envira-admin-litevspro .envira-admin-litevspro-section-hero h3.call-to-action {
-    font-size: 21px;
-    font-weight: 500;
-    text-align: center; }
-  #envira-admin-litevspro .envira-admin-litevspro-section-hero span.envira-deal {
-    font-weight: 500;
-    color: green; }
-
-#envira-admin-litevspro .envira-admin-litevspro-section-table {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0; }
-  #envira-admin-litevspro .envira-admin-litevspro-section-table table {
-    width: 100%; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table tr td:first-child {
-      border-left: 1px solid #DDDDDD;
-      border-bottom-color: #dddddd;
-      border-bottom-style: solid;
-      border-bottom-width: 1px; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table tr td:last-child {
-      border-right: 1px solid #DDDDDD;
-      border-bottom-color: #dddddd;
-      border-bottom-style: solid;
-      border-bottom-width: 1px;
-      background-color: #F3F9FE; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table tr:first-child td {
-      border-top: 1px solid #DDD; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table th {
-      text-align: left;
-      font-weight: 600;
-      font-size: 18px;
-      padding-left: 30px;
-      padding-bottom: 20px;
-      padding-top: 20px;
-      border-top: 1px solid #DDDDDD;
-      border-right: 1px solid #DDDDDD;
-      vertical-align: middle; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table th:last-child {
-      border-right: 1px solid #DDDDDD; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table th:first-child {
-      border-left: 1px solid #DDDDDD; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table td {
-      background: #fff; }
-      #envira-admin-litevspro .envira-admin-litevspro-section-table table td strong {
-        display: block; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table p {
-      background-repeat: no-repeat;
-      background-size: 15px auto;
-      background-position: 0 6px;
-      margin: 0; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table p.features-full {
-      padding-left: 30px;
-      background-position: 0 4px;
-      background-image: url(../images/icons/litevspro/tick.svg); }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table p.features-none {
-      padding-left: 30px;
-      background-position: 6px 6px;
-      background-image: url(../images/icons/litevspro/cross_red.svg);
-      background-size: 15px auto; }
-    #envira-admin-litevspro .envira-admin-litevspro-section-table table p.features-partial {
-      padding-left: 30px;
-      background-position: 6px 6px;
-      background-size: 15px auto;
-      background-image: url(../images/icons/litevspro/cross.svg); }
-
-/*------------------------------------------------------------------------------
-* 5.0 Getting Started (Revised)
-*----------------------------------------------------------------------------*/
-.envira-get-started-section {
-  margin-top: 20px; }
-  .envira-get-started-section .centered {
-    text-align: center; }
-  .envira-get-started-section .envira-admin-get-started-panel {
-    display: flex;
-    background: white;
-    padding: 20px;
-    font-size: 16px;
-    line-height: 25px;
-    margin-bottom: 20px; }
-    .envira-get-started-section .envira-admin-get-started-panel h2 {
-      font-size: 2em;
-      font-weight: 500;
-      line-height: 1.2em;
-      margin-top: 0;
-      margin-bottom: 0;
-      text-transform: capitalize; }
-    .envira-get-started-section .envira-admin-get-started-panel p {
-      font-size: 16px;
-      line-height: 20px; }
-      .envira-get-started-section .envira-admin-get-started-panel p a {
-        font-weight: 500;
-        color: #7cc048;
-        text-decoration: none; }
-      .envira-get-started-section .envira-admin-get-started-panel p a:hover {
-        text-decoration: underline; }
-    .envira-get-started-section .envira-admin-get-started-panel ul {
-      list-style: disc;
-      list-style-position: inside; }
-      .envira-get-started-section .envira-admin-get-started-panel ul.list-of-links {
-        list-style: none; }
-        .envira-get-started-section .envira-admin-get-started-panel ul.list-of-links a {
-          color: #7cc048;
-          text-decoration: none; }
-        .envira-get-started-section .envira-admin-get-started-panel ul.list-of-links a:hover {
-          text-decoration: underline; }
-    .envira-get-started-section .envira-admin-get-started-panel .feature-photo-column {
-      padding-left: 30px;
-      max-width: 360px;
-      min-width: 350px;
-      display: inherit; }
-      .envira-get-started-section .envira-admin-get-started-panel .feature-photo-column img {
-        width: 100%;
-        margin: auto; }
-      .envira-get-started-section .envira-admin-get-started-panel .feature-photo-column.photo-left {
-        padding-left: 0;
-        padding-right: 30px; }
-    .envira-get-started-section .envira-admin-get-started-panel.mini-panel .feature-photo-column {
-      padding-top: 10px; }
-      .envira-get-started-section .envira-admin-get-started-panel.mini-panel .feature-photo-column a {
-        margin: 0 auto;
-        height: auto; }
-      .envira-get-started-section .envira-admin-get-started-panel.mini-panel .feature-photo-column img {
-        width: auto;
-        margin: 0 auto; }
-  .envira-get-started-section .envira-admin-get-started-banner {
-    display: flex;
-    background: black;
-    color: white;
-    padding: 10px 0;
-    margin-bottom: 20px; }
-    .envira-get-started-section .envira-admin-get-started-banner .banner-text {
-      display: block;
-      margin: 0 auto;
-      padding: 10px 0 0 0;
-      text-align: center;
-      font-size: 1.5em;
-      text-align: left; }
-      .envira-get-started-section .envira-admin-get-started-banner .banner-text h3 {
-        font-size: 1.5em;
-        margin: 5px auto;
-        color: white; }
-    .envira-get-started-section .envira-admin-get-started-banner .banner-button {
-      margin: auto;
-      max-width: 33%;
-      height: 100%;
-      vertical-align: middle; }
-      .envira-get-started-section .envira-admin-get-started-banner .banner-button a {
-        height: auto;
-        padding: 15px 25px;
-        font-size: 1.45em;
-        display: block;
-        margin: auto; }
+#wpforms-admin-about .wpforms-admin-about-section-table table p.features-partial {
+  padding-left: 30px;
+  background-position: -3px 0;
+  background-size: 23px auto;
+  background-image: url(../images/icons/litevspro/icon-partial.svg); }
 
 /*------------------------------------------------------------------------------
 * 1.0 Media Queries
