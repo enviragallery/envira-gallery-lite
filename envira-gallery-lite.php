@@ -573,6 +573,46 @@ if ( ! function_exists( 'envira_mobile_detect' ) ) {
 
 }
 
+// Conditionally load the upgrade function.
+if ( ! function_exists( 'envira_wp_upe_upgrade_completed' ) ) {
+
+	/**
+	 * This function runs when WordPress completes its upgrade process
+	 * It iterates through each plugin updated to see if Envira is included
+	 * @param $upgrader_object Array
+	 * @param $options Array
+	 */
+	function envira_wp_upe_upgrade_completed( $upgrader_object, $options ) {
+		// The path to our plugin's main file
+		$our_plugin = plugin_basename( __FILE__ );
+		// If an update has taken place and the updated type is plugins and the plugins element exists
+		if( $options['action'] == 'update' && $options['type'] == 'plugin' && isset( $options['plugins'] ) ) {
+			// Iterate through the plugins being updated and check if ours is there
+			foreach( $options['plugins'] as $plugin ) {
+				if( $plugin == $our_plugin ) {
+					// Set a transient to record that our plugin has just been updated
+					set_transient( 'envira_lite_updated', 1, 60 ); // one minute
+				}
+			}
+		}
+	}
+	add_action( 'upgrader_process_complete', 'envira_wp_upe_upgrade_completed', 10, 2 );
+
+	
+	function envira_gallery_welcome_on_upgrade() {
+		if ( ! empty( $_REQUEST['post_type'] ) && $_REQUEST['post_type'] === 'envira' ) {
+			if ( false !== ( $special_query_results = get_transient( 'envira_lite_updated' ) ) ) {
+				// transient exists, so determine if we can redirect to welcome screen - are we on an Envira page?
+				wp_redirect( admin_url( 'edit.php?post_type=envira&page=envira-gallery-lite-get-started' ) );
+				delete_transient( 'envira_lite_updated' ); // one minute
+				exit;
+			}
+		}
+	}
+	add_action( 'envira_gallery_lite_init', 'envira_gallery_welcome_on_upgrade' );
+
+}
+
 // Conditionally load the template tag.
 if ( ! function_exists( 'envira_gallery' ) ) {
 	/**
