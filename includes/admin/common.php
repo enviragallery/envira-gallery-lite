@@ -512,30 +512,33 @@ class Envira_Gallery_Common_Admin {
      *
      * @since 1.5.0
      */
-    public function get_upgrade_link( $page = 'liteplugin' ) {
+    public function get_upgrade_link( $medium = 'default', $button = 'default' ) {
+
         // Check if there's a constant.
         $shareasale_id = '';
         if ( defined( 'ENVIRA_GALLERY_SHAREASALE_ID' ) ) {
             $shareasale_id = ENVIRA_GALLERY_SHAREASALE_ID;
         }
+
         // If there's no constant, check if there's an option.
         if ( empty( $shareasale_id ) ) {
             $shareasale_id = get_option( 'envira_gallery_shareasale_id', '' );
         }
+
         // Whether we have an ID or not, filter the ID.
         $shareasale_id = apply_filters( 'envira_gallery_shareasale_id', $shareasale_id );
+
         // If at this point we still don't have an ID, we really don't have one!
         // Just return the standard upgrade URL.
         if ( empty( $shareasale_id ) ) {
-            return 'http://enviragallery.com/lite/?utm_source='.$page.'&utm_medium=link&utm_campaign=WordPress';
+            return 'http://enviragallery.com/lite/?utm_source=liteplugin&utm_medium=' . $medium .'&utm_campaign=' . $button;
         }
+
         // If here, we have a ShareASale ID
         // Return ShareASale URL with redirect.
         return 'http://www.shareasale.com/r.cfm?u=' . $shareasale_id . '&b=566240&m=51693&afftrack=&urllink=enviragallery%2Ecom%2Flite%2F';
+
     }
-     
-
-
 
     /**
      * Returns the singleton instance of the class.
