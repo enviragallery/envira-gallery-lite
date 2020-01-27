@@ -122,7 +122,7 @@ class Envira_Welcome {
 			li#menu-posts-envira ul li:last-child,
 			li#menu-posts-envira ul li:nth-last-child(2),
 			li#menu-posts-envira ul li:nth-last-child(3),
-			li#menu-posts-envira ul li:nth-last-child(4) { 
+			li#menu-posts-envira ul li:nth-last-child(4) {
 				display: none;
 			}
 
@@ -301,6 +301,27 @@ class Envira_Welcome {
 			</a>
 			<a class="nav-tab
 			<?php
+			if ( isset( $_GET['page'] ) && 'envira-gallery-lite-litevspro' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) : // @codingStandardsIgnoreLine
+				?>
+				nav-tab-active<?php endif; ?>" href="
+				<?php
+				echo esc_url(
+					admin_url(
+						add_query_arg(
+							array(
+								'post_type' => 'envira',
+								'page'      => 'envira-gallery-lite-litevspro',
+							),
+							'edit.php'
+						)
+					)
+				);
+				?>
+														">
+				<?php esc_html_e( 'Lite vs Pro', 'envira-gallery-lite' ); ?>
+			</a>
+			<a class="nav-tab
+			<?php
 			if ( isset( $_GET['page'] ) && 'envira-gallery-lite-upgrade' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) : // @codingStandardsIgnoreLine
 				?>
 				nav-tab-active<?php endif; ?>" href="
@@ -320,27 +341,7 @@ class Envira_Welcome {
 														">
 				<?php esc_html_e( 'Upgrade Envira Gallery', 'envira-gallery-lite' ); ?>
 			</a>
-			<a class="nav-tab
-			<?php
-			if ( isset( $_GET['page'] ) && 'envira-gallery-lite-litevspro' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) : // @codingStandardsIgnoreLine
-				?>
-				nav-tab-active<?php endif; ?>" href="
-				<?php
-				echo esc_url(
-					admin_url(
-						add_query_arg(
-							array(
-								'post_type' => 'envira',
-								'page'      => 'envira-gallery-lite-litevspro',
-							),
-							'edit.php'
-						)
-					)
-				);
-				?>
-														">
-				<?php esc_html_e( 'Lite vs. Pro', 'envira-gallery-lite' ); ?>
-			</a>
+
 		</h3>
 
 		<?php
@@ -354,6 +355,10 @@ class Envira_Welcome {
 	public function sidebar() {
 
 		global $wp_version;
+
+		if ( isset( $_GET['page'] ) && $_GET['page'] === 'envira-gallery-lite-litevspro' ) {
+			return;
+		}
 
 		?>
 
@@ -469,15 +474,42 @@ class Envira_Welcome {
 
 							<?php endif; ?>
 
-							<div class="envira-features-section">
+							<div class="envira-recent-section">
 
-								<h3 class="headline-title"><?php esc_html_e( 'Envira Gallery is the most beginner-friendly drag & drop WordPress gallery plugin.', 'envira-gallery-lite' ); ?></h3>
+								<h3 class="headline-title"><?php esc_html_e( 'Envira Gallery is the most beginner-friendly drag &amp; drop WordPress gallery plugin.', 'envira-gallery-lite' ); ?></h3>
+
+								<h3 class="title"><?php esc_html_e( 'Recent Updates To Envira Lite:', 'envira-gallery-lite' ); ?></h3>
+
+								<div class="envira-recent envirathree-column">
+									<div class="enviracolumn">
+											<h4 class="title"><?php esc_html_e( 'Bug Fixes', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span></h4>
+											<?php /* translators: %1$s: link */ ?>
+											<p><?php printf( esc_html__( 'Bugs involving automatic and column galleries on the same page, certain character displaying in the admin, and Gutenberg Block tweaks.' ) ); ?></p>
+									</div>
+									<div class="enviracolumn">
+											<h4 class="title"><?php esc_html_e( 'Gutenberg Block', 'envira-gallery-lite' ); ?></h4>
+											<?php /* translators: %1$s: link */ ?>
+											<p><?php printf( esc_html__( 'Improved support and additional features for the Envira Lite Gutenberg block. Bug fixes involving the gallery preview and items that were appearing out of order.' ) ); ?></p>
+									</div>
+
+									<div class="enviracolumn">
+											<h4 class="title"><?php esc_html_e( 'Enhancements', 'envira-gallery-lite' ); ?></h4>
+											<p><?php printf( esc_html__( 'Ability to set margins for Automatic Layouts. Also better workings with various popular WordPress plugins and themes.', 'envira-gallery-lite' ) ); ?></p>
+									</div>
+								</div>
+
+							</div>
+
+
+							<div class="envira-recent-section last-section">
+
+								<h3>Recent Updates To Envira Pro:</h3>
 
 								<div class="envira-feature">
-								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/08/drag-drop-icon.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Getting Better And Better!', 'envira-gallery-lite' ); ?></h4>
-								<?php /* translators: %1$s: url, %2$s url */ ?>
-								<p><?php printf( esc_html__( 'This latest update contains enhancements and improvements - some of which are based on your user feedback! Check out %1$s.', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/docs/how-to-configure-your-gallery-settings/#envira-changelog/">our changelog</a>' ); ?></p>
+									<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/08/drag-drop-icon.png" />
+									<h4 class="feature-title"><?php esc_html_e( 'Getting Better And Better!', 'envira-gallery-lite' ); ?></h4>
+									<?php /* translators: %1$s: url, %2$s url */ ?>
+									<p><?php printf( esc_html__( 'This latest update contains enhancements and improvements - some of which are based on your user feedback! Check out %1$s.', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/docs/how-to-configure-your-gallery-settings/#envira-changelog/">our changelog</a>' ); ?></p>
 								</div>
 
 								<div class="envira-feature opposite">
@@ -496,7 +528,7 @@ class Envira_Welcome {
 								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/10/social-icon.png" />
 								<h4 class="feature-title"><?php esc_html_e( 'Social Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span> </h4>
 								<?php /* translators: %1$s: button */ ?>
-								<p><?php printf( esc_html__( 'You can now allow users to share your photos via LinkedIn and WhatsApp, in addition to Facebook, Twitter, Google+, Pinterest, and email. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/addons/social-addon/">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'You can now allow users to share your photos via Instagram and Facebook, in addition to LinkedIn, WhatsApp, Twitter, Pinterest, and email. %s', 'envira-gallery-lite' ), '<a target="_blank" href="https://enviragallery.com/addons/social-addon/">Read More</a>' ); ?></p>
 								</div>
 
 								<div class="envira-feature opposite">
@@ -509,28 +541,7 @@ class Envira_Welcome {
 							</div>
 							
 
-							<div class="envira-recent-section">
 
-								<h3 class="title"><?php esc_html_e( 'Recent Updates To Envira Lite:', 'envira-gallery-lite' ); ?></h3>
-								<div class="envira-recent envirathree-column">
-								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Bug Fixes', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span></h4>
-										<?php /* translators: %1$s: link */ ?>
-										<p><?php printf( esc_html__( 'Bugs involving automatic and column galleries on the same page, certain character displaying in the admin, and Gutenberg Block tweaks.' ) ); ?></p>
-								</div>
-								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Gutenberg Block', 'envira-gallery-lite' ); ?></h4>
-										<?php /* translators: %1$s: link */ ?>
-										<p><?php printf( esc_html__( 'Improved support and additional features for the Envira Lite Gutenberg block. Bug fixes involving the gallery preview and items that were appearing out of order.' ) ); ?></p>
-								</div>
-
-								<div class="enviracolumn">
-										<h4 class="title"><?php esc_html_e( 'Enhancements', 'envira-gallery-lite' ); ?></h4>
-										<p><?php printf( esc_html__( 'Ability to set margins for Automatic Layouts. Also better workings with various popular WordPress plugins and themes.', 'envira-gallery-lite' ) ); ?></p>
-								</div>
-								</div>
-
-							</div>
 
 							<?php $this->envira_assets(); ?>
 
@@ -889,11 +900,11 @@ class Envira_Welcome {
 								<p>This will launch the Envira Gallery Builder.</p>
 
 								<ul class="list-of-links">
-									<li><a target="_blank" href="XXXXXXX">How to create your first gallery</a></li>
-									<li><a target="_blank" href="XXXXXXX">How to create and synchronize your Adobe Lightroom Collections with WordPress</a></li>
-									<li><a target="_blank" href="XXXXXXX">How to protect your galleries and images from online theft</a></li>
-									<li><a target="_blank" href="XXXXXXX">How to turn your photos into products and make money from your photography</a></li>
-									<li><a target="_blank" href="XXXXXXX">How to appear higher in Google search results so more people find your work</a></li>
+									<li><a target="_blank" href="https://enviragallery.com/docs/creating-first-envira-gallery/?utm_source=WORDPRESS&utm_medium=gettingstartedpage&utm_campaign=liteplugin">How to create your first gallery</a></li>
+									<li><a target="_blank" href="https://enviragallery.com/how-to-upload-photos-directly-from-lightroom-to-wordpress/?utm_source=WordPress&utm_medium=liteplugin&utm_campaign=getstartedpage">How to create and synchronize your Adobe Lightroom Collections with WordPress</a></li>
+									<li><a target="_blank" href="https://enviragallery.com/how-to-protect-your-website-from-image-theft/?utm_source=WORDPRESS&utm_medium=gettingstartedpage&utm_campaign=liteplugin">How to protect your galleries and images from online theft</a></li>
+									<li><a target="_blank" href="https://enviragallery.com/how-to-create-a-woocommerce-product-image-gallery/?utm_source=WORDPRESS&utm_medium=gettingstartedpage&utm_campaign=liteplugin">How to turn your photos into products and make money from your photography</a></li>
+									<li><a target="_blank" href="https://enviragallery.com/how-to-optimize-your-wordpress-galleries-for-seo/?utm_source=WORDPRESS&utm_medium=gettingstartedpage&utm_campaign=liteplugin">How to appear higher in Google search results so more people find your work</a></li>
 									</li>
 								</ul>
 
@@ -911,7 +922,7 @@ class Envira_Welcome {
 
 								<h2>Upgrade to a complete Envira Gallery experience</h2>
 
-								<p>Get the most out of Envira Gallery by <a target="_blank" href="https://enviragallery.com/lite/?utm_source=WORDPRESS&utm_medium=gettingstartedpage&utm_campaign=liteplugin">upgrading to unlock all of its powerful features</a>.</p>
+								<p>Get the most out of Envira Gallery by <a target="_blank" href="https://enviragallery.com/lite/?utm_source=WORDPRESS&utm_medium=liteplugin&utm_campaign=gettingstartedpage&utm_content=upgradetoacompleteexperiencesection">upgrading to unlock all of its powerful features</a>.</p>
 
 								<p>With Envira Gallery Pro, you can unlock amazing features like:</p>
 
@@ -941,17 +952,15 @@ class Envira_Welcome {
 
 							<div class="section-text-column text-left">
 
-								<h2>Upgrade today and save 20%</h2>
+								<h2>Upgrade to Envira Gallery Pro today and get 20% off with the coupon code LITE20</h2>
 
-								<p>Begin creating beautiful photo and video galleries in just a few clicks so you can begin showcasing your work and making money online from your photography.</p>
+								<p>Create, edit and sync your photos from Adobe Lightroom to WordPress, protect your work from image theft, start selling your work online by turning images into products and appear higher in Google search results so more people can find your work.</p> 
 
-								<p>1) <a href="https://enviragallery.com/lite/?utm_source=WORDPRESS&utm_medium=gettingstartedpage&utm_campaign=liteplugin" target="_blank">Upgrade to Envira Gallery Pro</a> and get 20% off the regular price. Apply the coupon code LITE20 at checkout.</p>
+								<p>Get all of this and more when you upgrade to Envira Gallery Pro!</p>
 
-								<p>2) Get 20% off all Adobe Creative Cloud Apps (Lightroom, Photoshop, InDesign and more) and 30% off Skylum Luminar 4 when you upgrade to Envira Gallery Pro.</p>
+								<p>Plus, get access to exclusive discounts on photography tools and software when you upgrade like 15% off all Adobe products, 40% off Skylum Luminar and more!</p>
 
-								<p>Plus, you'll get access to other exclusive discounts and deals on photography software and tools!</p>
-
-								<p>3) <a href="https://direct-labs.lc.chat/100012819/?utm_source=WORDPRESS&utm_medium=gettingstartedpage&utm_campaign=liteplugin" target="_blank">Chat with a live member of our support team</a> and have all of your tech-related questions answered.</p>
+								<p>Have questions about Envira Gallery? <a href="https://direct.lc.chat/10277922/?utm_source=WordPress&utm_medium=liteplugin&utm_campaign=getstartedpage" target="_blank">Chat with a live member of our support team</a> and have all your questions answered.</p>
 
 							</div>
 
@@ -1239,7 +1248,7 @@ class Envira_Welcome {
 
 				<div class="envira-admin-litevspro-section no-bottom envira-admin-litevspro-section-table">
 
-						<table>
+						<table cellspacing="0" cellpadding="0" border="0">
 							<thead>
 								<th>Feature</th>
 								<th>Lite</th>
@@ -1279,20 +1288,7 @@ class Envira_Welcome {
 										</p>
 									</td>
 								</tr>
-								<tr class="envira-admin-columns">
-									<td class="envira-admin-litevspro-first-column">
-										<p>Lightbox Features	</p>
-									</td>
-									<td class="envira-admin-litevspro-lite-column">
-										<p class="features-partial">
-											<strong>Basic Lightbox	</strong>
-										</p>
-									</td>
-									<td class="envira-admin-litevspro-pro-column">
-										<p class="features-full">
-											<strong>All Advanced Lightbox Features</strong>Multiple themes for your Gallery Lightbox display, Titles, Transitions, Fullscreen, Counter, Thumbnails</p>
-									</td>
-								</tr>       
+   
 								<tr class="envira-admin-columns">
 									<td class="envira-admin-litevspro-first-column">
 										<p>Mobile Features</p>
@@ -1312,7 +1308,7 @@ class Envira_Welcome {
 										<p>Import/Export Options	</p>
 									</td>
 									<td class="envira-admin-litevspro-lite-column">
-										<p class="features-partial">
+										<p class="features-none">
 											<strong>Limited Import/Export	</strong>
 										</p>
 									</td>
@@ -1326,7 +1322,7 @@ class Envira_Welcome {
 										<p>Video Galleries	</p>
 									</td>
 									<td class="envira-admin-litevspro-lite-column">
-										<p class="features-partial">
+										<p class="features-none">
 											<strong> No Videos	</strong>
 										</p>
 									</td>
@@ -1340,7 +1336,7 @@ class Envira_Welcome {
 										<p>Social Sharing	</p>
 									</td>
 									<td class="envira-admin-litevspro-lite-column">
-										<p class="features-partial">
+										<p class="features-none">
 											<strong>No Social Sharing	</strong>
 										</p>
 									</td>
@@ -1354,7 +1350,7 @@ class Envira_Welcome {
 										<p>Advanced Gallery Features	</p>
 									</td>
 									<td class="envira-admin-litevspro-lite-column">
-										<p class="features-partial">
+										<p class="features-none">
 											<strong>  No Advanced Features	</strong>
 										</p>
 									</td>
@@ -1368,7 +1364,7 @@ class Envira_Welcome {
 										<p>Envira Gallery Addons 	</p>
 									</td>
 									<td class="envira-admin-litevspro-lite-column">
-										<p class="features-partial">
+										<p class="features-none">
 											<strong>  No Addons Included 	</strong>
 										</p>
 									</td>
@@ -1382,7 +1378,7 @@ class Envira_Welcome {
 										<p>Customer Support	</p>
 									</td>
 									<td class="envira-admin-litevspro-lite-column">
-										<p class="features-partial">
+										<p class="features-none">
 											<strong>Limited Customer Support</strong>
 										</p>
 									</td>
@@ -1404,7 +1400,7 @@ class Envira_Welcome {
 					</h3>
 
 						<p>
-							<strong>Bonus:</strong> Envira Lite users get <span class="envira-deal 50-percent-off">50% off regular price</span>, automatically applied at checkout.
+							<strong>Bonus:</strong> Envira Lite users get <span class="envira-deal 20-percent-off">20% off regular price</span>, using the code in the link above.
 						</p>
 					</div>
 				</div>
