@@ -504,6 +504,10 @@ class Envira_Gallery_Common_Admin {
      * - add_filter( 'envira_gallery_shareasale_id', function() { return 1234; } );
      * - define( 'ENVIRA_GALLERY_SHAREASALE_ID', 1234 );
      * - get_option( 'envira_gallery_shareasale_id' ); (with the option being in the wp_options table)
+     * 
+     * utm_source = liteplugin
+     * utm_medium = page
+     * utm_campaign = what button was clicked, etc.
      *
      * If an ID is present, returns the ShareASale link with the affiliate ID, and tells
      * ShareASale to then redirect to enviragallery.com/lite

@@ -15,6 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+echo ENVIRA_FILE; exit;
+
+echo esc_url( plugins_url( 'assets/images/get-started/creating.png', ENVIRA_FILE ) ); exit;
+
 /**
  * Welcome Class
  *
@@ -33,15 +37,6 @@ class Envira_Welcome {
 	 * @var string`
 	 */
 	public $hook;
-
-	/**
-	 * Holds the link to the tracked link for updates.
-	 *
-	 * @since 1.7.0
-	 *
-	 * @var string`
-	 */
-	public $upgrade_link;
 
 	/**
 	 * Primary class constructor.
@@ -66,8 +61,6 @@ class Envira_Welcome {
 
 		// Misc.
 		add_action( 'admin_print_scripts', array( $this, 'disable_admin_notices' ) );
-
-		$this->upgrade_link = class_exists( 'Envira_Gallery_Common_Admin' ) ? Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link() : 'https://enviragallery.com';
 
 	}
 
@@ -933,7 +926,7 @@ class Envira_Welcome {
 
 								<h2>Upgrade to a complete Envira Gallery experience</h2>
 
-								<p>Get the most out of Envira Gallery by <a target="_blank" href="<?php echo $this-upgrade_link; ?>">upgrading to unlock all of its powerful features</a>.</p>
+								<p>Get the most out of Envira Gallery by <a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'welcome', 'default' ); ?>">upgrading to unlock all of its powerful features</a>.</p>
 
 								<p>With Envira Gallery Pro, you can unlock amazing features like:</p>
 
@@ -984,7 +977,7 @@ class Envira_Welcome {
 								<p>Pricing starts at just $29... What are you waiting for?</p>
 							</div>
 							<div class="banner-button">
-								<a target="_blank" href="<?php echo $this->upgrade_link; ?>" class="button button-primary">Upgrade Now</a>
+								<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'welcome', 'upgrade-now' ); ?>" class="button button-primary">Upgrade Now</a>
 							</div>
 
 						</div> <!-- banner -->
@@ -1076,7 +1069,7 @@ class Envira_Welcome {
 								<p>Customize and Publish in Minutes... What are you waiting for?</p>
 							</div>
 							<div class="banner-button">
-								<a target="_blank" href="<?php echo $this->upgrade_link; ?>" class="button button-primary">Get Envira Gallery Now</a>
+								<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'welcome', 'get-envira-gallery-now' ); ?>" class="button button-primary">Get Envira Gallery Now</a>
 							</div>
 
 						</div> <!-- banner -->
@@ -1124,7 +1117,7 @@ class Envira_Welcome {
 
 						<h4 class="headline-subtitle"><?php esc_html_e( 'Upgrade To Envira Pro and can get access to our full suite of features.', 'envira-gallery-lite' ); ?></h4>
 
-						<a target="_blank" href="<?php echo $this->upgrade_link; ?>" class="button button-primary">Upgrade To Envira Pro</a>
+						<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'welcome', 'upgrade-to-envira-pro' ); ?>" class="button button-primary">Upgrade To Envira Pro</a>
 
 					</div>
 
@@ -1199,7 +1192,7 @@ class Envira_Welcome {
 							</li>
 							<li>
 								<div class="interior">
-									<h5><a href="<?php echo $this->upgrade_link; ?>">Dedicated Customer Support... and much more!</a></h5>
+									<h5><a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'welcome', 'dedicated-customer-support' ); ?>">Dedicated Customer Support... and much more!</a></h5>
 									<p>Top notch customer support and dozens of pro features.</p>
 								</div>
 							</li>
@@ -1407,7 +1400,7 @@ class Envira_Welcome {
 				<div class="envira-admin-litevspro-section envira-admin-litevspro-section-hero">
 					<div class="envira-admin-about-section-hero-main no-border">
 						<h3 class="call-to-action">
-						<a href="<?php echo $this->upgrade_link; ?>" target="_blank" rel="noopener noreferrer">Get Envira Pro Today and Unlock all the Powerful Features					</a>
+						<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'welcome', 'get-envira-pro-today' ); ?>" target="_blank" rel="noopener noreferrer">Get Envira Pro Today and Unlock all the Powerful Features					</a>
 					</h3>
 
 						<p>
