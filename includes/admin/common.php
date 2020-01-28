@@ -516,7 +516,7 @@ class Envira_Gallery_Common_Admin {
      *
      * @since 1.5.0
      */
-    public function get_upgrade_link( $medium = 'default', $button = 'default' ) {
+    public function get_upgrade_link( $url = false, $medium = 'default', $button = 'default', $append = false ) {
 
         // Check if there's a constant.
         $shareasale_id = '';
@@ -535,37 +535,13 @@ class Envira_Gallery_Common_Admin {
         // If at this point we still don't have an ID, we really don't have one!
         // Just return the standard upgrade URL.
         if ( empty( $shareasale_id ) ) {
-            return 'http://enviragallery.com/lite/?utm_source=liteplugin&utm_medium=' . $medium .'&utm_campaign=' . $button;
+            $url = ( false !== $url ) ? trailingslashit( esc_url ( $url ) ) : 'https://enviragallery.com/lite/';
+            return $url . '?utm_source=liteplugin&utm_medium=' . $medium .'&utm_campaign=' . $button . $append;
         }
 
         // If here, we have a ShareASale ID
         // Return ShareASale URL with redirect.
         return 'http://www.shareasale.com/r.cfm?u=' . $shareasale_id . '&b=566240&m=51693&afftrack=&urllink=enviragallery%2Ecom%2Flite%2F';
-
-    }
-
-
-    /**
-     * A non-upgrade but trackable link
-     *
-     * There are three ways to specify an ID, ordered by highest to lowest priority
-     * - add_filter( 'envira_gallery_shareasale_id', function() { return 1234; } );
-     * - define( 'ENVIRA_GALLERY_SHAREASALE_ID', 1234 );
-     * - get_option( 'envira_gallery_shareasale_id' ); (with the option being in the wp_options table)
-     * 
-     * url = can be any link that isn't /lite
-     * utm_source = liteplugin (does not change)
-     * utm_medium = page
-     * utm_campaign = what button was clicked, etc.
-     *
-     *
-     * @since 1.7.2
-     */
-    public function get_trackable_link( $url = false, $medium = 'default', $button = 'default', $post = false ) {
-
-        $url = ( false !== $url ) ? trailingslashit( esc_url ( $url ) ) : 'https://enviragallery.com/';
-
-        return $url . '?utm_source=liteplugin&utm_medium=' . $medium .'&utm_campaign=' . $button . $post;
 
     }
 

@@ -475,7 +475,7 @@ class Envira_Gallery_Addons {
         // If the Addon doesn't supply an upgrade_url key, it's because the user hasn't provided a license
         // get_upgrade_link() will return the Lite or Pro link as necessary for us.
         if ( ! isset( $addon->upgrade_url ) ) {
-            $addon->upgrade_url = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link();
+            $addon->upgrade_url = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'addonspage', str_replace( '-', '', str_replace( 'envira-', '', $addon->slug ) ) . 'addonupgradenowbutton' );
         }
 
         // Output the card
