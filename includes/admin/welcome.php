@@ -15,10 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-echo ENVIRA_FILE; exit;
-
-echo esc_url( plugins_url( 'assets/images/get-started/creating.png', ENVIRA_FILE ) ); exit;
-
 /**
  * Welcome Class
  *
