@@ -48,7 +48,7 @@ class Envira_Subscribe {
 		$screen = get_current_screen();
 
 		// Bail if we're not on the Envira Post Type screen.
-		if ( 'envira' !== $screen->post_type ) {
+		if ( 'envira' !== $screen->post_type || 'envira_page_envira-gallery-lite-litevspro' === $screen->id ) {
 			return;
 		}
 
