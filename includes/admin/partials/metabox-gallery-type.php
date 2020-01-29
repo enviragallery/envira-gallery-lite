@@ -40,7 +40,7 @@
 	<!-- External Gallery -->
 	<div id="envira-gallery-external" class="envira-tab envira-clear<?php echo ( ( $data['instance']->get_config( 'type', $data['instance']->get_config_default( 'type' ) ) != 'default' ) ? ' envira-active' : '' ); ?>">
 	
-		<?php	$upgrade_link = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link(); ?>
+		<?php $upgrade_link = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpage', 'externalgalleryinstagram' ); ?>
 		<p class="envira-intro"><?php _e( 'Create Dynamic Galleries with Envira', 'envira-gallery-lite' ); ?></p>
 		<ul id="envira-gallery-types-nav">
 			<li id="envira-gallery-type-instagram">
@@ -53,6 +53,7 @@
 		<p>
 			<?php _e( 'Envira Pro allows you to build galleries from Instagram photos, images from your posts, and more.', 'envira-gallery-lite' ); ?>
 		</p>
+		<?php $upgrade_link = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpage', 'externalgalleryclickheretoupgradebutton' ); ?>
 		<p>
 			<a href="<?php echo $upgrade_link; ?>" class="button button-primary button-x-large" title="<?php _e( 'Click Here to Upgrade', 'envira-gallery-lite' ); ?>" target="_blank">
 				<?php _e( 'Click Here to Upgrade', 'envira-gallery-lite' ); ?>

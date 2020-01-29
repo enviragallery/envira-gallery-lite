@@ -504,6 +504,10 @@ class Envira_Gallery_Common_Admin {
      * - add_filter( 'envira_gallery_shareasale_id', function() { return 1234; } );
      * - define( 'ENVIRA_GALLERY_SHAREASALE_ID', 1234 );
      * - get_option( 'envira_gallery_shareasale_id' ); (with the option being in the wp_options table)
+     * 
+     * utm_source = liteplugin
+     * utm_medium = page
+     * utm_campaign = what button was clicked, etc.
      *
      * If an ID is present, returns the ShareASale link with the affiliate ID, and tells
      * ShareASale to then redirect to enviragallery.com/lite
@@ -512,7 +516,7 @@ class Envira_Gallery_Common_Admin {
      *
      * @since 1.5.0
      */
-    public function get_upgrade_link() {
+    public function get_upgrade_link( $url = false, $medium = 'default', $button = 'default', $append = false ) {
 
         // Check if there's a constant.
         $shareasale_id = '';
@@ -531,7 +535,12 @@ class Envira_Gallery_Common_Admin {
         // If at this point we still don't have an ID, we really don't have one!
         // Just return the standard upgrade URL.
         if ( empty( $shareasale_id ) ) {
-            return 'http://enviragallery.com/lite/?utm_source=liteplugin&utm_medium=link&utm_campaign=WordPress';
+            if ( false === filter_var($url, FILTER_VALIDATE_URL) ) {
+                // prevent a possible typo
+                $url = false;
+            }
+            $url = ( false !== $url ) ? trailingslashit( esc_url ( $url ) ) : 'https://enviragallery.com/lite/';
+            return $url . '?utm_source=liteplugin&utm_medium=' . $medium .'&utm_campaign=' . $button . $append;
         }
 
         // If here, we have a ShareASale ID
