@@ -535,6 +535,10 @@ class Envira_Gallery_Common_Admin {
         // If at this point we still don't have an ID, we really don't have one!
         // Just return the standard upgrade URL.
         if ( empty( $shareasale_id ) ) {
+            if ( false === filter_var($url, FILTER_VALIDATE_URL) ) {
+                // prevent a possible typo
+                $url = false;
+            }
             $url = ( false !== $url ) ? trailingslashit( esc_url ( $url ) ) : 'https://enviragallery.com/lite/';
             return $url . '?utm_source=liteplugin&utm_medium=' . $medium .'&utm_campaign=' . $button . $append;
         }

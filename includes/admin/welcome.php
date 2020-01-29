@@ -924,7 +924,7 @@ class Envira_Welcome {
 
 								<h2>Upgrade to a complete Envira Gallery experience</h2>
 
-								<p>Get the most out of Envira Gallery by <a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'gettingstartedtab', 'upgradetounlockallitspowerfulfeatures' ); ?>">upgrading to unlock all of its powerful features</a>.</p>
+								<p>Get the most out of Envira Gallery by <a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'gettingstartedtab', 'upgradetounlockallitspowerfulfeatures' ); ?>">upgrading to unlock all of its powerful features</a>.</p>
 
 								<p>With Envira Gallery Pro, you can unlock amazing features like:</p>
 
@@ -975,7 +975,7 @@ class Envira_Welcome {
 								<p>Pricing starts at just $29... What are you waiting for?</p>
 							</div>
 							<div class="banner-button">
-								<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'getstartedtab', 'upgradenowbutton' ); ?>" class="button button-primary">Upgrade Now</a>
+								<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'getstartedtab', 'upgradenowbutton' ); ?>" class="button button-primary">Upgrade Now</a>
 							</div>
 
 						</div> <!-- banner -->
@@ -1067,7 +1067,7 @@ class Envira_Welcome {
 								<p>Customize and Publish in Minutes... What are you waiting for?</p>
 							</div>
 							<div class="banner-button">
-								<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'getstartedtab', 'getenviragallerynowbutton' ); ?>" class="button button-primary">Get Envira Gallery Now</a>
+								<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'getstartedtab', 'getenviragallerynowbutton' ); ?>" class="button button-primary">Get Envira Gallery Now</a>
 							</div>
 
 						</div> <!-- banner -->
@@ -1398,7 +1398,7 @@ class Envira_Welcome {
 				<div class="envira-admin-litevspro-section envira-admin-litevspro-section-hero">
 					<div class="envira-admin-about-section-hero-main no-border">
 						<h3 class="call-to-action">
-						<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'litevsprotab', 'getenviragalleryprotoday' ); ?>" target="_blank" rel="noopener noreferrer">Get Envira Pro Today and Unlock all the Powerful Features					</a>
+						<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'litevsprotab', 'getenviragalleryprotoday' ); ?>" target="_blank" rel="noopener noreferrer">Get Envira Pro Today and Unlock all the Powerful Features					</a>
 					</h3>
 
 						<p>

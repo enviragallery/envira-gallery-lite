@@ -1127,6 +1127,8 @@ class Envira_Gallery_Metaboxes {
      */
     public function misc_tab( $post ) {
 
+        $upgrade_link = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'http://enviragallery.com/docs/creating-first-envira-gallery/', 'adminpagemisc', 'readthedocumentation' );
+
         ?>
         <div id="envira-misc">
             <p class="envira-intro">
@@ -1135,7 +1137,7 @@ class Envira_Gallery_Metaboxes {
                     <?php _e( 'The settings below adjust miscellaneous options for the Gallery.', 'envira-gallery-lite' ); ?>
                     <br />
                     <?php _e( 'Need some help?', 'envira-gallery-lite' ); ?>
-                    <a href="http://enviragallery.com/docs/creating-first-envira-gallery/" class="envira-doc" target="_blank">
+                    <a href="<?php echo $upgrade_link; ?>" class="envira-doc" target="_blank">
                         <?php _e( 'Read the Documentation', 'envira-gallery-lite' ); ?>
                     </a>
                     or
@@ -1250,45 +1252,18 @@ class Envira_Gallery_Metaboxes {
 		<div class="upgrade-content">
 			<div class="hero-image-exterior">
 				<div class="interior">
-                <a href="https://enviragallery.com/features/responsive-mobile-friendly/" target="_blank"><img src="https://enviragallery.com/wp-content/uploads/2019/06/mobile.jpg" /></a>
+                <a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/features/responsive-mobile-friendly/', 'adminpagemobile', 'mobilefeaturesimage' ); ?>" target="_blank"><img src="https://enviragallery.com/wp-content/uploads/2019/06/mobile.jpg" /></a>
 				</div>
 			</div>
             <p>Build responsive WordPress galleries that work on mobile, tablet and desktop devices. You can even customize all aspects of your user's mobile gallery display experience to be different than desktop.</p>
             <p><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>
-			<!-- <div class="two-column-list">
-				<ul>
-					<li><a target="_blank" href="https://enviragallery.com/lite">Self-hosted Videos</a> (MP4)</li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">YouTube</a> (with playlist and custom start time support)</li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">Vimeo</a></li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">Instagram</a> Feed Videos</li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">Instagram</a> IGTV</li>
-				</ul>
-				<ul>
-					<li><a target="_blank" href="https://enviragallery.com/lite">Facebook</a> Video</li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">Twitch</a></li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">VideoPress</a></li>
-					<li><a target="_blank" href="https://enviragallery.com/lite">DailyMotion</a></li>
-					<li><strong>...and more!</strong></li>
-				</ul>
-			</div> -->
 			<div class="cta-buttons">
-				<a href="https://enviragallery.com/features/responsive-mobile-friendly/" target="_blank" class="button button-secondary">View Mobile Demo</a>
-				<a href="http://enviragallery.com/lite/?utm_source=liteplugin&amp;utm_medium=link&amp;utm_campaign=WordPress" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
+				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/features/responsive-mobile-friendly/', 'adminpagemobile', 'viewmobiledemo' ); ?>" target="_blank" class="button button-secondary">View Mobile Demo</a>
+				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagemobile', 'upgradetoenviragallerypro' ); ?>" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
 			</div>
 		</div>
 
 		<?php
-				
-		// Output an upgrade notice
-		// $this->notices->display_inline_notice(
-		// 	'envira_gallery_mobile_tab',
-		// 	__( 'Want to take your galleries further?', 'envira-gallery-lite' ),
-		// 	__( 'By upgrading to Envira Pro, you can get access to mobile-specific settings, including mobile image sizes, number of columns, mobile-specific lightbox options and so much more!', 'envira-gallery-lite' ),
-		// 	'warning',
-		// 	__( 'Click here to Upgrade', 'envira-gallery-lite' ),
-		// 	envira_get_upgrade_link(),
-		// 	false
-		// );
 
 	}
    /**
@@ -1377,7 +1352,7 @@ class Envira_Gallery_Metaboxes {
             </div>
             <p><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>
 			<div class="cta-buttons">
-				<a href="https://enviragallery.com/demo/social-sharing-demo/" target="_blank" class="button button-secondary">View Social Addon Demo</a>
+				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/social-sharing-demo/', 'adminpagesocial', 'viewsocialaddondemobutton' ); ?>" target="_blank" class="button button-secondary">View Social Addon Demo</a>
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagesocial', 'upgradetoenviraprobutton' ); ?>" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
 			</div>
 		</div>
@@ -1453,7 +1428,7 @@ class Envira_Gallery_Metaboxes {
 		<div class="upgrade-content">
 			<div class="hero-image-exterior">
 				<div class="interior">
-                <a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagetags', 'upgradetoenviraprobutton' ); ?>" target="_blank"><img src="https://enviragallery.com/wp-content/uploads/2015/10/pagination-addon.png" /></a>
+                <a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/gallery-pagination-demo/', 'adminpagepagination', 'paginationaddonimage' ); ?>" target="_blank"><img src="https://enviragallery.com/wp-content/uploads/2015/10/pagination-addon.png" /></a>
 				</div>
 			</div>
             <p>If you have a lot of photos in your gallery, you can split your Gallery across multiple pages! Customize a variety of aspects including how many items are shown per page, button text, left/right arrows, and more.</p>
@@ -1464,7 +1439,7 @@ class Envira_Gallery_Metaboxes {
 					<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/pagination-demo/', 'adminpagepagination', 'onscroll', '#envira-pagination-scroll' ); ?>">On Scroll</a></li>
 				</ul>
 				<ul>
-					<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/addons/pagination-addon', 'adminpagepagination', 'viewpaginationaddondemo' ); ?>">Click More Button</a> (with customizable text)</li>
+					<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/addons/pagination-addon', 'adminpagepagination', 'clickmorebutton' ); ?>">Click More Button</a> (with customizable text)</li>
 					<li><strong>...and more!</strong></li>
 				</ul>
             </div>
