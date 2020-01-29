@@ -1115,7 +1115,7 @@ class Envira_Welcome {
 
 						<h4 class="headline-subtitle"><?php esc_html_e( 'Upgrade To Envira Pro and can get access to our full suite of features.', 'envira-gallery-lite' ); ?></h4>
 
-						<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'upgradeenviragallerytab', 'upgradetoenviraprobutton' ); ?>" class="button button-primary">Upgrade To Envira Pro</a>
+						<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'upgradeenviragallerytab', 'upgradetoenviraprobutton' ); ?>" class="button button-primary">Upgrade To Envira Pro</a>
 
 					</div>
 
@@ -1190,7 +1190,7 @@ class Envira_Welcome {
 							</li>
 							<li>
 								<div class="interior">
-									<h5><a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'upgradeenviragallerytab', 'dedicatedcustomersupport' ); ?>">Dedicated Customer Support... and much more!</a></h5>
+									<h5><a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'upgradeenviragallerytab', 'dedicatedcustomersupport' ); ?>">Dedicated Customer Support... and much more!</a></h5>
 									<p>Top notch customer support and dozens of pro features.</p>
 								</div>
 							</li>
