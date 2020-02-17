@@ -5,7 +5,7 @@
  * @since 1.0.0
  *
  * @package Envira_Gallery
- * @author  Thomas Griffin
+ * @author  Envira Gallery Team
  */
 class Envira_Gallery_Media {
 

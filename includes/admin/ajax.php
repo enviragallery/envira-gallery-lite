@@ -5,7 +5,7 @@
  * @since 1.0.0
  *
  * @package Envira_Gallery
- * @author  Thomas Griffin
+ * @author  Envira Gallery Team
  */
 
 add_action( 'wp_ajax_envira_gallery_change_type', 'envira_gallery_ajax_change_type' );

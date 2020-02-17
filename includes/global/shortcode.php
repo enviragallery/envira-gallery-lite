@@ -5,7 +5,7 @@
  * @since 1.0.0
  *
  * @package Envira_Gallery
- * @author  Thomas Griffin
+ * @author  Envira Gallery Team
  */
 class Envira_Gallery_Shortcode {
 
@@ -331,7 +331,7 @@ class Envira_Gallery_Shortcode {
         $output .= '<div class="envira-gallery-item-inner">';
         $output  = apply_filters( 'envira_gallery_output_before_link', $output, $id, $item, $data, $i );
 
-        // Top Left box
+        // Top Left box.
 
         $css_class = false; // no css classes yet
         $css_class = apply_filters( 'envira_gallery_output_dynamic_position_css', $css_class, $output, $id, $item, $data, $i, 'top-left' );
@@ -340,7 +340,7 @@ class Envira_Gallery_Shortcode {
         $output  = apply_filters( 'envira_gallery_output_dynamic_position', $output, $id, $item, $data, $i, 'top-left' );
         $output .= '</div>';
 
-        // Top Right box
+        // Top Right box.
 
         $css_class = false; // no css classes yet
         $css_class = apply_filters( 'envira_gallery_output_dynamic_position_css', $css_class, $output, $id, $item, $data, $i, 'top-right' );
@@ -349,7 +349,7 @@ class Envira_Gallery_Shortcode {
         $output  = apply_filters( 'envira_gallery_output_dynamic_position', $output, $id, $item, $data, $i, 'top-right' );
         $output .= '</div>';
 
-        // Bottom Left box
+        // Bottom Left box.
 
         $css_class = false; // no css classes yet
         $css_class = apply_filters( 'envira_gallery_output_dynamic_position_css', $css_class, $output, $id, $item, $data, $i, 'bottom-left' );
@@ -358,7 +358,7 @@ class Envira_Gallery_Shortcode {
         $output  = apply_filters( 'envira_gallery_output_dynamic_position', $output, $id, $item, $data, $i, 'bottom-left' );
         $output .= '</div>';
 
-        // Bottom Right box
+        // Bottom Right box.
         $css_class = false; // no css classes yet
         $css_class = apply_filters( 'envira_gallery_output_dynamic_position_css', $css_class, $output, $id, $item, $data, $i, 'bottom-right' );
 
@@ -366,11 +366,11 @@ class Envira_Gallery_Shortcode {
         $output  = apply_filters( 'envira_gallery_output_dynamic_position', $output, $id, $item, $data, $i, 'bottom-right' );
         $output .= '</div>';
 
-        // Title
+        // Title.
         $title = str_replace('<', '&lt;', $item['title'] ); // not sure why this was not encoded
         $title = strip_tags( htmlspecialchars( $title ) );
 
-        // Caption
+        // Caption.
         // Lite doesn't support captions, so we fallback to the title.
         $caption = $title;
 
@@ -477,7 +477,6 @@ class Envira_Gallery_Shortcode {
             }
 
         }
-
 
                 $output_item = apply_filters( 'envira_gallery_output_image', $output_item, $id, $item, $data, $i );
 
