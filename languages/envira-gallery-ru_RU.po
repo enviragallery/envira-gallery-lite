@@ -1439,8 +1439,8 @@ msgid "Envira Gallery is best responsive WordPress gallery plugin."
 msgstr "Envira Gallery лучшая отзывчивая галерея WordPress."
 
 #. Author of the plugin/theme
-msgid "Thomas Griffin"
-msgstr "Thomas Griffin"
+msgid "Envira Gallery Team"
+msgstr "Envira Gallery Team"
 
 #. Author URI of the plugin/theme
 msgid "http://thomasgriffinmedia.com"

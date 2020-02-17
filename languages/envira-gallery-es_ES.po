@@ -1889,8 +1889,8 @@ msgstr ""
 "adaptable. Está es la versión lite."
 
 #. Author of the plugin/theme
-msgid "Thomas Griffin"
-msgstr "Thomas Griffin"
+msgid "Envira Gallery Team"
+msgstr "Envira Gallery Team"
 
 #~ msgid ""
 #~ "In order to get access to Addons, you need to verify your license key for "

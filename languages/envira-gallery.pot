@@ -1596,5 +1596,5 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Thomas Griffin"
+msgid "Envira Gallery Team"
 msgstr ""

@@ -2,7 +2,7 @@
  * settings.js
  * http://enviragallery.com/
  * ==========================================================
- * Copyright 2014 Thomas Griffin.
+ * Copyright 2014 Envira Gallery Team.
  *
  * Licensed under the GPL License, Version 2.0 or later (the "License");
  * you may not use this file except in compliance with the License.

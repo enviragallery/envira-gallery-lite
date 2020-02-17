@@ -1817,5 +1817,5 @@ msgstr ""
 "die Lite Version."
 
 #. Author of the plugin/theme
-msgid "Thomas Griffin"
-msgstr "Thomas Griffin"
+msgid "Envira Gallery Team"
+msgstr "Envira Gallery Team"
