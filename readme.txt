@@ -209,6 +209,14 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+1.7.8.2
+
+* Fixed: Version number variable updated.
+
+1.7.8.1
+
+* Fixed: Minor typos.
+
 1.7.8
 
 * Fixed: Alert message appearing in wrong location on Lite vs. Pro page.
