@@ -1241,9 +1241,9 @@ class Envira_Welcome {
 				<div id="envira-admin-litevspro" class="wrap envira-admin-wrap">
 
 				<div class="envira-admin-litevspro-section no-bottom litevspro-table-header">
-					<h1 class="centered">
+					<h3 class="centered">
 						<strong>Lite</strong> vs <strong>Pro</strong>
-					</h1>
+					</h3>
 
 					<p class="centered">Get the most out of Envira by upgrading to Pro and unlocking all of the powerful features.</p>
 				</div>

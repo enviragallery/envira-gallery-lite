@@ -26,7 +26,8 @@
 /**
 * Border-Radius
 */
-body.post-type-envira {
+body.post-type-envira,
+body.post-type-envira_album {
   /**
 	* Subheading
 	*/
@@ -39,26 +40,32 @@ body.post-type-envira {
   /* ==========================================================================
 	   Thickbox (used for choosing a Default Gallery/Album)
 	   ========================================================================== */ }
-  body.post-type-envira #wpcontent {
+  body.post-type-envira #wpcontent,
+  body.post-type-envira_album #wpcontent {
     padding-left: 0; }
-  body.post-type-envira .update-nag {
+  body.post-type-envira .update-nag,
+  body.post-type-envira_album .update-nag {
     margin-left: 20px;
     margin-bottom: 20px; }
-  body.post-type-envira .subheading {
+  body.post-type-envira .subheading,
+  body.post-type-envira_album .subheading {
     background-color: #ffffff;
     height: 45px;
     margin-left: -20px; }
     @media (min-width: 600px) and (max-width: 767px) {
-      body.post-type-envira .subheading {
+      body.post-type-envira .subheading,
+      body.post-type-envira_album .subheading {
         height: auto;
         padding-bottom: 20px; } }
-    body.post-type-envira .subheading h1 {
+    body.post-type-envira .subheading h1,
+    body.post-type-envira_album .subheading h1 {
       font-size: 20px;
       font-weight: 400;
       line-height: 45px;
       margin: 0 0 0 20px;
       padding-left: 20px; }
-  body.post-type-envira div.wrap {
+  body.post-type-envira div.wrap,
+  body.post-type-envira_album div.wrap {
     margin: 0;
     /**
 		* Page Title Action (i.e. Add New)
@@ -75,7 +82,8 @@ body.post-type-envira {
     /**
 		* Code Snippets
 		*/ }
-    body.post-type-envira div.wrap a.page-title-action {
+    body.post-type-envira div.wrap a.page-title-action,
+    body.post-type-envira_album div.wrap a.page-title-action {
       position: relative;
       top: -53px;
       left: 115px;
@@ -84,12 +92,15 @@ body.post-type-envira {
       /* Trying To Prevent The "Shift" Upload Page Load Before JS can move the button */
       /* margin-left: 10px; */
       /* Change WordPress 4.7 */ }
-      body.post-type-envira div.wrap a.page-title-action:hover {
+      body.post-type-envira div.wrap a.page-title-action:hover,
+      body.post-type-envira_album div.wrap a.page-title-action:hover {
         background: #95dc5e;
         border-color: #95dc5e;
         color: #ffffff; }
     body.post-type-envira div.wrap > h1,
-    body.post-type-envira div.wrap > h2 {
+    body.post-type-envira div.wrap > h2,
+    body.post-type-envira_album div.wrap > h1,
+    body.post-type-envira_album div.wrap > h2 {
       margin: 0 0 20px 0;
       padding: 15px 0 10px;
       background: #ffffff;
@@ -104,7 +115,9 @@ body.post-type-envira {
 			* Subtitle (search results title)
 			*/ }
       body.post-type-envira div.wrap > h1 a.page-title-action,
-      body.post-type-envira div.wrap > h2 a.page-title-action {
+      body.post-type-envira div.wrap > h2 a.page-title-action,
+      body.post-type-envira_album div.wrap > h1 a.page-title-action,
+      body.post-type-envira_album div.wrap > h2 a.page-title-action {
         top: -3px;
         left: auto;
         /* display: none; */
@@ -112,21 +125,28 @@ body.post-type-envira {
         /* margin-left: 10px; */
         /* Change WordPress 4.7 */ }
         body.post-type-envira div.wrap > h1 a.page-title-action:hover,
-        body.post-type-envira div.wrap > h2 a.page-title-action:hover {
+        body.post-type-envira div.wrap > h2 a.page-title-action:hover,
+        body.post-type-envira_album div.wrap > h1 a.page-title-action:hover,
+        body.post-type-envira_album div.wrap > h2 a.page-title-action:hover {
           background: #95dc5e;
           border-color: #95dc5e;
           color: #ffffff; }
       body.post-type-envira div.wrap > h1 span.subtitle,
-      body.post-type-envira div.wrap > h2 span.subtitle {
+      body.post-type-envira div.wrap > h2 span.subtitle,
+      body.post-type-envira_album div.wrap > h1 span.subtitle,
+      body.post-type-envira_album div.wrap > h2 span.subtitle {
         float: right; }
-    body.post-type-envira div.wrap .envira-tab {
+    body.post-type-envira div.wrap .envira-tab,
+    body.post-type-envira_album div.wrap .envira-tab {
       display: none;
       /**
             * Active Tab
             */ }
-      body.post-type-envira div.wrap .envira-tab.envira-active {
+      body.post-type-envira div.wrap .envira-tab.envira-active,
+      body.post-type-envira_album div.wrap .envira-tab.envira-active {
         display: block; }
-    body.post-type-envira div.wrap div.envira-code {
+    body.post-type-envira div.wrap div.envira-code,
+    body.post-type-envira_album div.wrap div.envira-code {
       position: relative;
       margin: 0 0 10px 0;
       /**
@@ -135,23 +155,28 @@ body.post-type-envira {
       /**
 			* Copy to Clipboard
 			*/ }
-      body.post-type-envira div.wrap div.envira-code:after {
+      body.post-type-envira div.wrap div.envira-code:after,
+      body.post-type-envira_album div.wrap div.envira-code:after {
         content: "";
         display: table;
         clear: both; }
-      body.post-type-envira div.wrap div.envira-code code {
+      body.post-type-envira div.wrap div.envira-code code,
+      body.post-type-envira_album div.wrap div.envira-code code {
         display: block;
         font-size: 11px;
         padding: 5px 20px 5px 5px; }
-      body.post-type-envira div.wrap div.envira-code a.envira-clipboard {
+      body.post-type-envira div.wrap div.envira-code a.envira-clipboard,
+      body.post-type-envira_album div.wrap div.envira-code a.envira-clipboard {
         position: absolute;
         top: 5px;
         right: 5px;
         color: #23282d; }
-        body.post-type-envira div.wrap div.envira-code a.envira-clipboard span {
+        body.post-type-envira div.wrap div.envira-code a.envira-clipboard span,
+        body.post-type-envira_album div.wrap div.envira-code a.envira-clipboard span {
           display: block;
           text-indent: -9999px; }
-  body.post-type-envira .button {
+  body.post-type-envira .button,
+  body.post-type-envira_album .button {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -o-border-radius: 2px;
@@ -182,45 +207,52 @@ body.post-type-envira {
     /**
 		* Red Button
 		*/ }
-    body.post-type-envira .button.button-small {
+    body.post-type-envira .button.button-small,
+    body.post-type-envira_album .button.button-small {
       padding: 0 8px 1px;
       line-height: 22px;
       height: 24px; }
-    body.post-type-envira .button.button-x-large {
+    body.post-type-envira .button.button-x-large,
+    body.post-type-envira_album .button.button-x-large {
       padding: 0 32px 1px;
       line-height: 48px;
       height: 50px;
       font-size: 18px;
       text-transform: uppercase; }
     @media (min-width: 600px) and (max-width: 767px) {
-      body.post-type-envira .button {
+      body.post-type-envira .button,
+      body.post-type-envira_album .button {
         margin-top: 10px; } }
-    body.post-type-envira .button.show-settings {
+    body.post-type-envira .button.show-settings,
+    body.post-type-envira_album .button.show-settings {
       height: auto; }
-    body.post-type-envira .button.button-primary {
+    body.post-type-envira .button.button-primary,
+    body.post-type-envira_album .button.button-primary {
       background: #7cc048;
       border-color: #7cc048;
       -webkit-box-shadow: none;
       box-shadow: none;
       color: #ffffff; }
-      body.post-type-envira .button.button-primary:hover {
+      body.post-type-envira .button.button-primary:hover,
+      body.post-type-envira_album .button.button-primary:hover {
         background: #95dc5e;
         border-color: #95dc5e;
         color: #ffffff; }
-    body.post-type-envira .button.button-danger {
+    body.post-type-envira .button.button-danger,
+    body.post-type-envira_album .button.button-danger {
       background: #e02626;
       border-color: #e02626;
       -webkit-box-shadow: none;
       box-shadow: none;
       color: #ffffff; }
-      body.post-type-envira .button.button-danger:hover {
+      body.post-type-envira .button.button-danger:hover,
+      body.post-type-envira_album .button.button-danger:hover {
         background: #f85959;
         border-color: #f85959;
         color: #ffffff; }
-  body.post-type-envira div#TB_window div.wrap {
+  body.post-type-envira div#TB_window div.wrap,
+  body.post-type-envira_album div#TB_window div.wrap {
     margin: 10px 20px 0 2px; }
-  body.post-type-envira .envira-subscribe-notice {
-    margin-top: -10px; }
 
 /* ==========================================================================
    Language Specific
@@ -575,6 +607,15 @@ body.post-type-envira div.wrap {
         text-shadow: 1px 1px #ddd; }
   .media-modal .media-modal-content .media-frame-content .attachments-browser.envira-gallery-editor div.media-sidebar div.settings .name {
     text-align: left; }
+
+/* ==========================================================================
+   Header Welcome Exceptions
+   ========================================================================== */
+.envira-admin-litevspro-section h3 {
+  font-size: 42px;
+  line-height: 50px;
+  font-weight: 600;
+  margin: 5px auto; }
 
 /* ==========================================================================
    Gallery List
