@@ -1,6 +1,6 @@
 === Gallery Plugin for WordPress - Envira Photo Gallery ===
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
-Tags: gallery, image gallery, photo gallery, video gallery, wordpress gallery plugin, gallery slider, gallery slideshow, gallery widget
+Tags: best gallery plugin, image gallery, photo gallery, video gallery, wordpress gallery plugin, gallery slider, gallery slideshow, gallery widget
 Requires at least: 4.4.0
 Tested up to: 5.3.2
 Requires PHP: 5.3
@@ -27,7 +27,7 @@ Envira is highly optimized for web and server performance because we understand 
 > <strong>Envira Pro</strong><br />
 > Photo Gallery by Envira is the lite version of the popular Envira Pro plugin that comes with all the features you will ever need including albums, tags, social media integration, gallery templates / gallery layouts, deeplinking, pagination, e-commerce, image proofing, and tons more. <a href="http://enviragallery.com/?utm_source=wprepo&utm_medium=link&utm_campaign=liteversion" rel="friend" title="Envira">Click here to purchase Envira Pro now!</a>
 
-**Envira** has been downloaded over 1,000,000 times. Here's why smart photographers, designers, and developers love Envira, and you will too!
+**Envira** has been downloaded over 2,000,000 times. Here's why smart photographers, designers, and developers love Envira, and you will too!
 
 = Drag & Drop Gallery Builder =
 
@@ -449,7 +449,7 @@ Yes, Envira has full translation and localization support via the envira-gallery
 * Fix: Image uploader on Add/Edit screen not displaying on some tablet and mobile devices
 * Fix: Checkmark icon wrongly displaying on modal close when editing images.
 * Fix: Display text in warning when Envira Lite and Envira are both activated.
-* Fix: Ensure that third party notification plugins donâ€™t remove the Envira logo and header from Envira screens
+* Fix: Ensure that third party notification plugins donÃ¢â‚¬â„¢t remove the Envira logo and header from Envira screens
 * Fix: Various resets for images and captions to prevent themes overriding default behaviour
 * Fix: Minified admin CSS for faster load times
 * Fix: When editing an image, store any checkbox values if checked, instead of assuming 1 or 0 for better Addon compatibility.
