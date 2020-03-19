@@ -209,7 +209,7 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
-1.7.8.3
+1.7.8.4
 
 * Fixed: Readme.txt updated
 
