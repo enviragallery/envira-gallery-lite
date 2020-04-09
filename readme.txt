@@ -214,6 +214,10 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+1.7.8.6
+
+* Fixed: Readme.txt updated
+
 1.7.8.5
 
 * Updated: Tested with WordPress 5.4.0.
