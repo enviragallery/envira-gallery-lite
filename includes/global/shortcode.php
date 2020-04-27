@@ -324,7 +324,7 @@ class Envira_Gallery_Shortcode {
         // This reverts that change for the few edge cases where this happened
         if ( ! empty( $item['thumb'] ) && strpos( $item['thumb'], $thumbnail_start_url ) !== false ) {
             $item['thumb'] = str_replace( $thumbnail_start_url, get_bloginfo( 'url' ) . '/', $item['thumb'] );
-        } else if !isset( $item['thumb'] ) {
+        } else if ( ! isset( $item['thumb'] ) ) {
             // this must be at least defined.
             $item['thumb'] = false;
         }
