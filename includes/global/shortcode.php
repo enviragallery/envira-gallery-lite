@@ -322,8 +322,11 @@ class Envira_Gallery_Shortcode {
         // Non-ASCII filenames fail when FILTER_VALIDATE_URL is applied to them when saving a gallery to generate thumbs
         // This resulted in the blog URL being prepended to the URL, therefore breaking the thumbnail URL
         // This reverts that change for the few edge cases where this happened
-        if ( strpos( $item['thumb'], $thumbnail_start_url ) !== false ) {
+        if ( ! empty( $item['thumb'] ) && strpos( $item['thumb'], $thumbnail_start_url ) !== false ) {
             $item['thumb'] = str_replace( $thumbnail_start_url, get_bloginfo( 'url' ) . '/', $item['thumb'] );
+        } else if !isset( $item['thumb'] ) {
+            // this must be at least defined.
+            $item['thumb'] = false;
         }
 
         $output   = '<div id="envira-gallery-item-' . sanitize_html_class( $id ) . '" class="' . $this->get_gallery_item_classes( $item, $i, $data ) . '" style="padding-left: ' . $padding . 'px; padding-bottom: ' . $this->get_config( 'margin', $data ) . 'px; padding-right: ' . $padding . 'px;" ' . apply_filters( 'envira_gallery_output_item_attr', '', $id, $item, $data, $i ) . ' itemscope itemtype="https://schema.org/ImageObject">';
