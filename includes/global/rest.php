@@ -83,7 +83,6 @@ class Envira_Rest {
 				} else {
 
 					$content_dir = defined( 'WP_CONTENT_DIR' ) ? WP_CONTENT_DIR : '/wp-content/';
-					$pathinfo    = wp_parse_url( $url );
 					$uploads_dir = is_multisite() ? '/files/' : $content_dir;
 					$file_path   = trailingslashit( $wp_upload_dir['basedir'] ) . basename( $urlinfo['path'] );
 					$file_path   = preg_replace( '/(\/\/)/', '/', $file_path );
