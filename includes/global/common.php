@@ -916,10 +916,18 @@ class Envira_Gallery_Common {
             $file_path = $wp_upload_dir['basedir'] . $matches[0];
         } else {
             $pathinfo    = parse_url( $url );
-            // $uploads_dir = is_multisite() ? '/files/' : '/wp-content/';
+            $content_dir = defined( 'WP_CONTENT_DIR' ) ? WP_CONTENT_DIR : '/wp-content/';
             $uploads_dir = is_multisite() ? '/files/' : '/' . str_replace( ABSPATH, '', WP_CONTENT_DIR ) . '/';
-            $file_path   = ABSPATH . str_replace( dirname( $_SERVER['SCRIPT_NAME'] ) . '/', '', strstr( $pathinfo['path'], $uploads_dir ) );
-            $file_path   = preg_replace( '/(\/\/)/', '/', $file_path );
+            if ( is_multisite() ) {
+                $uploads_dir = '/files/';
+            } elseif ( defined('UPLOADS') ) {
+                $uploads_dir = '/' . UPLOADS . '/';
+            } else {
+                $uploads_dir = '/' . str_replace( ABSPATH, '', WP_CONTENT_DIR ) . '/';
+            }
+            $file_path = ABSPATH . str_replace( dirname( $_SERVER['SCRIPT_NAME'] ) . '/', '', strstr( $pathinfo['path'], $uploads_dir ) );
+            $file_path = preg_replace( '/(\/\/)/', '/', $file_path );
+
         }
 
         // Attempt to stream and import the image if it does not exist based on URL provided.

@@ -58,6 +58,7 @@ class Envira_Rest {
 
 		$i      = 0;
 		$images = array();
+		$url    = false;
 
 		if ( isset( $data['gallery'] ) && is_array( $data['gallery'] ) ) {
 			foreach ( $data['gallery'] as $id => $item ) {
@@ -82,15 +83,28 @@ class Envira_Rest {
 
 				} else {
 
+					$pathinfo    = parse_url( $url );
 					$content_dir = defined( 'WP_CONTENT_DIR' ) ? WP_CONTENT_DIR : '/wp-content/';
-					$uploads_dir = is_multisite() ? '/files/' : $content_dir;
-					$file_path   = trailingslashit( $wp_upload_dir['basedir'] ) . basename( $urlinfo['path'] );
-					$file_path   = preg_replace( '/(\/\/)/', '/', $file_path );
+					$uploads_dir = is_multisite() ? '/files/' : '/' . str_replace( ABSPATH, '', WP_CONTENT_DIR ) . '/';
+					if ( is_multisite() ) {
+						$uploads_dir = '/files/';
+					} elseif ( defined('UPLOADS') ) {
+						$uploads_dir = '/' . UPLOADS . '/';
+					} else {
+						$uploads_dir = '/' . str_replace( ABSPATH, '', WP_CONTENT_DIR ) . '/';
+					}
+					$file_path = ABSPATH . str_replace( dirname( $_SERVER['SCRIPT_NAME'] ) . '/', '', strstr( $pathinfo['path'], $uploads_dir ) );
+					$file_path = preg_replace( '/(\/\/)/', '/', $file_path );
 
 				}
 
 				if ( file_exists( $file_path ) ) {
-					list($width, $height) = getimagesize( $file_path );
+					if ( list($width, $height) = @getimagesize( $file_path ) ) {
+						// everything is fine.
+					} else {
+						$width  = false;
+						$height = false;
+					}
 				}
 
 				$item['src']    = $imagesrc;
