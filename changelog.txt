@@ -1,6 +1,11 @@
 
 == Changelog ==
 
+1.7.8.8
+
+* Added: Oringial Size option for image sizes in gallery.
+: Added: Compatibility with animated GIFS (oringial size option).
+
 1.7.8.7
 
 * Fixed: Bug associated with using non-default WordPress media upload folders.

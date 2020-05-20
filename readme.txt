@@ -1,8 +1,8 @@
 === Gallery Plugin for WordPress - Envira Photo Gallery ===
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
-Tags: best gallery plugin, image gallery, photo gallery, video gallery, wordpress gallery plugin
+Tags: best gallery plugin, gallery, photo gallery, image gallery, wordpress gallery plugin
 Requires at least: 4.4.0
-Tested up to: 5.4.0
+Tested up to: 5.4.1
 Requires PHP: 5.3
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
@@ -209,6 +209,11 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 
 == Changelog ==
+
+1.7.8.8
+
+* Added: Oringial Size option for image sizes in gallery.
+* Added: Compatibility with animated GIFS (oringial size option).
 
 1.7.8.7
 
