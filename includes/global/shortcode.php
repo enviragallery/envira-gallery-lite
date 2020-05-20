@@ -1581,7 +1581,8 @@ class Envira_Gallery_Shortcode {
 
 				if ( ! $retina ){
 
-					$isize = $this->find_clostest_size( $data ) != '' ? $this->find_clostest_size( $data ) : 'full';
+                    $isize = $this->find_clostest_size( $data ) != '' ? $this->find_clostest_size( $data ) : 'full';
+                    $isize = ( $image_size === 'full' ) ? 'full' : $isize;
 					$src = apply_filters( 'envira_gallery_retina_image_src', wp_get_attachment_image_src( $id, $isize ), $id, $item, $data, $this->is_mobile );
 
 				}else{
@@ -1634,12 +1635,12 @@ class Envira_Gallery_Shortcode {
 			'height'   => $this->get_config( $type . '_height', $data ),
 			'quality'  => 100,
 			'retina'   => $retina,
-		);
-
+        );
+        
 		// If we're requesting a retina image, and the gallery uses a registered WordPress image size,
 		// we need use the width and height of that registered WordPress image size - not the gallery's
 		// image width and height, which are hidden settings.
-		if ( $image_size != 'default' && $retina ) {
+		if (  $image_size != 'full' && ( $image_size != 'default' && $retina ) ) {
 			// Find WordPress registered image size
 			$wordpress_image_sizes = $this->common->get_image_sizes( true ); // true = WordPress only image sizes (excludes random)
 
@@ -1664,7 +1665,7 @@ class Envira_Gallery_Shortcode {
 		}
 
 		// Filter
-		$args     = apply_filters( 'envira_gallery_crop_image_args', $args);
+		$args          = apply_filters( 'envira_gallery_crop_image_args', $args);
 		$resized_image = $this->common->resize_image( $image, $args['width'], $args['height'], $this->get_config( 'crop', $data ), $args['position'], $args['quality'], $args['retina'], $data );
 
 		// If there is an error, possibly output error message and return the default image src.
