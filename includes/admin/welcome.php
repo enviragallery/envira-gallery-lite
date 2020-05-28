@@ -433,8 +433,8 @@ class Envira_Welcome {
 					</div>
 				<div class="sidebox">
 					<form action="https://enviragallery.us3.list-manage.com/subscribe/post?u=beaa9426dbd898ac91af5daca&amp;id=2ee2b5572e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<h4><?php esc_html_e( 'Stay in Touch!', 'send-system-info' ); ?></h4>
-						<p><?php esc_html_e( 'Get periodic updates, developer notices, special discounts, and invites to our exclusive beta programs.', 'send-system-info' ); ?></p>
+						<h4><?php esc_html_e( 'Join 50,261 web developers, photographers and artists who already have a head start.', 'send-system-info' ); ?></h4>
+						<p><?php esc_html_e( 'Get free tips and resources on how to get the most out of Envira Gallery and WordPress delivered directly to your inbox.', 'send-system-info' ); ?></p>
 						<div class="form-row"><input type="text" value="" name="FNAME" placeholder="Name" id="mce-FNAME"></div>
 						<div class="form-row"><input type="email" placeholder="Email" name="EMAIL" required /></div>
 
@@ -954,7 +954,7 @@ class Envira_Welcome {
 
 							<div class="section-text-column text-left">
 
-								<h2>Upgrade to Envira Gallery Pro today and get 20% off with the coupon code LITE20</h2>
+								<h2>Upgrade to Envira Gallery Pro Today and Get 20% Off</h2>
 
 								<p>Create, edit and sync your photos from Adobe Lightroom to WordPress, protect your work from image theft, start selling your work online by turning images into products and appear higher in Google search results so more people can find your work.</p> 
 
