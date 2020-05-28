@@ -56,7 +56,7 @@ class Envira_Gallery_Editor {
         $this->base = Envira_Gallery_Lite::get_instance();
 
         // Add a custom media button to the editor.
-        add_filter( 'media_buttons_context', array( $this, 'media_button' ) );
+        add_filter( 'media_buttons', array( $this, 'media_button' ) );
         add_action( 'save_post', array( $this, 'save_gallery_ids' ), 9999 );
         add_action( 'before_delete_post', array( $this, 'remove_gallery_ids' ) );
 
