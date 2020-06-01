@@ -67,7 +67,7 @@ But we also knew that our developer friends may want to extend it further. That'
 * 100% Responsive - Mobile Friendly
 * Beautiful WordPress Templates for Customization
 * [Albums](https://bit.ly/35dXeP1) - Easily organize your photo galleries, choose cover photos, and more.
-* [Social Sharing](https://bit.ly/2W8Ye2P) - Share your photos on Facebook, Twitter, Pinterest, and Google+
+* [Social Sharing](https://bit.ly/2W8Ye2P) - Share your photos on Facebook, Twitter, Pinterest, LinkedIn, and WhatsApp.
 * [Video Galleries](https://bit.ly/2ySgvcz) - Not just for photos! You can add YouTube, Vimeo, Wistia, and other videos in your video gallery.
 * [Watermarking](https://bit.ly/3bNWCCd) - Protect your images from theft with watermarking.
 * [Slideshow](https://bit.ly/2WenYuq) - Add beautiful slideshow with autoplay, manual controls, and more.
@@ -77,7 +77,7 @@ But we also knew that our developer friends may want to extend it further. That'
 * [WooCommerce Integration](https://bit.ly/3bNIngt) - Instantly display and sell your photos with the most popular eCommerce software on the web.
 * [Image Tags](https://bit.ly/3aUChKh) - Organize your WordPress photos with tags for easy search and display that also filtrable.
 * [Password Protection](https://bit.ly/3aPH53t) - Prevent unauthorized access to your WordPress galleries.
-* [Standalone Galleries]9https://bit.ly/2KLpFKA) - Create independent galleries that are not tied to your posts or pages.
+* [Standalone Galleries](https://bit.ly/2KLpFKA) - Create independent galleries that are not tied to your posts or pages.
 * [EXIF Meta Data](https://bit.ly/3bQw4zZ) - Display your EXIF data including camera model, aperture, shutter speed, and more.
 * [Pinterest](https://bit.ly/2Wbiwsd) - Add the Pinterest Pin It button to improve your reach.
 * [Instagram](https://bit.ly/3cZHYru) - Import Instagram images.
@@ -209,6 +209,11 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 
 == Changelog ==
+
+1.7.8.9
+
+* Updated: Text on Welcome Screen.
+* Fix: Replace deprecated filter media_buttons_context.
 
 1.7.8.8
 
