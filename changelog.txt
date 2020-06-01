@@ -1,6 +1,11 @@
 
 == Changelog ==
 
+1.7.8.9
+
+* Updated: Text on Welcome Screen.
+* Fix: Replace deprecated filter media_buttons_context.
+
 1.7.8.8
 
 * Added: Oringial Size option for image sizes in gallery.
