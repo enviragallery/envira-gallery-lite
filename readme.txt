@@ -1,6 +1,6 @@
 === Gallery Plugin for WordPress - Envira Photo Gallery ===
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
-Tags: best gallery plugin, gallery, photo gallery, image gallery, wordpress gallery plugin
+Tags: gallery, image gallery, photo gallery, best gallery plugin, wordpress gallery plugin
 Requires at least: 4.4.0
 Tested up to: 5.4.1
 Requires PHP: 5.3
