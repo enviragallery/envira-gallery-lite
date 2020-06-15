@@ -1043,7 +1043,7 @@ class Envira_Welcome {
 						<div class="envira-admin-get-started-panel mini-panel">
 
 							<div class="feature-photo-column photo-left">
-								<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-customize-wordpress-for-mobile-galleries/", "gettingstartedtab", "customizewordpressgalleriesformobile", "" ); ?>"><img class="feature-photo" src="<?php echo esc_url( plugins_url( 'assets/images/get-started/How-to-Customize-WordPress-Galleries-for-Mobile-Devices.png', ENVIRA_FILE ) ); ?>" /></a>
+								<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-optimize-image-galleries-for-mobile-using-envira-gallery/", "gettingstartedtab", "customizewordpressgalleriesformobile", "" ); ?>"><img class="feature-photo" src="<?php echo esc_url( plugins_url( 'assets/images/get-started/How-to-Customize-WordPress-Galleries-for-Mobile-Devices.png', ENVIRA_FILE ) ); ?>" /></a>
 							</div>
 
 							<div class="section-text-column text-left">
@@ -1053,7 +1053,7 @@ class Envira_Welcome {
 								<p>Do you want to customize your image galleries for mobile? With the rise of mobile internet usage, your photo galleries should be responsive. In this tutorial, we will share how to customize WordPress galleries for mobile devices.</p>
 
 								<div class="banner-button">
-									<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-customize-wordpress-for-mobile-galleries/", "gettingstartedtab", "customizewordpressgalleriesformobile", "" ); ?>" class="button button-primary">Read Documentation</a>
+									<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-optimize-image-galleries-for-mobile-using-envira-gallery/", "gettingstartedtab", "customizewordpressgalleriesformobile", "" ); ?>" class="button button-primary">Read Documentation</a>
 								</div>
 
 							</div>
