@@ -2,7 +2,7 @@
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
 Tags: gallery, image gallery, photo gallery, best gallery plugin, wordpress gallery plugin
 Requires at least: 4.4.0
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 5.3
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
