@@ -210,6 +210,10 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+1.8.0
+
+* Added: Enable links in lightbox settings, when lightbox is deactivated.
+
 1.7.9.0
 
 * Fix: Updated bad link that resulted in a 404.
