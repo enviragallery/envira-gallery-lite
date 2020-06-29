@@ -1038,6 +1038,15 @@ class Envira_Gallery_Metaboxes {
                             <span class="description"><?php _e( 'Enables or disables the gallery lightbox.', 'envira-gallery-lite' ); ?></span>
                         </td>
                     </tr>
+					<tr id="envira-config-lightbox-enabled-link">
+						<th scope="row">
+							<label for="envira-config-lightbox-enable-links"><?php esc_html_e( 'Enable Links?', 'envira-gallery' ); ?></label>
+						</th>
+						<td>
+							<input id="envira-config-lightbox-enable-links" type="checkbox" name="_envira_gallery[gallery_link_enabled]" value="<?php echo esc_html( $this->get_config_default( 'gallery_link_enabled' ) ); ?>" <?php checked( $this->get_config( 'gallery_link_enabled', $this->get_config_default( 'gallery_link_enabled' ) ), 1 ); ?> />
+							<span class="description"><?php esc_html_e( 'Enables or disables links only when the gallery lightbox is disabled.', 'envira-gallery' ); ?></span>
+						</td>
+					</tr>
                 </tbody>
             </table>
 
@@ -1557,10 +1566,11 @@ class Envira_Gallery_Metaboxes {
         $settings['config']['justified_row_height'] = isset( $_POST['_envira_gallery']['justified_row_height'] ) ? absint($_POST['_envira_gallery']['justified_row_height'] ) : 150;
 
         // Lightbox
-        $settings['config']['lightbox_enabled']    = isset( $_POST['_envira_gallery']['lightbox_enabled'] ) ? 1 : 0;
-        $settings['config']['lightbox_theme']      = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['lightbox_theme'] );
-        $settings['config']['lightbox_image_size'] = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['lightbox_image_size'] );
-        $settings['config']['title_display']       = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['title_display'] );
+        $settings['config']['lightbox_enabled']     = isset( $_POST['_envira_gallery']['lightbox_enabled'] ) ? 1 : 0;
+        $settings['config']['gallery_link_enabled'] = isset( $_POST['_envira_gallery']['gallery_link_enabled'] ) ? 1 : 0;
+        $settings['config']['lightbox_theme']       = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['lightbox_theme'] );
+        $settings['config']['lightbox_image_size']  = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['lightbox_image_size'] );
+        $settings['config']['title_display']        = preg_replace( '#[^a-z0-9-_]#', '', $_POST['_envira_gallery']['title_display'] );
 
         // Misc
         $settings['config']['classes']             = explode( "\n", $_POST['_envira_gallery']['classes'] );
