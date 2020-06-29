@@ -380,13 +380,9 @@ class Envira_Gallery_Shortcode {
         // Determine if we create a link.
         // If the user has disabled lightbox, there should not be a link
         // "Turn off the lightbox then the image shouldn't be clicked"
-        if (!$this->get_config( 'lightbox_enabled', $data ) ) {
-            $create_link = false;
-        } else if ( ! empty( $item['link'] ) ) {
-            $create_link = true;
-        } else {
-            $create_link = false;
-        }
+		$create_link = ! empty( $item['link'] ) && (
+            ( $this->get_config( 'gallery_link_enabled', $data ) || $this->get_config( 'lightbox_enabled', $data ) )
+        ) ? true : false;
 
         // Filter the ability to create a link
         $create_link = apply_filters( 'envira_gallery_create_link', $create_link, $data, $id, $item, $i, $this->is_mobile );

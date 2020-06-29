@@ -292,13 +292,21 @@ jQuery( document ).ready( function( $ ) {
 						{
 							element: '#envira-lightbox-settings',
 							action: 'show'
-						}
+						},
+						{
+							element: '#envira-config-lightbox-enabled-link',
+							action: 'hide'
+						},
 					],
 					else: [
 						{
 							element: '#envira-lightbox-settings',
 							action: 'hide'
-						}
+						},
+						{
+							element: '#envira-config-lightbox-enabled-link',
+							action: 'show'
+						},
 					]
 				}
 			},
