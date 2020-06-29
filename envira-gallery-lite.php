@@ -80,7 +80,7 @@ class Envira_Gallery_Lite {
 	 *
 	 * @var string
 	 */
-	public $file = false; // __FILE__;
+	public $file = __FILE__;
 
 	/**
 	 * Primary class constructor.
