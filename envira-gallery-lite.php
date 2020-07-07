@@ -598,19 +598,6 @@ if ( ! function_exists( 'envira_wp_upe_upgrade_completed' ) ) {
 	}
 	add_action( 'upgrader_process_complete', 'envira_wp_upe_upgrade_completed', 10, 2 );
 
-	
-	function envira_gallery_welcome_on_upgrade() {
-		if ( ! empty( $_REQUEST['post_type'] ) && $_REQUEST['post_type'] === 'envira' ) {
-			if ( false !== ( $special_query_results = get_transient( 'envira_lite_updated' ) ) ) {
-				// transient exists, so determine if we can redirect to welcome screen - are we on an Envira page?
-				wp_redirect( admin_url( 'edit.php?post_type=envira&page=envira-gallery-lite-get-started' ) );
-				delete_transient( 'envira_lite_updated' ); // one minute
-				exit;
-			}
-		}
-	}
-	add_action( 'envira_gallery_lite_init', 'envira_gallery_welcome_on_upgrade' );
-
 }
 
 // Conditionally load the template tag.
