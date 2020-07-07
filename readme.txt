@@ -210,6 +210,10 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+1.8.0.1
+
+* Removed: Redirect upon updating.
+
 1.8.0
 
 * Added: Enable links in lightbox settings, when lightbox is deactivated.
