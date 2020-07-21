@@ -146,13 +146,6 @@ class Envira_Gutenberg {
 			$args_array
 		);
 
-		// Styles.
-		wp_enqueue_style(
-			'envira_gutenberg-block-editor-css', // Handle.
-			plugins_url( 'assets/css/blocks.editor.build.css', $this->base->file ), // Block editor CSS.
-			array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
-			$this->base->version
-		);
 	}
 
     /**
