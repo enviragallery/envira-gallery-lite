@@ -210,6 +210,10 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+1.8.0.2
+
+* Removed: Legacy style related to Gutenberg.
+
 1.8.0.1
 
 * Removed: Redirect upon updating.
