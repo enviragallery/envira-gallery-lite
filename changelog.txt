@@ -1,6 +1,11 @@
 
 == Changelog ==
 
+1.8.0.3
+
+* Fix: Tweak UI for upcoming WordPress 5.5 admin visual changes.
+* Fix: Removed outdated URL from translation files.
+
 1.8.0.2
 
 * Removed: Legacy style related to Gutenberg.
