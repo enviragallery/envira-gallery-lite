@@ -310,7 +310,7 @@ class Envira_Gallery_Shortcode {
         // Get image and image retina URLs
         // These calls will generate thumbnails as necessary for us.
         $imagesrc         = $this->get_image_src( $id, $item, $data );
-        $image_src_retina = $this->get_image_src( $id, $item, $data, false, true );
+        $image_src_retina = apply_filters( 'envira_gallery_output_item_src_retina', $this->get_image_src( $id, $item, $data, false, true ), $item, $id, $data, $i, $this->is_mobile );
         $placeholder      = wp_get_attachment_image_src( $id, 'medium' ); // $placeholder is null because $id is 0 for instagram?
 
         // Filter output before starting this gallery item.
