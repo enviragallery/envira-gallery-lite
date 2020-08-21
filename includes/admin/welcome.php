@@ -535,7 +535,7 @@ class Envira_Welcome {
 
 								<div class="envira-feature opposite">
 								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/10/videos-icon.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Video Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span> </h4>
+								<h4 class="feature-title"><?php esc_html_e( 'Video Addon', 'envira-gallery-lite' ); ?> </h4>
 								<?php /* translators: %1$s: button */ ?>
 								<p><?php printf( esc_html__( 'Now add videos from Instagram, Twitch, VideoPress, Vimeo, Wistia, and Dailymotion to your galleries. Expanded self-hosted and YouTube features are now supported too! %s', 'envira-gallery-lite' ), '<a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/announcing-new-video-integrations/", "whatsnewtab", "videoaddonreadmore", "" ) . '">Read More</a>' ); ?></p>
 								</div>
