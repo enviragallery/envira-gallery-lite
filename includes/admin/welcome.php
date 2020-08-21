@@ -433,7 +433,7 @@ class Envira_Welcome {
 					</div>
 				<div class="sidebox">
 					<form action="https://enviragallery.us3.list-manage.com/subscribe/post?u=beaa9426dbd898ac91af5daca&amp;id=2ee2b5572e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<h4><?php esc_html_e( 'Join 52,209 web developers, photographers and artists who already have a head start.', 'send-system-info' ); ?></h4>
+						<h4><?php esc_html_e( 'Join 58,709 web developers, photographers and artists who already have a head start.', 'send-system-info' ); ?></h4>
 						<p><?php esc_html_e( 'Get free tips and resources on how to get the most out of Envira Gallery and WordPress delivered directly to your inbox.', 'send-system-info' ); ?></p>
 						<div class="form-row"><input type="text" value="" name="FNAME" placeholder="Name" id="mce-FNAME"></div>
 						<div class="form-row"><input type="email" placeholder="Email" name="EMAIL" required /></div>
