@@ -73,7 +73,7 @@ class Envira_Gallery_Posttype {
             'show_in_admin_bar'   => true,
             'rewrite'             => false,
 			'query_var'           => false,
-			'show_in_rest'        => true,
+			'show_in_rest'        => apply_filters( 'envira_gallery_post_type_show_in_rest', true ),
 			'rest_base'           => 'envira-gallery',
             'menu_position'       => apply_filters( 'envira_gallery_post_type_menu_position', 247 ),
             'menu_icon'           => plugins_url( 'assets/css/images/menu-icon@2x.png', $this->base->file ),
