@@ -1,6 +1,14 @@
 
 == Changelog ==
 
+1.8.1
+
+* Added: envira_gallery_output_item_src_retina filter.
+* Added: envira_gallery_title_display filter.
+* Added: filters for aspectRatio, loop, lightbox openclose effect, and more for Fancybox settings.
+* Updated: Subscription number.
+* Updated: Remove references to Facebook Video.
+
 1.8.0.3
 
 * Fix: Tweak UI for upcoming WordPress 5.5 admin visual changes.
