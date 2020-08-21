@@ -993,7 +993,7 @@ class Envira_Gallery_Shortcode {
                         // in a Gallery, not just the paginated subset on screen.
                         // Those Addons can populate this array now which will tell envirabox which images to use.
                         $lightbox_images = apply_filters( 'envira_gallery_lightbox_images', false, $data );
-                        $title_fb1 = $this->get_config( 'title_display', $data );
+                        $title_fb1 = apply_filters( 'envira_gallery_title_display', $this->get_config( 'title_display', $data ), $data );
                         if ( 'float_wrap' == $title_fb1 || 'float' == $title_fb1 ) {
 	                        $title_fb1 = 'float';
                         }
@@ -1685,10 +1685,10 @@ class Envira_Gallery_Shortcode {
 	public function find_clostest_size( $data ){
 
 		$image_sizes = $this->get_image_sizes();
-		$dimensions =  $this->get_config( 'dimensions', $data );
-		$width =  $this->get_config( 'crop_width', $data );
-		$height =  $this->get_config( 'crop_height', $data );
-		$match   = false;
+		$dimensions  =  $this->get_config( 'dimensions', $data );
+		$width       =  $this->get_config( 'crop_width', $data );
+		$height      =  $this->get_config( 'crop_height', $data );
+		$match       = false;
 
 		usort( $image_sizes, array( $this, 'usort_callback' ) );
 
@@ -1764,7 +1764,7 @@ class Envira_Gallery_Shortcode {
 			}
 
 			$sizes[ $_size ] = array(
-				'name'  => $_size,
+				'name'   => $_size,
 				'width'  => $_wp_additional_image_sizes[ $_size ]['width'],
 				'height' => $_wp_additional_image_sizes[ $_size ]['height'],
 				'crop'   => $_wp_additional_image_sizes[ $_size ]['crop'],
