@@ -1013,15 +1013,15 @@ class Envira_Gallery_Shortcode {
                             <?php endif; ?>
                             margin: <?php echo apply_filters( 'envirabox_margin', 60, $data ); ?>,
                             arrows: <?php echo in_array( $this->get_config( 'lightbox_theme', $data ), array( 'base_dark' ) ) ? 'true' : $this->get_config( 'arrows', $data ); ?>,
-                            aspectRatio: <?php echo $this->get_config( 'aspect', $data ); ?>,
-                            loop: <?php echo $this->get_config( 'loop', $data ); ?>,
-                            mouseWheel: <?php echo $this->get_config( 'mousewheel', $data ); ?>,
+                            aspectRatio: <?php echo apply_filters( 'envirabox_aspect', $this->get_config( 'aspect', $data ), $data ); ?>,
+                            loop: <?php echo apply_filters( 'envirabox_loop', $this->get_config( 'loop', $data ), $data ); ?>,
+                            mouseWheel: <?php echo apply_filters( 'mousewheel', $this->get_config( 'mousewheel', $data ), $data ); ?>,
                             preload: 1,
 
                             <?php
                             /* Get open and transition effects */
-                            $lightbox_open_close_effect = $this->get_config( 'lightbox_open_close_effect', $data );
-                            $lightbox_transition_effect = $this->get_config( 'effect', $data );
+                            $lightbox_open_close_effect = apply_filters( 'lightbox_open_close_effect', $this->get_config( 'lightbox_open_close_effect', $data ), $data );
+                            $lightbox_transition_effect = apply_filters( 'effect', $this->get_config( 'effect', $data ), $data );
 
                             /* Get standard effects */
                             $lightbox_standard_effects = $this->common->get_transition_effects_values();
