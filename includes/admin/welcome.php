@@ -433,7 +433,7 @@ class Envira_Welcome {
 					</div>
 				<div class="sidebox">
 					<form action="https://enviragallery.us3.list-manage.com/subscribe/post?u=beaa9426dbd898ac91af5daca&amp;id=2ee2b5572e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<h4><?php esc_html_e( 'Join 50,261 web developers, photographers and artists who already have a head start.', 'send-system-info' ); ?></h4>
+						<h4><?php esc_html_e( 'Join 58,709 web developers, photographers and artists who already have a head start.', 'send-system-info' ); ?></h4>
 						<p><?php esc_html_e( 'Get free tips and resources on how to get the most out of Envira Gallery and WordPress delivered directly to your inbox.', 'send-system-info' ); ?></p>
 						<div class="form-row"><input type="text" value="" name="FNAME" placeholder="Name" id="mce-FNAME"></div>
 						<div class="form-row"><input type="email" placeholder="Email" name="EMAIL" required /></div>
@@ -470,11 +470,6 @@ class Envira_Welcome {
 					<div class="envira-welcome-panel">
 
 						<div class="wraps about-wsrap">
-
-							<?php if ( self::is_new_install() ) : ?>
-
-
-							<?php endif; ?>
 
 							<div class="envira-recent-section">
 
@@ -535,9 +530,9 @@ class Envira_Welcome {
 
 								<div class="envira-feature opposite">
 								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/10/videos-icon.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Video Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span> </h4>
+								<h4 class="feature-title"><?php esc_html_e( 'Video Addon', 'envira-gallery-lite' ); ?> </h4>
 								<?php /* translators: %1$s: button */ ?>
-								<p><?php printf( esc_html__( 'Now add videos from Facebook, Instagram, Twitch, VideoPress, Vimeo, Wistia, and Dailymotion to your galleries. Expanded self-hosted and YouTube features are now supported too! %s', 'envira-gallery-lite' ), '<a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/announcing-new-video-integrations/", "whatsnewtab", "videoaddonreadmore", "" ) . '">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'Now add videos from Instagram, Twitch, VideoPress, Vimeo, Wistia, and Dailymotion to your galleries. Expanded self-hosted and YouTube features are now supported too! %s', 'envira-gallery-lite' ), '<a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/announcing-new-video-integrations/", "whatsnewtab", "videoaddonreadmore", "" ) . '">Read More</a>' ); ?></p>
 								</div>
 
 							</div>

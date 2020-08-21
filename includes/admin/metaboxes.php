@@ -1305,7 +1305,6 @@ class Envira_Gallery_Metaboxes {
 					<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/video-gallery-demo/', 'adminpagesocial', 'videoplatformlinks' ); ?>">Instagram</a> IGTV</li>
 				</ul>
 				<ul>
-					<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/video-gallery-demo/', 'adminpagevideos', 'videoplatformlinks' ); ?>">Facebook</a> Video</li>
 					<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/video-gallery-demo/', 'adminpagevideos', 'videoplatformlinks' ); ?>">Twitch</a></li>
 					<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/video-gallery-demo/', 'adminpagevideos', 'videoplatformlinks' ); ?>">VideoPress</a></li>
 					<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/video-gallery-demo/', 'adminpagevideos', 'videoplatformlinks' ); ?>">DailyMotion</a></li>

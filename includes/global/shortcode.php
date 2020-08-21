@@ -310,7 +310,7 @@ class Envira_Gallery_Shortcode {
         // Get image and image retina URLs
         // These calls will generate thumbnails as necessary for us.
         $imagesrc         = $this->get_image_src( $id, $item, $data );
-        $image_src_retina = $this->get_image_src( $id, $item, $data, false, true );
+        $image_src_retina = apply_filters( 'envira_gallery_output_item_src_retina', $this->get_image_src( $id, $item, $data, false, true ), $item, $id, $data, $i, $this->is_mobile );
         $placeholder      = wp_get_attachment_image_src( $id, 'medium' ); // $placeholder is null because $id is 0 for instagram?
 
         // Filter output before starting this gallery item.
@@ -993,7 +993,7 @@ class Envira_Gallery_Shortcode {
                         // in a Gallery, not just the paginated subset on screen.
                         // Those Addons can populate this array now which will tell envirabox which images to use.
                         $lightbox_images = apply_filters( 'envira_gallery_lightbox_images', false, $data );
-                        $title_fb1 = $this->get_config( 'title_display', $data );
+                        $title_fb1 = apply_filters( 'envira_gallery_title_display', $this->get_config( 'title_display', $data ), $data );
                         if ( 'float_wrap' == $title_fb1 || 'float' == $title_fb1 ) {
 	                        $title_fb1 = 'float';
                         }
@@ -1013,15 +1013,15 @@ class Envira_Gallery_Shortcode {
                             <?php endif; ?>
                             margin: <?php echo apply_filters( 'envirabox_margin', 60, $data ); ?>,
                             arrows: <?php echo in_array( $this->get_config( 'lightbox_theme', $data ), array( 'base_dark' ) ) ? 'true' : $this->get_config( 'arrows', $data ); ?>,
-                            aspectRatio: <?php echo $this->get_config( 'aspect', $data ); ?>,
-                            loop: <?php echo $this->get_config( 'loop', $data ); ?>,
-                            mouseWheel: <?php echo $this->get_config( 'mousewheel', $data ); ?>,
+                            aspectRatio: <?php echo apply_filters( 'envirabox_aspect', $this->get_config( 'aspect', $data ), $data ); ?>,
+                            loop: <?php echo apply_filters( 'envirabox_loop', $this->get_config( 'loop', $data ), $data ); ?>,
+                            mouseWheel: <?php echo apply_filters( 'mousewheel', $this->get_config( 'mousewheel', $data ), $data ); ?>,
                             preload: 1,
 
                             <?php
                             /* Get open and transition effects */
-                            $lightbox_open_close_effect = $this->get_config( 'lightbox_open_close_effect', $data );
-                            $lightbox_transition_effect = $this->get_config( 'effect', $data );
+                            $lightbox_open_close_effect = apply_filters( 'lightbox_open_close_effect', $this->get_config( 'lightbox_open_close_effect', $data ), $data );
+                            $lightbox_transition_effect = apply_filters( 'effect', $this->get_config( 'effect', $data ), $data );
 
                             /* Get standard effects */
                             $lightbox_standard_effects = $this->common->get_transition_effects_values();
@@ -1685,10 +1685,10 @@ class Envira_Gallery_Shortcode {
 	public function find_clostest_size( $data ){
 
 		$image_sizes = $this->get_image_sizes();
-		$dimensions =  $this->get_config( 'dimensions', $data );
-		$width =  $this->get_config( 'crop_width', $data );
-		$height =  $this->get_config( 'crop_height', $data );
-		$match   = false;
+		$dimensions  =  $this->get_config( 'dimensions', $data );
+		$width       =  $this->get_config( 'crop_width', $data );
+		$height      =  $this->get_config( 'crop_height', $data );
+		$match       = false;
 
 		usort( $image_sizes, array( $this, 'usort_callback' ) );
 
@@ -1764,7 +1764,7 @@ class Envira_Gallery_Shortcode {
 			}
 
 			$sizes[ $_size ] = array(
-				'name'  => $_size,
+				'name'   => $_size,
 				'width'  => $_wp_additional_image_sizes[ $_size ]['width'],
 				'height' => $_wp_additional_image_sizes[ $_size ]['height'],
 				'crop'   => $_wp_additional_image_sizes[ $_size ]['crop'],
