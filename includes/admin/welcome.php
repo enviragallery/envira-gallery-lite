@@ -897,11 +897,11 @@ class Envira_Welcome {
 								<p>This will launch the Envira Gallery Builder.</p>
 
 								<ul class="list-of-links">
-									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/docs/creating-first-envira-gallery", "gettingstartedtab", "howtocreateyourfirstgallery", "" ); ?>">How to create your first gallery</a></li>
-									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-upload-photos-directly-from-lightroom-to-wordpress/", "gettingstartedtab", "createandsynchronizelightroomwithwordpress", "" ); ?>">How to create and synchronize your Adobe Lightroom Collections with WordPress</a></li>
+									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-use-envira-gallery/", "gettingstartedtab", "howtouseenviragallery", "" ); ?>">How to get started with Envira Gallery</a></li>
+									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-optimize-image-galleries-for-mobile-using-envira-gallery", "gettingstartedtab", "howtooptimizeimagegalleriesformobile", "" ); ?>">How to optimize image galleries for mobile using Envira Gallery</a></li>
 									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-protect-your-website-from-image-theft/", "gettingstartedtab", "howtoprotectyourgalleriesfromimagetheft", "" ); ?>">How to protect your galleries and images from online theft</a></li>
-									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-create-a-woocommerce-product-image-gallery/", "gettingstartedtab", "turnphotosintoproductsandmakemoneyfromphotography", "" ); ?>">How to turn your photos into products and make money from your photography</a></li>
-									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-optimize-your-wordpress-galleries-for-seo/", "gettingstartedtab", "appearhigheringooglesearchresults", "" ); ?>">How to appear higher in Google search results so more people find your work</a></li>
+									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-sell-your-photos-in-wordpress", "gettingstartedtab", "howtosellyourphotosinwordpress", "" ); ?>">How to sell your photos in WordPress</a></li>
+									<li><a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-enhance-gallery-layouts-with-customizable-gallery-themes/", "gettingstartedtab", "howtoenhancegallerylayouts", "" ); ?>">How to enhance gallery layouts with customizable gallery themes</a></li>
 									</li>
 								</ul>
 
@@ -937,28 +937,6 @@ class Envira_Welcome {
 
 							<div class="feature-photo-column">
 									<img class="feature-photo" src="<?php echo esc_url( plugins_url( 'assets/images/get-started/upgrade.png', ENVIRA_FILE ) ); ?>" />
-							</div>
-
-						</div> <!-- panel -->
-
-						<div class="envira-admin-get-started-panel">
-
-							<div class="feature-photo-column photo-left">
-								<img class="feature-photo" src="<?php echo esc_url( plugins_url( 'assets/images/get-started/upgrade-and-save.png', ENVIRA_FILE ) ); ?>" />
-							</div>
-
-							<div class="section-text-column text-left">
-
-								<h2>Upgrade to Envira Gallery Pro Today and Get 20% Off</h2>
-
-								<p>Create, edit and sync your photos from Adobe Lightroom to WordPress, protect your work from image theft, start selling your work online by turning images into products and appear higher in Google search results so more people can find your work.</p> 
-
-								<p>Get all of this and more when you upgrade to Envira Gallery Pro!</p>
-
-								<p>Plus, get access to exclusive discounts on photography tools and software when you upgrade like 15% off all Adobe products, 40% off Skylum Luminar and more!</p>
-
-								<p>Have questions about Envira Gallery? <a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://direct.lc.chat/10277922/", "gettingstartedtab", "chatwithalivememberofoursupporteam", "" ); ?>" target="_blank">Chat with a live member of our support team</a> and have all your questions answered.</p>
-
 							</div>
 
 						</div> <!-- panel -->
@@ -1029,26 +1007,6 @@ class Envira_Welcome {
 
 								<div class="banner-button">
 									<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/add-gallery-tags-wordpress/", "gettingstartedtab", "addgallerytagsinwordpress", "" ); ?>" class="button button-primary">Read Documentation</a>
-								</div>
-
-							</div>
-
-						</div> <!-- panel -->
-
-						<div class="envira-admin-get-started-panel mini-panel">
-
-							<div class="feature-photo-column photo-left">
-								<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-optimize-image-galleries-for-mobile-using-envira-gallery/", "gettingstartedtab", "customizewordpressgalleriesformobile", "" ); ?>"><img class="feature-photo" src="<?php echo esc_url( plugins_url( 'assets/images/get-started/How-to-Customize-WordPress-Galleries-for-Mobile-Devices.png', ENVIRA_FILE ) ); ?>" /></a>
-							</div>
-
-							<div class="section-text-column text-left">
-
-								<h2>How to Make Your Galleries Mobile Friendly</h2>
-
-								<p>Do you want to customize your image galleries for mobile? With the rise of mobile internet usage, your photo galleries should be responsive. In this tutorial, we will share how to customize WordPress galleries for mobile devices.</p>
-
-								<div class="banner-button">
-									<a target="_blank" href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/how-to-optimize-image-galleries-for-mobile-using-envira-gallery/", "gettingstartedtab", "customizewordpressgalleriesformobile", "" ); ?>" class="button button-primary">Read Documentation</a>
 								</div>
 
 							</div>
