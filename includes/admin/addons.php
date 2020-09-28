@@ -195,7 +195,7 @@ class Envira_Gallery_Addons {
                 <span class="spinner"></span>
                 <input id="add-on-searchbox" name="envira-addon-search" value="" placeholder="<?php _e( 'Search Envira Addons', 'envira-gallery-lite' ); ?>" />
                 <select id="envira-filter-select">
-                    <option value="popular"><?php esc_html_e( 'Most Popular', 'envira-gallery-lite' ); ?></option>
+                    <option value="sort-order"><?php esc_html_e( 'Most Popular', 'envira-gallery-lite' ); ?></option>
                     <option value="asc"><?php esc_html_e( 'Sort Ascending (A-Z)', 'envira-gallery-lite' ); ?></option>
                     <option value="desc"><?php esc_html_e( 'Sort Descending (Z-A)', 'envira-gallery-lite' ); ?></option>
                 </select>
@@ -259,7 +259,7 @@ class Envira_Gallery_Addons {
             // Output Addons the User is licensed to use.
             if ( count( $addons['licensed'] )> 0 ) {
                 ?>
-                <div class="envira-addons-area licensed" class="envira-clear">
+                <div id="envira-addons-area-license" class="envira-addons-area licensed" class="envira-clear">
                     <h3><?php _e( 'Available Addons', 'envira-gallery-lite' ); ?></h3>
 
                     <div id="envira-addons-licensed" class="envira-addons">
@@ -279,19 +279,16 @@ class Envira_Gallery_Addons {
             // Output Addons the User isn't licensed to use.
             if ( count( $addons['unlicensed'] )> 0 ) {
                 ?>
-                <div class="envira-addons-area unlicensed" class="envira-clear">
+                <div id="envira-addons-area-unlicensed" class="envira-addons-area unlicensed" class="envira-clear">
                     <h3><?php _e( 'Unlock More Addons', 'envira-gallery-lite' ); ?></h3>
                     <p><?php echo sprintf( __( '<strong>Want even more addons?</strong> <a href="%s">Upgrade your Envira Gallery account</a> and unlock the following addons.', 'envira-gallery-lite' ), $upgrade_url ); ?></p>
 
-                    <div id="envira-addons-unlicensed" class="envira-addons">
-                        <!-- list container class required for list.js -->
-                        <div class="list">
-                            <?php
-                            foreach ( (array) $addons['unlicensed'] as $i => $addon ) {
-                                $this->get_addon_card( $addon, $i, false, $installed_plugins );
-                            }
-                            ?>
-                        </div>
+                    <div id="envira-addons-unlicensed" class="envira-addons">                       
+                        <?php
+                        foreach ( (array) $addons['unlicensed'] as $i => $addon ) {
+                            $this->get_addon_card( $addon, $i, false, $installed_plugins );
+                        }
+                        ?>
                     </div>
                 </div>
                 <?php
@@ -479,14 +476,13 @@ class Envira_Gallery_Addons {
             $addon->upgrade_url = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'addonspage', str_replace( '-', '', str_replace( 'envira-', '', $addon->slug ) ) . 'addonupgradenowbutton' );
         }
 
-        $sort_order = ! empty( $addon->sort_order ) ? intval( $addon->sort_order ) : 0;
-        $sort_order = rand( 0, 10 );
+        $sort_order = ! empty( $addon->sort_order ) ? intval( $addon->sort_order ) : rand( 0, 10 ); // should be zero, not random - for testing only. TESTING!!!!
 
         // Output the card
         ?>
-        <div class="envira-addon">
-            <h3 class="envira-addon-title" data-sort="<?php echo $sort_order; ?>"><?php echo esc_html( $addon->title ); ?></h3>
-            <div><?php echo $sort_order; ?></div>
+        <div class="envira-addon" data-addon-title="<?php echo esc_html( $addon->title ); ?>" data-sort-order="<?php echo ( $sort_order ); ?>">
+            <h3 class="envira-addon-title"><?php echo esc_html( $addon->title ); ?></h3>
+            <div><?php echo $sort_order; ?></div> <!-- to delete TESTING!!! -->
             <?php
             if ( ! empty( $addon->image ) ) {
                 ?>

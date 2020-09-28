@@ -64,40 +64,72 @@
 
         } );
 
-        // Addons Sorting
-        var envira_addons_licensed_sorting = new List( 'envira-addons-licensed', {
-            valueNames: [ 'envira-addon-title', { name: 'sort', attr: 'data-sort' } ]
-        } );
-        var envira_addons_unlicensed_sorting = new List( 'envira-addons-unlicensed', {
-            valueNames: [ 'envira-addon-title', { name: 'sort', attr: 'data-sort' } ]
-        } );
-        $( 'select#envira-filter-select' ).on( 'change', function() {
-            console.log( 'testing' );
-            console.log( envira_addons_licensed_sorting );
-            console.log( $( this ).val() );
-            if ( typeof envira_addons_licensed_sorting.sort !== 'undefined' ) {
-                if ( $( this ).val() == 'popular' ) {
-                    envira_addons_licensed_sorting.sort( 'sort', {
-                        order: 'desc',
-                    } );
-                } else {
-                    envira_addons_licensed_sorting.sort( 'envira-addon-title', {
-                        order: $( this ).val(),
-                    } );
-                }
+        //Sort Filter for addons
+        $('#envira-filter-select').on('change', function () {
+
+            var $select = $(this),
+                $value = $select.val(),
+                $container = $('#envira-addons-unlicensed'),
+                container_data = $container.data('soliloquy-filter'),
+                $addon = $('#envira-addons-unlicensed .envira-addon');
+
+            //Make sure the addons are visible.
+            $addon.show();
+
+            switch ($value) {
+
+                case 'asc':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(a).data('addon-title').localeCompare($(b).data('addon-title'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-unlicensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+                case 'desc':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(b).data('addon-title').localeCompare($(a).data('addon-title'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-unlicensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+                case 'sort-order':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(b).data('sort-order').toString().localeCompare($(a).data('sort-order'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-unlicensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
             }
-            if ( typeof envira_addons_unlicensed_sorting.sort !== 'undefined' ) {
-                if ( $( this ).val() == 'popular' ) {
-                    envira_addons_unlicensed_sorting.sort( 'sort', {
-                        order: 'desc',
-                    } );
-                } else {
-                    envira_addons_unlicensed_sorting.sort( 'envira-addon-title', {
-                        order: $( this ).val(),
-                    } );
-                }
-            }
-        } );
+
+        });
 
         // Re-enable install button if user clicks on it, needs creds but tries to install another addon instead.
         $('#envira-addons').on('click.refreshInstallAddon', '.envira-addon-action-button', function(e) {
