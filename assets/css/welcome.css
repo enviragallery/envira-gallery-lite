@@ -1016,6 +1016,11 @@ body.envira_page_envira-gallery-lite-litevspro .envira-get-started-main {
     .envira-admin-get-started-banner.bottom .banner-button a {
       font-size: 16px; } }
 
+@media screen and (max-width: 1120px) {
+  .envira-admin-get-started-banner.middle .banner-button a,
+  .envira-admin-get-started-banner.bottom .banner-button a {
+    font-size: 14px; } }
+
 @media screen and (max-width: 360px) {
   .envira_page_envira-gallery-lite-welcome .enviraheadline {
     text-align: center; }
