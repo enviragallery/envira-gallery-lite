@@ -476,7 +476,7 @@ class Envira_Gallery_Addons {
             $addon->upgrade_url = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'addonspage', str_replace( '-', '', str_replace( 'envira-', '', $addon->slug ) ) . 'addonupgradenowbutton' );
         }
 
-        $sort_order = ! empty( $addon->sort_order ) ? intval( $addon->sort_order ) : rand( 0, 10 ); // should be zero, not random - for testing only. TESTING!!!!
+        $sort_order = $sort_order = isset( $addon->sort_order ) && false !== $addon->sort_order ? intval( $addon->sort_order ) : rand( 0, 10 ); // should be zero, not random - for testing only. TESTING!!!!
 
         // Output the card
         ?>
