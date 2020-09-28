@@ -995,6 +995,7 @@ body.envira_page_envira-gallery-lite-litevspro {
 			text-align: left;
 			h3 {
 				font-size: 1.5em;
+				line-height: 1.3em;
 				margin: 5px auto;
 				color: white;
 			}
@@ -1154,7 +1155,7 @@ body.envira_page_envira-gallery-lite-litevspro {
 
 }
 
-@media screen and ( max-width: 1224px ) {
+@media screen and ( max-width: 1400px ) {
 
 	.envira-admin-get-started-banner.middle,
 	.envira-admin-get-started-banner.bottom {
@@ -1167,7 +1168,7 @@ body.envira_page_envira-gallery-lite-litevspro {
 		.banner-button {
 			margin-right: 10px;
 			a {
-				font-size: 100%;
+				font-size: 16px;
 			}
 		}
 	}
