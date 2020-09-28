@@ -480,12 +480,13 @@ class Envira_Gallery_Addons {
         }
 
         $sort_order = ! empty( $addon->sort_order ) ? intval( $addon->sort_order ) : 0;
+        $sort_order = rand( 0, 10 );
 
         // Output the card
         ?>
         <div class="envira-addon">
-            <h3 class="envira-addon-title"><?php echo esc_html( $addon->title ); ?></h3>
-            <div class="envira-sort-order"><?php echo $sort_order; ?></div>
+            <h3 class="envira-addon-title" data-sort="<?php echo $sort_order; ?>"><?php echo esc_html( $addon->title ); ?></h3>
+            <div><?php echo $sort_order; ?></div>
             <?php
             if ( ! empty( $addon->image ) ) {
                 ?>

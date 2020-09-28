@@ -66,10 +66,10 @@
 
         // Addons Sorting
         var envira_addons_licensed_sorting = new List( 'envira-addons-licensed', {
-            valueNames: [ 'envira-addon-title', 'envira-sort-order' ]
+            valueNames: [ 'envira-addon-title', { name: 'sort', attr: 'data-sort' } ]
         } );
         var envira_addons_unlicensed_sorting = new List( 'envira-addons-unlicensed', {
-            valueNames: [ 'envira-addon-title', 'envira-sort-order' ]
+            valueNames: [ 'envira-addon-title', { name: 'sort', attr: 'data-sort' } ]
         } );
         $( 'select#envira-filter-select' ).on( 'change', function() {
             console.log( 'testing' );
@@ -77,7 +77,7 @@
             console.log( $( this ).val() );
             if ( typeof envira_addons_licensed_sorting.sort !== 'undefined' ) {
                 if ( $( this ).val() == 'popular' ) {
-                    envira_addons_licensed_sorting.sort( 'envira-sort-order', {
+                    envira_addons_licensed_sorting.sort( 'sort', {
                         order: 'desc',
                     } );
                 } else {
@@ -88,7 +88,7 @@
             }
             if ( typeof envira_addons_unlicensed_sorting.sort !== 'undefined' ) {
                 if ( $( this ).val() == 'popular' ) {
-                    envira_addons_unlicensed_sorting.sort( 'envira-sort-order', {
+                    envira_addons_unlicensed_sorting.sort( 'sort', {
                         order: 'desc',
                     } );
                 } else {
