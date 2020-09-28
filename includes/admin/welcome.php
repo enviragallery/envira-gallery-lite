@@ -513,7 +513,6 @@ class Envira_Welcome {
 									<img class="icon" src="<?php echo esc_url( plugins_url( 'assets/images/logos/gutenberg.svg', ENVIRA_FILE ) ); ?>" />
 									<h4 class="feature-title">
 										<?php esc_html_e( 'Envira Gutenberg Block', 'envira-gallery-lite' ); ?>
-										<span class="badge new">NEW</span>
 									</h4>
 									<p>
 										<?php /* translators: %1$s: url, %2$s url */ ?>
@@ -522,17 +521,17 @@ class Envira_Welcome {
 								</div>
 
 								<div class="envira-feature">
-								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/10/social-icon.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Social Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">UPDATED</span> </h4>
+								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2020/07/logo-elementor.png" />
+								<h4 class="feature-title"><?php esc_html_e( 'Elementor Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">NEW</span> </h4>
 								<?php /* translators: %1$s: button */ ?>
-								<p><?php printf( esc_html__( 'You can now allow users to share your photos via Instagram and Facebook, in addition to LinkedIn, WhatsApp, Twitter, Pinterest, and email. %s', 'envira-gallery-lite' ), '<a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/addons/social-addon/", "whatsnewtab", "socialaddonreadmore", "" ) . '">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'Quickly and easily create, edit and sync your image and video galleries directly inside the Elementor page builder. %s', 'envira-gallery-lite' ), '<a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/addons/elementor-addon/", "whatsnewtab", "elementoraddonreadmore", "" ) . '">Read More</a>' ); ?></p>
 								</div>
 
 								<div class="envira-feature opposite">
-								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/10/videos-icon.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Video Addon', 'envira-gallery-lite' ); ?> </h4>
+								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2020/09/audio_icon.png" style="border: 1px solid #000;" />
+								<h4 class="feature-title"><?php esc_html_e( 'Audio Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">NEW</span> </h4>
 								<?php /* translators: %1$s: button */ ?>
-								<p><?php printf( esc_html__( 'Now add videos from Instagram, Twitch, VideoPress, Vimeo, Wistia, and Dailymotion to your galleries. Expanded self-hosted and YouTube features are now supported too! %s', 'envira-gallery-lite' ), '<a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/announcing-new-video-integrations/", "whatsnewtab", "videoaddonreadmore", "" ) . '">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'This addon allows you to easily add an audio track (such as background music or a narration) to the lightboxes in your Envira galleries. %s', 'envira-gallery-lite' ), '<a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/addons/audio-addon/", "whatsnewtab", "audioaddonreadmore", "" ) . '">Read More</a>' ); ?></p>
 								</div>
 
 							</div>
