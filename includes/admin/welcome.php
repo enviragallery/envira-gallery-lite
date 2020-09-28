@@ -940,7 +940,7 @@ class Envira_Welcome {
 
 						</div> <!-- panel -->
 
-						<div class="envira-admin-get-started-banner">
+						<div class="envira-admin-get-started-banner middle">
 
 							<div class="banner-text">
 								<h3>Upgrade To Unleash the Power of Envira</h3>
@@ -1012,7 +1012,7 @@ class Envira_Welcome {
 
 						</div> <!-- panel -->
 
-						<div class="envira-admin-get-started-banner">
+						<div class="envira-admin-get-started-banner bottom">
 
 							<div class="banner-text">
 								<h3>Start Creating Responsive Photo Galleries</h3>

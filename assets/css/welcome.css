@@ -905,6 +905,7 @@ body.envira_page_envira-gallery-lite-litevspro .envira-get-started-main {
       text-align: left; }
       .envira-get-started-section .envira-admin-get-started-banner .banner-text h3 {
         font-size: 1.5em;
+        line-height: 1.3em;
         margin: 5px auto;
         color: white; }
     .envira-get-started-section .envira-admin-get-started-banner .banner-button {
@@ -1000,6 +1001,25 @@ body.envira_page_envira-gallery-lite-litevspro .envira-get-started-main {
     width: 100%; }
   .envira_page_envira-gallery-lite-welcome .envirathree-column .enviracolumn {
     width: 100%; } }
+
+@media screen and (max-width: 1400px) {
+  .envira-admin-get-started-banner.middle .banner-text,
+  .envira-admin-get-started-banner.bottom .banner-text {
+    padding: 10px 0 0 10px; }
+    .envira-admin-get-started-banner.middle .banner-text h3,
+    .envira-admin-get-started-banner.bottom .banner-text h3 {
+      line-height: 1.3em; }
+  .envira-admin-get-started-banner.middle .banner-button,
+  .envira-admin-get-started-banner.bottom .banner-button {
+    margin-right: 10px; }
+    .envira-admin-get-started-banner.middle .banner-button a,
+    .envira-admin-get-started-banner.bottom .banner-button a {
+      font-size: 16px; } }
+
+@media screen and (max-width: 1120px) {
+  .envira-admin-get-started-banner.middle .banner-button a,
+  .envira-admin-get-started-banner.bottom .banner-button a {
+    font-size: 14px; } }
 
 @media screen and (max-width: 360px) {
   .envira_page_envira-gallery-lite-welcome .enviraheadline {

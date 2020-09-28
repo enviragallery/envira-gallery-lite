@@ -995,6 +995,7 @@ body.envira_page_envira-gallery-lite-litevspro {
 			text-align: left;
 			h3 {
 				font-size: 1.5em;
+				line-height: 1.3em;
 				margin: 5px auto;
 				color: white;
 			}
@@ -1151,6 +1152,40 @@ body.envira_page_envira-gallery-lite-litevspro {
 	.envira_page_envira-gallery-lite-welcome .envirathree-column .enviracolumn {
 		width: 100%;
 	}
+
+}
+
+@media screen and ( max-width: 1400px ) {
+
+	.envira-admin-get-started-banner.middle,
+	.envira-admin-get-started-banner.bottom {
+		.banner-text {
+			padding: 10px 0 0 10px;
+			h3 {
+				line-height: 1.3em;
+			}
+		}
+		.banner-button {
+			margin-right: 10px;
+			a {
+				font-size: 16px;
+			}
+		}
+	}
+
+}
+
+@media screen and ( max-width: 1120px ) {
+
+	.envira-admin-get-started-banner.middle,
+	.envira-admin-get-started-banner.bottom {
+		.banner-button {
+			a {
+				font-size: 14px;
+			}
+		}
+	}
+
 }
 
 @media screen and ( max-width: 360px ) {
