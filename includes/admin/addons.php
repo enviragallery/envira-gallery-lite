@@ -258,6 +258,10 @@ class Envira_Gallery_Addons {
             <?php
             // Output Addons the User is licensed to use.
             if ( count( $addons['licensed'] )> 0 ) {
+
+                // sort by sort order (Popular) first by default.
+                usort( $addons['licensed'], array( $this, 'sort_data_by_sort_order' ) );
+
                 ?>
                 <div id="envira-addons-area-license" class="envira-addons-area licensed" class="envira-clear">
                     <h3><?php _e( 'Available Addons', 'envira-gallery-lite' ); ?></h3>
@@ -278,6 +282,10 @@ class Envira_Gallery_Addons {
 
             // Output Addons the User isn't licensed to use.
             if ( count( $addons['unlicensed'] )> 0 ) {
+
+                // sort by sort order (Popular) first by default.
+                usort( $addons['unlicensed'], array( $this, 'sort_data_by_sort_order' ) );
+
                 ?>
                 <div id="envira-addons-area-unlicensed" class="envira-addons-area unlicensed" class="envira-clear">
                     <h3><?php _e( 'Unlock More Addons', 'envira-gallery-lite' ); ?></h3>
@@ -297,6 +305,18 @@ class Envira_Gallery_Addons {
         </div>
         <?php
 
+    }
+
+    /**
+     * Sorts by Sort order.
+     *
+     * @since 1.5.0
+     *
+     * @param   array   $a    First element.
+     * @param   array   $b    First element.
+     */
+    public function sort_data_by_sort_order( $a, $b ) {
+        return $b->sort_order - $a->sort_order;
     }
 
     /**
@@ -476,13 +496,16 @@ class Envira_Gallery_Addons {
             $addon->upgrade_url = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'addonspage', str_replace( '-', '', str_replace( 'envira-', '', $addon->slug ) ) . 'addonupgradenowbutton' );
         }
 
-        $sort_order = $sort_order = isset( $addon->sort_order ) && false !== $addon->sort_order ? intval( $addon->sort_order ) : rand( 0, 10 ); // should be zero, not random - for testing only. TESTING!!!!
+        $sort_order   = isset( $addon->sort_order ) && false !== $addon->sort_order ? intval( $addon->sort_order ) : 0;
+        $most_popular = isset( $addon->most_popular ) && false !== $addon->most_popular ? true : false;
 
         // Output the card
         ?>
         <div class="envira-addon" data-addon-title="<?php echo esc_html( $addon->title ); ?>" data-sort-order="<?php echo ( $sort_order ); ?>">
+            <?php if ( $most_popular ) { ?>
+                <div class="addon-tag">Most Popular</div>
+            <?php } ?>
             <h3 class="envira-addon-title"><?php echo esc_html( $addon->title ); ?></h3>
-            <div><?php echo $sort_order; ?></div> <!-- to delete TESTING!!! -->
             <?php
             if ( ! empty( $addon->image ) ) {
                 ?>

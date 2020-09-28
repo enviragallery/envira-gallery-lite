@@ -70,7 +70,7 @@
             var $select = $(this),
                 $value = $select.val(),
                 $container = $('#envira-addons-unlicensed'),
-                container_data = $container.data('soliloquy-filter'),
+                container_data = $container.data('envira-filter'),
                 $addon = $('#envira-addons-unlicensed .envira-addon');
 
             //Make sure the addons are visible.
@@ -115,7 +115,7 @@
 
                     $addon.sort(function (a, b) {
 
-                        return $(b).data('sort-order').toString().localeCompare($(a).data('sort-order'));
+                        return $(b).data('sort-order') - $(a).data('sort-order');
 
                     }).each(function (_, addon) {
 
@@ -125,6 +125,72 @@
                     });
 
                     $("#envira-addons-unlicensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+            }
+
+        });
+
+        $('#envira-filter-select').on('change', function () {
+
+            var $select = $(this),
+                $value = $select.val(),
+                $container = $('#envira-addons-licensed'),
+                container_data = $container.data('envira-filter'),
+                $addon = $('#envira-addons-licensed .envira-addon');
+
+            //Make sure the addons are visible.
+            $addon.show();
+
+            switch ($value) {
+
+                case 'asc':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(a).data('addon-title').localeCompare($(b).data('addon-title'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-licensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+                case 'desc':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(b).data('addon-title').localeCompare($(a).data('addon-title'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-licensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+                case 'sort-order':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(b).data('sort-order') - $(a).data('sort-order');
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-licensed .envira-addon:nth-child(3n)").addClass('last');
 
                     break;
             }
