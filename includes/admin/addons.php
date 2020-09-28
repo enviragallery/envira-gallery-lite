@@ -195,6 +195,7 @@ class Envira_Gallery_Addons {
                 <span class="spinner"></span>
                 <input id="add-on-searchbox" name="envira-addon-search" value="" placeholder="<?php _e( 'Search Envira Addons', 'envira-gallery-lite' ); ?>" />
                 <select id="envira-filter-select">
+                    <option value="popular"><?php esc_html_e( 'Most Popular', 'envira-gallery-lite' ); ?></option>
                     <option value="asc"><?php esc_html_e( 'Sort Ascending (A-Z)', 'envira-gallery-lite' ); ?></option>
                     <option value="desc"><?php esc_html_e( 'Sort Descending (Z-A)', 'envira-gallery-lite' ); ?></option>
                 </select>
@@ -478,10 +479,13 @@ class Envira_Gallery_Addons {
             $addon->upgrade_url = Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'addonspage', str_replace( '-', '', str_replace( 'envira-', '', $addon->slug ) ) . 'addonupgradenowbutton' );
         }
 
+        $sort_order = ! empty( $addon->sort_order ) ? intval( $addon->sort_order ) : 0;
+
         // Output the card
         ?>
         <div class="envira-addon">
             <h3 class="envira-addon-title"><?php echo esc_html( $addon->title ); ?></h3>
+            <div class="envira-sort-order"><?php echo $sort_order; ?></div>
             <?php
             if ( ! empty( $addon->image ) ) {
                 ?>
