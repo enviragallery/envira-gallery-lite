@@ -1,6 +1,12 @@
 
 == Changelog ==
 
+1.8.2
+
+* Added: Most Popular sort in Addons screen.
+* Updated: Recent News On Welcome Screen.
+* Updated: Links On What's New Screen.
+
 1.8.1
 
 * Added: envira_gallery_output_item_src_retina filter.
