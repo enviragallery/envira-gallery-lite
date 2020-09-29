@@ -64,25 +64,138 @@
 
         } );
 
-        // Addons Sorting
-        var envira_addons_licensed_sorting = new List( 'envira-addons-licensed', {
-            valueNames: [ 'envira-addon-title' ]
-        } );
-        var envira_addons_unlicensed_sorting = new List( 'envira-addons-unlicensed', {
-            valueNames: [ 'envira-addon-title' ]
-        } );
-        $( 'select#envira-filter-select' ).on( 'change', function() {
-            if ( typeof envira_addons_licensed_sorting.sort !== 'undefined' ) {
-                envira_addons_licensed_sorting.sort( 'envira-addon-title', {
-                    order: $( this ).val(),
-                } );
+        //Sort Filter for addons
+        $('#envira-filter-select').on('change', function () {
+
+            var $select = $(this),
+                $value = $select.val(),
+                $container = $('#envira-addons-unlicensed'),
+                container_data = $container.data('envira-filter'),
+                $addon = $('#envira-addons-unlicensed .envira-addon');
+
+            //Make sure the addons are visible.
+            $addon.show();
+
+            switch ($value) {
+
+                case 'asc':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(a).data('addon-title').localeCompare($(b).data('addon-title'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-unlicensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+                case 'desc':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(b).data('addon-title').localeCompare($(a).data('addon-title'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-unlicensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+                case 'sort-order':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(b).data('sort-order') - $(a).data('sort-order');
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-unlicensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
             }
-            if ( typeof envira_addons_unlicensed_sorting.sort !== 'undefined' ) {
-                envira_addons_unlicensed_sorting.sort( 'envira-addon-title', {
-                    order: $( this ).val(),
-                } );
+
+        });
+
+        $('#envira-filter-select').on('change', function () {
+
+            var $select = $(this),
+                $value = $select.val(),
+                $container = $('#envira-addons-licensed'),
+                container_data = $container.data('envira-filter'),
+                $addon = $('#envira-addons-licensed .envira-addon');
+
+            //Make sure the addons are visible.
+            $addon.show();
+
+            switch ($value) {
+
+                case 'asc':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(a).data('addon-title').localeCompare($(b).data('addon-title'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-licensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+                case 'desc':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(b).data('addon-title').localeCompare($(a).data('addon-title'));
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-licensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
+                case 'sort-order':
+
+                    $addon.sort(function (a, b) {
+
+                        return $(b).data('sort-order') - $(a).data('sort-order');
+
+                    }).each(function (_, addon) {
+
+                        $(addon).removeClass('last');
+                        $container.append(addon).hide().fadeIn(100);
+
+                    });
+
+                    $("#envira-addons-licensed .envira-addon:nth-child(3n)").addClass('last');
+
+                    break;
             }
-        } );
+
+        });
 
         // Re-enable install button if user clicks on it, needs creds but tries to install another addon instead.
         $('#envira-addons').on('click.refreshInstallAddon', '.envira-addon-action-button', function(e) {
