@@ -977,22 +977,24 @@ class Envira_Gallery_Metaboxes {
         // Output an upgrade notice
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
             'envira_gallery_images_tab',
-            __( 'Want to do even more with your gallery display?', 'envira-gallery-lite' ),
-            __( '<p>We know that you will truly love Envira Gallery Pro. It has 1,000+ five star ratings (<span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span><span class="dashicons star dashicons-star-filled"></span>) and is active on over 150,000 websites.</p>
-            <p>By upgrading to Envira Gallery Pro, you can get access to numerous other gallery display features, including:</p><div class="two-column-list">
+            __( '' ),
+            __( '<h2 style="margin: -10px 0 0 0; font-weight: 600; font-size: 21px; padding: 0;">Improve Your Galleries With Our Premium Addons:</h2>
+            <div class="two-column-list">
             <ul>
-                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/addons/tags-addon/', 'adminpageconfig', 'customimagetaggingandfiltering' ) . '">Custom image tagging and filtering</a></li>
-                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/features/responsive-mobile-friendly/', 'adminpageconfig', 'mobilespecificassetsforblazingfastloadtimes' ) . '">Mobile specific image assets for blazing fast load times</a></li>
-                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/addons/deeplinking-addon/', 'adminpageconfig', 'dedicatedanduniquegalleryurls' ) . '">Dedicated and unique gallery URLs</a></li>
+                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/customize-your-envira-galleries-with-new-gallery-layouts', 'adminpageconfig', 'customgallerythemes' ) . '">Custom Gallery Themes</a></li>
+                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/how-to-optimize-image-galleries-for-mobile-using-envira-gallery/', 'adminpageconfig', 'mobileoptimizedgalleries' ) . '">Mobile Optimized Galleries</a></li>
+                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/how-to-upload-photos-directly-from-lightroom-to-wordpress/', 'adminpageconfig', 'adobelightroomintegration' ) . '">Adobe Lightroom Integration</a></li>
             </ul>
             <ul>
-                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/envira-gallery-theme-demo/', 'adminpageconfig', 'customgallerythemes' ) . '">Custom gallery themes</a></li>
-                <li>Gallery thumbnail support and so much more!</li>
+                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/how-to-sell-your-photos-in-wordpress/', 'adminpageconfig', 'woocommerceintegration' ) . '">Woocommerce Integration</a></li>
+                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/how-to-protect-your-website-from-image-theft/', 'adminpageconfig', 'imageprotection' ) . '">Image Protection</a></li>
+                <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/lite/', 'adminpageconfig', 'prioritytechnicalsupport' ) . '">Priority Technical Support</a></li>
             </ul>
-        </div><p class="no-margin-top"><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>', 'envira-gallery-lite' ),
+            </div>
+            <p class="no-margin-top">Join 2,500,000 + Professionals Who Are Using Envira Gallery to Create Beautiful Photo and Video Galleries.</p>', 'envira-gallery-lite' ),
             'warning',
-            __( 'Click here to Upgrade', 'envira-gallery-lite' ),
-            Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpageconfig', 'clickheretoupgradebutton' ),
+            __( 'Click here to Upgrade Today', 'envira-gallery-lite' ),
+            Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpageconfig', 'clickheretoupgradetodaybutton' ),
             false
         );
 
