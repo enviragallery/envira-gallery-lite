@@ -510,21 +510,21 @@ class Envira_Welcome {
 								</div>
 
 								<div class="envira-feature opposite">
-									<img class="icon" src="<?php echo esc_url( plugins_url( 'assets/images/logos/gutenberg.svg', ENVIRA_FILE ) ); ?>" />
+									<img class="icon" src="https://enviragallery.com/wp-content/uploads/2015/10/proofing-icon.png" />
 									<h4 class="feature-title">
-										<?php esc_html_e( 'Envira Gutenberg Block', 'envira-gallery-lite' ); ?>
+										<?php esc_html_e( 'Proofing Addon', 'envira-gallery-lite' ); ?>
 									</h4>
 									<p>
 										<?php /* translators: %1$s: url, %2$s url */ ?>
-										<?php printf( esc_html__( 'Envira is now ready for WordPress 5.0 and it\'s newest editor "%1$s". Find out how to use the new Envira Gutenberg block: %2$s', 'envira-gallery-lite' ), '<a href="https://wordpress.org/gutenberg/" target="_blank">Gutenberg</a>', '<a href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/docs/how-to-use-envira-with-gutenberg/", "whatsnewtab", "gutenbergblockreadmore", "" ) . '" target="_blank">Read More</a>' ); ?>
+										<?php printf( esc_html__( 'New and improved features and functions make client image proofing even easier for your photography business.', 'envira-gallery-lite' ) ); ?>
 										</p>
 								</div>
 
 								<div class="envira-feature">
-								<img class="icon" src="https://enviragallery.com/wp-content/uploads/2020/07/logo-elementor.png" />
-								<h4 class="feature-title"><?php esc_html_e( 'Elementor Addon', 'envira-gallery-lite' ); ?> <span class="badge updated">NEW</span> </h4>
+								<img class="icon" src="<?php echo esc_url( plugins_url( 'assets/images/icons/automatic-layout.png', ENVIRA_FILE ) ); ?>" />
+								<h4 class="feature-title"><?php esc_html_e( 'Gallery Layouts', 'envira-gallery-lite' ); ?> <span class="badge updated">NEW</span> </h4>
 								<?php /* translators: %1$s: button */ ?>
-								<p><?php printf( esc_html__( 'Quickly and easily create, edit and sync your image and video galleries directly inside the Elementor page builder. %s', 'envira-gallery-lite' ), '<a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( "https://enviragallery.com/addons/elementor-addon/", "whatsnewtab", "elementoraddonreadmore", "" ) . '">Read More</a>' ); ?></p>
+								<p><?php printf( esc_html__( 'New and improved features and functions make client image proofing even easier for your photography business.' ) ); ?></p>
 								</div>
 
 								<div class="envira-feature opposite">
@@ -535,7 +535,8 @@ class Envira_Welcome {
 								</div>
 
 							</div>
-							
+
+													
 
 
 
