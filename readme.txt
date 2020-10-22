@@ -1,4 +1,4 @@
-=== Gallery Plugin for WordPress - Envira Photo Gallery ===
+=== Image Gallery Plugin for WordPress - Envira Photo Gallery ===
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
 Tags: gallery, image gallery, photo gallery, best gallery plugin, wordpress gallery plugin
 Requires at least: 4.4.0
@@ -22,18 +22,20 @@ https://www.youtube.com/watch?v=4jHG3LOmV-c&w=532&rel=0
 
 We believe that you shouldn't have to hire a developer to create a WordPress gallery. That's why we built [Envira](https://bit.ly/35gNvqW), a drag & drop **photo gallery plugin** that's both EASY, FAST and POWERFUL.
 
-Envira is highly optimized for web and server performance because we understand the importance of speed when it comes to image and gallery load times, as well as SEO and conversion.
+Envira is optimized for web and server performance as well as SEO and conversion, because we understand the importance of speed when it comes to image and gallery load times. Especially if your looking to sell from your site.
+
+Works great with the top page builders including: Elementor, Beaver Builder, Divi and more.
 
 > <strong>Envira Pro</strong><br />
-> Photo Gallery by Envira is the lite version of the popular Envira Pro plugin that comes with all the features you will ever need including albums, tags, social media integration, gallery templates / gallery layouts, deeplinking, pagination, e-commerce, image proofing, and tons more. [Click here to purchase Envira Pro now!](https://bit.ly/2YnXCsV)
+> Photo Gallery by Envira is the lite version of the popular Envira Pro plugin that comes with all the features you will ever need including albums, video galleries, tags, social media integration, gallery templates / gallery layouts, deeplinking, pagination, e-commerce, image proofing, and tons more. [Click here to purchase Envira Pro now!](https://bit.ly/2YnXCsV)
 
-**Envira** has been downloaded over 2,100,000 times. Here's why smart photographers, designers, and developers love Envira, and you will too!
+**Envira** has been downloaded over 2.8 million times. Here's why smart photographers, designers, and developers love Envira, and you will too!
 
 = Drag & Drop Gallery Builder =
 
 We were tired with the bloated and buggy gallery widgets. That's why we built Envira Gallery to adapt to your workflow and allow you to create in minutes. By using our easy to use [drag and drop builder](https://bit.ly/3bObn87), you can upload your photos, rearrange them, and create an image gallery with just a few clicks.
 
-You can also add gallery blocks built for the new WordPress 5.0 Gutenberg block editor.
+You can also add gallery blocks built for the Gutenberg block editor.
 
 > The trick to making difficult things easy is to keep the easy things still easy. <strong>Envira makes everything easy.</strong> If you've struggled with WordPress gallery plugins that take video tutorials to learn, you're going to love Envira Gallery.<br>
 > Chris Lema - WordPress Blogger and Speaker
@@ -53,7 +55,7 @@ Social media integrations, image proofing, and WooCommerce store integration.
 
 = Easy to Customize and Extend =
 
-You can easily customize with our built-in wordpress templates or create your own.
+You can easily customize with our built-in Wordpress templates and layouts or create your own.
 
 But we also knew that our developer friends may want to extend it further. That's why Envira comes with tons of hooks and filters (and yes it's all very-well documented).
 
@@ -62,7 +64,7 @@ But we also knew that our developer friends may want to extend it further. That'
 
 = Full Envira Feature List =
 
-* Guttenberg Blocks for WordPress 5.0
+* Guttenberg Blocks
 * Drag & Drop Photo Gallery Builder
 * 100% Responsive - Mobile Friendly
 * Beautiful WordPress Templates for Customization
@@ -89,7 +91,7 @@ But we also knew that our developer friends may want to extend it further. That'
 * [Adobe Lightroom to WordPress](https://bit.ly/3f1StMX) - Do you love Adobe Lightroom? We do too. You can automatically create and sync photo galleries from your Adobe Lightroom Collections. We made Lightroom to WordPress import easy!
 * [Zip Importer](https://bit.ly/2yaFCr7) - Nobody likes uploading images individually. Now you can build a gallery from a .zip file.
 * [Dropbox Importer](https://bit.ly/2YjAdsq) - You can easily import photos from your Dropbox account.
-* [NextGen Importer](https://bit.ly/3bRqvkX) - Not a fan of NextGen? You can import your files in few simple clicks.
+* [NextGEN Importer](https://bit.ly/3bRqvkX) - Import your NextGEN files in few simple clicks.
 * Want us to add something else? Suggest a feature and we'll get it added!
 
 > When it comes to WordPress gallery plugins, <strong>Envira has no equal</strong>. Solid enough to do the job right, while flexible enough to handle any situation you can throw at it.<br>
@@ -209,6 +211,11 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 
 == Changelog ==
+
+1.8.3
+
+* Updated: Recent News On Welcome Screen.
+* Updated: Links On What's New Screen.
 
 1.8.2
 
