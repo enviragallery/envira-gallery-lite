@@ -193,6 +193,7 @@ class Envira_Gallery_Lite {
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/review.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/gutenberg.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/subscribe.php';
+		require plugin_dir_path( __FILE__ ) . 'includes/admin/promotion.php';
 		require plugin_dir_path( __FILE__ ) . 'includes/admin/welcome.php';
 
 	}
