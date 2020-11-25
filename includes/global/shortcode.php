@@ -121,7 +121,8 @@ class Envira_Gallery_Shortcode {
 
 		if ( is_admin() ){
 			return;
-		}
+        }
+        
         global $post;
 
         // If no attributes have been passed, the gallery should be pulled from the current post.
@@ -143,6 +144,11 @@ class Envira_Gallery_Shortcode {
 
         // Change the gallery order, if specified
         $data = $this->maybe_sort_gallery( $data, $gallery_id );
+
+        // If the post is in draft, don't display it.
+        if ( get_post_status ( $gallery_id ) == 'draft' ) {
+            return;
+        }
 
         // Limit the number of images returned, if specified
         // [envira-gallery id="123" limit="10"] would only display 10 images
