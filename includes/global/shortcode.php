@@ -792,8 +792,7 @@ class Envira_Gallery_Shortcode {
                     <?php if ( $this->get_config( 'lazy_loading', $data ) ) { ?>
 
 				var responsivelyLazy = window.responsivelyLazy;
-					console.log('window');
-					console.log(window);
+
                     responsivelyLazy.run('#envira-gallery-'+ $id);
 
                     <?php } else { ?>
