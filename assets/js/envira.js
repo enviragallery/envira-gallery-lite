@@ -1,19 +1,16 @@
 /**
 * envira.js is a placeholder, which CodeKit attaches the following JS files to, before compiling as min/envira-min.js:
 */
-// @codekit-append "lib/jquery.justifiedGallery.js";
-// @codekit-append "lib/enviraJustifiedGallery-extensions.js";
-// @codekit-append "lib/touchsupport.js";
-// @codekit-append "lib/touchswipe.js";
-// @codekit-append "lib/mousewheel.js";
-// @codekit-append "lib/imagesloaded.js";
-// @codekit-append "lib/isotope.js";
-// @codekit-append "lib/fancybox.js";
-// @codekit-append "lib/fancybox-buttons.js";
-// @codekit-append "lib/fancybox-media.js";
-// @codekit-append "lib/fancybox-thumbs.js";
-// @codekit-append "lib/fancybox-video.js";
-// @codekit-append "lib/responsivelyLazy.js";
+import './lib/jquery.justifiedGallery.js';
+import './lib/enviraJustifiedGallery-extensions.js';
+import './lib/touchsupport.js';
+import './lib/touchswipe.js';
+import './lib/mousewheel.js';
+import './lib/imagesloaded.js';
+import './lib/isotope.js';
+import './lib/fancybox.js';
+import './lib/responsivelyLazy.js';
+
 /**
 * To load more JS resources:
 * - Add them to the lib subfolder
@@ -25,14 +22,16 @@
 */
 jQuery( document ).ready( function( $ ) {
 
+	let envira_container;
+
 	$( 'body' ).on( 'click', 'div.envirabox-title a[href*="#"]:not([href="#"])', function( e ) {
 
 		if ( location.pathname.replace( /^\//, '' ) == this.pathname.replace( /^\//, '' ) && location.hostname == this.hostname ) {
       		$.envirabox.close();
       		return false;
       	}
- 
-	} ); 
+
+	} );
 
     /* setup lazy load event */
     $( document ).on( "envira_image_lazy_load_complete", function( event ) {
@@ -48,7 +47,7 @@ jQuery( document ).ready( function( $ ) {
                 envira_container = $( '#envira-gallery-wrap-' + event.gallery_id ).find( 'img#' + event.image_id );
             }
 
-            if ( $('#envira-gallery-wrap-' + event.gallery_id).find('div.envira-gallery-public').hasClass('envira-gallery-0-columns') ) { 
+            if ( $('#envira-gallery-wrap-' + event.gallery_id).find('div.envira-gallery-public').hasClass('envira-gallery-0-columns') ) {
                 /* this is an automatic gallery */
                 $( envira_container ).closest('div.envira-gallery-item-inner').find( 'div.envira-gallery-position-overlay' ).delay( 100 ).show();
             } else {
@@ -67,9 +66,9 @@ jQuery( document ).ready( function( $ ) {
                 } else {
                     var ratio = ratio1;
                 }
-                
+
                 var padding_bottom = ratio * 100;
-                
+
                 $( envira_container ).closest('div.envira-gallery-item-inner').find('.envira-lazy').css('padding-bottom', padding_bottom + '%');
                 $( envira_container ).closest('div.envira-gallery-item-inner').find('.envira-lazy').data('envira-changed', 'true');
 
@@ -77,7 +76,7 @@ jQuery( document ).ready( function( $ ) {
 
                     window["envira_container_" + event.gallery_id].on( 'layoutComplete',
                       function( event, laidOutItems ) {
-                        
+
                         $( envira_container ).closest('div.envira-gallery-item-inner').find( 'span.envira-title' ).delay( 1000 ).css('visibility', 'visible');
                         $( envira_container ).closest('div.envira-gallery-item-inner').find( 'span.envira-caption' ).delay( 1000 ).css('visibility', 'visible');
 
@@ -87,7 +86,7 @@ jQuery( document ).ready( function( $ ) {
 
                 }
 
-                
+
                 $('#envira-gallery-' + event.gallery_id).enviratope('layout');
 
             }

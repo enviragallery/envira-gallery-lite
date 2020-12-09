@@ -7,10 +7,8 @@
 
 if ( typeof envira_lazy_load !== 'undefined' && envira_lazy_load == 'true' ) {
 
+window.responsivelyLazy = (function () {
 
-
-var responsivelyLazy = (function () {
-    
     var hasWebPSupport = false;
     var windowWidth = null;
     var windowHeight = null;
@@ -37,12 +35,12 @@ var responsivelyLazy = (function () {
         var elementWidth = rect.width;
         var elementHeight = rect.height;
         var test = elementTop < windowHeight && elementTop + elementHeight > 0 && elementLeft < windowWidth && elementLeft + elementWidth > 0;
-        
-        if ( test === false ) { 
+
+        if ( test === false ) {
 
         }
         return test;
-    
+
 
     };
 
@@ -241,7 +239,7 @@ var responsivelyLazy = (function () {
 
 
             myVar = setTimeout(function () {
-                
+
                 if ( jQuery( galleryClass + ' .envira-lazy > img').exists() ) {
                     //console.log('exists');
                     update(document.querySelectorAll(galleryClass + ' .envira-lazy > img'), false);
@@ -253,9 +251,9 @@ var responsivelyLazy = (function () {
                 envira_lazy_load_initial == true; // ok, we did the initial load so now delay can happen
 
             }, envira_lazy_load_delay);
-            
 
-            
+
+
 
         }
         //update(document.querySelectorAll('img.envira-lazy'), true);

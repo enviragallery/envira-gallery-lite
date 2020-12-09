@@ -414,8 +414,8 @@
             }
         }, v = function() {
             if (!B.support.opacity) {
-                m.get(0).style.removeAttribute("filter");
-                M.get(0).style.removeAttribute("filter")
+                m.get(0).style.removeProperty("filter");
+                M.get(0).style.removeProperty("filter")
             }
             if (H.autoDimensions) {
                 m.css("height", "auto")

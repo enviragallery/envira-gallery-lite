@@ -791,6 +791,9 @@ class Envira_Gallery_Shortcode {
 
                     <?php if ( $this->get_config( 'lazy_loading', $data ) ) { ?>
 
+				var responsivelyLazy = window.responsivelyLazy;
+					console.log('window');
+					console.log(window);
                     responsivelyLazy.run('#envira-gallery-'+ $id);
 
                     <?php } else { ?>
@@ -1632,7 +1635,7 @@ class Envira_Gallery_Shortcode {
 			'quality'  => 100,
 			'retina'   => $retina,
         );
-        
+
 		// If we're requesting a retina image, and the gallery uses a registered WordPress image size,
 		// we need use the width and height of that registered WordPress image size - not the gallery's
 		// image width and height, which are hidden settings.
