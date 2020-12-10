@@ -1,9 +1,9 @@
-=== Image Gallery Plugin for WordPress - Envira Photo Gallery ===
+ === Gallery Plugin for WordPress - Envira Photo Gallery ===
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
 Tags: gallery, image gallery, photo gallery, best gallery plugin, wordpress gallery plugin
 Requires at least: 4.4.0
-Tested up to: 5.5.3
-Requires PHP: 5.3
+Tested up to: 5.6.0
+Requires PHP: 5.6
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
 
@@ -22,11 +22,11 @@ https://www.youtube.com/watch?v=4jHG3LOmV-c&w=532&rel=0
 
 We believe that you shouldn't have to hire a developer to create a WordPress gallery. That's why we built [Envira](https://bit.ly/35gNvqW), a drag & drop **photo gallery plugin** that's both EASY, FAST and POWERFUL.
 
-Envira is optimized for web and server performance as well as SEO and conversion, because we understand the importance of speed when it comes to image and gallery load times. Especially if your looking to sell from your site.
+Envira Gallery is optimized for web and server performance as well as SEO and conversion, because we understand the importance of speed when it comes to image and gallery load times. Especially if your looking to sell from your site.
 
 Works great with the top page builders including: Elementor, Beaver Builder, Divi and more.
 
-> <strong>Envira Pro</strong><br />
+> <strong>Envira  Gallery Pro</strong><br />
 > Photo Gallery by Envira is the lite version of the popular Envira Pro plugin that comes with all the features you will ever need including albums, video galleries, tags, social media integration, gallery templates / gallery layouts, deeplinking, pagination, e-commerce, image proofing, and tons more. [Click here to purchase Envira Pro now!](https://bit.ly/2YnXCsV)
 
 **Envira** has been downloaded over 2.8 million times. Here's why smart photographers, designers, and developers love Envira, and you will too!
@@ -212,6 +212,10 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+1.8.3.2
+
+* Fixed: Lightbox Bug with WordPress 5.6.0
+
 1.8.3.1
 
 * Added: Lifetime option notice.
@@ -252,105 +256,3 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 * Added: Enable links in lightbox settings, when lightbox is deactivated.
 
-1.7.9.0
-
-* Fix: Updated bad link that resulted in a 404.
-
-1.7.8.9
-
-* Updated: Text on Welcome Screen.
-* Fix: Replace deprecated filter media_buttons_context.
-
-1.7.8.8
-
-* Added: Oringial Size option for image sizes in gallery.
-* Added: Compatibility with animated GIFS (oringial size option).
-
-1.7.8.7
-
-* Fixed: Bug associated with using non-default WordPress media upload folders.
-
-1.7.8.6
-
-* Fixed: Readme.txt updated
-
-1.7.8.5
-
-* Updated: Tested with WordPress 5.4.0.
-
-1.7.8.4
-
-* Fixed: Readme.txt updated
-
-1.7.8.2
-
-* Fixed: Version number variable updated.
-
-1.7.8.1
-
-* Fixed: Minor typos.
-
-1.7.8
-
-* Fixed: Alert message appearing in wrong location on Lite vs. Pro page.
-
-1.7.7
-
-* Updated: Minor code cleanup, updating authors.
-
-1.7.6
-
-* Updated: Welcome Screen, tracking links.
-
-1.7.5.1
-
-* Updated: Welcome Screen.
-
-1.7.5
-
-* Updated: Welcome Screen, Lite vs Pro tab.
-
-1.7.4.2
-
-* Updated: Promotion updating.
-
-1.7.4.1
-
-* Fix: Promotion updating.
-
-
-1.7.4
-
-* Added: Messaging.
-* Added: Promotion class.
-
-1.7.3.1
-
-* Fix: Resolving Gutenberg links and minor errors related to media uploads.
-
-1.7.3
-
-* Fix: Reverting some changes related to Gutenberg.
-
-1.7.2
-
-* Updated: Gutenberg performance improvements.
-* Fix: Errors related to Gutenberg updates.
-* Fix: Typo resolved in Media.php causing PHP Warning.
-
-1.7.1
-
-* Fix: Schema referenced now points to https.
-* Fix: Remove unused CSS.
-
-1.7.0
-
-* Updated: Welcome Screen information.
-* Fix: Issue involving showing captions in certain scenarios.
-* Fix: Remove unused CSS.
-
-= 1.7.0 =
-
-* Updated: Welcome Screen information.
-* Fix: Issue involving showing captions in certain scenarios.
-* Fix: Remove unused CSS.
