@@ -972,7 +972,7 @@ class Envira_Gallery_Metaboxes {
 
         </div>
         </div>
-        <?php 
+        <?php
 
         // Output an upgrade notice
         Envira_Gallery_Notice_Admin::get_instance()->display_inline_notice(
@@ -1164,7 +1164,7 @@ class Envira_Gallery_Metaboxes {
                             <label for="envira-config-title"><?php _e( 'Gallery Title', 'envira-gallery-lite' ); ?></label>
                         </th>
                         <td>
-                            <input id="envira-config-title" type="text" name="_envira_gallery[title]" value="<?php echo $this->get_config( 'title', $this->get_config_default( 'title' ) ); ?>" />
+                            <input id="envira-config-title" type="text" name="_envira_gallery[title]" value="<?php echo esc_html( $this->get_config( 'title', $this->get_config_default( 'title' ) ) ); ?>" />
                             <p class="description"><?php _e( 'Internal gallery title for identification in the admin.', 'envira-gallery-lite' ); ?></p>
                         </td>
                     </tr>
@@ -1321,7 +1321,7 @@ class Envira_Gallery_Metaboxes {
 		</div>
 
 		<?php
-				
+
     }
 
     /**
