@@ -407,8 +407,41 @@ function envira_gallery_ajax_save_meta() {
     $meta         = $_POST['meta'];
     $gallery_data = get_post_meta( $post_id, '_eg_gallery_data', true );
 
+	$wp_kses_allowed_html = array(
+		'a'      => array(
+			'href'                => array(),
+			'target'              => array(),
+			'class'               => array(),
+			'title'               => array(),
+			'data-status'         => array(),
+			'data-envira-tooltip' => array(),
+			'data-id'             => array(),
+		),
+		'br'     => array(),
+		'img'    => array(
+			'src'   => array(),
+			'class' => array(),
+			'alt'   => array(),
+		),
+		'div'    => array(
+			'class' => array(),
+		),
+		'li'     => array(
+			'id'                              => array(),
+			'class'                           => array(),
+			'data-envira-gallery-image'       => array(),
+			'data-envira-gallery-image-model' => array(),
+		),
+		'em'     => array(),
+		'span'   => array(
+			'class' => array(),
+		),
+		'strong' => array(),
+	);
+
+
     if ( isset( $meta['title'] ) ) {
-        $gallery_data['gallery'][ $attach_id ]['title'] = trim( $meta['title'] );
+        $gallery_data['gallery'][ $attach_id ]['title'] = trim( wp_kses( $meta['title'], $wp_kses_allowed_html ) );
     }
 
     if ( isset( $meta['alt'] ) ) {
@@ -421,10 +454,6 @@ function envira_gallery_ajax_save_meta() {
 
     if ( isset( $meta['link_new_window'] ) ) {
         $gallery_data['gallery'][ $attach_id ]['link_new_window'] = trim( $meta['link_new_window'] );
-    }
-
-    if ( isset( $meta['caption'] ) ) {
-        $gallery_data['gallery'][ $attach_id ]['caption'] = trim( $meta['caption'] );
     }
 
     // Allow filtering of meta before saving.
