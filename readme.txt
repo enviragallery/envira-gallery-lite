@@ -212,6 +212,11 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 == Changelog ==
 
+1.8.3.3
+
+* Fixed: Improving metadata sanitization.
+
+
 1.8.3.2
 
 * Fixed: Lightbox Bug with WordPress 5.6.0
