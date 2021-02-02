@@ -663,7 +663,7 @@ class Envira_Gallery_Metaboxes {
      * @param string $type The type of display to output.
      * @param object $post The current post object.
      */
-    public function images_display( $type = 'default', $post ) {
+    public function images_display( $type = 'default', $post = false ) {
 
         // Output a unique hidden field for settings save testing for each type of slider.
         echo '<input type="hidden" name="_envira_gallery[type_' . $type . ']" value="1" />';
@@ -688,7 +688,7 @@ class Envira_Gallery_Metaboxes {
      * @param string $type The type of display to output.
      * @param object $data Gallery Data
      */
-    public function preview_display( $type = 'default', $data ) {
+    public function preview_display( $type = 'default', $data = false ) {
 
         // Output the display based on the type of slider available.
         switch ( $type ) {
