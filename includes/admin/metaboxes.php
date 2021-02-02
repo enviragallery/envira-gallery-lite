@@ -764,7 +764,7 @@ class Envira_Gallery_Metaboxes {
                 <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/addons/woocommerce-addon/', 'adminpagegallery', 'eCommerce' ) . '">eCommerce</a></li>
                 <li>Dedicated customer support and so much more!</li>
             </ul>
-        </div><p class="no-margin-top"><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>', 'envira-gallery-lite' ),
+        </div><p class="no-margin-top"><strong>Bonus:</strong> Envira Lite users get a discount code for 50% off regular price.</p>', 'envira-gallery-lite' ),
             'warning',
             __( 'Click here to Upgrade', 'envira-gallery-lite' ),
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagegallery', 'clickheretoupgradebutton' ),
@@ -1120,7 +1120,7 @@ class Envira_Gallery_Metaboxes {
                 <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/lightbox-gallery-demo/', 'adminpagelightbox', 'lightboxsupersizeeffects' ) . '">Lightbox supersize effects</a></li>
                 <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/lightbox-gallery-demo/', 'adminpagelightbox', 'lightboxslideshows' ) . '">Lightbox slideshows</a> and so much more!</li>
             </ul>
-        </div><p class="no-margin-top"><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>', 'envira-gallery-lite' ),
+        </div><p class="no-margin-top"><strong>Bonus:</strong> Envira Lite users get a discount code for 50% off regular price.</p>', 'envira-gallery-lite' ),
             'warning',
             __( 'Click here to Upgrade', 'envira-gallery-lite' ),
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagelightbox', 'clickheretoupgradebutton' ),
@@ -1214,7 +1214,7 @@ class Envira_Gallery_Metaboxes {
             <ul class="no-margin-top">
                 <li><a target="_blank" href="' . Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/addons/css-addon/', 'adminpagemisc', 'customcsscontrols' ) . '">Custom CSS controls</a> for each gallery and so much more!</li>
             </ul>
-        </div><p class="no-margin-top"><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>', 'envira-gallery-lite' ),
+        </div><p class="no-margin-top"><strong>Bonus:</strong> Envira Lite users get a discount code for 50% off regular price.</p>', 'envira-gallery-lite' ),
             'warning',
             __( 'Click here to Upgrade', 'envira-gallery-lite' ),
             Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagemisc', 'clickheretoupgradebutton' ),
@@ -1267,7 +1267,7 @@ class Envira_Gallery_Metaboxes {
 				</div>
 			</div>
             <p>Build responsive WordPress galleries that work on mobile, tablet and desktop devices. You can even customize all aspects of your user's mobile gallery display experience to be different than desktop.</p>
-            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>
+            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 50% off regular price.</p>
 			<div class="cta-buttons">
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/features/responsive-mobile-friendly/', 'adminpagemobile', 'viewmobiledemo' ); ?>" target="_blank" class="button button-secondary">View Mobile Demo</a>
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagemobile', 'upgradetoenviragallerypro' ); ?>" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
@@ -1313,7 +1313,7 @@ class Envira_Gallery_Metaboxes {
 					<li><strong>...and more!</strong></li>
 				</ul>
             </div>
-            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>
+            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 50% off regular price.</p>
 			<div class="cta-buttons">
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/video-gallery-demo/', 'adminpagevideos', 'viewvideoaddondemobutton' ); ?>" target="_blank" class="button button-secondary">View Video Addon Demo</a>
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagevideos', 'upgradetoenviraprobutton' ); ?>" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
@@ -1360,7 +1360,7 @@ class Envira_Gallery_Metaboxes {
 					<li><strong>...and more!</strong></li>
 				</ul>
             </div>
-            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>
+            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 50% off regular price.</p>
 			<div class="cta-buttons">
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/social-sharing-demo/', 'adminpagesocial', 'viewsocialaddondemobutton' ); ?>" target="_blank" class="button button-secondary">View Social Addon Demo</a>
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( false, 'adminpagesocial', 'upgradetoenviraprobutton' ); ?>" target="_blank" class="button button-primary">Upgrade To Envira Pro</a>
@@ -1407,7 +1407,7 @@ class Envira_Gallery_Metaboxes {
 					<li><strong>...and more!</strong></li>
 				</ul>
             </div>-->
-            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>
+            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 50% off regular price.</p>
 
 			<div class="cta-buttons">
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/gallery-tags/', 'adminpagetags', 'viewtagsaddondemobutton' ); ?>" target="_blank" class="button button-secondary">View Tags Addon Demo</a>
@@ -1453,7 +1453,7 @@ class Envira_Gallery_Metaboxes {
 					<li><strong>...and more!</strong></li>
 				</ul>
             </div>
-            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 20% off regular price.</p>
+            <p><strong>Bonus:</strong> Envira Lite users get a discount code for 50% off regular price.</p>
 
 			<div class="cta-buttons">
 				<a href="<?php echo Envira_Gallery_Common_Admin::get_instance()->get_upgrade_link( 'https://enviragallery.com/demo/gallery-pagination-demo/', 'adminpagepagination', 'viewpaginationaddondemo' ); ?>" target="_blank" class="button button-secondary">View Pagination Addon Demo</a>

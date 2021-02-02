@@ -1355,7 +1355,7 @@ class Envira_Welcome {
 					</h3>
 
 						<p>
-							<strong>Bonus:</strong> Envira Lite users get <span class="envira-deal 20-percent-off">20% off regular price</span>, using the code in the link above.
+							<strong>Bonus:</strong> Envira Lite users get <span class="envira-deal 20-percent-off">50% off regular price</span>, using the code in the link above.
 						</p>
 					</div>
 				</div>
