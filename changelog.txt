@@ -1,6 +1,11 @@
 
 == Changelog ==
 
+1.8.3.4
+
+* Updated: Promotional messages.
+* Fixed: PHP 8 related notices.
+
 1.8.3.3
 
 * Fixed: Improving metadata sanitization.

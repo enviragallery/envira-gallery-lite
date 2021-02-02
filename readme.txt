@@ -2,7 +2,7 @@
 Contributors: enviragallery, nathansingh, chrisakelley, dimensionmedia
 Tags: gallery, image gallery, photo gallery, best gallery plugin, wordpress gallery plugin
 Requires at least: 4.4.0
-Tested up to: 5.6.0
+Tested up to: 5.6.1
 Requires PHP: 5.6
 Stable tag: trunk
 License: GNU General Public License v2.0 or later
@@ -211,6 +211,11 @@ Yes, Envira has full translation and localization support via the envira-gallery
 
 
 == Changelog ==
+
+1.8.3.4
+
+* Updated: Promotional messages.
+* Fixed: PHP 8 related notices.
 
 1.8.3.3
 
