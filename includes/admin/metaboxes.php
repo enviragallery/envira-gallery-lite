@@ -1682,8 +1682,8 @@ class Envira_Gallery_Metaboxes {
                 <div class="title">
                     <span>
 						<?php
-                        $allowed_tags = wp_kses_allowed_html( 'title' );
-                        $the_title = isset( $item['title'] ) ? wp_kses( $item['title'], $allowed_tags ) : '';
+                        $the_title = ( isset( $item['title'] ) ? esc_html( $item['title'] ) : '' );
+
                         // Output Title.
                         echo ( $the_title );
 
